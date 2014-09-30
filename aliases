@@ -1,0 +1,32 @@
+# CLI Shortcuts
+alias copyssh="pbcopy < ~/.ssh/id_rsa.pub"
+alias reloadbash="source ~/.bash_profile"
+alias reloaddns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
+alias aliases="cat ~/.aliases"
+alias dotfiles="cd ~/dotfiles"
+
+# PHP
+alias art="php artisan"
+
+# Directories
+alias sites="cd ~/Sites"
+alias blog="sites && cd github/driesvints.com"
+alias lw="sites && cd laravelio/LaravelWeekly"
+alias lio="sites && cd laravelio/laravel.io"
+
+# Homestead
+alias sshhomestead="ssh vagrant@127.0.0.1 -p 2222"
+alias homestead="sites && cd homestead"
+
+# Beatswitch
+alias bs="sites && cd beatswitch/web-app"
+
+# Laravel.IO
+alias sshlio="ssh u-laravelio@ssh9.eu1.frbit.com"
+
+# Vagrant
+alias v="vagrant global-status"
+alias vup="vagrant up"
+alias vhalt="vagrant halt"
+alias vssh="vagrant ssh"
+alias vrebuild="vagrant destroy --force && vagrant up"
