@@ -21,9 +21,6 @@ alias homestead="sites && cd homestead"
 # Beatswitch
 alias bs="sites && cd beatswitch/web-app"
 
-# Laravel.IO
-alias sshlio="ssh u-laravelio@ssh9.eu1.frbit.com"
-
 # Vagrant
 alias v="vagrant global-status"
 alias vup="vagrant up"
