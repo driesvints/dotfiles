@@ -10,16 +10,14 @@ alias art="php artisan"
 
 # Directories
 alias sites="cd ~/Sites"
-alias blog="sites && cd github/driesvints.com"
-alias lw="sites && cd laravelio/LaravelWeekly"
-alias lio="sites && cd laravelio/laravel.io"
-
-# Homestead
-alias sshhomestead="ssh vagrant@127.0.0.1 -p 2222"
-alias homestead="sites && cd homestead"
+alias projects="sites && cd projects"
+alias blog="projects && cd driesvints.com"
+alias lio="projects && cd laravelio"
 
 # Beatswitch
-alias bs="sites && cd beatswitch/web-app"
+alias bs="sites && cd beatswitch"
+alias webapp="bs && cd web-app"
+alias lock="bs && cd lock"
 
 # Vagrant
 alias v="vagrant global-status"
