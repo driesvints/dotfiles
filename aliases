@@ -7,6 +7,7 @@ alias dotfiles="cd ~/dotfiles"
 
 # PHP
 alias art="php artisan"
+alias hs="homestead"
 
 # Directories
 alias sites="cd ~/Sites"
