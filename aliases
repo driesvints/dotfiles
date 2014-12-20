@@ -4,6 +4,7 @@ alias reloadbash="source ~/.bash_profile"
 alias reloaddns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
 alias aliases="cat ~/.aliases"
 alias dotfiles="cd ~/dotfiles"
+alias ls="ls -F"
 
 # PHP
 alias art="php artisan"
