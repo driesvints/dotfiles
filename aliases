@@ -16,7 +16,7 @@ alias projects="sites && cd projects"
 alias blog="projects && cd driesvints.com"
 alias lio="projects && cd laravelio"
 
-# Beatswitch
+# BeatSwitch
 alias bs="sites && cd beatswitch"
 alias webapp="bs && cd web-app"
 alias lock="bs && cd lock"
