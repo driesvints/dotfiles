@@ -11,3 +11,8 @@ unset file;
 
 # $PATH
 export PATH=vendor/bin:node_modules/.bin:~/.composer/vendor/bin:$PATH
+
+# Autocomplete Git commands and branches
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
