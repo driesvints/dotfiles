@@ -10,9 +10,6 @@ alias ls="ls -F"
 alias art="php artisan"
 alias hs="homestead"
 
-# Git
-alias updatedevelop="git checkout master && git pull && git checkout develop && git pull && git merge --no-edit master && git push"
-
 # Directories
 alias sites="cd ~/Sites"
 alias projects="sites && cd projects"
