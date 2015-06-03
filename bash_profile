@@ -16,3 +16,7 @@ export PATH=vendor/bin:node_modules/.bin:~/.composer/vendor/bin:$PATH
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
+
+# Language Preferences
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
