@@ -19,6 +19,7 @@ alias lio="projects && cd laravelio"
 # BeatSwitch
 alias bs="sites && cd beatswitch"
 alias webapp="bs && cd web-app"
+alias webappconfig="bs && cd web-app-config"
 alias lock="bs && cd lock"
 
 # Vagrant
