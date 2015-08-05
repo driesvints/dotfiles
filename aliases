@@ -3,7 +3,7 @@ alias copyssh="pbcopy < ~/.ssh/id_rsa.pub"
 alias reloadbash="source ~/.bash_profile"
 alias reloaddns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
 alias aliases="cat ~/.aliases"
-alias dotfiles="cd ~/dotfiles"
+alias dotfiles="cd ~/.dotfiles"
 alias ls="ls -F"
 
 # PHP
@@ -15,12 +15,6 @@ alias sites="cd ~/Sites"
 alias projects="sites && cd projects"
 alias blog="projects && cd driesvints.com"
 alias lio="projects && cd laravelio"
-
-# BeatSwitch
-alias bs="sites && cd beatswitch"
-alias webapp="bs && cd web-app"
-alias webappconfig="bs && cd web-app-config"
-alias lock="bs && cd lock"
 
 # Vagrant
 alias v="vagrant global-status"
