@@ -38,9 +38,3 @@ Most applications get installed through Homebrew Cask. The remaining ones need t
 - Tweetbot
 - Byword
 
-#### Google Chrome
-
-##### Plugins
-
-- Authy
-
