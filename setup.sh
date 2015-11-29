@@ -1,40 +1,90 @@
-#!/bin/bash
-############################
-# This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
-############################
+# Install dotfiles on a fresh system
 
-########## Variables
+# Check for Homebrew,
+# Install if we don't have it
+if test ! $(which brew); then
+  echo "Installing homebrew..."
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
 
-dir=~/.dotfiles                    # dotfiles directory
-olddir=~/.dotfiles_old             # old dotfiles backup directory
-files="aliases bash_profile"    # list of files/folders to symlink in homedir
+# Update homebrew recipes
+brew update
 
-##########
+# Install GNU core utilities (those that come with OS X are outdated)
+brew install coreutils
 
-# create dotfiles_old in homedir
-echo -n "Creating $olddir for backup of any existing dotfiles in ~ ..."
-mkdir -p $olddir
+# Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
+brew install findutils
 
-# change to the dotfiles directory
-echo -n "Changing to the $dir directory ..."
-cd $dir
+# Install Bash 4
+brew install bash
 
-# Create bin dir if it doesn't exists yet.
-echo -n "Creating ~/.bin directory"
-mkdir -p ~/.bin
+# Install more recent versions of some OS X tools
+brew tap homebrew/dupes
+brew install homebrew/dupes/grep
 
-# Copy commands to the bin dir
-echo -n "Copying commands to ~/.bin directory"
-cp ./bin/* ~/.bin
+# Install Binaries
 
-# move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks from the homedir to any files in the ~/dotfiles directory specified in $files
-for file in $files; do
-    echo "Moving any existing dotfiles from ~ to $olddir"
-    mv ~/.$file ~/.dotfiles_old/
-    echo "Creating symlink to $file in home directory."
-    ln -s $dir/$file ~/.$file
-done
+binaries=(
+  trash
+  node
+  tree
+  hub
+  git
+  caskroom/cask/brew-cask
+)
 
-# Symlink Sublime Text CLI tools
-ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/sublime
+echo "installing binaries..."
+brew install ${binaries[@]}
+
+brew cleanup
+
+# Install OS X Applications
+apps=(
+  google-chrome
+  goofy
+  slack
+  phpstorm
+  iterm2
+  sequel-pro
+  alfred
+  transmit
+  mysqlworkbench
+  dropbox
+  virtualbox
+  virtualbox-extension-pack
+  vagrant
+  sublime-text
+  tower
+  textual
+  skype
+  firefox
+  vlc
+  screenhero
+  evernote
+)
+
+
+# Install apps to /Applications
+# Default is: /Users/$user/Applications
+echo "installing apps..."
+brew cask install --appdir="/Applications" ${apps[@]}
+
+# Link Alfread
+brew cask alfred link
+
+# Install Fonts
+brew tap caskroom/fonts
+
+# fonts
+fonts=(
+  font-source-code-pro
+  font-source-sans-pro
+  font-source-serif-pro
+)
+
+# install fonts
+echo "installing fonts..."
+brew cask install ${fonts[@]}
+
 
