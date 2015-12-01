@@ -29,7 +29,7 @@ Checklist to setup OS X with my personal preferences.
 
 ### Applications
 
-Most applications get installed through Homebrew Cask. The remaining ones need to be installed from the app store:
+Most applications get installed through Homebrew Cask. The apps below need to be installed from the App Store.
 
 - 1Password
 - Sketch 2
@@ -37,4 +37,8 @@ Most applications get installed through Homebrew Cask. The remaining ones need t
 - Wunderlist
 - Tweetbot
 - Byword
+
+And the following ones need to be installed manually.
+
+- [Google Chrome](http://www.google.com/chrome): 1Password extension requires is sandboxed and requires it to be installed in `/Applications` 
 

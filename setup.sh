@@ -41,7 +41,6 @@ brew cleanup
 
 # Install OS X Applications
 apps=(
-  google-chrome
   goofy
   slack
   phpstorm
