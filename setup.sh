@@ -1,7 +1,6 @@
 # Install dotfiles on a fresh system
 
-# Check for Homebrew,
-# Install if we don't have it
+# Check for Homebrew and install if we don't have it
 if test ! $(which brew); then
   echo "Installing homebrew..."
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -24,7 +23,6 @@ brew tap homebrew/dupes
 brew install homebrew/dupes/grep
 
 # Install Binaries
-
 binaries=(
   trash
   node
@@ -63,7 +61,6 @@ apps=(
   evernote
 )
 
-
 # Install apps to /Applications
 # Default is: /Users/$user/Applications
 echo "installing apps..."
@@ -75,7 +72,6 @@ brew cask alfred link
 # Install Fonts
 brew tap caskroom/fonts
 
-# fonts
 fonts=(
   font-source-code-pro
   font-source-sans-pro
@@ -83,8 +79,5 @@ fonts=(
   font-sauce-code-powerline
 )
 
-# install fonts
 echo "installing fonts..."
 brew cask install ${fonts[@]}
-
-
