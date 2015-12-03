@@ -80,6 +80,7 @@ fonts=(
   font-source-code-pro
   font-source-sans-pro
   font-source-serif-pro
+  font-sauce-code-powerline
 )
 
 # install fonts
