@@ -26,6 +26,9 @@ Checklist to setup OS X with my personal preferences.
 - Date & Time -> Use 24 hour clock
 - Date & Time -> Show date
 - Sharing -> Adjust Computer Name
+- Calendar -> Week starts on Monday
+- Calendar -> Day starts at 9AM
+- Calendar -> Show 24 hours at a time
 
 ### Applications
 
