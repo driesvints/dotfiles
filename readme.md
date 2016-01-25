@@ -49,7 +49,7 @@ And the following ones need to be installed manually.
 
 Below are specific setup instructions for some applications.
 
-##### 1Password :lock:
+##### 1Password
 
 Most of 1Password gets synced with iCloud. The only thing left to do is add the teams. We're not gonna list here which ones :speak_no_evil:
 
