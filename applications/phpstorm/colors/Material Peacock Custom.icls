@@ -1,15 +1,7 @@
 <scheme name="Material Peacock Custom" version="142" parent_scheme="Default">
   <option name="LINE_SPACING" value="1.4" />
   <option name="EDITOR_FONT_SIZE" value="13" />
-  <console-font>
-    <option name="EDITOR_FONT_NAME" value="Hack" />
-    <option name="EDITOR_FONT_SIZE" value="13" />
-  </console-font>
-  <console-font>
-    <option name="EDITOR_FONT_NAME" value="Menlo" />
-    <option name="EDITOR_FONT_SIZE" value="13" />
-  </console-font>
-  <option name="EDITOR_FONT_NAME" value="Hack" />
+  <option name="EDITOR_FONT_NAME" value="Menlo" />
   <colors>
     <option name="ADDED_LINES_COLOR" value="5f7210" />
     <option name="ANNOTATIONS_COLOR" value="8b999f" />
@@ -270,25 +262,9 @@
         <option name="FOREGROUND" value="bcd42a" />
       </value>
     </option>
-    <option name="CSS.COMMENT">
-      <value>
-        <option name="FOREGROUND" value="808080" />
-      </value>
-    </option>
     <option name="CSS.FUNCTION">
       <value>
         <option name="FOREGROUND" value="bcd42a" />
-      </value>
-    </option>
-    <option name="CSS.IDENT">
-      <value>
-        <option name="FOREGROUND" value="ff5d38" />
-      </value>
-    </option>
-    <option name="CSS.IMPORTANT">
-      <value>
-        <option name="FOREGROUND" value="26a6a6" />
-        <option name="FONT_TYPE" value="1" />
       </value>
     </option>
     <option name="CSS.KEYWORD">
@@ -309,11 +285,6 @@
     <option name="CSS.PROPERTY_VALUE">
       <value>
         <option name="FOREGROUND" value="dee3ec" />
-      </value>
-    </option>
-    <option name="CSS.STRING">
-      <value>
-        <option name="FOREGROUND" value="a5c261" />
       </value>
     </option>
     <option name="CSS.TAG_NAME">
@@ -428,6 +399,7 @@
     <option name="DEFAULT_DOT">
       <value />
     </option>
+    <option name="DEFAULT_ENTITY" baseAttributes="DEFAULT_IDENTIFIER" />
     <option name="DEFAULT_FUNCTION_CALL">
       <value>
         <option name="FOREGROUND" value="26a6a6" />
@@ -662,20 +634,9 @@
         <option name="FOREGROUND" value="bcd42a" />
       </value>
     </option>
-    <option name="HTML_COMMENT">
-      <value>
-        <option name="FOREGROUND" value="7a7267" />
-        <option name="FONT_TYPE" value="2" />
-      </value>
-    </option>
     <option name="HTML_ENTITY_REFERENCE">
       <value>
         <option name="FOREGROUND" value="ff5d38" />
-      </value>
-    </option>
-    <option name="HTML_TAG">
-      <value>
-        <option name="FOREGROUND" value="ede0ce" />
       </value>
     </option>
     <option name="HTML_TAG_NAME">
@@ -864,6 +825,9 @@
         <option name="FONT_TYPE" value="1" />
       </value>
     </option>
+    <option name="JS.GLOBAL_FUNCTION" baseAttributes="DEFAULT_FUNCTION_DECLARATION" />
+    <option name="JS.GLOBAL_VARIABLE" baseAttributes="DEFAULT_GLOBAL_VARIABLE" />
+    <option name="JS.INSTANCE_MEMBER_FUNCTION" baseAttributes="DEFAULT_INSTANCE_METHOD" />
     <option name="JS.PARAMETER">
       <value>
         <option name="EFFECT_COLOR" value="dee3ec" />
@@ -884,11 +848,6 @@
     <option name="LABEL">
       <value>
         <option name="FONT_TYPE" value="2" />
-      </value>
-    </option>
-    <option name="LESS_VARIABLE">
-      <value>
-        <option name="FOREGROUND" value="d0d0ff" />
       </value>
     </option>
     <option name="LINE_FULL_COVERAGE">
@@ -1017,6 +976,11 @@
         <option name="BACKGROUND" value="2b2a27" />
       </value>
     </option>
+    <option name="PHP_FUNCTION_CALL">
+      <value>
+        <option name="FOREGROUND" value="ff5d38" />
+      </value>
+    </option>
     <option name="PHP_HEREDOC_ID">
       <value>
         <option name="FOREGROUND" value="26a6a6" />
@@ -1112,37 +1076,11 @@
         <option name="BACKGROUND" value="2b2a27" />
       </value>
     </option>
-    <option name="SASS_MIXIN">
-      <value>
-        <option name="FOREGROUND" value="d0d0ff" />
-      </value>
-    </option>
-    <option name="SASS_NUMBER">
-      <value>
-        <option name="FOREGROUND" value="a5c261" />
-        <option name="EFFECT_TYPE" value="1" />
-      </value>
-    </option>
-    <option name="SASS_STRING">
-      <value>
-        <option name="FOREGROUND" value="a5c261" />
-      </value>
-    </option>
-    <option name="SASS_VARIABLE">
-      <value>
-        <option name="FOREGROUND" value="6d9cbe" />
-      </value>
-    </option>
+    <option name="SASS_MIXIN" baseAttributes="DEFAULT_KEYWORD" />
     <option name="SEARCH_RESULT_ATTRIBUTES">
       <value>
         <option name="BACKGROUND" value="1e2123" />
         <option name="ERROR_STRIPE_COLOR" value="246e00" />
-      </value>
-    </option>
-    <option name="SQL_COLUMN">
-      <value>
-        <option name="FOREGROUND" value="d0d0ff" />
-        <option name="FONT_TYPE" value="1" />
       </value>
     </option>
     <option name="SQL_KEYWORD">
@@ -1236,6 +1174,11 @@
         <option name="FOREGROUND" value="a8c023" />
         <option name="FONT_TYPE" value="2" />
         <option name="ERROR_STRIPE_COLOR" value="a74c0" />
+      </value>
+    </option>
+    <option name="TWIG_KEYWORD">
+      <value>
+        <option name="FOREGROUND" value="ff5d38" />
       </value>
     </option>
     <option name="TYPEDEF">
@@ -1338,19 +1281,9 @@
         <option name="FONT_TYPE" value="2" />
       </value>
     </option>
-    <option name="XML_ENTITY_REFERENCE">
-      <value>
-        <option name="FOREGROUND" value="6d9cbe" />
-      </value>
-    </option>
     <option name="XML_PROLOGUE">
       <value>
         <option name="FOREGROUND" value="e8bf6a" />
-      </value>
-    </option>
-    <option name="XML_TAG">
-      <value>
-        <option name="FOREGROUND" value="ede0ce" />
       </value>
     </option>
     <option name="XML_TAG_DATA">
@@ -1389,25 +1322,9 @@
         <option name="FONT_TYPE" value="1" />
       </value>
     </option>
-    <option name="YAML_COMMENT">
-      <value>
-        <option name="FOREGROUND" value="7a7267" />
-        <option name="FONT_TYPE" value="2" />
-      </value>
-    </option>
     <option name="YAML_SCALAR_DSTRING">
       <value>
         <option name="FOREGROUND" value="bcd42a" />
-      </value>
-    </option>
-    <option name="YAML_SCALAR_KEY">
-      <value>
-        <option name="FOREGROUND" value="bcd42a" />
-      </value>
-    </option>
-    <option name="YAML_SCALAR_LIST">
-      <value>
-        <option name="FOREGROUND" value="a5c261" />
       </value>
     </option>
     <option name="YAML_SCALAR_STRING">
@@ -1426,12 +1343,6 @@
       </value>
     </option>
     <option name="YAML_SIGN">
-      <value>
-        <option name="FOREGROUND" value="a5c261" />
-        <option name="EFFECT_TYPE" value="2" />
-      </value>
-    </option>
-    <option name="YAML_TEXT">
       <value>
         <option name="FOREGROUND" value="a5c261" />
         <option name="EFFECT_TYPE" value="2" />
