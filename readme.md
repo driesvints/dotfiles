@@ -2,62 +2,23 @@
 
 Public repository for my personal dotfiles.
 
-## Setup new OS X
+## A Small Explanation
+
+This repository serves as my way to help me setup and maintain my Mac. It takes the effort out of installing everything manually. Everything which is needed to install my preffered setup of OS X is detailed in this readme. Feel free to explore, learn and copy parts for your own dotfiles.
+
+## A Fresh OS X Setup
 
 Follow these install instructions to setup a new OS X system.
 
-1. Setup OS X with the preferences below. Make sure you update OS X to the latest version with the App Store
-2. Install Xcode with the App Store, open it and accept the license agreement
-3. Install OS X Command Line Tools
-4. Copy public and private SSH keys to `~/.ssh`. Make sure they're set to `600`
-5. Clone this repo to `~/.dotfiles`
-6. Run `./setup.sh` to install preferences & applications
-7. Install remaining applications from the App Store
+1. Update OS X to the latest version with the App Store
+2. Setup OS X with [these preferences](./osx/readme.md)
+3. Install Xcode from the App Store, open it and accept the license agreement
+4. Install OS X Command Line Tools
+5. Copy public and private SSH keys to `~/.ssh`. Make sure they're set to `600`
+6. Clone this repo to `~/.dotfiles`
+7. Run `./setup.sh` to start the installation
+8. Follow the remaining [app installation instructions](./apps/readme.md)
 
-### Preferences
+## License
 
-Checklist to setup OS X with my personal preferences.
-
-- General -> Auto hide menu bar
-- General -> Dark menu bar and dock
-- Dock -> Auto hide dock
-- Mission Control -> Hot Corners
-- Mission Control -> Group windows by application
-- Date & Time -> Use 24 hour clock
-- Date & Time -> Show date
-- Sharing -> Adjust Computer Name
-- Calendar -> Week starts on Monday
-- Calendar -> Day starts at 9AM
-- Calendar -> Show 24 hours at a time
-
-### Applications
-
-Most applications get installed through Homebrew Cask. The apps below need to be installed from the App Store.
-
-- 1Password
-- Sketch 2
-- Paw
-- Wunderlist
-- Tweetbot
-- Byword
-
-And the following ones need to be installed manually.
-
-- [Google Chrome](http://www.google.com/chrome): 1Password extension is sandboxed and requires it to be installed directly in `/Applications` 
-
-#### Setup
-
-Below are specific setup instructions for some applications.
-
-##### 1Password
-
-Most of 1Password gets synced with iCloud. The only thing left to do is add the teams. We're not gonna list here which ones :speak_no_evil:
-
-##### PhpStorm
-
-Install the following plugins:
-
-- .ignore
-- Laravel Plugin
-- Material Theme UI
-- Symfony Plugin
+The MIT License. Please see [the license file](license.md) for more information.

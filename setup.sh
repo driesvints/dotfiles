@@ -1,83 +1,14 @@
+#!/usr/bin/env bash
 # Install dotfiles on a fresh system
 
-# Check for Homebrew and install if we don't have it
-if test ! $(which brew); then
-  echo "Installing homebrew..."
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-fi
+# Install Homebrew
+source ./homebrew/setup.sh
 
-# Update homebrew recipes
-brew update
+# Install OS X utilities
+source ./osx/setup.sh
 
-# Install GNU core utilities (those that come with OS X are outdated)
-brew install coreutils
+# Install apps
+source ./apps/setup.sh
 
-# Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
-brew install findutils
-
-# Install Bash 4
-brew install bash
-
-# Install more recent versions of some OS X tools
-brew tap homebrew/dupes
-brew install homebrew/dupes/grep
-
-# Install Binaries
-binaries=(
-  trash
-  node
-  tree
-  hub
-  git
-  caskroom/cask/brew-cask
-)
-
-echo "installing binaries..."
-brew install ${binaries[@]}
-
-brew cleanup
-
-# Install OS X Applications
-apps=(
-  goofy
-  slack
-  phpstorm
-  iterm2
-  sequel-pro
-  alfred
-  transmit
-  mysqlworkbench
-  dropbox
-  virtualbox
-  virtualbox-extension-pack
-  vagrant
-  sublime-text
-  tower
-  textual
-  skype
-  firefox
-  vlc
-  screenhero
-  evernote
-)
-
-# Install apps to /Applications
-# Default is: /Users/$user/Applications
-echo "installing apps..."
-brew cask install --appdir="/Applications" ${apps[@]}
-
-# Link Alfread
-brew cask alfred link
-
-# Install Fonts
-brew tap caskroom/fonts
-
-fonts=(
-  font-source-code-pro
-  font-source-sans-pro
-  font-source-serif-pro
-  font-sauce-code-powerline
-)
-
-echo "installing fonts..."
-brew cask install ${fonts[@]}
+# Install fonts
+source ./fonts/setup.sh
