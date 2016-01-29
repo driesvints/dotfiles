@@ -19,7 +19,7 @@ Below are specific setup instructions for some applications.
 
 ### 1Password
 
-Most of 1Password gets synced with iCloud. The only thing left to do is add teams. We're not gonna list here which ones :speak_no_evil:
+Most of 1Password gets synced with iCloud. The only thing left to do is to add teams. We're not gonna list which ones :speak_no_evil:
 
 ### PhpStorm
 
@@ -30,3 +30,10 @@ Install the following plugins.
 - Laravel Plugin
 - Material Theme UI
 - Symfony Plugin
+
+### Sublime Text
+
+Install the following packages.
+
+- [Material Theme](https://github.com/equinusocio/material-theme)
+- SideBarEnhancements

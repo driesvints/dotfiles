@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+echo "Installing fonts..."
+
 # Installs fonts onto the system.
 brew tap caskroom/fonts
 
@@ -10,5 +12,4 @@ fonts=(
   font-sauce-code-powerline
 )
 
-echo "installing fonts..."
 brew cask install ${fonts[@]}

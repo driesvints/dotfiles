@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+echo "Installing apps..."
+
 # Install OS X Applications
 apps=(
   goofy
@@ -14,7 +16,7 @@ apps=(
   virtualbox
   virtualbox-extension-pack
   vagrant
-  sublime-text
+  sublime-text3
   tower
   textual
   skype
@@ -26,10 +28,10 @@ apps=(
 
 # Install apps to /Applications
 # Default is: /Users/$user/Applications
-echo "installing apps..."
 brew cask install --appdir="/Applications" ${apps[@]}
 
 # Setup applications
+echo "Setting up apps..."
 source ./alfred/setup.sh
 source ./phpstorm/setup.sh
-
+source ./sublimetext/setup.sh

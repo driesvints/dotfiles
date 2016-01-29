@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+echo "Setting up OS X..."
+
 # Install GNU core utilities (those that come with OS X are outdated)
 brew install coreutils
 
@@ -21,9 +23,10 @@ binaries=(
   hub
   git
   caskroom/cask/brew-cask
+  caskroom/versions
 )
 
-echo "installing binaries..."
 brew install ${binaries[@]}
 
+# Cleanup brew installs
 brew cleanup

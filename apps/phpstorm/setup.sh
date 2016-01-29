@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Setup PHPStorm assets
+echo "Setting up PHPStorm..."
 
 # Symlink Themes
-ln -s ./colors/Material\ Peacock\ Custom.icls ~/Library/Preferences/WebIde100/colors/Material\ Peacock\ Custom.icls
+ln -s ~/.dotfiles/app/phpstorm/themes/Material\ Peacock\ Custom.icls ~/Library/Preferences/WebIde100/colors/Material\ Peacock\ Custom.icls
