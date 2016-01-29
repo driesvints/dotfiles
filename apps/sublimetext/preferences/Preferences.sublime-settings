@@ -1,7 +1,7 @@
 {
 	"color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
-    "font_face": "Source Code Pro",
-    "font_size": 14,
+	"font_face": "Source Code Pro",
+	"font_size": 14,
 	"ignored_packages":
 	[
 		"Vintage"
