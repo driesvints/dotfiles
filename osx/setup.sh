@@ -30,3 +30,6 @@ brew install ${binaries[@]}
 
 # Cleanup brew installs
 brew cleanup
+
+# Set preferences
+source ./preferences.sh

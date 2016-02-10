@@ -6,7 +6,7 @@ echo "Setting up Sublime Text 3..."
 mkdir -p ~/Library/Application\ Support/Sublime\ Text\ 3/Packages
 mkdir -p ~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages
 
-# Copy user preferences
+# Symlink user preferences
 ln -s ~/.dotfiles/apps/sublimetext/preferences/ ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
 
 # Install Package Control
