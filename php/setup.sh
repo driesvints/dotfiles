@@ -2,7 +2,7 @@
 
 echo "Setting up PHP..."
 
-# Install PHP 7
+# Install PHP 7 (Will be activated through .bashrc)
 brew install homebrew/php/php70
 
 # Install Composer
