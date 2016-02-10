@@ -19,6 +19,10 @@
 	],
 	"font_face": "Source Code Pro",
 	"font_size": 14,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
 	"line_numbers": false,
 	"line_padding_bottom": 5,
 	"line_padding_top": 5,
