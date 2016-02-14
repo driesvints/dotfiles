@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Thanks to Mattias Bynes! https://mths.be/osx
-# See license in this directory.
+# See license in the licenses directory.
 
 # Ask for the administrator password upfront
 sudo -v

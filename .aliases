@@ -1,0 +1,9 @@
+# CLI Shortcuts
+alias copyssh="pbcopy < ~/.ssh/id_rsa.pub"
+alias reloadbash="source ~/.bash_profile"
+alias reloaddns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
+alias ls="ls -1pa --group-directories-first"
+
+# Directories
+alias dotfiles="cd ~/.dotfiles"
+alias sites="cd ~/Sites"
