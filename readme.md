@@ -1,4 +1,4 @@
-# Dries' Dotfiles
+# Dries's Dotfiles
 
 Public repository for my personal dotfiles.
 
