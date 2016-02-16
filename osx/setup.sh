@@ -18,6 +18,7 @@ brew install homebrew/dupes/grep
 # Install Binaries
 binaries=(
   trash
+  wget
   node
   tree
   hub
