@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-echo "Installing apps..."
+echo "Setting up apps..."
 
 # Install OS X Applications
 apps=(
