@@ -5,6 +5,7 @@
 	],
 	"installed_packages":
 	[
+		"Dotfiles Syntax Highlighting",
 		"Material Theme",
 		"Package Control",
 		"SideBarEnhancements"
