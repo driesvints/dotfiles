@@ -2,8 +2,8 @@
 
 echo "Setting up your Mac..."
 
-# Load settings before we continue
-source ./.settings
+# Load config before we continue
+source ./.config
 
 # Install dotfiles on a fresh system
 source $DOTFILES/bin/setup.sh

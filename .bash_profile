@@ -1,15 +1,15 @@
-# We'll load the settings first because we need the $DOTFILES setting
-source ./.settings
+# We'll load the config first because we need the $DOTFILES setting
+source ./.config
 
 # Load the shell dotfiles
-# * .settings can be used to set some defaults like variables
+# * .config can be used to set some defaults like variables
 # * .aliases can be used to load command aliases
 # * .path can be used to extend $PATH
 # * .private can be used for other settings you don’t want to commit
 # First start with iterating over each directory we want to check for these files
 for directory in {$HOME,$DOTFILES,$DOTFILES/osx,$DOTFILES/node,$DOTFILES/php,$DOTFILES/vagrant}; do
   # Now check if we can find these files
-  for file in "$directory"/.{settings,aliases,path,private}; do
+  for file in "$directory"/.{config,aliases,path,private}; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file";
   done;
   unset file;
