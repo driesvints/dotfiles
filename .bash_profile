@@ -1,5 +1,5 @@
-# We'll load the config first because we need the $DOTFILES setting
-source ./.config
+# We need the dotfiles location before we continue
+export DOTFILES="$HOME/.dotfiles"
 
 # Load the shell dotfiles
 # * .config can be used to set some defaults like variables
