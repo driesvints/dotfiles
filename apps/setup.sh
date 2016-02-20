@@ -15,6 +15,7 @@ apps=(
   dropbox
   virtualbox
   virtualbox-extension-pack
+  google-drive
   vagrant
   sublime-text3
   tower
