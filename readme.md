@@ -17,11 +17,12 @@ Follow these install instructions to setup a new OS X system.
 5. Copy public and private SSH keys to `~/.ssh`. Make sure they're set to `600`
 6. Clone this repo to `~/.dotfiles`
 7. Run `./setup.sh` to start the installation
-8. Follow the remaining [app installation instructions](./apps/readme.md)
+8. Finish installing zsh by running `./zsh/post-setup.sh`
+9. Follow the remaining [app installation instructions](./apps/readme.md)
 
 ## Thanks To...
 
-I first got the idea for starting this project by visiting the [Github does dotfiles](https://dotfiles.github.io/) project. Both [Zach Holman](https://github.com/holman/dotfiles) and [Mathias Bynens](https://github.com/mathiasbynens/dotfiles) were great sources of inspiration. In general, I'd like to thank every single one who open-sources their dotfiles for their effort to contribute something to the open-source community. Your work means the world. :earth_africa: :heart:
+I first got the idea for starting this project by visiting the [Github does dotfiles](https://dotfiles.github.io/) project. Both [Zach Holman](https://github.com/holman/dotfiles) and [Mathias Bynens](https://github.com/mathiasbynens/dotfiles) were great sources of inspiration. Also, [Sourabh Bajaj](https://twitter.com/sb2nov/)'s [Mac OS X Setup Guide](http://sourabhbajaj.com/mac-setup/) proved to be invaluable. In general, I'd like to thank every single one who open-sources their dotfiles for their effort to contribute something to the open-source community. Your work means the world. :earth_africa: :heart:
 
 ## License
 

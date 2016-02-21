@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 # Check for Homebrew and install if we don't have it
 if test ! $(which brew); then
