@@ -17,7 +17,7 @@ Follow these install instructions to setup a new OS X system.
 5. Copy public and private SSH keys to `~/.ssh`. Make sure they're set to `600`
 6. Clone this repo to `~/.dotfiles`
 7. Copy the env file `cp .dotfiles_env $HOME/.dotfiles_env` and change the values if needed
-8. Run `./setup.sh` to start the installation
+8. Run `./install.sh` to start the installation
 9. Follow the remaining [app installation instructions](./apps/readme.md)
 
 ## Thanks To...
