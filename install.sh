@@ -6,13 +6,13 @@ echo "Setting up your Mac..."
 source $HOME/.dotfiles_env
 
 # Install dotfiles on a fresh system
-source $DOTFILES/bin/setup.sh
-source $DOTFILES/homebrew/setup.sh
-source $DOTFILES/zsh/setup.sh
-source $DOTFILES/osx/setup.sh
-source $DOTFILES/php/setup.sh
-source $DOTFILES/fonts/setup.sh
-source $DOTFILES/apps/setup.sh
+source $DOTFILES/bin/install.sh
+source $DOTFILES/homebrew/install.sh
+source $DOTFILES/zsh/install.sh
+source $DOTFILES/osx/install.sh
+source $DOTFILES/php/install.sh
+source $DOTFILES/fonts/install.sh
+source $DOTFILES/apps/install.sh
 
 # Load ZSH as our environment
 env zsh

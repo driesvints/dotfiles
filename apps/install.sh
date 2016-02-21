@@ -32,7 +32,6 @@ apps=(
 brew cask install --appdir="/Applications" ${apps[@]}
 
 # Setup applications
-echo "Setting up apps..."
-source ./alfred/setup.sh
-source ./phpstorm/setup.sh
-source ./sublimetext/setup.sh
+source $DOTFILES/apps/alfred/install.sh
+source $DOTFILES/apps/phpstorm/install.sh
+source $DOTFILES/apps/sublimetext/install.sh

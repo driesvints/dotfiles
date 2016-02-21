@@ -2,7 +2,7 @@
 
 echo "Installing fonts..."
 
-# Installs fonts onto the system.
+# Installs fonts onto the system
 brew tap caskroom/fonts
 
 fonts=(
