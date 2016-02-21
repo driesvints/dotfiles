@@ -19,6 +19,12 @@ done
 
 unset config_files
 
-# You may need to manually set your language environment
+# Set our preffered language
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+
+# Load Oh-My-Zsh theme handling
+source $DOTFILES/zsh/oh-my-zsh/theme-and-appearance.zsh
+
+# Set our preffered theme
+source $ZSH_THEME

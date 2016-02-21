@@ -1,2 +1,6 @@
+# Paths
 export DOTFILES="$HOME/.dotfiles"
 export LIBRARY="$HOME/Library"
+
+# ZSH
+export ZSH_THEME="$DOTFILES/zsh/themes/taybalt-custom.zsh-theme"
