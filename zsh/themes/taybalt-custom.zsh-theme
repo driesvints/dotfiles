@@ -1,5 +1,6 @@
 # vim:ft=zsh ts=2 sw=2 sts=2
 #
+# agnoster's Theme - https://gist.github.com/3712874
 # A Powerline-inspired theme for ZSH
 #
 # # README
@@ -79,9 +80,14 @@ prompt_git() {
   local ref dirty
   if $(git rev-parse --is-inside-work-tree >/dev/null 2>&1); then
     ZSH_THEME_GIT_PROMPT_DIRTY='±'
+    dirty=$(parse_git_dirty)
     ref=$(git symbolic-ref HEAD 2> /dev/null) || ref="➦ $(git show-ref --head -s --abbrev |head -n1 2> /dev/null)"
-    prompt_segment black green
-    echo -n "${ref/refs\/heads\// }"
+    if [[ -n $dirty ]]; then
+      prompt_segment black yellow
+    else
+      prompt_segment black green
+    fi
+    echo -n "${ref/refs\/heads\// }$dirty"
   fi
 }
 
