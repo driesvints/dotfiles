@@ -33,5 +33,6 @@ brew cask install --appdir="/Applications" ${apps[@]}
 
 # Setup applications
 source $DOTFILES/apps/alfred/install.sh
+source $DOTFILES/apps/iterm2/install.sh
 source $DOTFILES/apps/phpstorm/install.sh
 source $DOTFILES/apps/sublimetext/install.sh
