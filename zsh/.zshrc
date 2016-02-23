@@ -23,8 +23,5 @@ unset config_files
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-# Load Oh-My-Zsh theme handling
-source $DOTFILES/zsh/oh-my-zsh/theme-and-appearance.zsh
-
 # Set our preffered theme
 source $ZSH_THEME
