@@ -26,7 +26,7 @@
 	"line_numbers": false,
 	"line_padding_bottom": 5,
 	"line_padding_top": 5,
-    "save_on_focus_lost": true,
+	"save_on_focus_lost": true,
 	"show_line_endings": true,
 	"theme": "Material-Theme.sublime-theme",
 	"translate_tabs_to_spaces": true,
