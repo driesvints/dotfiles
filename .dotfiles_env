@@ -4,4 +4,4 @@ export ZSH="$HOME/.oh-my-zsh"
 export LIBRARY="$HOME/Library"
 
 # ZSH
-export ZSH_THEME="../../.dotfiles/zsh/themes/taybalt-custom"
+export ZSH_THEME="zsh/themes/taybalt-custom"

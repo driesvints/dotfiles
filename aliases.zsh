@@ -9,3 +9,15 @@ alias weather="curl -4 http://wttr.in"
 alias dotfiles="cd $DOTFILES"
 alias library="cd $LIBRARY"
 alias sites="cd $HOME/Sites"
+
+# Laravel
+alias art="php artisan"
+alias hs="homestead"
+
+# Vagrant
+alias v="vagrant global-status"
+alias vup="vagrant up"
+alias vhalt="vagrant halt"
+alias vssh="vagrant ssh"
+alias vreload="vagrant reload"
+alias vrebuild="vagrant destroy --force && vagrant up"
