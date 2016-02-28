@@ -6,6 +6,9 @@ tap 'homebrew/bundle'
 tap 'homebrew/dupes'
 tap 'homebrew/php'
 
+# Cask
+cask_args appdir: '/Applications'
+
 # Install ZSH
 brew 'zsh'
 brew 'zsh-completions'
