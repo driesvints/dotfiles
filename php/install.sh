@@ -2,9 +2,6 @@
 
 echo "Setting up PHP..."
 
-# Install PHP 7
-brew install homebrew/php/php70
-
 # Install Composer
 curl -sS https://getcomposer.org/installer | php
 mv composer.phar /usr/local/bin/composer
