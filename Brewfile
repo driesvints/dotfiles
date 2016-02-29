@@ -26,6 +26,7 @@ brew 'bash'
 brew 'homebrew/dupes/grep'
 
 # Install Binaries
+brew 'awscli'
 brew 'git'
 brew 'hub'
 brew 'tree'
