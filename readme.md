@@ -1,4 +1,4 @@
-# Dries's Dotfiles
+# Dries's Dotfiles :computer:
 
 ## What Is This?
 
