@@ -17,10 +17,6 @@ And the following ones need to be installed manually.
 
 Below are specific setup instructions for some applications.
 
-### 1Password
-
-Most of 1Password gets synced with iCloud. The only thing left to do is to add teams. We're not gonna list which ones :speak_no_evil:
-
 ### PhpStorm
 
 Install the following plugins.

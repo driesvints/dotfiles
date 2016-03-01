@@ -2,6 +2,8 @@
 
 echo "Setting up apps..."
 
-# Setup applications
-source $DOTFILES/apps/alfred/install.sh
-source $DOTFILES/apps/phpstorm/install.sh
+# Link Alfred
+brew cask alfred link
+
+# Setup PhpStorm
+# source $DOTFILES/apps/phpstorm/install.sh
