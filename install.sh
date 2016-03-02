@@ -19,7 +19,6 @@ brew bundle
 # Install dotfiles on a fresh system
 source $DOTFILES/bin/install.sh
 source $DOTFILES/zsh/install.sh
-source $DOTFILES/osx/install.sh
 source $DOTFILES/php/install.sh
 source $DOTFILES/apps/install.sh
 
