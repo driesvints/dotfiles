@@ -42,9 +42,6 @@ ZSH_CUSTOM=$DOTFILES
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(composer git git-extras httpie github npm sublime vagrant)
 
-# Make sure path is set first
-source $DOTFILES/path.zsh
-
 # Activate Oh-My-Zsh
 source $ZSH/oh-my-zsh.sh
 

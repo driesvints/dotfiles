@@ -15,7 +15,7 @@ And the following ones need to be installed manually.
 
 ## Setup
 
-Below are specific setup instructions for some applications.
+Below are specific setup instructions for some applications. Set these up after you've followed [the installation procedures](../readme.md#a-fresh-os-x-setup).
 
 ### PhpStorm
 
