@@ -7,7 +7,7 @@ alias weather="curl -4 http://wttr.in"
 
 # Directories
 alias dotfiles="cd $DOTFILES"
-alias library="cd $LIBRARY"
+alias library="cd $HOME/Library"
 alias sites="cd $HOME/Sites"
 
 # Laravel

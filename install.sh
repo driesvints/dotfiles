@@ -2,17 +2,30 @@
 
 echo "Setting up your Mac..."
 
-# Load env variables before we continue
-source $HOME/.dotfiles_env
+# Check for Homebrew and install if we don't have it
+if test ! $(which brew); then
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
 
-# Install homebrew
-source $DOTFILES/homebrew/install.sh
+# Update Homebrew recipes
+brew update
 
 # Install all our dependencies with bundle
 brew tap homebrew/bundle
 brew bundle
 
-# Install everything else
-source $DOTFILES/zsh/install.sh
-source $DOTFILES/php/install.sh
-source $DOTFILES/apps/install.sh
+# Make zsh the default environment
+chsh -s $(which zsh)
+
+# Install Composer
+curl -sS https://getcomposer.org/installer | php
+mv composer.phar /usr/local/bin/composer
+
+# Install global packages
+/usr/local/bin/composer global require laravel/installer laravel/lumen-installer
+
+# Create a Sites directory
+mkdir ~/Sites
+
+# Set OS X preferences
+source .osx
