@@ -29,11 +29,8 @@ If you want to start your own dotfiles from this setup, it's pretty easy to do s
 needs docs...
 
 ```bash
-# Load env variables
-source $HOME/.dotfiles_env
-
-# Bootstrap ZSH
-source $DOTFILES/zsh/bootstrap.sh
+# Load ZSH
+source ~/.dotfiles/zsh.sh
 ```
 
 ## Thanks To...
