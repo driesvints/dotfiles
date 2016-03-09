@@ -30,7 +30,7 @@ needs docs...
 
 ```bash
 # Load ZSH
-source ~/.dotfiles/zsh.sh
+source ~/.dotfiles/.zshrc
 ```
 
 ## Thanks To...
