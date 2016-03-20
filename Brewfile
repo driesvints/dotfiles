@@ -6,7 +6,7 @@ tap 'homebrew/bundle'
 tap 'homebrew/dupes'
 tap 'homebrew/php'
 
-# Cask
+# Make sure apps get installed in system Applications dir
 cask_args appdir: '/Applications'
 
 # Install ZSH
