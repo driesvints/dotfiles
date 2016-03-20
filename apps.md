@@ -12,17 +12,3 @@ Most applications get installed through Homebrew Cask. The apps below need to be
 And the following ones need to be installed manually.
 
 - [Google Chrome](http://www.google.com/chrome): 1Password extension is sandboxed and requires it to be installed directly in `/Applications`
-
-## Setup
-
-Below are specific setup instructions for some applications. Set these up after you've followed [the installation procedures](../readme.md#a-fresh-os-x-setup).
-
-### PhpStorm
-
-Install the following plugins.
-
-- .ignore
-- BashSupport
-- Laravel Plugin
-- Material Theme UI
-- Symfony Plugin

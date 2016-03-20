@@ -12,7 +12,6 @@ alias sites="cd $HOME/Sites"
 
 # Laravel
 alias art="php artisan"
-alias hs="homestead"
 
 # Vagrant
 alias v="vagrant global-status"
