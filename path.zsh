@@ -1,4 +1,4 @@
-# Load Nodeglobal installed binaries
+# Load Node global installed binaries
 export PATH="$HOME/.node/bin:$PATH"
 
 # Use project specific binaries before global ones
@@ -12,7 +12,7 @@ export PATH="$(brew --prefix homebrew/php/php70)/bin:$PATH"
 # referenced in my aliases.zsh file directly.
 #export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 
-# Bin directory
+# Load custom commands
 export PATH="$DOTFILES/bin:$PATH"
 
 # Local bin directories before anything else
