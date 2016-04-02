@@ -40,6 +40,7 @@ brew 'php70', args: ['with-debug', 'without-apache']
 
 # Apps
 cask 'alfred'
+cask 'atom'
 cask 'dropbox'
 cask 'evernote'
 cask 'firefox'
