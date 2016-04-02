@@ -26,9 +26,9 @@ Your Mac is now ready to use!
 
 If you want to start your own dotfiles from this setup, it's pretty easy to do so. First of all you'll need to clone this repo. After that you can tweak it the way you want.
 
-Go through the [`.osx`](./.osx) and adjust the settings to your liking. You can find much more settings at [the original script by Mathias Bynens](https://github.com/mathiasbynens/dotfiles/blob/master/.osx) and [Kevin Suttle's OSX Defaults project](https://github.com/kevinSuttle/OSXDefaults).
+Go through the [`.osx`](./.osx) file and adjust the settings to your liking. You can find much more settings at [the original script by Mathias Bynens](https://github.com/mathiasbynens/dotfiles/blob/master/.osx) and [Kevin Suttle's OSX Defaults project](https://github.com/kevinSuttle/OSXDefaults).
 
-Check out the [`Brewfile`](./Brewfile) and adjust the apps you want to install for your machine. Use [their search page](https://caskroom.github.io/search) to check if the app you want to install is available.
+Check out the [`Brewfile`](./Brewfile) file and adjust the apps you want to install for your machine. Use [their search page](https://caskroom.github.io/search) to check if the app you want to install is available.
 
 Check out the [`aliases.zsh`](./aliases.zsh) file and add your own aliases. If you need to tweak your `$PATH` check out the [`path.zsh`](./path.zsh) file.
 

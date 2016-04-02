@@ -25,7 +25,7 @@ mv composer.phar /usr/local/bin/composer
 /usr/local/bin/composer global require laravel/installer laravel/lumen-installer
 
 # Create a Sites directory
-# This is an default directory for OS X user accounts but doesn't comes pre-installed
+# This is a default directory for OS X user accounts but doesn't comes pre-installed
 mkdir $HOME/Sites
 
 # Set OS X preferences
