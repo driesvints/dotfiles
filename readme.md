@@ -24,7 +24,7 @@ Your Mac is now ready to use!
 
 ## Your Own Dotfiles
 
-If you want to start your own dotfiles from this setup, it's pretty easy to do so. First of all you'll need to clone this repo. After that you can tweak it the way you want.
+If you want to start your own dotfiles from this setup, it's pretty easy to do so. First of all you'll need to fork this repo. After that you can tweak it the way you want.
 
 Go through the [`.osx`](./.osx) file and adjust the settings to your liking. You can find much more settings at [the original script by Mathias Bynens](https://github.com/mathiasbynens/dotfiles/blob/master/.osx) and [Kevin Suttle's OSX Defaults project](https://github.com/kevinSuttle/OSXDefaults).
 
