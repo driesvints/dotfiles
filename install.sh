@@ -22,7 +22,7 @@ curl -sS https://getcomposer.org/installer | php
 mv composer.phar /usr/local/bin/composer
 
 # Install global Composer packages
-/usr/local/bin/composer global require laravel/installer laravel/lumen-installer
+/usr/local/bin/composer global require laravel/installer laravel/lumen-installer tightenco/jigsaw
 
 # Create a Sites directory
 # This is a default directory for OS X user accounts but doesn't comes pre-installed
