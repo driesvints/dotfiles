@@ -35,8 +35,9 @@ brew 'node'
 brew 'trash'
 brew 'wget'
 
-# PHP
+# Development
 brew 'php70', args: ['with-debug', 'without-apache']
+brew 'mariadb'
 
 # Apps
 cask 'alfred'
