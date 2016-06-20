@@ -42,6 +42,7 @@ brew 'mariadb'
 # Apps
 cask 'alfred'
 cask 'atom'
+cask 'dash'
 cask 'dropbox'
 cask 'evernote'
 cask 'firefox'
