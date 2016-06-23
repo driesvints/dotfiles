@@ -40,6 +40,7 @@ brew 'php70', args: ['with-debug', 'without-apache']
 brew 'mariadb'
 
 # Apps
+cask 'aerial'
 cask 'alfred'
 cask 'atom'
 cask 'dash'
