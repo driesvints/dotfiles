@@ -6,6 +6,7 @@ Most applications get installed through Homebrew Cask. The apps below need to be
 - Byword
 - Giphy Capture
 - Paw
+- Sip
 - Sketch 2
 - Tweetbot
 - Wunderlist
