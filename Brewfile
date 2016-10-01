@@ -10,7 +10,7 @@ tap 'homebrew/php'
 brew 'zsh'
 brew 'zsh-completions'
 
-# Install GNU core utilities (those that come with OS X are outdated)
+# Install GNU core utilities (those that come with macOS are outdated)
 brew 'coreutils'
 
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
@@ -19,7 +19,7 @@ brew 'findutils'
 # Install Bash 4
 brew 'bash'
 
-# Install more recent versions of some OS X tools
+# Install more recent versions of some macOS tools
 brew 'homebrew/dupes/grep'
 
 # Install Binaries
