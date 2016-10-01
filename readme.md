@@ -2,17 +2,17 @@
 
 ## What Is This?
 
-This repository serves as my way to help me setup and maintain my Mac. It takes the effort out of installing everything manually. Everything which is needed to install my preffered setup of OS X is detailed in this readme. Feel free to explore, learn and copy parts for your own dotfiles. Enjoy! :smile:
+This repository serves as my way to help me setup and maintain my Mac. It takes the effort out of installing everything manually. Everything which is needed to install my preffered setup of macOS is detailed in this readme. Feel free to explore, learn and copy parts for your own dotfiles. Enjoy! :smile:
 
 Read the blog post: https://driesvints.com/blog/getting-started-with-dotfiles
 
-## A Fresh OS X Setup
+## A Fresh macOS Setup
 
 Follow these install instructions to setup a new Mac.
 
-1. Update OS X to the latest version with the App Store
+1. Update macOS to the latest version with the App Store
 2. Install Xcode from the App Store, open it and accept the license agreement
-3. Install OS X Command Line Tools by running `xcode-select --install`
+3. Install macOS Command Line Tools by running `xcode-select --install`
 4. Copy public and private SSH keys to `~/.ssh` and make sure they're set to `600`
 5. Clone this repo to `~/.dotfiles`
 6. Append `/usr/local/bin/zsh` to the end of your `/etc/shells` file
@@ -28,7 +28,7 @@ Your Mac is now ready to use!
 
 If you want to start your own dotfiles from this setup, it's pretty easy to do so. First of all you'll need to fork this repo. After that you can tweak it the way you want.
 
-Go through the [`.osx`](./.osx) file and adjust the settings to your liking. You can find much more settings at [the original script by Mathias Bynens](https://github.com/mathiasbynens/dotfiles/blob/master/.osx) and [Kevin Suttle's OSX Defaults project](https://github.com/kevinSuttle/OSXDefaults).
+Go through the [`.macos`](./.macos) file and adjust the settings to your liking. You can find much more settings at [the original script by Mathias Bynens](https://github.com/mathiasbynens/dotfiles/blob/master/.macos) and [Kevin Suttle's macOS Defaults project](https://github.com/kevinSuttle/MacOS-Defaults).
 
 Check out the [`Brewfile`](./Brewfile) file and adjust the apps you want to install for your machine. Use [their search page](https://caskroom.github.io/search) to check if the app you want to install is available.
 
