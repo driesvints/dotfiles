@@ -28,9 +28,9 @@ mv composer.phar /usr/local/bin/composer
 $HOME/.composer/vendor/bin/valet install
 
 # Create a Sites directory
-# This is a default directory for OS X user accounts but doesn't comes pre-installed
+# This is a default directory for macOS user accounts but doesn't comes pre-installed
 mkdir $HOME/Sites
 
-# Set OS X preferences
+# Set macOS preferences
 # We will run this last because this will reload the shell
-source .osx
+source .macos
