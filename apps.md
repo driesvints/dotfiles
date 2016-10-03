@@ -4,6 +4,7 @@ Most applications get installed through Homebrew Cask. The apps below need to be
 
 - 1Password
 - Byword
+- [Deckset](http://www.decksetapp.com/)
 - Giphy Capture
 - Paw
 - Sip
