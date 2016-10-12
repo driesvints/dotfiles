@@ -13,7 +13,8 @@ export PATH="$(brew --prefix homebrew/php/php70)/bin:$PATH"
 #export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 
 # Load custom commands
-export PATH="$DOTFILES/bin:$PATH"
+# Disabled this because I have no custom binaries at the moment.
+# export PATH="$DOTFILES/bin:$PATH"
 
 # Local bin directories before anything else
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"

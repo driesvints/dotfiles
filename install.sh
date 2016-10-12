@@ -14,6 +14,17 @@ brew update
 brew tap homebrew/bundle
 brew bundle
 
+# Install Mac App Store apps
+mas install 443987910 # 1Password
+mas install 420212497 # Byword
+mas install 847496013 # Deckset
+mas install 668208984 # Giphy Capture
+mas install 584653203 # Paw
+mas install 507257563 # Sip
+mas install 402476602 # Sketch
+mas install 557168941 # Tweetbot
+mas install 410628904 # Wunderlist
+
 # Make ZSH the default shell environment
 chsh -s $(which zsh)
 
