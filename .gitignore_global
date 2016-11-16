@@ -37,3 +37,6 @@ ehthumbs.db
 Thumbs.db
 .idea/
 .vagrant/
+
+# JS/Node
+node_modules/

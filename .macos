@@ -62,7 +62,7 @@ defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
 defaults write NSGlobalDomain AppleMetricUnits -bool true
 
 # Set the timezone; see `sudo systemsetup -listtimezones` for other values
-sudo systemsetup -settimezone "Europe/Brussels" > /dev/null
+sudo systemsetup -settimezone "Europe/Berlin" > /dev/null
 
 # Disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
@@ -102,7 +102,7 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:gridSpacing 100" $HOME/Library/Preferences/com.apple.finder.plist
 
 # Increase the size of icons on the desktop and in other icon views
-/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:iconSize 80" $HOME/Library/Preferences/com.apple.finder.plist
+/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:iconSize 40" $HOME/Library/Preferences/com.apple.finder.plist
 /usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:iconSize 80" $HOME/Library/Preferences/com.apple.finder.plist
 /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:iconSize 80" $HOME/Library/Preferences/com.apple.finder.plist
 
@@ -127,14 +127,11 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict \
     Privileges -bool true
 
 # Auto hide menu bar
-defaults write NSGlobalDomain _HIHideMenuBar -bool true
+# defaults write NSGlobalDomain _HIHideMenuBar -bool true
 
 ###############################################################################
 # Dock, Dashboard, and hot corners                                            #
 ###############################################################################
-
-# Dark menu bar and dock
-defaults write $HOME/Library/Preferences/.GlobalPreferences.plist AppleInterfaceTheme -string "Dark"
 
 # Enable highlight hover effect for the grid view of a stack (Dock)
 defaults write com.apple.dock mouse-over-hilite-stack -bool true
@@ -144,14 +141,6 @@ defaults write com.apple.dock mineffect -string "scale"
 
 # Minimize windows into their application’s icon
 defaults write com.apple.dock minimize-to-application -bool true
-
-# Wipe all (default) app icons from the Dock
-# This is only really useful when setting up a new Mac, or if you don’t use
-# the Dock to launch apps.
-defaults write com.apple.dock persistent-apps -array
-
-# Show only open applications in the Dock
-defaults write com.apple.dock static-only -bool true
 
 # Group windows by application in Mission Control
 defaults write com.apple.dock expose-group-by-app -bool true
@@ -171,34 +160,15 @@ defaults write com.apple.dock autohide-time-modifier -float 0
 # Automatically hide and show the Dock
 defaults write com.apple.dock autohide -bool true
 
+# Change tile size in the Dock
+defaults write com.apple.dock tilesize -int 32
+
+# Enable 2D mode of the Dock
+defaults write com.apple.dock no-glass -boolean YES
+
 # Add iOS & Watch Simulator to Launchpad
 sudo ln -sf "/Applications/Xcode.app/Contents/Developer/Applications/Simulator.app" "/Applications/Simulator.app"
 sudo ln -sf "/Applications/Xcode.app/Contents/Developer/Applications/Simulator (Watch).app" "/Applications/Simulator (Watch).app"
-
-# Hot corners
-# Possible values:
-#  0: no-op
-#  2: Mission Control
-#  3: Show application windows
-#  4: Desktop
-#  5: Start screen saver
-#  6: Disable screen saver
-#  7: Dashboard
-# 10: Put display to sleep
-# 11: Launchpad
-# 12: Notification Center
-# Top left screen corner → Mission Control
-# defaults write com.apple.dock wvous-tl-corner -int 2
-# defaults write com.apple.dock wvous-tl-modifier -int 0
-# Top right screen corner → Put display to sleep
-defaults write com.apple.dock wvous-tr-corner -int 10
-defaults write com.apple.dock wvous-tr-modifier -int 0
-# Bottom left screen corner → Start screen saver
-# defaults write com.apple.dock wvous-bl-corner -int 5
-# defaults write com.apple.dock wvous-bl-modifier -int 0
-# Bottom right screen corner → Launchpad
-defaults write com.apple.dock wvous-br-corner -int 11
-defaults write com.apple.dock wvous-br-modifier -int 0
 
 ###############################################################################
 # Safari & WebKit                                                             #
@@ -222,8 +192,6 @@ defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 # Disable inline attachments (just show the icons)
 defaults write com.apple.mail DisableInlineAttachmentViewing -bool true
 
-# Disable automatic spell checking
-defaults write com.apple.mail SpellCheckingBehavior -string "NoSpellCheckingEnabled"
 
 ###############################################################################
 # Terminal & iTerm 2                                                          #
@@ -279,13 +247,6 @@ defaults write com.apple.ical "first day of the week" 1
 defaults write com.apple.ical "first minute of work hours" 540
 
 ###############################################################################
-# Date & Time                                                                 #
-###############################################################################
-
-# Custom DateFormat
-defaults write com.apple.menuextra.clock DateFormat "EEE MMM d  H:mm"
-
-###############################################################################
 # Photos                                                                      #
 ###############################################################################
 
@@ -298,10 +259,8 @@ defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 
 for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
     "Dock" "Finder" "Mail" "Messages" "Photos" "Safari" "SystemUIServer" \
-    "Terminal" "Tweetbot" "iCal"; do
+    "Terminal" "iCal"; do
     killall "${app}" &> /dev/null
 done
 
 echo "Done. Note that some of these changes require a logout/restart to take effect."
-
-
