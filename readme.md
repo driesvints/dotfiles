@@ -49,7 +49,7 @@ brew install mackup
 mackup backup
 ```
 
-You can tweak the shell theme, the Oh My Zsh settings and much more. Go through the files in this repo and tweak everthing to your liking.
+You can tweak the shell theme, the Oh My Zsh settings and much more. Go through the files in this repo and tweak everything to your liking.
 
 Enjoy your own Dotfiles!
 
