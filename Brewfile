@@ -4,7 +4,6 @@ tap 'caskroom/fonts'
 tap 'caskroom/versions'
 tap 'homebrew/bundle'
 tap 'homebrew/dupes'
-tap 'homebrew/php'
 
 # Install ZSH
 brew 'zsh'
@@ -32,36 +31,24 @@ brew 'mas'
 brew 'node'
 brew 'trash'
 brew 'wget'
-
-# Development
-brew 'php70', args: ['with-debug', 'without-apache']
-brew 'mariadb'
+brew 'httpie'
+brew 'go'
+brew 'postgres'
 
 # Apps
-cask 'aerial'
-cask 'alfred'
+cask 'flux'
 cask 'atom'
-cask 'caffeine'
-cask 'cheatsheet'
-cask 'dash'
+cask 'dash' # API docs
 cask 'dropbox'
 cask 'evernote'
 cask 'firefox'
-cask 'fluid'
 cask 'google-chrome'
 cask 'google-drive'
 cask 'iterm2'
-cask 'mysqlworkbench'
-cask 'phpstorm'
-cask 'quip'
-cask 'rescuetime'
-cask 'sequel-pro'
+cask 'rescuetime' # Activity tracking
 cask 'skype'
 cask 'slack'
-cask 'sublime-text'
-cask 'textual'
-cask 'tower'
-cask 'transmit'
+cask 'tower' # Git-tower
 cask 'vagrant'
 cask 'virtualbox'
 cask 'virtualbox-extension-pack'
@@ -81,12 +68,5 @@ cask 'font-source-sans-pro'
 cask 'font-source-serif-pro'
 
 # Install Mac App Store apps
-mas '1Password', id: 443987910
-mas 'Byword', id: 420212497
-mas 'Deckset', id: 847496013
 mas 'Giphy Capture', id: 668208984
 mas 'Paw', id: 584653203
-mas 'Sip', id: 507257563
-mas 'Sketch', id: 402476602
-mas 'Tweetbot', id: 557168941
-mas 'Wunderlist', id: 410628904
