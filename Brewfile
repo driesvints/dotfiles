@@ -34,7 +34,7 @@ brew 'trash'
 brew 'wget'
 
 # Development
-brew 'php70', args: ['with-debug', 'without-apache']
+brew 'php71', args: ['with-debug']
 brew 'mariadb'
 
 # Apps
