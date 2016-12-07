@@ -1,0 +1,377 @@
+#!/usr/bin/env bash
+
+# ls shortcuts
+alias l='ls'
+alias ll='ls -lAh'
+alias la='ls -a'
+alias ls='ls -al'
+
+# tmux
+alias tmux='TERM=screen-256color-bce tmux'
+alias tnew='tmux new -s'
+alias tlist='tmux ls'
+alias tat='tmux attach -t'
+
+# git shortcuts
+alias ga='git add .'
+alias gc='git commit -m'
+alias gco='git checkout'
+alias gs='git status -sb'
+alias gl='git pull'
+alias gp='git push'
+alias got='git'
+alias gut='git'
+alias git=hub
+alias glog='git log --oneline --decorate'
+alias lsg='git tag -l [0-9]*'
+alias commits='git shortlog -s -n'
+
+# Rails shortcuts
+alias begs='bundle exec guard start'
+alias beef='bundle exec foreman start'
+alias be='bundle exec'
+alias deploy='bundle exec cap deploy'
+alias rs='bundle exec rails s'
+alias rc='bundle exec rails c'
+alias rollback='time bundle exec rake db:rollback --trace'
+alias migrate='time bundle exec rake db:migrate -- trace'
+alias reset='time bundle exec rake db:reset --trace'
+alias seed='time bundle exec rake db:seed --trace'
+alias populate='time bundle exec rake db:populate --trace'
+
+alias flush_memcached='echo "flush_all" | nc 127.0.0.1 11211'
+alias mem='sudo htop --sort-key PERCENT_MEM'
+alias grep="GREP_COLOR='31' grep -in --color=auto 2>/dev/null"
+alias bup='source ~/.bash_profile'
+alias ttop='top -U $USER'
+alias bedit='subl ~/.bash_profile'
+alias hosts='sudo subl /etc/hosts'
+alias dedit='subl ~/Library/Application\ Support/Steam/SteamApps/common/dota\ 2\ beta/dota/cfg/.'
+
+alias neo4j-test='/Library/Java/JavaVirtualMachines/jdk1.7.0_67.jdk/Contents/Home/bin/java -cp /usr/local/Cellar/neo4j/2.2.3/libexec/lib/concurrentlinkedhashmap-lru-1.4.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/lib/lucene-core-3.6.2.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/lib/neo4j-consistencyser-check-2.2.3.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/lib/neo4j-csv-2.2.3.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/lib/neo4j-cypher-2.2.3.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/lib/neo4j-cypher-compiler-1.9-2.0.4.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/lib/neo4j-cypher-compiler-2.0-2.0.4.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/lib/neo4j-cypher-compiler-2.1-2.1.8.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/lib/neo4j-cypher-compiler-2.2-2.2.3.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/lib/neo4j-graph-algo-2.2.3.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/lib/neo4j-graph-matching-2.2.3.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/lib/neo4j-import-tool-2.2.3.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/lib/neo4j-io-2.2.3.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/lib/neo4j-jmx-2.2.3.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/lib/neo4j-kernel-2.2.3.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/lib/neo4j-lucene-index-2.2.3.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/lib/neo4j-primitive-collections-2.2.3.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/lib/neo4j-shell-2.2.3.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/lib/neo4j-udc-2.2.3.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/lib/neo4j-unsafe-2.2.3.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/lib/opencsv-2.3.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/lib/org.apache.servicemix.bundles.jline-0.9.94_1.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/lib/parboiled-core-1.1.7.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/lib/parboiled-scala_2.10-1.1.7.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/lib/scala-library-2.10.5.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/lib/server-api-2.2.3.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/bcprov-jdk16-140.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/commons-beanutils-1.8.3.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/commons-compiler-2.6.1.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/commons-configuration-1.10.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/commons-digester-2.1.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/commons-io-2.4.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/commons-lang-2.6.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/commons-logging-1.1.1.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/jackson-core-asl-1.9.13.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/jackson-jaxrs-1.9.13.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/jackson-mapper-asl-1.9.13.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/janino-2.6.1.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/javax.servlet-api-3.1.0.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/jcl-over-slf4j-1.7.7.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/jersey-core-1.19.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/jersey-multipart-1.19.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/jersey-server-1.19.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/jersey-servlet-1.19.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/jetty-http-9.2.4.v20141103.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/jetty-io-9.2.4.v20141103.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/jetty-security-9.2.4.v20141103.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/jetty-server-9.2.4.v20141103.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/jetty-servlet-9.2.4.v20141103.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/jetty-util-9.2.4.v20141103.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/jetty-webapp-9.2.4.v20141103.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/jetty-xml-9.2.4.v20141103.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/jsr311-api-1.1.2.r612.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/logback-access-1.1.2.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/logback-classic-1.1.2.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/logback-core-1.1.2.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/mimepull-1.9.3.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/neo4j-browser-2.2.3.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/neo4j-server-2.2.3-static-web.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/neo4j-server-2.2.3.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/rhino-1.7R4.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/rrd4j-2.2.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/scala-reflect-2.10.5.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/slf4j-api-1.7.7.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/conf -server -XX:+DisableExplicitGC -Dorg.neo4j.server.properties=test-neo4j-server.properties -Djava.util.logging.config.file=conf/logging.properties -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -XX:-OmitStackTraceInFastThrow -XX:hashCode=5 -Dneo4j.ext.udc.source=tarball -Dneo4j.ext.udc.source=homebrew -Djava.awt.headless=true -Dneo4j.home=/usr/local/Cellar/neo4j/2.2.3/libexec -Dneo4j.instance=/usr/local/Cellar/neo4j/2.2.3/libexec -Dfile.encoding=UTF-8 org.neo4j.server.Bootstrapper'
+# golang alias things
+alias goconvey='goop exec goconvey -workDir="$GOPATH/src/${PWD##*/}"'
+
+# check internet connection
+alias pingoo="ping -c 3 www.google.com"
+
+#locate = find
+spot(){
+  find $1 -name $2 -print
+}
+
+#launchctl load - start a process
+load() {
+  local plist=$(find ${HOME}/Library/LaunchAgents -name "*${1}*" | head -1)
+  launchctl load $plist
+}
+
+#launchctl unload - stop a running process
+unload() {
+  local plist=$(find ${HOME}/Library/LaunchAgents -name "*${1}*" | head -1)
+  launchctl unload $plist
+}
+
+# git clone and cd into directory
+clone() {
+  git clone $1 \
+  && cd `echo $1 | sed -n -e 's/^.*\/\([^.]*\)\(.git\)*/\1/p'` \
+  && git branch --set-upstream-to=origin/master master
+}
+
+# Check to see if pbzip2 is already on path; if so, set BZIP_BIN appropriately
+type -P pbzip2 &>/dev/null && export BZIP_BIN="pbzip2"
+# Otherwise, default to standard bzip2 binary
+if [ -z $BZIP_BIN ]; then
+  export BZIP_BIN="bzip2"
+fi
+alias bz=$BZIP_BIN
+
+tarb() {
+  tar -cf "$1".tbz --use-compress-prog=$BZIP_BIN "$1"
+}
+untarb() {
+  $BZIP_BIN -dc "$1" | tar x --exclude="._*"
+}
+
+# recolor
+recolor(){
+  osascript -e 'run script (POSIX file "'$HOME'/Documents/iterm_random_colors.scpt")'
+}
+
+# list running launchctl programs
+launch-list(){
+  ruby $HOME/launch-list.rb "$@"
+}
+
+# splat will make many terminal tabs with selected hosts connecting
+splat(){
+  if [[ $TERM_PROGRAM = iTerm.app ]];then
+    ruby $HOME/Documents/splat.rb "$@"
+  else
+    echo "Must be using iTerm for that function!"
+  fi
+}
+
+# git branch cleaner
+# clean_branches regex_matching_branch_names [test]
+clean_branches(){
+  if [[ $# -ne 2 ]];then
+    git branch  | cut -c3- | egrep $1 | xargs git branch -d
+  else
+    git branch  | cut -c3- | egrep $1
+  fi
+}
+
+merged_branches(){
+  local current_branch=$(git rev-parse --abbrev-ref HEAD)
+  for branch in $(git branch --merged | cut -c3-)
+    do
+      echo "Branch $branch is already merged into $current_branch."
+      echo "Would you like to delete it? [Y]es/[N]o "
+      read REPLY
+      if [[ $REPLY =~ ^[Yy] ]]; then
+        git branch -d $branch
+      fi
+  done
+}
+
+clean_remote_branches(){
+  if [[ $# -ne 2 ]];then
+    matching_branches=$(git branch -r | cut -c3- | egrep $1)
+    read remote branch <<<$(IFS="/"; echo $matching_branches)
+    git push $remote ":$branch"
+  else
+    git branch -r | cut -c3- | egrep $1
+  fi
+}
+
+# dl is directory list
+dl(){
+  ls -d $1 */
+}
+
+# download the source to a files of a host
+# getsrc http://www.cnn.com/
+getsrc() {
+  wget $1 -O - 2> /dev/null
+}
+
+# wfull www.cnn.com/full cnn.com
+wfull() {
+  wget \
+    --recursive \
+    --no-clobber \
+    --page-requisites \
+    --html-extension \
+    --convert-links \
+    --restrict-file-names=windows \
+    --domains $2 \
+    --no-parent \
+      $1
+}
+
+# hello does a loop and says a default saying infinately or a custom saying
+hello(){
+  SAYTHIS="hello... my name is inigo montoya. You killed my father prepare to die"
+  if [[ $1 ]]; then
+    SAYTHIS=$1
+  fi
+  for((;;)) do say "$SAYTHIS"; done
+}
+
+# take a bash script and turn it into a Mac OSX app
+appify(){
+  APPNAME=${2:-$(basename "$1" ".sh")}
+  DIR="$APPNAME.app/Contents/MacOS"
+  if [ -a "$APPNAME.app" ]; then
+    echo "$PWD/$APPNAME.app already exists :("
+  fi
+  if [[ $APPNAME == '' || $DIR == '' ]]; then
+    echo "appify requires two parameters bash script and app name"
+    echo "Usage : appify myscript.sh myapp"
+  else
+    mkdir -p "$DIR"
+    cp "$1" "$DIR/$APPNAME"
+    chmod +x "$DIR/$APPNAME"
+    echo "$PWD/$APPNAME.app"
+  fi
+}
+
+# scans for ips in the network given by the first 3 octets
+# scannc 192.168.2 [nslookup]
+scannc(){
+  range=$1
+  nslookup=$2
+  for ip in $(eval echo $range.{1..255})
+    do
+    nc -n -z -w 1 $ip 22 > /dev/null
+    if [ $? -eq 0 ]; then
+      output="$ip"
+      [[ $nslookup ]] && [ $nslookup != "" ] && output="$ip $(nslookup $ip)"
+      echo $output
+    else
+      echo "."
+    fi
+  done
+}
+
+#w/ ping
+scanping(){
+  range=$1
+  nslookup=$2
+  for ip in $(eval echo $range.{1..255})
+  do
+    ping -c1 $ip > /dev/null
+    if [ $? -eq 0 ]; then
+      output="$ip"
+      [[ $nslookup ]] && [ $nslookup != "" ] && output="$ip $(nslookup $ip)"
+      echo $output
+    else
+      echo "."
+    fi
+  done
+}
+
+nc_port_scan(){
+  nc -z $1 1-9999
+}
+
+# add a cron entry without worrying if that entry exists already
+addCron(){
+  entry=$1
+  crontab -l | egrep "$entry" >> /dev/null
+  if [ $? -ne 0 ]; then
+    crontab -l > tmp_crontab
+    echo "$entry" >> tmp_crontab
+    crontab tmp_crontab
+    rm tmp_crontab
+  fi
+}
+
+known_cut() {
+  sed -ie ${1}d $HOME/.ssh/known_hosts
+}
+
+jvm() {
+ export JAVA_HOME=`/usr/libexec/java_home -v 1.$2`
+ echo $(java -version)
+}
+
+aux(){
+  ps aux | grep $1
+}
+
+wgif(){
+  wget -P $HOME/Downloads/gifs/ $1
+}
+
+export GIT_SSH="$HOME/dynamic_git_command.sh"
+swapgitmail() {
+  local email=$(git config --global user.email)
+  if [ "$email" = "earlkrauss@gmail.com" ];then
+    git config --global user.email 'kkrauss@gopro.com'
+    echo "$(git config --global user.email)"
+  else
+    git config --global user.email 'earlkrauss@gmail.com'
+    echo "$(git config --global user.email)"
+  fi
+}
+
+#dota stuff
+play_dota(){
+  launchctl unload $HOME/Library/LaunchAgents/homebrew.mxcl.redis.plist
+  launchctl unload $HOME/Library/LaunchAgents/homebrew.mxcl.elasticsearch.plist
+  aux 'redis\|elasticsearch'
+}
+
+stop_dota(){
+  launchctl load $HOME/Library/LaunchAgents/homebrew.mxcl.redis.plist
+  launchctl load $HOME/Library/LaunchAgents/homebrew.mxcl.elasticsearch.plist
+  aux 'redis\|elasticsearch'
+}
+
+# # Iterm colors!!!!
+# if [[ $TERM_PROGRAM = iTerm.app ]]; then
+#   osascript -e 'run script (POSIX file "'$HOME'/Documents/iterm_random_colors.scpt")'
+# fi
+
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
+
+# RVM Prompt settings
+[[ -s "$HOME/.git_prompt" ]] && . "$HOME/.git_prompt"
+
+# Load RVM into a shell session *as a function*
+
+# Path to the bash it configuration
+export BASH_IT=$HOME/.bash_it
+
+# Lock and Load a custom theme file
+# location /.bash_it/themes/
+export BASH_IT_THEME='powerline-plus'
+
+# android-sdk
+export ANDROID_HOME=/usr/local/opt/android-sdk
+
+# homebrew
+export PATH=/usr/local/sbin:$PATH
+
+# export GOPATH=$HOME/go
+
+# Don't check mail when opening terminal.
+unset MAILCHECK
+
+# Load Bash It
+source $BASH_IT/bash_it.sh
+
+# Load private stuff - keys and such
+source $HOME/.private_profile
+
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm" # Load GVM into a shell session *as a function*
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+# Path to the bash it configuration
+export BASH_IT="/Users/kkrauss/.bash_it"
+
+# (Advanced): Change this to the name of your remote repo if you
+# cloned bash-it with a remote other than origin such as `bash-it`.
+# export BASH_IT_REMOTE='bash-it'
+
+# Your place for hosting Git repos. I use this for private repos.
+export GIT_HOSTING='git@git.domain.com'
+
+# Don't check mail when opening terminal.
+unset MAILCHECK
+
+# Change this to your console based IRC client of choice.
+export IRC_CLIENT='irssi'
+
+# Set this to the command you use for todo.txt-cli
+export TODO="t"
+
+export EDITOR='atom'
+
+# Set this to false to turn off version control status checking within the prompt for all themes
+export SCM_CHECK=true
+
+# Set Xterm/screen/Tmux title with only a short hostname.
+# Unomment this (or set SHORT_HOSTNAME to something else),
+# Will otherwise fall back on $HOSTNAME.
+#export SHORT_HOSTNAME=$(hostname -s)
+
+# Set vcprompt executable path for scm advance info in prompt (demula theme)
+# https://github.com/djl/vcprompt
+#export VCPROMPT_EXECUTABLE=~/.vcprompt/bin/vcprompt
+
+# (Advanced): Uncomment this to make Bash-it reload itself automatically
+# after enabling or disabling aliases, plugins, and completions.
+# export BASH_IT_AUTOMATIC_RELOAD_AFTER_CONFIG_CHANGE=1
+
+# Load Bash It
+source $BASH_IT/bash_it.sh
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

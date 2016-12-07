@@ -10,33 +10,10 @@ fi
 # Update Homebrew recipes
 brew update
 
-# Install all our dependencies with bundle (See Brewfile)
-brew tap homebrew/bundle
-brew bundle
-
-# Install Mac App Store apps
-mas install 443987910 # 1Password
-mas install 420212497 # Byword
-mas install 847496013 # Deckset
-mas install 668208984 # Giphy Capture
-mas install 584653203 # Paw
-mas install 507257563 # Sip
-mas install 402476602 # Sketch
-mas install 557168941 # Tweetbot
-mas install 410628904 # Wunderlist
-
-# Make ZSH the default shell environment
-chsh -s $(which zsh)
-
-# Install Composer
-curl -sS https://getcomposer.org/installer | php
-mv composer.phar /usr/local/bin/composer
-
-# Install global Composer packages
-/usr/local/bin/composer global require laravel/installer laravel/lumen-installer laravel/valet tightenco/jigsaw
-
-# Install Laravel Valet
-$HOME/.composer/vendor/bin/valet install
+mkdir $HOME/Projects
+cd $HOME/Projects
+git clone https://github.com/earlonrails/superlumic-config.git
+cd superlumic-config
 
 # Create a Sites directory
 # This is a default directory for macOS user accounts but doesn't comes pre-installed
@@ -44,4 +21,4 @@ mkdir $HOME/Sites
 
 # Set macOS preferences
 # We will run this last because this will reload the shell
-source .macos
+. .macos
