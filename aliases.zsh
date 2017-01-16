@@ -1,4 +1,4 @@
-# CLI Shortcuts
+# Shortcuts
 alias copyssh="pbcopy < $HOME/.ssh/id_rsa.pub"
 alias reloadcli="source $HOME/.zshrc"
 alias reloaddns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
@@ -11,7 +11,7 @@ alias library="cd $HOME/Library"
 alias sites="cd $HOME/Sites"
 
 # Laravel
-alias art="php artisan"
+alias a="php artisan"
 
 # Vagrant
 alias v="vagrant global-status"
