@@ -4,6 +4,7 @@ alias reloadcli="source $HOME/.zshrc"
 alias reloaddns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
 alias ll="$(brew --prefix coreutils)/libexec/gnubin/ls -ahlF --color --group-directories-first"
 alias weather="curl -4 http://wttr.in"
+alias phpstorm='open -a /Applications/PhpStorm.app "`pwd`"'
 
 # Directories
 alias dotfiles="cd $DOTFILES"
