@@ -1,4 +1,4 @@
-#!/bin/sh
+e#!/bin/sh
 
 echo "Setting up your Mac..."
 
@@ -26,6 +26,9 @@ mv composer.phar /usr/local/bin/composer
 
 # Install Laravel Valet
 $HOME/.composer/vendor/bin/valet install
+
+# Install global NPM packages
+npm install --global yarn pure-prompt
 
 # Create a Sites directory
 # This is a default directory for macOS user accounts but doesn't comes pre-installed
