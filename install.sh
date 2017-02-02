@@ -1,4 +1,4 @@
-e#!/bin/sh
+#!/bin/sh
 
 echo "Setting up your Mac..."
 
@@ -28,7 +28,7 @@ mv composer.phar /usr/local/bin/composer
 $HOME/.composer/vendor/bin/valet install
 
 # Install global NPM packages
-npm install --global yarn pure-prompt
+npm install --global yarn
 
 # Create a Sites directory
 # This is a default directory for macOS user accounts but doesn't comes pre-installed
