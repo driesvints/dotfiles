@@ -7,6 +7,13 @@ if test ! $(which brew); then
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
+ln -s $HOME/.dotfiles/system/bash_profile $HOME/.bash_profile
+
+# install bash-it
+# git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
+ln -s $HOME/.dotfiles/bash_it/themes/powerline-plus /home/kevin/.bash_it/themes/powerline-plus
+
+
 # Update Homebrew recipes
 brew update
 
