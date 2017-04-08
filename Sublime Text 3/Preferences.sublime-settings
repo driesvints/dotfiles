@@ -1,0 +1,15 @@
+{
+	"color_scheme": "Packages/Tomorrow Color Schemes/Tomorrow.tmTheme",
+	"detect_indentation": false,
+	"draw_white_space": "all",
+	"font_size": 17.0,
+	"ignored_packages":
+	[
+		"Elixir",
+		"Vintage"
+	],
+	"tab_size": 2,
+	"theme": "Soda Light.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true
+}
