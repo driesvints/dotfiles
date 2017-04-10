@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Stop all running virtual machines
+if [[ $@ == "halt all" ]]; then
+    /usr/local/bin/vagrant global-status | grep running | colrm 8 | xargs -L 1 -t /usr/local/bin/vagrant halt
+else
+    /usr/local/bin/vagrant "$@"
+fi

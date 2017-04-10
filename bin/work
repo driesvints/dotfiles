@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# Define project location
+PROJECT=$HOME/Sites/$@
+
+# Stop all running virtual machines
+vagrant halt all
+
+# Open Tower project
+gittower $PROJECT
+
+# Open PHPStorm project
+open -a /Applications/PhpStorm.app $PROJECT
+
+# Start virtual machine
+cd $PROJECT
+vagrant up
