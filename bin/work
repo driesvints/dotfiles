@@ -3,15 +3,15 @@
 # Define project location
 PROJECT=$HOME/Sites/$@
 
-# Stop all running virtual machines
-vagrant halt all
-
 # Open Tower project
 gittower $PROJECT
 
-# Open PHPStorm project
+# Open PhpStorm project
 open -a /Applications/PhpStorm.app $PROJECT
 
-# Start virtual machine
+# Stop all running virtual machines
+vagrant halt all
+
+# Start virtual machine for project
 cd $PROJECT
 vagrant up
