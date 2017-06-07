@@ -79,6 +79,7 @@ cask 'font-source-serif-pro'
 mas '1Password', id: 443987910
 mas 'Byword', id: 420212497
 mas 'Deckset', id: 847496013
+mas 'Gapplin', id: 768053424
 mas 'Giphy Capture', id: 668208984
 mas 'Paw', id: 584653203
 mas 'Sip', id: 507257563
