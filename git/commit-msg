@@ -8,11 +8,11 @@
 # customize the final commit message using placeholders:
 #  - {issue_id} replaced with discovered issue id
 #  - {user_message} replaced with message provided by the user
-commit_message_format = '{issue_id} {user_message}'
+commit_message_format = '[{issue_id}] {user_message}'
 
 # you may set this to your custom JIRA project key format
 # or explicitly specify a single project name, e.g. 'EXAMPLE'
-project_format = '[A-Z][A-Z]+'  
+project_format = '[A-Z][A-Z]+'
 
 # if not using JIRA, set this to your ticket system's issue pattern
 issue_pattern = '{}-[\d]+'.format(project_format)

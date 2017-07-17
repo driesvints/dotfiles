@@ -9,11 +9,13 @@ fi
 
 # Update Homebrew recipes
 brew update
+brew install ansible
 
 mkdir $HOME/Projects
 cd $HOME/Projects
 git clone https://github.com/earlonrails/superlumic-config.git
 cd superlumic-config
+ansible-playbook -i "localhost," config/$USER.yml
 
 # Create a Sites directory
 # This is a default directory for macOS user accounts but doesn't comes pre-installed
