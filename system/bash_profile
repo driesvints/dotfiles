@@ -82,6 +82,17 @@ clone() {
   && git branch --set-upstream-to=origin/master master
 }
 
+backupToUsb() {
+  local directory="/Volumes/BACKUPUSB"
+  if [ -d "$directory" ]; then
+    tar -cvpzf $directory/$HOSTNAME-Documents.tar.gz $HOME/Documents
+    tar -cvpzf $directory/$HOSTNAME-Projects.tar.gz $HOME/Projects
+    tar -cvpzf $directory/$HOSTNAME-Downloads.tar.gz $HOME/Downloads
+  else
+    echo "$directory not found"
+  fi
+}
+
 # Check to see if pbzip2 is already on path; if so, set BZIP_BIN appropriately
 type -P pbzip2 &>/dev/null && export BZIP_BIN="pbzip2"
 # Otherwise, default to standard bzip2 binary
