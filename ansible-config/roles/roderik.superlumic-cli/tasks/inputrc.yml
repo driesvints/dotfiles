@@ -1,0 +1,10 @@
+---
+
+- name: install the inputrc
+  become: yes
+  copy:
+    src: "inputrc"
+    dest: "/etc/inputrc"
+    owner: root
+    group: wheel
+    mode: 0644

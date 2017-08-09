@@ -1,0 +1,19 @@
+webserver:
+    engine: apache
+    hostmachine: dev.kunstmaan.be
+
+users:
+    superuser:      root
+    supergroup:     wheel
+    wwwuser: {{ lookup('env','USER') }}
+
+mysql:
+    user: root
+    password: password
+
+postgresql:
+    user: skylab
+    password: password
+
+debug: false
+develmode: true

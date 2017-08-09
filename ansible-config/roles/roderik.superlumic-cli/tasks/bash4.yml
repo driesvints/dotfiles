@@ -1,0 +1,42 @@
+---
+
+- name: tap homebrew/dupes
+  homebrew_tap: tap=homebrew/dupes state=present
+
+- name: install bash4
+  homebrew: name=bash state=latest
+
+- name: add bash4 to the allowed shells
+  become: yes
+  lineinfile: >
+    dest=/etc/shells
+    regexp="{{ item.regexp }}"
+    line="{{ item.line }}"
+    state=present
+    create=true
+  with_items:
+    - { regexp: '^/usr/local/bin/bash', line: '/usr/local/bin/bash' }
+
+- name: register the current shell
+  shell: echo $SHELL
+  register: current_shell_result
+  changed_when: False
+
+- name: change shell for the current user
+  become: yes
+  shell: chsh -s /usr/local/bin/bash {{ lookup('env','USER') }}
+  when: current_shell_result.stdout != "/usr/local/bin/bash"
+
+- name: register the current root shell
+  shell: dscl . -read /Users/root UserShell
+  register: current_root_shell_result
+  changed_when: False
+
+- name: set the root user shell to bash
+  become: yes
+  shell: dscl . -create /Users/root UserShell /usr/local/bin/bash
+  when: 'current_root_shell_result.stdout != "UserShell: /usr/local/bin/bash"'
+
+- name: link /root to /var/root
+  become: yes
+  file: src=/var/root dest=/root state=link

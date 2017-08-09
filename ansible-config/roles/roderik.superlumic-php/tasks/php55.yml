@@ -1,0 +1,77 @@
+---
+
+- name: install php
+  homebrew: name=php55 state=latest install_options="--with-mysql --with-apache"
+
+- name: install php modules
+  homebrew: name={{item}} state=latest
+  with_items:
+    - php55-apcu
+    - php55-http
+    - php55-xdebug
+    - php55-memcached
+    - php55-symfony-debug
+    - php55-mongo
+    - php55-yaml
+    - php55-imagick
+    - php55-twig
+    - php55-mcrypt
+    - php55-intl
+    - php55-pdo-pgsql
+
+- name: activate mod_php
+  become: yes
+  lineinfile: >
+    dest=/etc/apache2/httpd.conf
+    regexp="{{ item.regexp }}"
+    line="{{ item.line }}"
+    state=present
+    create=true
+  with_items:
+    - { regexp: '^#?LoadModule php5_module', line: "LoadModule php5_module    /usr/local/opt/php55/libexec/apache2/libphp5.so" }
+
+- name: configure the opcache settings
+  lineinfile: >
+    dest=/usr/local/etc/php/5.5/php.ini
+    regexp="{{ item.regexp }}"
+    line="{{ item.line }}"
+    state=present
+    create=yes
+  with_items:
+    - { regexp: 'opcache.enable_cli', line: 'opcache.enable_cli=0' }
+    - { regexp: 'opcache.revalidate_freq', line: 'opcache.revalidate_freq=30' }
+    - { regexp: 'opcache.validate_timestamps', line: 'opcache.validate_timestamps=1' }
+    - { regexp: 'opcache.max_accelerated_files', line: 'opcache.max_accelerated_files=50000' }
+    - { regexp: 'opcache.memory_consumption', line: 'opcache.memory_consumption=386' }
+    - { regexp: 'opcache.interned_strings_buffer', line: 'opcache.interned_strings_buffer=32' }
+    - { regexp: 'opcache.fast_shutdown', line: 'opcache.fast_shutdown=1' }
+    - { regexp: 'opcache.use_cwd', line: 'opcache.use_cwd=1' }
+
+- name: configure the apcu settings
+  lineinfile: >
+    dest=/usr/local/etc/php/5.5/conf.d/ext-apcu.ini
+    regexp="{{ item.regexp }}"
+    line="{{ item.line }}"
+    state=present
+  with_items:
+    - { regexp: 'apc.shm_size', line: 'apc.shm_size=256M' }
+
+- name: configure the php.ini settings
+  lineinfile: >
+    dest=/usr/local/etc/php/5.5/php.ini
+    regexp="{{ item.regexp }}"
+    line="{{ item.line }}"
+    state=present
+    create=yes
+  with_items:
+    - { regexp: 'max_execution_time', line: 'max_execution_time = 7200' }
+    - { regexp: 'max_input_time', line: 'max_input_time = 7200' }
+    - { regexp: 'memory_limit', line: 'memory_limit = -1' }
+    - { regexp: 'post_max_size', line: 'post_max_size = 200M' }
+    - { regexp: 'upload_max_filesize', line: 'upload_max_filesize = 200M' }
+    - { regexp: 'max_file_uploads', line: 'max_file_uploads = 100' }
+    - { regexp: 'date.timezone', line: 'date.timezone = Europe/Brussels' }
+    - { regexp: 'date.default_latitude', line: 'date.default_latitude = 50.877369' }
+    - { regexp: 'date.default_longitude', line: 'date.default_longitude = 4.684167' }
+    - { regexp: 'session.cookie_httponly', line: 'session.cookie_httponly = 1' }
+    - { regexp: ';?phar.readonly', line: 'phar.readonly = Off' }

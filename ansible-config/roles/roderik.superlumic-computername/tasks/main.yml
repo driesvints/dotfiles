@@ -1,0 +1,25 @@
+---
+
+- name: set computername
+  shell: scutil --set ComputerName {{ computername }}
+  become: yes
+  when: ansible_hostname != computername
+
+- name: set hostname
+  shell: scutil --set HostName {{ computername }}
+  become: yes
+  when: ansible_hostname != computername
+
+- name: set localhostname
+  shell: scutil --set LocalHostName {{ computername }}
+  become: yes
+  when: ansible_hostname != computername
+
+- name: set the netbios name
+  become: yes
+  osx_defaults:
+    domain: com.apple.smb.server
+    key: NetBIOSName
+    type: string
+    value: "{{ computername }}"
+    state: present

@@ -1,0 +1,32 @@
+---
+
+- name: register the current terminal profile
+  shell: defaults read "com.apple.Terminal" "Default Window Settings"
+  register: terminal_profile_result
+  changed_when: False
+
+- name: store the terminal profile in /tmp
+  copy:
+    src: "base16-eighties.dark.256.terminal"
+    dest: "/tmp/base16-eighties.dark.256.terminal"
+  when: terminal_profile_result.stdout != "base16-eighties.dark.256"
+
+- name: install the terminal profile
+  shell: open /tmp/base16-eighties.dark.256.terminal
+  when: terminal_profile_result.stdout != "base16-eighties.dark.256"
+
+- name: set the Default Window Settings
+  osx_defaults:
+    domain: com.apple.Terminal
+    key: Default Window Settings
+    type: string
+    value: "base16-eighties.dark.256"
+    state: present
+
+- name: set the Startup Window Settings
+  osx_defaults:
+    domain: com.apple.Terminal
+    key: Startup Window Settings
+    type: string
+    value: "base16-eighties.dark.256"
+    state: present

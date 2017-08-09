@@ -1,0 +1,94 @@
+---
+
+- name: unhide home
+  become: yes
+  shell: cat /etc/auto_master | grep -v home > /tmp/am; mv /tmp/am /etc/auto_master; automount -vc
+
+- name: install gnu-tar
+  homebrew: name=gnu-tar state=latest
+
+- name: symlink gnutar
+  become: yes
+  file: src=/usr/local/bin/gtar path=/usr/local/bin/tar state=link force=yes
+
+- name: create skylab directories
+  become: yes
+  file:
+    path: "{{item}}"
+    state: directory
+    owner: root
+    group: wheel
+    mode: 0777
+  with_items:
+    - /etc/apache2/sites-available
+    - /etc/apache2/sites-enabled
+    - /etc/apache2/logs
+    - /etc/tomcat
+    - /home/projects
+    - /home/backupped-projects
+    - /etc/libapache2-mod-jk
+    - /opt/nowebsite
+    - /opt/jdk
+
+- name: touch needed skylab files
+  become: yes
+  file:
+    path: "{{item}}"
+    state: touch
+    owner: root
+    group: wheel
+    mode: 0777
+  with_items:
+    - /etc/libapache2-mod-jk/workers.properties
+
+- name: render the skylab apache config file
+  become: yes
+  template: src=apache.j2 dest="/etc/apache2/other/skylab.conf"
+
+- name: install skylab
+  shell: curl -sSL https://raw.github.com/Kunstmaan/skylab/master/installer | php -- --install-dir=/usr/local/bin
+  args:
+    creates: /usr/local/bin/skylab.phar
+
+- name: easy symlink
+  file: src=/usr/local/bin/skylab.phar dest=/usr/local/bin/skylab state=link
+
+- name: skylab config
+  become: yes
+  template:
+    src: skylab.j2
+    dest: /etc/skylab.yml
+
+- name: update skylab with a cronjob
+  become: yes
+  cron: name="Skylab self-update" minute="*/30" job="echo \"`date -u` `/usr/local/bin/skylab.phar self-update --no-interaction --no-ansi`\" >> /var/log/skylab.log 2>&1"
+
+- name: create the skylab user in postgresql
+  postgresql_user: name=skylab password=password role_attr_flags=SUPERUSER
+
+- name: set the permissions
+  shell: psql -d template1 -c "GRANT SELECT ON pg_shadow TO skylab;"; touch /usr/local/var/postgres/postgres-skylab-grants.done;
+  args:
+    creates: /usr/local/var/postgres/postgres-skylab-grants.done
+
+- name: install bundler
+  become: yes
+  gem: name=bundler state=latest user_install=no
+
+- name: install developer node appications
+  npm: name={{item}} global=yes
+  with_items:
+    - bower
+    - gulp
+    - grunt
+    - uglify-js
+    - uglifycss
+
+- name: install java6
+  homebrew_cask: name={{item}} state=present
+  with_items:
+    - java6
+
+- name: symlink java7
+  become: yes
+  file: src=/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/ path=/opt/jdk/default state=link force=yes
