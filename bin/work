@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# Usage: work <dirname in ~/Sites directory>
+
 # Define project location
 PROJECT=$HOME/Sites/$@
 
