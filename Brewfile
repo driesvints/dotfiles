@@ -36,6 +36,7 @@ brew 'wget'
 # Development
 brew 'php71'
 brew 'php71-intl'
+brew 'php71-imagick'
 brew 'mariadb'
 
 # Apps
