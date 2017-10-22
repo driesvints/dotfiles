@@ -8,7 +8,15 @@ Read the blog post: https://driesvints.com/blog/getting-started-with-dotfiles
 
 ## A Fresh macOS Setup
 
-Follow these install instructions to setup a new Mac.
+First, go through the checklist below to make sure you didn't forget anything.
+
+- Did you commit and push any changes/branches to your git repositories?
+- Did you not forget any important documents in non-iCloud directories?
+- Did you save all of your work in apps which aren't synced through iCloud?
+- Did you not forget to export important data from your local database?
+- Did you run `mackup backup`?
+
+If you did all this you may now follow these install instructions to setup a new Mac.
 
 1. Update macOS to the latest version with the App Store
 2. Install Xcode from the App Store, open it and accept the license agreement
