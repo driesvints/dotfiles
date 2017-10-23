@@ -10,7 +10,7 @@ Read the blog post: https://driesvints.com/blog/getting-started-with-dotfiles
 
 ### Before you re-install
 
-First, go through the checklist below to make sure you didn't forget anything before we wipe our hard drive.
+First, go through the checklist below to make sure you didn't forget anything before you wipe your hard drive.
 
 - Did you commit and push any changes/branches to your git repositories?
 - Did you not forget any important documents in non-iCloud directories?
@@ -20,7 +20,7 @@ First, go through the checklist below to make sure you didn't forget anything be
 
 ### Installing macOS cleanly
 
-After going to our checklist above and making sure we backed everything up, we're going to cleanly install macOS with the latest release. Follow [this article](https://www.imore.com/how-do-clean-install-macos) to cleanly install the latest macOS.
+After going to our checklist above and making sure you backed everything up, we're going to cleanly install macOS with the latest release. Follow [this article](https://www.imore.com/how-do-clean-install-macos) to cleanly install the latest macOS.
 
 ### Setting up your Mac
 
