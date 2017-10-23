@@ -14,7 +14,7 @@ First, go through the checklist below to make sure you didn't forget anything.
 - Did you not forget any important documents in non-iCloud directories?
 - Did you save all of your work in apps which aren't synced through iCloud?
 - Did you not forget to export important data from your local database?
-- Did you run `mackup backup`?
+- Did you update [mackup](https://github.com/lra/mackup) to the latest version and run `mackup backup`?
 
 If you did all this you may now follow these install instructions to setup a new Mac.
 
