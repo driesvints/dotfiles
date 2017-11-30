@@ -89,5 +89,7 @@ mas 'Giphy Capture', id: 668208984
 mas 'Paw', id: 584653203
 mas 'Sip', id: 507257563
 mas 'Sketch', id: 402476602
+mas 'Spark', id: 1176895641
+mas 'Things', id: 904280696
 mas 'Tweetbot', id: 557168941
 mas 'Unsplash Wallpapers', id: 1284863847
