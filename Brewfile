@@ -1,5 +1,6 @@
 # Taps
 tap 'caskroom/cask'
+tap 'caskroom/eid'
 tap 'caskroom/fonts'
 tap 'caskroom/versions'
 tap 'homebrew/bundle'
@@ -34,9 +35,9 @@ brew 'trash'
 brew 'wget'
 
 # Development
-brew 'php71'
-brew 'php71-intl'
-brew 'php71-imagick'
+brew 'php72'
+brew 'php72-intl'
+brew 'php72-imagick'
 brew 'mariadb'
 
 # Apps
@@ -44,6 +45,8 @@ cask 'aerial'
 cask 'alfred'
 cask 'caffeine'
 cask 'docker'
+cask 'eid-be'
+cask 'eid-be-viewer'
 cask 'firefox'
 cask 'google-backup-and-sync'
 cask 'google-chrome'
@@ -66,6 +69,7 @@ cask 'vagrant'
 cask 'virtualbox'
 cask 'virtualbox-extension-pack'
 cask 'vlc'
+cask 'zoomus'
 
 # Quicklook
 cask 'qlcolorcode'
