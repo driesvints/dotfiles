@@ -38,7 +38,7 @@ brew 'wget'
 brew 'php72'
 brew 'php72-intl'
 brew 'php72-imagick'
-brew 'mariadb'
+brew 'mysql'
 
 # Apps
 cask 'aerial'
