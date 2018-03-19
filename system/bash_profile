@@ -1,10 +1,8 @@
-#!/usr/bin/env bash
-
 # ls shortcuts
-alias l='ls'
-alias ll='ls -lAh'
-alias la='ls -a'
-alias ls='ls -al'
+alias l='\ls'
+alias ll='\ls -lAh'
+alias la='\ls -a'
+alias ls='\ls -al'
 
 # tmux
 alias tmux='TERM=screen-256color-bce tmux'
@@ -17,7 +15,6 @@ alias ga='git add .'
 alias gc='git commit -m'
 alias gco='git checkout'
 alias gs='git status -sb'
-alias gl='git pull'
 alias gp='git push'
 alias got='git'
 alias gut='git'
@@ -33,6 +30,7 @@ alias be='bundle exec'
 alias deploy='bundle exec cap deploy'
 alias rs='bundle exec rails s'
 alias rc='bundle exec rails c'
+alias spec='bundle exec rspec'
 alias rollback='time bundle exec rake db:rollback --trace'
 alias migrate='time bundle exec rake db:migrate -- trace'
 alias reset='time bundle exec rake db:reset --trace'
@@ -44,19 +42,23 @@ alias mem='sudo htop --sort-key PERCENT_MEM'
 alias grep="GREP_COLOR='31' grep -in --color=auto 2>/dev/null"
 alias bup='source ~/.bash_profile'
 alias ttop='top -U $USER'
-alias bedit='atom ~/.bash_profile'
-alias hosts='sudo atom /etc/hosts'
-alias dedit='atom ~/Library/Application\ Support/Steam/SteamApps/common/dota\ 2\ beta/dota/cfg/.'
+alias bedit='subl ~/.bash_profile'
+alias hosts='sudo subl /etc/hosts'
 
-alias neo4j-test='/Library/Java/JavaVirtualMachines/jdk1.7.0_67.jdk/Contents/Home/bin/java -cp /usr/local/Cellar/neo4j/2.2.3/libexec/lib/concurrentlinkedhashmap-lru-1.4.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/lib/lucene-core-3.6.2.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/lib/neo4j-consistencyser-check-2.2.3.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/lib/neo4j-csv-2.2.3.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/lib/neo4j-cypher-2.2.3.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/lib/neo4j-cypher-compiler-1.9-2.0.4.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/lib/neo4j-cypher-compiler-2.0-2.0.4.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/lib/neo4j-cypher-compiler-2.1-2.1.8.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/lib/neo4j-cypher-compiler-2.2-2.2.3.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/lib/neo4j-graph-algo-2.2.3.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/lib/neo4j-graph-matching-2.2.3.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/lib/neo4j-import-tool-2.2.3.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/lib/neo4j-io-2.2.3.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/lib/neo4j-jmx-2.2.3.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/lib/neo4j-kernel-2.2.3.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/lib/neo4j-lucene-index-2.2.3.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/lib/neo4j-primitive-collections-2.2.3.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/lib/neo4j-shell-2.2.3.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/lib/neo4j-udc-2.2.3.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/lib/neo4j-unsafe-2.2.3.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/lib/opencsv-2.3.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/lib/org.apache.servicemix.bundles.jline-0.9.94_1.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/lib/parboiled-core-1.1.7.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/lib/parboiled-scala_2.10-1.1.7.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/lib/scala-library-2.10.5.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/lib/server-api-2.2.3.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/bcprov-jdk16-140.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/commons-beanutils-1.8.3.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/commons-compiler-2.6.1.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/commons-configuration-1.10.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/commons-digester-2.1.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/commons-io-2.4.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/commons-lang-2.6.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/commons-logging-1.1.1.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/jackson-core-asl-1.9.13.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/jackson-jaxrs-1.9.13.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/jackson-mapper-asl-1.9.13.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/janino-2.6.1.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/javax.servlet-api-3.1.0.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/jcl-over-slf4j-1.7.7.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/jersey-core-1.19.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/jersey-multipart-1.19.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/jersey-server-1.19.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/jersey-servlet-1.19.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/jetty-http-9.2.4.v20141103.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/jetty-io-9.2.4.v20141103.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/jetty-security-9.2.4.v20141103.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/jetty-server-9.2.4.v20141103.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/jetty-servlet-9.2.4.v20141103.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/jetty-util-9.2.4.v20141103.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/jetty-webapp-9.2.4.v20141103.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/jetty-xml-9.2.4.v20141103.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/jsr311-api-1.1.2.r612.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/logback-access-1.1.2.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/logback-classic-1.1.2.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/logback-core-1.1.2.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/mimepull-1.9.3.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/neo4j-browser-2.2.3.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/neo4j-server-2.2.3-static-web.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/neo4j-server-2.2.3.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/rhino-1.7R4.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/rrd4j-2.2.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/scala-reflect-2.10.5.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/system/lib/slf4j-api-1.7.7.jar:/usr/local/Cellar/neo4j/2.2.3/libexec/conf -server -XX:+DisableExplicitGC -Dorg.neo4j.server.properties=test-neo4j-server.properties -Djava.util.logging.config.file=conf/logging.properties -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -XX:-OmitStackTraceInFastThrow -XX:hashCode=5 -Dneo4j.ext.udc.source=tarball -Dneo4j.ext.udc.source=homebrew -Djava.awt.headless=true -Dneo4j.home=/usr/local/Cellar/neo4j/2.2.3/libexec -Dneo4j.instance=/usr/local/Cellar/neo4j/2.2.3/libexec -Dfile.encoding=UTF-8 org.neo4j.server.Bootstrapper'
 # golang alias things
 alias goconvey='goop exec goconvey -workDir="$GOPATH/src/${PWD##*/}"'
+alias cdg='cd $GOPATH'
 
 # check internet connection
-alias pingoo="ping -c 3 www.google.com"
+alias pingoo='ping -c 3 www.google.com'
 
 # Load private stuff - keys and such
 source $HOME/.private_profile
+
+# git pull origin current branch
+gl() {
+  git pull origin $(git rev-parse --abbrev-ref HEAD)
+}
 
 #locate = find
 spot(){
@@ -85,9 +87,10 @@ clone() {
 backupToUsb() {
   local directory="/Volumes/BACKUPUSB"
   if [ -d "$directory" ]; then
-    tar -cvpzf $directory/$HOSTNAME-Documents.tar.gz $HOME/Documents
-    tar -cvpzf $directory/$HOSTNAME-Projects.tar.gz $HOME/Projects
-    tar -cvpzf $directory/$HOSTNAME-Downloads.tar.gz $HOME/Downloads
+    tar -cvpzf $directory/GoPro13-Documents.tar.gz $HOME/Documents
+    tar -cvpzf $directory/GoPro13-Projects.tar.gz $HOME/Projects
+    tar -cvpzf $directory/GoPro13-Downloads.tar.gz $HOME/Downloads
+    tar -cvpzf $directory/GoPro13-Work.tar.gz $HOME/Work
   else
     echo "$directory not found"
   fi
@@ -116,6 +119,10 @@ recolor(){
 # list running launchctl programs
 launch-list(){
   ruby $HOME/launch-list.rb "$@"
+}
+
+deploycomm() {
+  ruby $HOME/deploy_comm.rb "$@"
 }
 
 # splat will make many terminal tabs with selected hosts connecting
@@ -328,32 +335,18 @@ export BASH_IT=$HOME/.bash_it
 # location /.bash_it/themes/
 export BASH_IT_THEME='powerline-plus'
 
-# android-sdk
-export ANDROID_HOME=/usr/local/opt/android-sdk
-
 # homebrew
-export PATH=/usr/local/sbin:$PATH
-
-# export GOPATH=$HOME/go
-
-# Don't check mail when opening terminal.
-unset MAILCHECK
-
-# Load Bash It
-source $BASH_IT/bash_it.sh
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm" # Load GVM into a shell session *as a function*
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-# Path to the bash it configuration
-export BASH_IT="/Users/kkrauss/.bash_it"
-
 # Don't check mail when opening terminal.
 unset MAILCHECK
 
-export EDITOR='atom'
+export EDITOR='subl'
 
 # Set this to false to turn off version control status checking within the prompt for all themes
 export SCM_CHECK=true
@@ -366,6 +359,10 @@ export SCM_CHECK=true
 # Set vcprompt executable path for scm advance info in prompt (demula theme)
 # https://github.com/djl/vcprompt
 #export VCPROMPT_EXECUTABLE=~/.vcprompt/bin/vcprompt
+
+export ANDROID_HOME=$HOME/Library/Android/sdk
+
+export PATH=${PATH}:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools
 
 # (Advanced): Uncomment this to make Bash-it reload itself automatically
 # after enabling or disabling aliases, plugins, and completions.

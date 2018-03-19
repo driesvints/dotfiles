@@ -31,7 +31,7 @@ def write_message(message):
         f.write(message)
 
 def contains_message(message):
-    return message and not message.isspace()
+    return message and not message.decode('utf-8').isspace()
 
 def remove_editor_help_message(message):
     return message[:message.find("# Please enter the commit message for your changes.")].rstrip()
