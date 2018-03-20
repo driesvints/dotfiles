@@ -34,7 +34,7 @@ brew 'trash'
 brew 'wget'
 
 # Development
-brew 'php72'
+brew 'php'
 brew 'php72-imagick'
 brew 'mysql'
 
