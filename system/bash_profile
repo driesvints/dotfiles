@@ -44,6 +44,7 @@ alias bup='source ~/.bash_profile'
 alias ttop='top -U $USER'
 alias bedit='subl ~/.bash_profile'
 alias hosts='sudo subl /etc/hosts'
+alias tf='terraform'
 
 # golang alias things
 alias goconvey='goop exec goconvey -workDir="$GOPATH/src/${PWD##*/}"'
@@ -58,6 +59,15 @@ source $HOME/.private_profile
 # git pull origin current branch
 gl() {
   git pull origin $(git rev-parse --abbrev-ref HEAD)
+}
+
+resetsoft() {
+  local plist=1
+  if [ -z $1 ]; then
+    plist=$1
+  fi
+
+  git reset --soft HEAD~$plist
 }
 
 #locate = find
@@ -87,10 +97,10 @@ clone() {
 backupToUsb() {
   local directory="/Volumes/BACKUPUSB"
   if [ -d "$directory" ]; then
-    tar -cvpzf $directory/GoPro13-Documents.tar.gz $HOME/Documents
-    tar -cvpzf $directory/GoPro13-Projects.tar.gz $HOME/Projects
-    tar -cvpzf $directory/GoPro13-Downloads.tar.gz $HOME/Downloads
-    tar -cvpzf $directory/GoPro13-Work.tar.gz $HOME/Work
+    tar -cvpzf --exclude='.git' --exclude='*.log' $directory/GoPro13-Documents.tar.gz $HOME/Documents
+    tar -cvpzf --exclude='.git' --exclude='*.log' $directory/GoPro13-Projects.tar.gz $HOME/Projects
+    tar -cvpzf --exclude='.git' --exclude='*.log' $directory/GoPro13-Downloads.tar.gz $HOME/Downloads
+    tar -cvpzf --exclude='.git' --exclude='*.log' $directory/GoPro13-Work.tar.gz $HOME/Work
   else
     echo "$directory not found"
   fi
@@ -220,16 +230,16 @@ appify(){
 }
 
 # scans for ips in the network given by the first 3 octets
-# scannc 192.168.2 [nslookup]
+# scannc 192.168.2 [lookup]
 scannc(){
   range=$1
-  nslookup=$2
+  lookup=$2
   for ip in $(eval echo $range.{1..255})
     do
     nc -n -z -w 1 $ip 22 > /dev/null
     if [ $? -eq 0 ]; then
       output="$ip"
-      [[ $nslookup ]] && [ $nslookup != "" ] && output="$ip $(nslookup $ip)"
+      [[ $lookup ]] && [ $lookup != "" ] && output="$ip $(nslookup -timeout=1 $ip  || echo '')"
       echo $output
     else
       echo "."
@@ -240,13 +250,13 @@ scannc(){
 #w/ ping
 scanping(){
   range=$1
-  nslookup=$2
+  lookup=$2
   for ip in $(eval echo $range.{1..255})
   do
     ping -c1 $ip > /dev/null
     if [ $? -eq 0 ]; then
       output="$ip"
-      [[ $nslookup ]] && [ $nslookup != "" ] && output="$ip $(nslookup $ip)"
+      [[ $lookup ]] && [ $lookup != "" ] && output="$ip $(nslookup -timeout=1 $ip  || echo '')"
       echo $output
     else
       echo "."
@@ -299,6 +309,15 @@ swapgitmail() {
     git config --global user.email $MAIN_GIT_EMAIL
     echo "$(git config --global user.email)"
   fi
+}
+
+get_ec2_ip() {
+  ruby ~/Documents/get_ec2_ip.rb -c "$1" -s "$2"
+}
+
+gpssh() {
+  local gphost=$(get_ec2_ip "$1" "$2")
+  ssh -t kkrauss@bastion.infra.gopro-platform.com ssh $gphost
 }
 
 #dota stuff
