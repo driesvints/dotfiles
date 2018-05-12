@@ -29,3 +29,8 @@ alias dpurgecontainers="dstop && docker rm $(docker ps -a -q)"
 alias dpurgeimages="docker rmi $(docker images -q)"
 dbuild() { docker build -t=$1 .; }
 dbash() { docker exec -it $(docker ps -aqf "name=$1") bash; }
+
+# Git
+alias gst="git status"
+alias gd="git diff"
+alias gl="git log --oneline --decorate --color"
