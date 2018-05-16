@@ -37,6 +37,10 @@ npm install --global yarn
 # This is a default directory for macOS user accounts but doesn't comes pre-installed
 mkdir $HOME/Sites
 
+# Remove .zshrc from HOME (if existing) and symlink .zshrc from .dotfiles
+rm -rf "$HOME/.zshrc"
+ln -s "$HOME/.dotfiles/.zshrc" "$HOME/.zshrc"
+
 # Symlink the Mackup config file to the home directory
 ln -s ./.mackup.cfg $HOME/.mackup.cfg
 
