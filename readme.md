@@ -38,7 +38,7 @@ If you did all this you may now follow these install instructions to setup a new
 
 Your Mac is now ready to use!
 
-> Note: you can use a different location than `~/.dotfiles` if you want. Just make sure you also update the reference in the `.zshrc` file.
+> Note: you can use a different location than `~/.dotfiles` if you want. Just make sure you also update the reference in the [`.zshrc`](./.zshrc) file.
 
 ## Your Own Dotfiles
 
