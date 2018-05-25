@@ -82,7 +82,7 @@ cask 'font-source-sans-pro'
 cask 'font-source-serif-pro'
 
 # Install Mac App Store apps
-mas '1Password', id: 443987910
+mas '1Password', id: 1333542190
 mas 'Byword', id: 420212497
 mas 'Deckset', id: 847496013
 mas 'Gapplin', id: 768053424
