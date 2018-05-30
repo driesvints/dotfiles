@@ -13,7 +13,7 @@ Read the blog post: https://medium.com/@driesvints/getting-started-with-dotfiles
 First, go through the checklist below to make sure you didn't forget anything before you wipe your hard drive.
 
 - Did you commit and push any changes/branches to your git repositories?
-- Did you remember all important documents in non-iCloud directories?
+- Did you remember to save all important documents from non-iCloud directories?
 - Did you save all of your work in apps which aren't synced through iCloud?
 - Did you remember to export important data from your local database?
 - Did you update [mackup](https://github.com/lra/mackup) to the latest version and ran `mackup backup`?
