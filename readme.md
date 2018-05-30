@@ -24,12 +24,12 @@ After going to our checklist above and making sure you backed everything up, we'
 
 ### Setting up your Mac
 
-If you did all this you may now follow these install instructions to setup a new Mac.
+If you did all of the above you may now follow these install instructions to setup a new Mac.
 
 1. Update macOS to the latest version with the App Store
 2. Install Xcode from the App Store, open it and accept the license agreement
 3. Install macOS Command Line Tools by running `xcode-select --install`
-4. Copy public and private SSH keys to `~/.ssh` and make sure they're set to `600`
+4. Copy your public and private SSH keys to `~/.ssh` and make sure they're set to `600`
 5. Clone this repo to `~/.dotfiles`
 6. Append `/usr/local/bin/zsh` to the end of your `/etc/shells` file
 7. Run `install.sh` to start the installation
@@ -42,7 +42,7 @@ Your Mac is now ready to use!
 
 ## Your Own Dotfiles
 
-If you want to start your own dotfiles from this setup, it's pretty easy to do so. First of all you'll need to fork this repo. After that you can tweak it the way you want.
+If you want to start with your own dotfiles from this setup, it's pretty easy to do so. First of all you'll need to fork this repo. After that you can tweak it the way you want.
 
 Go through the [`.macos`](./.macos) file and adjust the settings to your liking. You can find much more settings at [the original script by Mathias Bynens](https://github.com/mathiasbynens/dotfiles/blob/master/.macos) and [Kevin Suttle's macOS Defaults project](https://github.com/kevinSuttle/MacOS-Defaults).
 
