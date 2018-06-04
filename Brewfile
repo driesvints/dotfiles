@@ -71,11 +71,9 @@ mas '1Password', id: 1333542190
 mas 'Byword', id: 420212497
 mas 'Deckset', id: 847496013
 mas 'Giphy Capture', id: 668208984
-mas 'Paw', id: 584653203
 mas 'Sip', id: 507257563
 mas 'Spark', id: 1176895641
 mas 'The Unarchiver', id: 425424353
 mas 'Things', id: 904280696
 mas 'Tweetbot', id: 1384080005
-mas 'Unsplash Wallpapers', id: 1284863847
 mas 'WhatsApp', id: 1147396723 
