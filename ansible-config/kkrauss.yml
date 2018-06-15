@@ -32,11 +32,9 @@
         - hedgewars
         - hex-fiend
         - iterm2
-        - kismac
         - mongohub
-        - mou
+        - macdown
         - openoffice
-        - opera
         - pandora
         - rowanj-gitx
         - slack
@@ -50,9 +48,7 @@
         - steam
         - sublime-text
         - skype
-        - textmate
         - the-unarchiver
-        - transmission
         - unrarx
         - vlc
         - virtualbox
@@ -66,7 +62,6 @@
         - atk
         - autoconf
         - automake
-        - cassandra
         - cmake
         - coreutils
         - ddrescue
@@ -86,7 +81,6 @@
         - git
         - git-extras
         - git-flow
-        - giter8
         - glib
         - gmp
         - gnu-getopt
@@ -101,7 +95,6 @@
         - gtksourceview
         - harfbuzz
         - htop-osx
-        - hub
         - icu4c
         - iftop
         - imagemagick
@@ -109,7 +102,6 @@
         - jmeter
         - jpeg
         - lame
-        - leiningen
         - libevent
         - libffi
         - libgpg-error
@@ -122,11 +114,9 @@
         - libtool
         - libyaml
         - little-cms
-        - lua
         - lzip
         - mad
         - memcached
-        - mercurial
         - mongodb
         - mutt
         - nettle
@@ -145,29 +135,22 @@
         - pygobject
         - pygtk
         - pygtksourceview
-        - python
-        - python3
-        - rabbitmq
+        - pyenv
         - rarian
         - readline
         - redis
         - rename
         - rhino
         - sbt
-        - scala
-        - selenium-server-standalone
         - shmux
-        - sox
         - sqlite
         - tmux
         - tree
-        - typesafe-activator
         - unixodbc
         - watch
         - wget
         - wxmac
         - xz
-        - zeromq
     - name: install kkrauss npm applications
       npm: name={{item}} state=latest global=yes
       with_items:

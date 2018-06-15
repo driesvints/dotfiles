@@ -297,19 +297,19 @@ wgif(){
   wget -P $HOME/Downloads/gifs/ $1
 }
 
-export GIT_SSH="$HOME/dynamic_git_command.sh"
-swapgitmail() {
-  [ -n "$MAIN_GIT_EMAIL" ] || echo "MAIN_GIT_EMAIL not set"
-  [ -n "$ALT_GIT_EMAIL" ] || echo "ALT_GIT_EMAIL not set"
-  local email=$(git config --global user.email)
-  if [ "$email" = "$MAIN_GIT_EMAIL" ];then
-    git config --global user.email $ALT_GIT_EMAIL
-    echo "$(git config --global user.email)"
-  else
-    git config --global user.email $MAIN_GIT_EMAIL
-    echo "$(git config --global user.email)"
-  fi
-}
+# export GIT_SSH="$HOME/dynamic_git_command.sh"
+# swapgitmail() {
+#   [ -n "$MAIN_GIT_EMAIL" ] || echo "MAIN_GIT_EMAIL not set"
+#   [ -n "$ALT_GIT_EMAIL" ] || echo "ALT_GIT_EMAIL not set"
+#   local email=$(git config --global user.email)
+#   if [ "$email" = "$MAIN_GIT_EMAIL" ];then
+#     git config --global user.email $ALT_GIT_EMAIL
+#     echo "$(git config --global user.email)"
+#   else
+#     git config --global user.email $MAIN_GIT_EMAIL
+#     echo "$(git config --global user.email)"
+#   fi
+# }
 
 get_ec2_ip() {
   ruby ~/Documents/get_ec2_ip.rb -c "$1" -s "$2"
