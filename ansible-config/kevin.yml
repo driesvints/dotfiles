@@ -25,6 +25,8 @@
         - pbzip2
         - redis-server
         - tmux
+        - vpn-unlimited
+        - sublime-text
 
     - name: install kevin npm applications
       npm: name={{item}} state=latest global=yes
@@ -86,7 +88,7 @@
         - dest: "BracketHighlighter"
           repo: "https://github.com/facelessuser/BracketHighlighter.git"
           version: "master"
-        - dest: "Theme - Soda"
+        - dest: "Soda Theme"
           repo: "https://github.com/buymeasoda/soda-theme.git"
           version: "master"
         - dest: "Base16"
@@ -101,5 +103,17 @@
         - dest: "Ansible"
           repo: "https://github.com/clifford-github/sublime-ansible.git"
           version: "master"
+        - dest: "Boxy Theme"
+          repo: "https://github.com/ihodev/sublime-boxy.git"
+          version: "master"
+        - dest: "Ethereum"
+          repo: "https://github.com/davidhq/SublimeEthereum.git"
+          version: "master"
+        - dest: "Sass"
+          repo: "https://github.com/P233/Syntax-hightlighting-for-Sass.git"
+          version: "master"
+        - dest: "A File Icon"
+          repo: "https://github.com/ihodev/a-file-icon.git"
+          version: "master"
     - sublime_text_color_scheme: "Packages/Tomorrow Color Schemes/Tomorrow.tmTheme"
-    - sublime_text_theme: "Soda Light.sublime-theme"
+    - sublime_text_theme: "Boxy Yesterday.sublime-theme"
