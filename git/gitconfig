@@ -4,9 +4,14 @@
 	name = Kevin Krauss
 	email = earlkrauss@gmail.com
 [alias]
-	pf = push --force-with-lease
-	pretty = log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+  pf = push --force-with-lease
+  pretty = log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
 [merge]
-	tool = opendiff
+  tool = opendiff
 [core]
-	editor = atom --wait
+  editor = subl -w -n
+  excludesfile = /Users/kkrauss/.gitignore_global
+[mergetool]
+  keepBackup = false
+[init]
+  templatedir = /Users/kkrauss/.git-templates

@@ -1,0 +1,14 @@
+---
+galaxy_info:
+  author: Roderik van der Veer
+  description: Ansible role to install and configure Postgresql on OSX. This role is part of the Superlumic project that aims to simplify repeat computer setups on OSX, 10.10 and up.
+  license: MIT
+  min_ansible_version: 1.2
+  platforms:
+    - name: Darwin
+      versions:
+        - all
+  categories:
+    - system
+dependencies:
+  - roderik.superlumic-homebrew

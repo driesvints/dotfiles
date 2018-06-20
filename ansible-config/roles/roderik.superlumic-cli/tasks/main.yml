@@ -1,0 +1,7 @@
+---
+
+- include: bash4.yml
+- include: bashrc.yml
+- include: inputrc.yml
+- include: git.yml
+- include: terminal.yml

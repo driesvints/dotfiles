@@ -1,0 +1,38 @@
+---
+
+- name: install dependencies
+  homebrew: name={{item}} state=latest
+  with_items:
+    - git
+    - git-extras
+
+- name: put up a gitconfig
+  become: yes
+  copy:
+    src: "gitconfig"
+    dest: "/etc/gitconfig"
+
+- name: put up a gitconfig
+  copy:
+    src: "gitconfig"
+    dest: "/usr/local/etc/gitconfig"
+
+- name: get git username
+  shell: git config --global --get user.name
+  register: git_user_name_result
+  changed_when: False
+  ignore_errors: yes
+
+- name: get git user email
+  shell: git config --global --get user.email
+  register: git_user_email_result
+  changed_when: False
+  ignore_errors: yes
+
+- name: set git username
+  shell: git config --global user.name "{{git_user_name}}"
+  when: git_user_email_result.stdout != "{{git_user_name}}"
+
+- name: set git user email
+  shell: git config --global user.email "{{git_user_email}}"
+  when: git_user_email_result.stdout != "{{git_user_email}}"

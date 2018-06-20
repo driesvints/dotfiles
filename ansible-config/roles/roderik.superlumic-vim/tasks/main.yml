@@ -1,0 +1,9 @@
+---
+# tasks file for ansible-role-vim
+
+- name: install janus
+  shell: curl -Lo- https://bit.ly/janus-bootstrap | bash
+  args:
+    creates: ~/.vim
+
+

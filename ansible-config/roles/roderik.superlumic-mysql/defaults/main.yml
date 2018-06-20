@@ -1,0 +1,4 @@
+---
+# defaults file for ansible-role-mysql
+
+mysql_root_password: password

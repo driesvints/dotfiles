@@ -1,0 +1,43 @@
+ServerName dev.kunstmaan.be
+
+LoadModule rewrite_module libexec/apache2/mod_rewrite.so
+
+User {{ lookup('env','USER') }}
+Group staff
+
+<Location /server-info>
+    SetHandler server-info
+    <IfVersion < 2.4>
+        Order deny,allow
+        Deny from all
+        Allow from 127.0.0.1
+    </IfVersion>
+    <IfVersion >= 2.4>
+        Require all denied
+        Require local
+    </IfVersion>
+</Location>
+
+ExtendedStatus on
+
+<Location /server-status>
+    SetHandler server-status
+    <IfVersion < 2.4>
+        Order deny,allow
+        Deny from all
+        Allow from 127.0.0.1
+    </IfVersion>
+    <IfVersion >= 2.4>
+        Require all denied
+        Require local
+    </IfVersion>
+</Location>
+
+<IfVersion < 2.4>
+    Include /etc/apache2/sites-enabled/[^.#]*.conf
+</IfVersion>
+<IfVersion >= 2.4>
+    IncludeOptional /etc/apache2/sites-enabled/[^.#]*.conf
+</IfVersion>
+
+SetEnv APP_ENV dev

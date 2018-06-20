@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
 # ls shortcuts
-alias l='ls'
-alias ll='ls -lAh'
-alias la='ls -a'
-alias ls='ls -al'
+alias l='\ls'
+alias ll='\ls -lAh'
+alias la='\ls -a'
+alias ls='\ls -al'
 
 # tmux
 alias tmux='TERM=screen-256color-bce tmux'
@@ -17,11 +17,9 @@ alias ga='git add .'
 alias gc='git commit -m'
 alias gco='git checkout'
 alias gs='git status -sb'
-alias gl='git pull'
 alias gp='git push'
 alias got='git'
 alias gut='git'
-# alias git=hub
 alias glog='git log --oneline --decorate'
 alias lsg='git tag -l [0-9]*'
 alias commits='git shortlog -s -n'
@@ -44,18 +42,31 @@ alias mem='sudo htop --sort-key PERCENT_MEM'
 alias grep="GREP_COLOR='31' grep -in --color=auto 2>/dev/null"
 alias bup='source ~/.bash_profile'
 alias ttop='top -U $USER'
-alias bedit='atom ~/.bash_profile'
-alias hosts='sudo atom /etc/hosts'
-alias dedit='atom ~/Library/Application\ Support/Steam/SteamApps/common/dota\ 2\ beta/dota/cfg/.'
+alias bedit='subl ~/.bash_profile'
+alias hosts='sudo subl /etc/hosts'
 
 # golang alias things
 alias goconvey='goop exec goconvey -workDir="$GOPATH/src/${PWD##*/}"'
 
 # check internet connection
-alias pingoo="ping -c 3 www.google.com"
+alias pingoo='ping -c 3 www.google.com'
 
 # Load private stuff - keys and such
 source $HOME/.private_profile
+
+# git pull origin current branch
+gl() {
+  git pull origin $(git rev-parse --abbrev-ref HEAD)
+}
+
+resetsoft() {
+  local plist=1
+  if [ -z $1 ]; then
+    plist=$1
+  fi
+
+  git reset --soft HEAD~$plist
+}
 
 #locate = find
 spot(){
@@ -81,6 +92,19 @@ clone() {
   && git branch --set-upstream-to=origin/master master
 }
 
+backupToUsb() {
+  local directory="/Volumes/BACKUPUSB"
+  local machine=$(uname)
+  if [ -d "$directory" ]; then
+    tar -cvpzf --exclude='.git' --exclude='*.log' $directory/$machine-Documents.tar.gz $HOME/Documents
+    tar -cvpzf --exclude='.git' --exclude='*.log' $directory/$machine-Projects.tar.gz $HOME/Projects
+    tar -cvpzf --exclude='.git' --exclude='*.log' $directory/$machine-Downloads.tar.gz $HOME/Downloads
+    tar -cvpzf --exclude='.git' --exclude='*.log' $directory/$machine-Work.tar.gz $HOME/Work
+  else
+    echo "$directory not found"
+  fi
+}
+
 # Check to see if pbzip2 is already on path; if so, set BZIP_BIN appropriately
 type -P pbzip2 &>/dev/null && export BZIP_BIN="pbzip2"
 # Otherwise, default to standard bzip2 binary
@@ -104,6 +128,10 @@ recolor(){
 # list running launchctl programs
 launch-list(){
   ruby $HOME/launch-list.rb "$@"
+}
+
+deploycomm() {
+  ruby $HOME/deploy_comm.rb "$@"
 }
 
 # splat will make many terminal tabs with selected hosts connecting
@@ -201,16 +229,16 @@ appify(){
 }
 
 # scans for ips in the network given by the first 3 octets
-# scannc 192.168.2 [nslookup]
+# scannc 192.168.2 [lookup]
 scannc(){
   range=$1
-  nslookup=$2
+  lookup=$2
   for ip in $(eval echo $range.{1..255})
     do
     nc -n -z -w 1 $ip 22 > /dev/null
     if [ $? -eq 0 ]; then
       output="$ip"
-      [[ $nslookup ]] && [ $nslookup != "" ] && output="$ip $(nslookup $ip)"
+      [[ $lookup ]] && [ $lookup != "" ] && output="$ip $(nslookup -timeout=1 $ip  || echo '')"
       echo $output
     else
       echo "."
@@ -221,13 +249,13 @@ scannc(){
 #w/ ping
 scanping(){
   range=$1
-  nslookup=$2
+  lookup=$2
   for ip in $(eval echo $range.{1..255})
   do
     ping -c1 $ip > /dev/null
     if [ $? -eq 0 ]; then
       output="$ip"
-      [[ $nslookup ]] && [ $nslookup != "" ] && output="$ip $(nslookup $ip)"
+      [[ $lookup ]] && [ $lookup != "" ] && output="$ip $(nslookup -timeout=1 $ip  || echo '')"
       echo $output
     else
       echo "."
@@ -268,18 +296,27 @@ wgif(){
   wget -P $HOME/Downloads/gifs/ $1
 }
 
-export GIT_SSH="$HOME/dynamic_git_command.sh"
-swapgitmail() {
-  [ -n "$MAIN_GIT_EMAIL" ] || echo "MAIN_GIT_EMAIL not set"
-  [ -n "$ALT_GIT_EMAIL" ] || echo "ALT_GIT_EMAIL not set"
-  local email=$(git config --global user.email)
-  if [ "$email" = "$MAIN_GIT_EMAIL" ];then
-    git config --global user.email $ALT_GIT_EMAIL
-    echo "$(git config --global user.email)"
-  else
-    git config --global user.email $MAIN_GIT_EMAIL
-    echo "$(git config --global user.email)"
-  fi
+# export GIT_SSH="$HOME/dynamic_git_command.sh"
+# swapgitmail() {
+#   [ -n "$MAIN_GIT_EMAIL" ] || echo "MAIN_GIT_EMAIL not set"
+#   [ -n "$ALT_GIT_EMAIL" ] || echo "ALT_GIT_EMAIL not set"
+#   local email=$(git config --global user.email)
+#   if [ "$email" = "$MAIN_GIT_EMAIL" ];then
+#     git config --global user.email $ALT_GIT_EMAIL
+#     echo "$(git config --global user.email)"
+#   else
+#     git config --global user.email $MAIN_GIT_EMAIL
+#     echo "$(git config --global user.email)"
+#   fi
+# }
+
+get_ec2_ip() {
+  ruby ~/Documents/get_ec2_ip.rb -c "$1" -s "$2"
+}
+
+gpssh() {
+  local gphost=$(get_ec2_ip "$1" "$2")
+  ssh -t kkrauss@bastion.infra.gopro-platform.com ssh $gphost
 }
 
 #dota stuff
@@ -319,8 +356,10 @@ export BASH_IT_THEME='powerline-plus'
 # android-sdk
 export ANDROID_HOME=/usr/local/opt/android-sdk
 
+export PATH=${PATH}:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools
+
 # homebrew
-export PATH=/usr/local/sbin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 # export GOPATH=$HOME/go
 
@@ -332,16 +371,10 @@ source $BASH_IT/bash_it.sh
 
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm" # Load GVM into a shell session *as a function*
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
-# Path to the bash it configuration
-export BASH_IT="$HOME/.bash_it"
-
 # Don't check mail when opening terminal.
 unset MAILCHECK
 
-export EDITOR='atom'
+export EDITOR='subl'
 
 # Set this to false to turn off version control status checking within the prompt for all themes
 export SCM_CHECK=true

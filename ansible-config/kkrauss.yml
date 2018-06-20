@@ -1,0 +1,466 @@
+---
+
+- hosts: 127.0.0.1
+  connection: local
+
+  tasks:
+    - name: install kkrauss cask applications
+      homebrew_cask: name={{item}} state=present
+      with_items:
+        - xquartz
+        - adium
+        - android-studio
+        - angry-ip-scanner
+        - atom
+        - audacity
+        - adobe-air
+        - blender
+        - docker
+        - caffeine
+        - chefdk
+        - chromium
+        - cyberduck
+        - dia
+        - dterm
+        - evernote
+        - firefox
+        - fluid
+        - gimp
+        - github-desktop
+        - google-chrome
+        - handbrake
+        - hedgewars
+        - hex-fiend
+        - iterm2
+        - mongohub
+        - macdown
+        - openoffice
+        - pandora
+        - rowanj-gitx
+        - slack
+        - seashore
+        - sequel-pro
+        - seil
+        - shiftit
+        - soundflower
+        - spotify
+        - sqlitebrowser
+        - steam
+        - sublime-text
+        - skype
+        - the-unarchiver
+        - unrarx
+        - vlc
+        - virtualbox
+        - wireshark
+    - name: install kkrauss brew applications
+      homebrew: name={{item}} state=latest
+      with_items:
+        - android-sdk
+        - ant
+        - arping
+        - atk
+        - autoconf
+        - automake
+        - cmake
+        - coreutils
+        - ddrescue
+        - elasticsearch
+        - elixir
+        - erlang
+        - ffmpeg
+        - findutils
+        - fontconfig
+        - fping
+        - freetype
+        - gawk
+        - gdbm
+        - gdk-pixbuf
+        - geoip
+        - gettext
+        - git
+        - git-extras
+        - git-flow
+        - glib
+        - gmp
+        - gnu-getopt
+        - gnu-indent
+        - gnu-sed
+        - gnu-tar
+        - gnupg
+        - gnutls
+        - gobject-introspection
+        - graphviz
+        - gtk+
+        - gtksourceview
+        - harfbuzz
+        - htop-osx
+        - icu4c
+        - iftop
+        - imagemagick
+        - intltool
+        - jmeter
+        - jpeg
+        - lame
+        - libevent
+        - libffi
+        - libgpg-error
+        - libksba
+        - libnet
+        - libpng
+        - libsodium
+        - libtasn1
+        - libtiff
+        - libtool
+        - libyaml
+        - little-cms
+        - lzip
+        - mad
+        - memcached
+        - mongodb
+        - mutt
+        - nettle
+        - node
+        - openssl
+        - ossp-uuid
+        - pango
+        - pbzip2
+        - pcre
+        - pixman
+        - pkg-config
+        - postgresql
+        - pstree
+        - pv
+        - py2cairo
+        - pygobject
+        - pygtk
+        - pygtksourceview
+        - pyenv
+        - rarian
+        - readline
+        - redis
+        - rename
+        - rhino
+        - sbt
+        - shmux
+        - sqlite
+        - tmux
+        - tree
+        - unixodbc
+        - watch
+        - wget
+        - wxmac
+        - xz
+    - name: install kkrauss npm applications
+      npm: name={{item}} state=latest global=yes
+      with_items:
+        - autoprefixer
+        - bower
+        - express
+        - grunt
+        - gulp
+        - grunt-cli
+        - generator-angular
+        - generator-cordova
+        - generator-express-react
+        - generator-reactjs
+        - generator-node
+        - generator-react-webpack
+        - jasmine-node
+        - karma
+        - mocha
+        - ngrok
+        - ios-sim
+        - phantomjs
+        - protractor
+        - readable-stream
+        - yo
+
+  roles:
+    - profile-gopro
+
+  vars:
+    - computername: mbr-27484
+    - git_user_name: Kevin
+    - git_user_email: earlkrauss@gmail.com
+    - sublime_packages:
+        - dest: "Alignment"
+          repo: "https://github.com/wbond/sublime_alignment.git"
+          version: "master"
+        - dest: "BeautifyRuby"
+          repo: "https://github.com/CraigWilliams/BeautifyRuby.git"
+          version: "master"
+        - dest: "Emmet"
+          repo: "https://github.com/sergeche/emmet-sublime.git"
+          version: "master"
+        - dest: "Git"
+          repo: "https://github.com/kemayo/sublime-text-git.git"
+          version: "master"
+        - dest: "Tomorrow Color Schemes"
+          repo: "https://github.com/theymaybecoders/sublime-tomorrow-theme.git"
+          version: "master"
+        - dest: "ReactJS"
+          repo: "https://github.com/reactjs/sublime-react.git"
+          version: "master"
+        - dest: "HTMLPrettify"
+          repo: "https://github.com/victorporof/Sublime-HTMLPrettify.git"
+          version: "master"
+        - dest: "SideBarEnhancements"
+          repo: "https://github.com/titoBouzout/SideBarEnhancements"
+          version: "st3"
+        - dest: "GitGutter"
+          repo: "https://github.com/jisaacks/GitGutter.git"
+          version: "master"
+        - dest: "BracketHighlighter"
+          repo: "https://github.com/facelessuser/BracketHighlighter.git"
+          version: "master"
+        - dest: "Theme - Soda"
+          repo: "https://github.com/buymeasoda/soda-theme.git"
+          version: "master"
+        - dest: "Base16"
+          repo: "https://github.com/chriskempson/base16-textmate.git"
+          version: "master"
+        - dest: "ApplySyntax"
+          repo: "https://github.com/facelessuser/ApplySyntax.git"
+          version: "master"
+        - dest: "SublimeAllAutocomplete"
+          repo: "https://github.com/alienhard/SublimeAllAutocomplete"
+          version: "master"
+        - dest: "Ansible"
+          repo: "https://github.com/clifford-github/sublime-ansible.git"
+          version: "master"
+    - sublime_text_color_scheme: "Packages/Tomorrow Color Schemes/Tomorrow.tmTheme"
+    - sublime_text_theme: "Soda Light.sublime-theme"
+    - osx_defaults:
+      - domain: 'com.apple.dock'
+        key: 'autohide'
+        type: boolean
+        value: false
+      - domain: 'com.apple.dock'
+        key: 'minimize-to-application'
+        type: integer
+        value: 1
+      - domain: 'com.apple.dock'
+        key: 'show-process-indicators'
+        type: boolean
+        value: true
+      - domain: 'com.apple.dock'
+        key: 'orientation'
+        type: string
+        value: right
+      - domain: 'com.apple.dock'
+        key: 'largesize'
+        type: float
+        value: 1
+      - domain: 'com.apple.dock'
+        key: 'expose-animation-duration'
+        type: integer
+        value: 0
+      - domain: 'com.apple.dock'
+        key: 'showhidden'
+        type: boolean
+        value: true
+      - domain: 'com.apple.screencapture'
+        key: 'location'
+        type: string
+        value: ~/Desktop/screenshots
+      - domain: 'com.apple.menuextra.clock'
+        key: 'DateFormat'
+        type: string
+        value: EEE MMM d  HH:mm
+      - domain: 'com.apple.menuextra.battery'
+        key: 'ShowPercent'
+        type: string
+        value: 'YES'
+      - domain: 'com.apple.finder'
+        key: 'FXPreferredViewStyle'
+        type: string
+        value: "clmv"
+      - domain: 'com.apple.finder'
+        key: 'FXDefaultSearchScope'
+        type: string
+        value: "SCcf"
+      - domain: 'com.apple.finder'
+        key: 'ShowStatusBar'
+        type: boolean
+        value: true
+      - domain: 'com.apple.finder'
+        key: 'OpenWindowForNewRemovableDisk'
+        type: boolean
+        value: true
+      - domain: 'com.apple.finder'
+        key: '_FXShowPosixPathInTitle'
+        type: boolean
+        value: true
+      - domain: 'com.apple.finder'
+        key: 'FXEnableExtensionChangeWarning'
+        type: boolean
+        value: false
+      - domain: 'com.apple.finder'
+        key: 'WarnOnEmptyTrash'
+        type: boolean
+        value: false
+      - domain: 'com.apple.finder'
+        key: 'QLEnableTextSelection'
+        type: boolean
+        value: true
+      - domain: 'com.apple.finder'
+        key: 'AppleShowAllFiles'
+        type: boolean
+        value: true
+      - domain: 'com.apple.Safari'
+        key: 'DebugSnapshotsUpdatePolicy'
+        type: integer
+        value: 2
+      - domain: 'com.apple.Safari'
+        key: 'IncludeInternalDebugMenu'
+        type: boolean
+        value: true
+      - domain: 'com.apple.Safari'
+        key: 'WebKitDeveloperExtrasEnabledPreferenceKey'
+        type: boolean
+        value: true
+      - domain: 'com.apple.Safari'
+        key: 'IncludeDevelopMenu'
+        type: boolean
+        value: true
+      - domain: 'com.apple.Safari'
+        key: 'com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled'
+        type: boolean
+        value: true
+      - domain: 'com.apple.Safari'
+        key: 'FindOnPageMatchesWordStartsOnly'
+        type: boolean
+        value: false
+      - domain: 'com.apple.Safari'
+        key: 'ProxiesInBookmarksBar'
+        type: string
+        value: ()
+      - domain: 'com.apple.BluetoothAudioAgent'
+        key: ''
+        type: string
+        value: ()
+      - domain: 'com.apple.NetworkBrowser'
+        key: '"Apple Bitpool Min (editable)"'
+        type: integer
+        value: 40
+      - domain: 'com.apple.BezelServices'
+        key: 'kDim'
+        type: boolean
+        value: true
+      - domain: 'com.apple.BezelServices'
+        key: 'kDimTime'
+        type: integer
+        value: 300
+      - domain: 'com.apple.loginwindow'
+        key: 'TALLogoutSavesState'
+        type: boolean
+        value: false
+      - domain: 'com.apple.loginwindow'
+        key: 'LoginwindowLaunchesRelaunchApps'
+        type: boolean
+        value: false
+      - domain: 'com.apple.desktopservices'
+        key: 'DSDontWriteNetworkStores'
+        type: boolean
+        value: true
+      - domain: 'com.apple.print.PrintingPrefs'
+        key: 'Quit When Finished'
+        type: boolean
+        value: true
+      - domain: 'com.apple.frameworks.diskimages'
+        key: 'skip-verify'
+        type: boolean
+        value: true
+      - domain: 'com.apple.frameworks.diskimages'
+        key: 'skip-verify-locked'
+        type: boolean
+        value: true
+      - domain: 'com.apple.frameworks.diskimages'
+        key: 'skip-verify-remote'
+        type: boolean
+        value: true
+      - domain: 'com.apple.DiskUtility'
+        key: 'DUDebugMenuEnabled'
+        type: boolean
+        value: true
+      - domain: 'com.apple.DiskUtility'
+        key: 'advanced-image-options'
+        type: boolean
+        value: true
+      - domain: 'com.apple.frameworks.diskimages'
+        key: 'auto-open-ro-root'
+        type: boolean
+        value: true
+      - domain: 'com.apple.frameworks.diskimages'
+        key: 'auto-open-rw-root'
+        type: boolean
+        value: true
+      - domain: 'com.google.Chrome'
+        key: 'ExtensionInstallSources'
+        type: array
+        value:
+          - "https://*.github.com/*"
+          - "http://userscripts.org/*"
+      - domain: 'com.google.Chrome.canary'
+        key: 'ExtensionInstallSources'
+        type: array
+        value:
+          - "https://*.github.com/*"
+          - "http://userscripts.org/*"
+      - domain: 'NSGlobalDomain'
+        key: 'NSTableViewDefaultSizeMode'
+        type: integer
+        value: 1
+      - domain: 'NSGlobalDomain'
+        key: 'KeyRepeat'
+        type: integer
+        value: 2
+      - domain: 'NSGlobalDomain'
+        key: 'InitialKeyRepeat'
+        type: integer
+        value: 20
+      - domain: 'NSGlobalDomain'
+        key: 'NSNavPanelExpandedStateForSaveMode'
+        type: boolean
+        value: true
+      - domain: 'NSGlobalDomain'
+        key: 'PMPrintingExpandedStateForPrint'
+        type: boolean
+        value: true
+      - domain: 'NSGlobalDomain'
+        key: 'NSQuitAlwaysKeepsWindows'
+        type: boolean
+        value: false
+      - domain: 'NSGlobalDomain'
+        key: 'ApplePressAndHoldEnabled'
+        type: boolean
+        value: false
+      - domain: 'NSGlobalDomain'
+        key: 'AppleKeyboardUIMode'
+        type: integer
+        value: 3
+      - domain: 'NSGlobalDomain'
+        key: 'AppleFontSmoothing'
+        type: integer
+        value: 2
+      - domain: 'NSGlobalDomain'
+        key: 'AppleShowAllExtensions'
+        type: boolean
+        value: true
+      - domain: 'NSGlobalDomain'
+        key: 'NSAutomaticSpellingCorrectionEnabled'
+        type: boolean
+        value: false
+      - domain: 'NSGlobalDomain'
+        key: 'NSAutomaticWindowAnimationsEnabled'
+        type: boolean
+        value: false
+      - domain: 'NSGlobalDomain'
+        key: 'WebKitDeveloperExtras'
+        type: boolean
+        value: true
+      - domain: 'NSGlobalDomain'
+        key: 'com.apple.swipescrolldirection'
+        type: boolean
+        value: false
