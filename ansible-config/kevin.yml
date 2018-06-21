@@ -6,7 +6,7 @@
   tasks:
     - name: install kevin apt-get applications
       apt: name={{item}} state=latest
-      sudo: yes
+      become: yes
       with_items:
         - ant
         - arping
@@ -25,11 +25,13 @@
         - pbzip2
         - redis-server
         - tmux
-        - vpn-unlimited
         - sublime-text
+        - linuxbrew-wrapper
+        - dconf-tools
 
     - name: install kevin npm applications
       npm: name={{item}} state=latest global=yes
+      become: yes
       with_items:
         - autoprefixer
         - bower

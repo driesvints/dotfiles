@@ -360,6 +360,10 @@ export PATH=${PATH}:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools
 
 # homebrew
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+# linuxbrew
+if [ -d "/home/linuxbrew" ]; then
+  export PATH='/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin':"$PATH"
+fi
 
 # export GOPATH=$HOME/go
 
@@ -368,8 +372,6 @@ unset MAILCHECK
 
 # Load Bash It
 source $BASH_IT/bash_it.sh
-
-[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm" # Load GVM into a shell session *as a function*
 
 # Don't check mail when opening terminal.
 unset MAILCHECK
@@ -396,3 +398,6 @@ export SCM_CHECK=true
 source $BASH_IT/bash_it.sh
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+[[ -s "$HOME/.nvm/nvm.sh" ]] && source "$HOME/.nvm/nvm.sh" # This loads nvm
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm" # Load GVM into a shell session *as a function*
+
