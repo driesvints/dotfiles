@@ -50,6 +50,9 @@ alias goconvey='goop exec goconvey -workDir="$GOPATH/src/${PWD##*/}"'
 
 # check internet connection
 alias pingoo='ping -c 3 www.google.com'
+if [ "$(uname)" != "Darwin" ]; then
+  alias pbcopy="xclip -sel clip"
+fi
 
 # Load private stuff - keys and such
 source $HOME/.private_profile
