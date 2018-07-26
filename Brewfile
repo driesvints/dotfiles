@@ -20,7 +20,7 @@ brew 'zsh-completions'
 
 # Development
 brew 'php'
-brew 'mysql'
+brew 'mysql@5.7'
 brew 'node'
 
 # Apps
