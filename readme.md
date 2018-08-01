@@ -6,7 +6,7 @@ Read the blog post: https://medium.com/@driesvints/getting-started-with-dotfiles
 
 ## A Fresh macOS Setup
 
-The instructions below are for when you've already set up your dotfiles. If you want to get started with your own dotfiles you can [find instructions below](#your-own-dotfiles).
+These instructions are for when you've already set up your dotfiles. If you want to get started with your own dotfiles you can [find instructions below](#your-own-dotfiles).
 
 ### Before you re-install
 
