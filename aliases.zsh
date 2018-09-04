@@ -15,6 +15,7 @@ alias sites="cd $HOME/Sites"
 
 # Laravel
 alias a="php artisan"
+alias ams="php artisan migrate:fresh --seed"
 
 # Vagrant
 alias v="vagrant global-status"
@@ -32,8 +33,8 @@ dbuild() { docker build -t=$1 .; }
 dbash() { docker exec -it $(docker ps -aqf "name=$1") bash; }
 
 # Git
-alias commit="git commit -am"
-alias gcommit="git commit -a"
+alias commit="git add . && git commit -m"
+alias gcommit="git add . && git commit"
 alias gst="git status"
 alias gc="git checkout"
 alias gd="git diff"
