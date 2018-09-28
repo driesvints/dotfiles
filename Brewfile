@@ -5,7 +5,7 @@ tap 'caskroom/fonts'
 tap 'caskroom/versions'
 tap 'homebrew/bundle'
 
-# Install Binaries
+# Binaries
 brew 'awscli'
 brew 'bash' # Bash 4
 brew 'bat'
@@ -71,7 +71,7 @@ cask 'font-source-code-pro'
 cask 'font-source-sans-pro'
 cask 'font-source-serif-pro'
 
-# Install Mac App Store apps
+# Mac App Store
 mas '1Password', id: 1333542190
 mas 'Byword', id: 420212497
 mas 'Deckset', id: 847496013
