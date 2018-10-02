@@ -1,0 +1,21 @@
+[user]
+  email = kkrauss@twilio.com
+  name = Kevin Krauss
+[alias]
+  pf = push --force-with-lease
+  pretty = log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+[merge]
+  tool = meld
+[core]
+  editor = subl -w -n
+  excludesfile = /Users/kkrauss/.gitignore_global
+  hooksPath = /Users/kkrauss/.git-hooks
+[diff]
+  tool = meld
+[mergetool]
+  keepBackup = false
+[pull]
+  rebase = true
+[rebase]
+  autosquash = true
+  autostash = true

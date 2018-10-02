@@ -23,3 +23,8 @@ http://download.virtualbox.org/virtualbox/5.2.12/virtualbox-5.2_5.2.12-122591~Ub
 
 gsettings set org.pantheon.files.preferences single-click false
 
+
+
+mac
+
+brew install https://raw.githubusercontent.com/kadwanev/bigboybrew/master/Library/Formula/sshpass.rb

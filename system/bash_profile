@@ -28,7 +28,6 @@ alias commits='git shortlog -s -n'
 alias begs='bundle exec guard start'
 alias beef='bundle exec foreman start'
 alias be='bundle exec'
-alias deploy='bundle exec cap deploy'
 alias rs='bundle exec rails s'
 alias rc='bundle exec rails c'
 alias rollback='time bundle exec rake db:rollback --trace'
@@ -72,7 +71,7 @@ resetsoft() {
 }
 
 #locate = find
-spot(){
+spot() {
   find $1 -name $2 -print
 }
 
@@ -138,7 +137,7 @@ deploycomm() {
 }
 
 # splat will make many terminal tabs with selected hosts connecting
-splat(){
+splat() {
   if [[ $TERM_PROGRAM = iTerm.app ]];then
     ruby $HOME/Documents/splat.rb "$@"
   else
@@ -148,7 +147,7 @@ splat(){
 
 # git branch cleaner
 # clean_branches regex_matching_branch_names [test]
-clean_branches(){
+clean_branches() {
   if [[ $# -ne 2 ]];then
     git branch  | cut -c3- | egrep $1 | xargs git branch -d
   else
@@ -156,7 +155,7 @@ clean_branches(){
   fi
 }
 
-merged_branches(){
+merged_branches() {
   local current_branch=$(git rev-parse --abbrev-ref HEAD)
   for branch in $(git branch --merged | cut -c3-)
     do
@@ -169,7 +168,7 @@ merged_branches(){
   done
 }
 
-clean_remote_branches(){
+clean_remote_branches() {
   if [[ $# -ne 2 ]];then
     matching_branches=$(git branch -r | cut -c3- | egrep $1)
     read remote branch <<<$(IFS="/"; echo $matching_branches)
@@ -205,7 +204,7 @@ wfull() {
 }
 
 # hello does a loop and says a default saying infinately or a custom saying
-hello(){
+hello() {
   SAYTHIS="hello... my name is inigo montoya. You killed my father prepare to die"
   if [[ $1 ]]; then
     SAYTHIS=$1
@@ -214,7 +213,7 @@ hello(){
 }
 
 # take a bash script and turn it into a Mac OSX app
-appify(){
+appify() {
   APPNAME=${2:-$(basename "$1" ".sh")}
   DIR="$APPNAME.app/Contents/MacOS"
   if [ -a "$APPNAME.app" ]; then
@@ -233,7 +232,7 @@ appify(){
 
 # scans for ips in the network given by the first 3 octets
 # scannc 192.168.2 [lookup]
-scannc(){
+scannc() {
   range=$1
   lookup=$2
   for ip in $(eval echo $range.{1..255})
@@ -250,7 +249,7 @@ scannc(){
 }
 
 #w/ ping
-scanping(){
+scanping() {
   range=$1
   lookup=$2
   for ip in $(eval echo $range.{1..255})
@@ -266,12 +265,12 @@ scanping(){
   done
 }
 
-nc_port_scan(){
+nc_port_scan() {
   nc -z $1 1-9999
 }
 
 # add a cron entry without worrying if that entry exists already
-addCron(){
+addCron() {
   entry=$1
   crontab -l | egrep "$entry" >> /dev/null
   if [ $? -ne 0 ]; then
@@ -291,11 +290,11 @@ jvm() {
  echo $(java -version)
 }
 
-aux(){
+aux() {
   ps aux | grep $1
 }
 
-wgif(){
+wgif() {
   wget -P $HOME/Downloads/gifs/ $1
 }
 
@@ -322,27 +321,12 @@ gpssh() {
   ssh -t kkrauss@bastion.infra.gopro-platform.com ssh $gphost
 }
 
-#dota stuff
-play_dota(){
-  launchctl unload $HOME/Library/LaunchAgents/homebrew.mxcl.redis.plist
-  launchctl unload $HOME/Library/LaunchAgents/homebrew.mxcl.elasticsearch.plist
-  aux 'redis\|elasticsearch'
-}
-
-stop_dota(){
-  launchctl load $HOME/Library/LaunchAgents/homebrew.mxcl.redis.plist
-  launchctl load $HOME/Library/LaunchAgents/homebrew.mxcl.elasticsearch.plist
-  aux 'redis\|elasticsearch'
-}
-
 # # Iterm colors!!!!
 # if [[ $TERM_PROGRAM = iTerm.app ]]; then
 #   osascript -e 'run script (POSIX file "'$HOME'/Documents/iterm_random_colors.scpt")'
 # fi
 
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
-fi
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
 # RVM Prompt settings
 [[ -s "$HOME/.git_prompt" ]] && . "$HOME/.git_prompt"
@@ -356,25 +340,13 @@ export BASH_IT=$HOME/.bash_it
 # location /.bash_it/themes/
 export BASH_IT_THEME='powerline-plus'
 
-# android-sdk
-export ANDROID_HOME=/usr/local/opt/android-sdk
-
-export PATH=${PATH}:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools
-
 # homebrew
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+
 # linuxbrew
 if [ -d "/home/linuxbrew" ]; then
   export PATH='/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin':"$PATH"
 fi
-
-# export GOPATH=$HOME/go
-
-# Don't check mail when opening terminal.
-unset MAILCHECK
-
-# Load Bash It
-source $BASH_IT/bash_it.sh
 
 # Don't check mail when opening terminal.
 unset MAILCHECK
@@ -403,4 +375,13 @@ source $BASH_IT/bash_it.sh
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.nvm/nvm.sh" ]] && source "$HOME/.nvm/nvm.sh" # This loads nvm
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm" # Load GVM into a shell session *as a function*
+#pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
+export OWL="/Users/kkrauss/code/owl"
+eval "$("$OWL/bin/owl" init -)"
 
