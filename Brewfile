@@ -25,6 +25,7 @@ brew 'php'
 brew 'imagick'
 brew 'mysql'
 brew 'node'
+brew 'redis'
 
 # Apps
 cask 'aerial'
