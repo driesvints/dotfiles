@@ -11,6 +11,7 @@ brew 'bash' # Bash 4
 brew 'bat'
 brew 'coreutils' # Those that come with macOS are outdated
 brew 'git'
+brew 'gnupg2'
 brew 'grep'
 brew 'mackup'
 brew 'mas'
