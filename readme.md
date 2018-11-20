@@ -2,7 +2,7 @@
 
 This repository serves as my way to help me setup and maintain my Mac. It takes the effort out of installing everything manually. Everything which is needed to install my preffered setup of macOS is detailed in this readme. Feel free to explore, learn and copy parts for your own dotfiles. Enjoy! :smile:
 
-Read the blog post: https://medium.com/@driesvints/getting-started-with-dotfiles-76bf046d035c
+Read the blog post: https://driesvints.com/blog/getting-started-with-dotfiles
 
 ## A Fresh macOS Setup
 
