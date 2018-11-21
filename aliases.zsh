@@ -35,6 +35,7 @@ alias vrebuild="vagrant destroy --force && vagrant up"
 # Git
 alias commit="git add . && git commit -m"
 alias gcommit="git add . && git commit"
+alias wip="commit wip"
 alias gst="git status"
 alias gc="git checkout"
 alias gd="git diff"
