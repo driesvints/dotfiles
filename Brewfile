@@ -79,6 +79,7 @@ cask 'font-source-serif-pro'
 mas '1Password', id: 1333542190
 mas 'Byword', id: 420212497
 mas 'Giphy Capture', id: 668208984
+mas 'Keynote', id: 409183694
 mas 'Sip', id: 507257563
 mas 'Spark', id: 1176895641
 mas 'The Unarchiver', id: 425424353
