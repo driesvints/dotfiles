@@ -37,6 +37,9 @@
         - watch
         - wget
         - readline
+        - vegeta
+        - jaggr
+        - jplot
 
   vars:
     - computername: mbr-27484

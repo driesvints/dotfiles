@@ -16,6 +16,9 @@ alias tat='tmux attach -t'
 alias ga='git add .'
 alias gc='git commit -m'
 alias gco='git checkout'
+alias gush='git push origin'
+alias gull='git pull origin master'
+alias gup='git checkout origin master && git pull origin master'
 alias gs='git status -sb'
 alias gp='git push'
 alias got='git'
@@ -43,9 +46,15 @@ alias bup='source ~/.bash_profile'
 alias ttop='top -U $USER'
 alias bedit='subl ~/.bash_profile'
 alias hosts='sudo subl /etc/hosts'
-
+alias dc='docker-compose'
+alias deef='docker-compose stop && docker-compose rm -svf && docker-compose up --build'
+alias drmi='docker rmi -f $(docker images -f "dangling=true" -q)'
+alias dvol='docker volume rm $(docker volume ls -qf dangling=true)'
+alias dclean='docker rmi -f $(docker images -f "dangling=true" -q); docker volume rm $(docker volume ls -qf dangling=true)'
+alias dprune='docker system prune -a'
+alias oci='eval "$(chef shell-init bash)"'
 # golang alias things
-alias goconvey='goop exec goconvey -workDir="$GOPATH/src/${PWD##*/}"'
+alias cdg='cd $GOPATH/src'
 
 # check internet connection
 alias pingoo='ping -c 3 www.google.com'
@@ -61,9 +70,33 @@ gl() {
   git pull origin $(git rev-parse --abbrev-ref HEAD)
 }
 
+dkill() {
+  local docker_hex=$(docker ps -aqf "name=${1}")
+  docker stop $docker_hex && docker rm $docker_hex
+}
+
+# bash help
+belp() {
+  local opts=""
+  if [ "$#" -gt 1 ]; then
+    local search=${*: -1}
+    grep "${@: 0:$#}" $search $HOME/.bash_profile
+  else
+    grep $1 $HOME/.bash_profile
+  fi
+}
+
+cutter() {
+  local cookbook_name=$1
+  local host=$2
+  scp -r ${HOME}/code/chef/cookbooks/$cookbook_name $host:/tmp/${cookbook_name}/
+  scp -r ${HOME}/code/chef/roles/${cookbook_name}.rb $host:/tmp/${cookbook_name}.rb
+  ssh $host "sudo -u root mv /tmp/${cookbook_name} /usr/local/chef-config/cookbooks/ && sudo -u root mv /tmp/${cookbook_name}.rb /usr/local/chef-config/roles/"
+}
+
 resetsoft() {
   local plist=1
-  if [ -z $1 ]; then
+  if [ -z "${1}" ]; then
     plist=$1
   fi
 
@@ -375,6 +408,7 @@ source $BASH_IT/bash_it.sh
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.nvm/nvm.sh" ]] && source "$HOME/.nvm/nvm.sh" # This loads nvm
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm" # Load GVM into a shell session *as a function*
+
 #pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
@@ -384,4 +418,8 @@ fi
 
 export OWL="/Users/kkrauss/code/owl"
 eval "$("$OWL/bin/owl" init -)"
+
+# history size
+export HISTFILESIZE=100000
+export HISTSIZE=100000
 
