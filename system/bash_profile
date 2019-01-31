@@ -18,7 +18,7 @@ alias gc='git commit -m'
 alias gco='git checkout'
 alias gush='git push origin'
 alias gull='git pull origin master'
-alias gup='git checkout origin master && git pull origin master'
+alias gup='git checkout master && git pull origin master'
 alias gs='git status -sb'
 alias gp='git push'
 alias got='git'
@@ -46,6 +46,7 @@ alias bup='source ~/.bash_profile'
 alias ttop='top -U $USER'
 alias bedit='subl ~/.bash_profile'
 alias hosts='sudo subl /etc/hosts'
+alias doc='docker'
 alias dc='docker-compose'
 alias deef='docker-compose stop && docker-compose rm -svf && docker-compose up --build'
 alias drmi='docker rmi -f $(docker images -f "dangling=true" -q)'
@@ -53,8 +54,12 @@ alias dvol='docker volume rm $(docker volume ls -qf dangling=true)'
 alias dclean='docker rmi -f $(docker images -f "dangling=true" -q); docker volume rm $(docker volume ls -qf dangling=true)'
 alias dprune='docker system prune -a'
 alias oci='eval "$(chef shell-init bash)"'
+
 # golang alias things
 alias cdg='cd $GOPATH/src'
+
+# python alias
+alias nose='source venv/bin/activate && nosetests'
 
 # check internet connection
 alias pingoo='ping -c 3 www.google.com'
