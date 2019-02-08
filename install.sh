@@ -2,14 +2,8 @@
 
 echo "Setting up your Computer..."
 
-if ! [ -d "$HOME/.rvm" ]; then
-  gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
-  \curl -sSL https://get.rvm.io | bash -s stable --ruby
-fi
-
-if ! [ -d "$HOME/.nvm" ]; then
-  \curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
-  nvm install 10.7.0
+if ! [ -d "$HOME/.asdf" ]; then
+  git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.6.3
 fi
 
 # Check for Homebrew and install if we don't have it
@@ -37,15 +31,18 @@ ln -s $HOME/.dotfiles/bash_it/themes/powerline-plus $HOME/.bash_it/themes/powerl
 
 # Update Homebrew recipes
 brew update
-brew install ansible
-
-pushd ansible-config
-ansible-playbook -i "localhost," $USER.yml
-popd
+if [ "$(uname)" == "Darwin" ]; then
+  brew bundle
+else
+  brew bundle --file Brewfile.linux
+fi
 # Create a Sites directory
 # This is a default directory for macOS user accounts but doesn't comes pre-installed
 mkdir $HOME/Sites || echo "Sites exists"
 
 # Set macOS preferences
 # We will run this last because this will reload the shell
-# . .macos
+if [ "$(uname)" == "Darwin" ]; then
+  source .macos
+fi
+source $HOME/.bash_profile

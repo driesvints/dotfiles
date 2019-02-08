@@ -75,6 +75,15 @@ gl() {
   git pull origin $(git rev-parse --abbrev-ref HEAD)
 }
 
+gisq() {
+  local current_branch=$(git rev-parse --abbrev-ref HEAD)
+  local old_branch=old-branch
+  git branch -m $old_branch
+  git checkout master && git pull origin master
+  git checkout -b $current_branch
+  git merge --squash $old_branch
+}
+
 dkill() {
   local docker_hex=$(docker ps -aqf "name=${1}")
   docker stop $docker_hex && docker rm $docker_hex
@@ -409,7 +418,8 @@ export SCM_CHECK=true
 
 # Load Bash It
 source $BASH_IT/bash_it.sh
-
+[[ -s "$HOME/.asdf/asdf.sh" ]] && source "$HOME/.asdf/asdf.sh"
+[[ -s "$HOME/.asdf/asdf.sh" ]] && source "$HOME/.asdf/completions/asdf.bash"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.nvm/nvm.sh" ]] && source "$HOME/.nvm/nvm.sh" # This loads nvm
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm" # Load GVM into a shell session *as a function*
@@ -427,4 +437,3 @@ eval "$("$OWL/bin/owl" init -)"
 # history size
 export HISTFILESIZE=100000
 export HISTSIZE=100000
-
