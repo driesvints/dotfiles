@@ -25,6 +25,7 @@ brew 'zsh-completions'
 brew 'php'
 brew 'imagick'
 brew 'mysql'
+brew 'nginx'
 brew 'node'
 brew 'redis'
 
