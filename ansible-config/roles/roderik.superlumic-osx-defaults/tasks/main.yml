@@ -1,4 +1,0 @@
----
-
-- osx_defaults: domain="{{ item.domain }}" key="{{ item.key }}" type="{{ item.type }}" value="{{ item.value }}" state=present
-  with_items: "{{ osx_defaults }}"

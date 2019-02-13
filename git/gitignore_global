@@ -37,3 +37,5 @@ ehthumbs.db
 Thumbs.db
 .idea/
 .vagrant/
+.tool-versions
+.python-version

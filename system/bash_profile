@@ -68,7 +68,7 @@ if [ "$(uname)" != "Darwin" ]; then
 fi
 
 # Load private stuff - keys and such
-source $HOME/.private_profile
+[[ -s "$HOME/.private_profile" ]] && source $HOME/.private_profile
 
 # git pull origin current branch
 gl() {
@@ -420,16 +420,6 @@ export SCM_CHECK=true
 source $BASH_IT/bash_it.sh
 [[ -s "$HOME/.asdf/asdf.sh" ]] && source "$HOME/.asdf/asdf.sh"
 [[ -s "$HOME/.asdf/asdf.sh" ]] && source "$HOME/.asdf/completions/asdf.bash"
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-[[ -s "$HOME/.nvm/nvm.sh" ]] && source "$HOME/.nvm/nvm.sh" # This loads nvm
-[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm" # Load GVM into a shell session *as a function*
-
-#pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
 
 export OWL="/Users/kkrauss/code/owl"
 eval "$("$OWL/bin/owl" init -)"

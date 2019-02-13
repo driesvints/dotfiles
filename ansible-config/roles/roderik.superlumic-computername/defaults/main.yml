@@ -1,4 +1,0 @@
----
-# defaults file for ansible-role-computername
-
-computername: "ChangeThis"
