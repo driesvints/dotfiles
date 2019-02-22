@@ -17,6 +17,9 @@ alias sites="cd $HOME/Sites"
 alias a="php artisan"
 alias ams="php artisan migrate:fresh --seed"
 
+# PHP
+alias cfresh="rm -rf vendor/ composer.lock && composer i"
+
 # Vagrant
 alias v="vagrant global-status"
 alias vup="vagrant up"
