@@ -20,6 +20,9 @@ alias ams="php artisan migrate:fresh --seed"
 # PHP
 alias cfresh="rm -rf vendor/ composer.lock && composer i"
 
+# JS
+alias nfresh="rm -rf node_modules/ package-lock.json && npm install"
+
 # Vagrant
 alias v="vagrant global-status"
 alias vup="vagrant up"
