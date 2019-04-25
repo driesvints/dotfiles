@@ -18,6 +18,7 @@ brew 'mas'
 brew 'pkg-config' # https://github.com/driesvints/dotfiles/issues/20
 brew 'trash'
 brew 'tree'
+brew 'zlib' # Needed for Memcached
 brew 'zsh'
 brew 'zsh-completions'
 
