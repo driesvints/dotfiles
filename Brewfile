@@ -7,18 +7,19 @@ tap 'homebrew/bundle'
 
 # Binaries
 brew 'awscli'
-brew 'bash' # Bash 4
-brew 'bat'
+brew 'bash' # Latest Bash version
+brew 'bat' # "cat" on steroids
 brew 'coreutils' # Those that come with macOS are outdated
 brew 'git'
 brew 'gnupg2'
 brew 'grep'
 brew 'mackup'
-brew 'mas'
+brew 'mas' # Mac App Store manager
 brew 'pkg-config' # https://github.com/driesvints/dotfiles/issues/20
-brew 'trash'
-brew 'tree'
+brew 'trash' # Manage the Trash bin
+brew 'tree' # List directories in a tree structure
 brew 'zlib' # Needed for Memcached
+brew 'zplug' # ZSH Plugin Manager
 brew 'zsh'
 brew 'zsh-completions'
 
