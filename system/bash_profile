@@ -16,11 +16,9 @@ alias tat='tmux attach -t'
 alias ga='git add .'
 alias gc='git commit -m'
 alias gco='git checkout'
-alias gush='git push origin'
 alias gull='git pull origin master'
 alias gup='git checkout master && git pull origin master'
 alias gs='git status -sb'
-alias gp='git push'
 alias got='git'
 alias gut='git'
 alias glog='git log --oneline --decorate'
@@ -53,6 +51,7 @@ alias drmi='docker rmi -f $(docker images -f "dangling=true" -q)'
 alias dvol='docker volume rm $(docker volume ls -qf dangling=true)'
 alias dclean='docker rmi -f $(docker images -f "dangling=true" -q); docker volume rm $(docker volume ls -qf dangling=true)'
 alias dprune='docker system prune -a'
+alias dcon='docker container prune --filter "until=12h"'
 alias oci='eval "$(chef shell-init bash)"'
 
 # golang alias things
@@ -70,6 +69,10 @@ fi
 # Load private stuff - keys and such
 [[ -s "$HOME/.private_profile" ]] && source $HOME/.private_profile
 
+gush() {
+  git push origin $(git rev-parse --abbrev-ref HEAD)
+}
+
 # git pull origin current branch
 gl() {
   git pull origin $(git rev-parse --abbrev-ref HEAD)
@@ -77,11 +80,12 @@ gl() {
 
 gisq() {
   local current_branch=$(git rev-parse --abbrev-ref HEAD)
-  local old_branch=old-branch
+  local old_branch=gisq-old-branch
   git branch -m $old_branch
   git checkout master && git pull origin master
   git checkout -b $current_branch
   git merge --squash $old_branch
+  git branch -D $old_branch
 }
 
 dkill() {
@@ -91,7 +95,6 @@ dkill() {
 
 # bash help
 belp() {
-  local opts=""
   if [ "$#" -gt 1 ]; then
     local search=${*: -1}
     grep "${@: 0:$#}" $search $HOME/.bash_profile
@@ -119,7 +122,8 @@ resetsoft() {
 
 #locate = find
 spot() {
-  find $1 -name $2 -print
+  local where=${2:-.}
+  find $where -name $1 -print
 }
 
 #launchctl load - start a process
@@ -177,10 +181,6 @@ recolor(){
 # list running launchctl programs
 launch-list(){
   ruby $HOME/launch-list.rb "$@"
-}
-
-deploycomm() {
-  ruby $HOME/deploy_comm.rb "$@"
 }
 
 # splat will make many terminal tabs with selected hosts connecting
@@ -332,11 +332,6 @@ known_cut() {
   sed -ie ${1}d $HOME/.ssh/known_hosts
 }
 
-jvm() {
- export JAVA_HOME=`/usr/libexec/java_home -v 1.$2`
- echo $(java -version)
-}
-
 aux() {
   ps aux | grep $1
 }
@@ -358,15 +353,6 @@ wgif() {
 #     echo "$(git config --global user.email)"
 #   fi
 # }
-
-get_ec2_ip() {
-  ruby ~/Documents/get_ec2_ip.rb -c "$1" -s "$2"
-}
-
-gpssh() {
-  local gphost=$(get_ec2_ip "$1" "$2")
-  ssh -t kkrauss@bastion.infra.gopro-platform.com ssh $gphost
-}
 
 # # Iterm colors!!!!
 # if [[ $TERM_PROGRAM = iTerm.app ]]; then
@@ -415,11 +401,18 @@ export SCM_CHECK=true
 # (Advanced): Uncomment this to make Bash-it reload itself automatically
 # after enabling or disabling aliases, plugins, and completions.
 # export BASH_IT_AUTOMATIC_RELOAD_AFTER_CONFIG_CHANGE=1
-
 # Load Bash It
 source $BASH_IT/bash_it.sh
+
+# asdf-vm related stuff
+setJavaHome() {
+  if [[ -d "$HOME/.asdf/plugins/java" ]]; then
+    export JAVA_HOME=${HOME}/.asdf/installs/java/$(asdf current java | awk '{print $1}')
+  fi
+}
 [[ -s "$HOME/.asdf/asdf.sh" ]] && source "$HOME/.asdf/asdf.sh"
 [[ -s "$HOME/.asdf/asdf.sh" ]] && source "$HOME/.asdf/completions/asdf.bash"
+setJavaHome
 
 export OWL="/Users/kkrauss/code/owl"
 eval "$("$OWL/bin/owl" init -)"
@@ -427,3 +420,4 @@ eval "$("$OWL/bin/owl" init -)"
 # history size
 export HISTFILESIZE=100000
 export HISTSIZE=100000
+export HISTCONTROL=ignoredups:erasedups

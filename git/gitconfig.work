@@ -14,8 +14,19 @@
   hooksPath = /Users/kkrauss/.git-hooks
 [diff]
   tool = meld
+[difftool]
+  prompt = false
+[difftool "meld"]
+  trustExitCode = true
+  cmd = open -W -a Meld --args \"$LOCAL\" \"$REMOTE\"
+[merge]
+  tool = meld
 [mergetool]
+  prompt = false
   keepBackup = false
+[mergetool "meld"]
+  trustExitCode = true
+  cmd = open -W -a Meld --args --auto-merge \"$LOCAL\" \"$BASE\" \"$REMOTE\" --output=\"$MERGED\"
 [pull]
   rebase = true
 [rebase]
