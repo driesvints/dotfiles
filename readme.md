@@ -42,7 +42,7 @@ Your Mac is now ready to use!
 
 ## Your Own Dotfiles
 
-**Please note that the instructions below assume you already have set up zplug so make sure to first [install zplug](https://github.com/zplug/zplug#installation) before you continue.**
+**Please note that the instructions below assume you already have set up antibody so make sure to first [install antibody](https://getantibody.github.io/install/) before you continue.**
 
 If you want to start with your own dotfiles from this setup, it's pretty easy to do so. First of all you'll need to fork this repo. After that you can tweak it the way you want.
 
@@ -50,7 +50,7 @@ Go through the [`.macos`](./.macos) file and adjust the settings to your liking.
 
 Check out the [`Brewfile`](./Brewfile) file and adjust the apps you want to install for your machine. Use [their search page](https://caskroom.github.io/search) to check if the app you want to install is available.
 
-Check out the [`aliases.zsh`](./aliases.zsh) file and add your own aliases. If you need to tweak your `$PATH` check out the [`path.zsh`](./path.zsh) file. These files get loaded in because the `.zshrc` file loads the `.dotfiles` directory. You can adjust the [`.zshrc`](./.zshrc) file to your liking to tweak your zplug setup. **Make sure to run `zplug install` after modifying the `.zshrc` file.** More info about how to customize zplug can be found [here](https://github.com/zplug/zplug#usage).
+Check out the [`aliases.zsh`](./aliases.zsh) file and add your own aliases. If you need to tweak your `$PATH` check out the [`path.zsh`](./path.zsh) file. These files get loaded in because the `.zshrc` file loads the `.dotfiles` directory. You can adjust the [`.zshrc`](./.zshrc) file to your liking to tweak your ZSH setup. More info about how to customize Antibody can be found [here](https://getantibody.github.io/usage/).
 
 When installing these dotfiles for the first time you'll need to backup all of your settings with Mackup. Install Mackup and backup your settings with the commands below. Your settings will be synced to iCloud so you can use them to sync between computers and reinstall them when reinstalling your Mac. If you want to save your settings to a different directory or different storage than iCloud, [checkout the documentation](https://github.com/lra/mackup/blob/master/doc/README.md#storage). Also make sure your `.zshrc` file is symlinked from your dotfiles repo to your home directory. 
 
@@ -59,7 +59,7 @@ brew install mackup
 mackup backup
 ```
 
-You can tweak the shell theme, the zplug settings and much more. Go through the files in this repo and tweak everything to your liking.
+You can tweak the shell theme, the Antibody settings and much more. Go through the files in this repo and tweak everything to your liking.
 
 Enjoy your own Dotfiles!
 
