@@ -36,8 +36,10 @@ brew update
 if [ "$(uname)" == "Darwin" ]; then
   brew bundle
 else
-  brew bundle --file Brewfile.linux
+  source Brewfile.linux
+  ln -s $HOME/.dotfiles/linux-config $HOME/.config
 fi
+
 # Create a Sites directory
 # This is a default directory for macOS user accounts but doesn't comes pre-installed
 mkdir $HOME/Sites || echo "Sites exists"
@@ -47,4 +49,5 @@ mkdir $HOME/Sites || echo "Sites exists"
 if [ "$(uname)" == "Darwin" ]; then
   source .macos
 fi
+
 source $HOME/.bash_profile
