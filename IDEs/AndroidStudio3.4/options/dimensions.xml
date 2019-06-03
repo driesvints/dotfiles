@@ -1,0 +1,16 @@
+<application>
+  <component name="DimensionService">
+    <location key="WELCOME_SCREEN.0.0.2880.1800@192dpi" x="1438" y="814" />
+    <location key="deploy.picker.dialog.0.0.2880.1800@192dpi" x="752" y="450" />
+    <location key="com.intellij.ide.util.TipDialog.1440.0.1920.1200" x="2027" y="423" />
+    <location key="SettingsEditor.1440.0.1920.1200" x="219" y="116" />
+    <location key="SettingsEditor.0.0.2880.1800@192dpi" x="440" y="46" />
+    <location key="#Browse_Repositories.0.0.2880.1800@192dpi" x="552" y="134" />
+    <location key="#Plugins.0.0.2880.1800@192dpi" x="576" y="140" />
+    <location key="com.intellij.ide.util.TipDialog.0.0.2880.1800@192dpi" x="760" y="632" />
+    <size key="GridCell.Tab.0.left.0.0.2880.1800@192dpi" width="0" height="0" />
+    <size key="GridCell.Tab.0.center.0.0.2880.1800@192dpi" width="0" height="0" />
+    <size key="GridCell.Tab.0.right.0.0.2880.1800@192dpi" width="0" height="0" />
+    <size key="GridCell.Tab.0.bottom.0.0.2880.1800@192dpi" width="0" height="0" />
+  </component>
+</application>

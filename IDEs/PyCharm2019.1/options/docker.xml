@@ -1,0 +1,5 @@
+<application>
+  <component name="DockerSettings">
+    <option name="dockerComposePath" value="/usr/local/bin/docker-compose" />
+  </component>
+</application>

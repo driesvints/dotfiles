@@ -1,0 +1,66 @@
+<application>
+  <component name="DimensionService">
+    <location key="NewModule_or_Project.wizard.0.0.2880.1800@192dpi" x="632" y="112" />
+    <location key="WELCOME_SCREEN.0.0.2880.1800@192dpi" x="1372" y="806" />
+    <location key="com.intellij.ide.util.TipDialog.0.0.2880.1800@192dpi" x="686" y="592" />
+    <location key="#com.intellij.execution.impl.EditConfigurationsDialog.0.0.2880.1800@192dpi" x="56" y="252" />
+    <location key="SettingsEditor.0.0.2880.1800@192dpi" x="360" y="132" />
+    <location key="#Project_Structure.0.0.2880.1800@192dpi" x="348" y="88" />
+    <location key="#com.intellij.ide.util.TreeClassChooserDialog.0.0.2880.1800@192dpi" x="636" y="558" />
+    <location key="#com.intellij.framework.addSupport.AddSupportForSingleFrameworkDialog.0.0.2880.1800@192dpi" x="862" y="772" />
+    <location key="ProcessPopupWindow.0.0.2880.1800@192dpi" x="1958" y="1580" />
+    <location key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate.0.0.2880.1800@192dpi" x="854" y="722" />
+    <location key="#com.intellij.execution.impl.EditConfigurationsDialog.1440.0.1920.1200" x="1903" y="106" />
+    <location key="WELCOME_SCREEN.1440.0.1920.1200" x="2364" y="503" />
+    <location key="#Project_Structure.1440.0.1920.1200" x="1853" y="194" />
+    <location key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser.1440.0.1920.1200" x="2033" y="300" />
+    <location key="SettingsEditor.1440.0.1920.1200" x="1859" y="265" />
+    <location key="new project wizard.0.0.2880.1800@192dpi" x="644" y="46" />
+    <location key="#com.intellij.execution.impl.EditConfigurationsDialog.0.0.2560.1440" x="709" y="395" />
+    <location key="SettingsEditor.1440.0.2560.1440" x="2172" y="314" />
+    <location key="#Project_Structure.0.0.2560.1440" x="733" y="314" />
+    <location key="new project wizard.1440.0.1920.1200" x="1994" y="23" />
+    <location key="#com.intellij.ide.util.TreeClassChooserDialog.1440.0.1920.1200" x="2119" y="428" />
+    <location key="find.popup.1440.0.1920.1200" x="2033" y="304" />
+    <location key="#Dockerfile.1440.0.1920.1200" x="2125" y="191" />
+    <location key="#ups.1440.0.1920.1200" x="2030" y="317" />
+    <location key="search.everywhere.popup.1440.0.1920.1200" x="2030" y="262" />
+    <location key="#com.intellij.refactoring.turnRefsToSuper.TurnRefsToSuperDialog.1440.0.1920.1200" x="2067" y="542" />
+    <location key="com.intellij.testIntegration.createTest.CreateTestDialog.1440.0.1920.1200" x="2086" y="365" />
+    <location key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog.1440.0.1920.1200" x="2103" y="375" />
+    <location key="DockerComposeFileDialog.1440.0.1920.1200" x="2326" y="326" />
+    <location key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog.0.0.2880.1800@192dpi" x="744" y="412" />
+    <location key="#Rust.0.0.2880.1800@192dpi" x="550" y="486" />
+    <size key="#com.intellij.execution.impl.EditConfigurationsDialog.0.0.2880.1800@192dpi" width="2212" height="1426" />
+    <size key="ProcessPopupWindow.0.0.2880.1800@192dpi" width="800" height="216" />
+    <size key="GridCell.Tab.0.left.0.0.2880.1800@192dpi" width="2662" height="662" />
+    <size key="GridCell.Tab.0.center.0.0.2880.1800@192dpi" width="2662" height="662" />
+    <size key="GridCell.Tab.0.right.0.0.2880.1800@192dpi" width="2662" height="662" />
+    <size key="GridCell.Tab.0.bottom.0.0.2880.1800@192dpi" width="2662" height="662" />
+    <size key="#com.intellij.execution.impl.EditConfigurationsDialog.1440.0.1920.1200" width="1106" height="712" />
+    <size key="GridCell.Tab.0.left.1440.0.1920.1200" width="1808" height="468" />
+    <size key="GridCell.Tab.0.center.1440.0.1920.1200" width="1808" height="468" />
+    <size key="GridCell.Tab.0.right.1440.0.1920.1200" width="1808" height="468" />
+    <size key="GridCell.Tab.0.bottom.1440.0.1920.1200" width="1808" height="468" />
+    <size key="GridCell.Tab.0.left.0.0.2560.1440" width="2448" height="233" />
+    <size key="GridCell.Tab.0.center.0.0.2560.1440" width="2448" height="233" />
+    <size key="GridCell.Tab.0.right.0.0.2560.1440" width="2448" height="233" />
+    <size key="GridCell.Tab.0.bottom.0.0.2560.1440" width="2448" height="233" />
+    <size key="#com.intellij.execution.impl.EditConfigurationsDialog.0.0.2560.1440" width="1106" height="673" />
+    <size key="GridCell.Tab.0.left.1440.0.2560.1440" width="2447" height="233" />
+    <size key="GridCell.Tab.0.center.1440.0.2560.1440" width="2447" height="233" />
+    <size key="GridCell.Tab.0.right.1440.0.2560.1440" width="2447" height="233" />
+    <size key="GridCell.Tab.0.bottom.1440.0.2560.1440" width="2447" height="233" />
+    <size key="find.popup.1440.0.1920.1200" width="664" height="615" />
+    <size key="search.everywhere.popup.1440.0.1920.1200" width="670" height="676" />
+    <size key="SettingsEditor.1440.0.1920.1200" width="1012" height="712" />
+    <size key="GridCell.Tab.1.left.1440.0.1920.1200" width="1808" height="408" />
+    <size key="GridCell.Tab.1.center.1440.0.1920.1200" width="1808" height="408" />
+    <size key="GridCell.Tab.1.right.1440.0.1920.1200" width="1808" height="408" />
+    <size key="GridCell.Tab.1.bottom.1440.0.1920.1200" width="1808" height="408" />
+    <size key="GridCell.Tab.1.left.0.0.2880.1800@192dpi" width="2662" height="868" />
+    <size key="GridCell.Tab.1.center.0.0.2880.1800@192dpi" width="2662" height="868" />
+    <size key="GridCell.Tab.1.right.0.0.2880.1800@192dpi" width="2662" height="868" />
+    <size key="GridCell.Tab.1.bottom.0.0.2880.1800@192dpi" width="2662" height="868" />
+  </component>
+</application>
