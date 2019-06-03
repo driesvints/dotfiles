@@ -14,38 +14,40 @@
 
 # http://download.virtualbox.org/virtualbox/5.2.12/virtualbox-5.2_5.2.12-122591~Ubuntu~xenial_amd64.deb
 
+# ln -s $HOME/.dotfiles/linux-config $HOME/.config
+
 sudo apt install -y automake \
-	bash-completion \
-	cmake \
-	coreutils \
-	fish \
-	gnupg \
-	gnutls \
-	htop \
-	jq \
-	mongodb \
-	progress \
-	redis \
-	shmux \
-	tmux \
-	vegeta \
-	bazel \
-	jaggr \
-	jplot \
-	alfred \
-	android-studio \
-	caffeine \
-	google-chrome \
-	docker \
-	firefox \
-	font-dejavu-sans-mono-for-powerline \
-	font-hack-nerd-font \
-	gimp \
-	insomnia \
-	meld \
-	ngrok \
-	rowanj-gitx \
-	steam \
-	sublime-text \
-	virtualbox \
-	vlc 
+  bash-completion \
+  cmake \
+  coreutils \
+  fish \
+  gnupg \
+  gnutls \
+  htop \
+  jq \
+  mongodb \
+  progress \
+  redis \
+  shmux \
+  tmux \
+  vegeta \
+  bazel \
+  jaggr \
+  jplot \
+  alfred \
+  android-studio \
+  caffeine \
+  google-chrome \
+  docker \
+  firefox \
+  font-dejavu-sans-mono-for-powerline \
+  font-hack-nerd-font \
+  gimp \
+  insomnia \
+  meld \
+  ngrok \
+  rowanj-gitx \
+  steam \
+  sublime-text \
+  virtualbox \
+  vlc

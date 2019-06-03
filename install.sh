@@ -6,16 +6,10 @@ if ! [ -d "$HOME/.asdf" ]; then
   git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.6.3
 fi
 
-# Check for Homebrew and install if we don't have it
-if ! [ -x "$(command -v brew)" ]; then
-  if [ "$(uname)" == "Darwin" ]; then
-    xcode-select --install
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    ln -s $HOME/.dotfiles/git/gitconfig.work $HOME/.gitconfig || echo ".gitconfig exists"
-  else
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
-    sudo apt install linuxbrew-wrapper
-  fi
+if [ "$(uname)" == "Darwin" ]; then
+  source install-mac.sh
+else
+  source install-linux.sh
 fi
 
 ln -s $HOME/.dotfiles/git/gitignore_global $HOME/.gitignore_global || echo ".gitignore_global exists"
@@ -31,23 +25,8 @@ ln -s $HOME/.dotfiles/iterm/profile $HOME/Library/Preferences/com.googlecode.ite
 git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it || echo ".bash_it exists"
 ln -s $HOME/.dotfiles/bash_it/themes/powerline-plus $HOME/.bash_it/themes/powerline-plus || echo "powerline-plus exists"
 
-# Update Homebrew recipes
-brew update
-if [ "$(uname)" == "Darwin" ]; then
-  brew bundle
-else
-  source Brewfile.linux
-  ln -s $HOME/.dotfiles/linux-config $HOME/.config
-fi
-
 # Create a Sites directory
 # This is a default directory for macOS user accounts but doesn't comes pre-installed
 mkdir $HOME/Sites || echo "Sites exists"
-
-# Set macOS preferences
-# We will run this last because this will reload the shell
-if [ "$(uname)" == "Darwin" ]; then
-  source .macos
-fi
 
 source $HOME/.bash_profile

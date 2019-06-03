@@ -1,1 +1,9 @@
 .DS_Store
+
+terminal/history
+user.token
+recentProjects.xml
+.history
+jdk.table.xml
+other.xml
+recentProjectDirectories.xml
