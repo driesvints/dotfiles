@@ -2,4 +2,7 @@ zsh-users/zsh-completions
 zsh-users/zsh-syntax-highlighting
 zsh-users/zsh-history-substring-search
 
+robbyrussell/oh-my-zsh
+robbyrussell/oh-my-zsh path:plugins/git
+
 subnixr/minimal
