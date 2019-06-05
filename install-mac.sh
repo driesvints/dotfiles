@@ -5,6 +5,7 @@ if ! [ -x "$(command -v brew)" ]; then
   xcode-select --install
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   ln -s $HOME/.dotfiles/git/gitconfig.work $HOME/.gitconfig || echo ".gitconfig exists"
+  sudo ln -s $HOME/.dotfiles/newsyslog.d/development.conf /etc/newsyslog.d/development.conf
 fi
 
 brew update
