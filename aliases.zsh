@@ -43,6 +43,7 @@ alias docker-composer="docker-compose"
 # Git
 alias commit="git add . && git commit -m"
 alias gcommit="git add . && git commit"
+alias amend="git commit --amend --no-edit"
 alias wip="commit wip"
 alias gst="git status"
 alias gb="git branch"
