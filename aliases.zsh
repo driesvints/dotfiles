@@ -13,6 +13,7 @@ alias zbundle="antibody bundle < $DOTFILES/zsh_plugins.txt > $DOTFILES/zsh_plugi
 alias dotfiles="cd $DOTFILES"
 alias library="cd $HOME/Library"
 alias sites="cd $HOME/Sites"
+alias lara="sites && cd laravel/"
 
 # Laravel
 alias a="php artisan"
@@ -51,5 +52,8 @@ alias gst="git status"
 alias gb="git branch"
 alias gc="git checkout"
 alias gd="git diff"
+alias pull="git pull"
+alias push="git push"
+alias resolve="git amend . && git commit --no-edit"
 alias gl="git log --oneline --decorate --color"
 alias gnuke="git clean -df && git reset --hard"
