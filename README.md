@@ -20,7 +20,7 @@ First, go through the checklist below to make sure you didn't forget anything be
 
 ### Installing macOS cleanly
 
-After going to our checklist above and making sure you backed everything up, we're going to cleanly install macOS with the latest release. Follow [this article](https://www.imore.com/how-do-clean-install-macos) to cleanly install the latest macOS.
+After going to our checklist above and making sure you backed everything up, we're going to cleanly install macOS with the latest release. Follow [this article](https://www.imore.com/how-do-clean-install-macos) to cleanly install the latest macOS version.
 
 ### Setting up your Mac
 
