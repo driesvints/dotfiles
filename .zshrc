@@ -5,7 +5,7 @@ export DOTFILES=$HOME/.dotfiles
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/driesvints/Library/Caches/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh"
+export ZSH="/Users/driesvints/.oh-my-zsh"
 
 # Theme
 export MNML_INSERT_CHAR="$"
