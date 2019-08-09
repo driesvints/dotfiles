@@ -13,6 +13,7 @@ brew 'coreutils' # Those that come with macOS are outdated
 brew 'git'
 brew 'gnupg2'
 brew 'grep'
+brew 'httpie'
 brew 'mackup'
 brew 'mas' # Mac App Store manager
 brew 'pkg-config' # https://github.com/driesvints/dotfiles/issues/20
