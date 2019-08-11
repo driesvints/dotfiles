@@ -14,6 +14,7 @@ brew 'git'
 brew 'gnupg2'
 brew 'grep'
 brew 'httpie'
+brew 'hub'
 brew 'mackup'
 brew 'mas' # Mac App Store manager
 brew 'pkg-config' # https://github.com/driesvints/dotfiles/issues/20
