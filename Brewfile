@@ -26,6 +26,7 @@ brew 'zsh-completions'
 
 # Development
 brew 'php'
+brew 'php@7.2'
 brew 'imagick'
 brew 'mysql'
 brew 'nginx'
