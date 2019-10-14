@@ -1,5 +1,5 @@
 # Taps
-tap 'homebrew/cask-cask'
+tap 'homebrew/cask'
 tap 'homebrew/cask-eid'
 tap 'homebrew/cask-fonts'
 tap 'homebrew/cask-versions'
