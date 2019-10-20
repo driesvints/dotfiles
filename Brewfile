@@ -33,6 +33,7 @@ brew 'redis'
 # Apps
 cask 'aerial'
 cask 'alfred'
+cask 'bartender'
 cask 'caffeine'
 cask 'discord'
 cask 'docker'
@@ -54,8 +55,8 @@ cask 'tor-browser'
 cask 'transmission'
 cask 'transmit'
 cask 'vagrant'
-# cask 'virtualbox' # Broken installation
-# cask 'virtualbox-extension-pack'
+cask 'virtualbox' # Might need to allow access in Security settings
+cask 'virtualbox-extension-pack'
 
 # Quicklook
 cask 'qlcolorcode'
