@@ -7,6 +7,9 @@ export DOTFILES=$HOME/.dotfiles
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
+# Enable completions
+autoload -Uz compinit && compinit
+
 # Minimal - Theme Settings
 export MNML_INSERT_CHAR="$"
 export MNML_PROMPT=(mnml_git mnml_keymap)
