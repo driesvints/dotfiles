@@ -58,6 +58,7 @@ cask 'transmit'
 cask 'vagrant'
 cask 'virtualbox' # Might need to allow access in Security settings
 cask 'virtualbox-extension-pack'
+cask 'vlc'
 
 # Quicklook
 cask 'qlcolorcode'
