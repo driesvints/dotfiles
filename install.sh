@@ -17,18 +17,11 @@ brew bundle
 # Install PHP extensions with PECL
 pecl install memcached imagick
 
-# Install Composer
-curl -sS https://getcomposer.org/installer | php
-mv composer.phar /usr/local/bin/composer
-
 # Install global Composer packages
 /usr/local/bin/composer global require laravel/installer laravel/spark-installer laravel/valet
 
 # Install Laravel Valet
 $HOME/.composer/vendor/bin/valet install
-
-# Install global NPM packages
-npm install --global yarn
 
 # Create a Sites directory
 # This is a default directory for macOS user accounts but doesn't comes pre-installed

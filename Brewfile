@@ -23,12 +23,14 @@ brew 'tree' # List directories in a tree structure
 brew 'zlib' # Needed for Memcached
 
 # Development
+brew 'composer'
 brew 'php'
 brew 'php@7.2'
 brew 'mysql'
 brew 'nginx'
 brew 'node'
 brew 'redis'
+brew 'yarn'
 
 # Apps
 cask 'aerial'
