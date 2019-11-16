@@ -1,0 +1,8 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+	name = Frank Kemps
+	email = bapawe.dev@gmail.com
+[core]
+	excludesfile = ~/.dotfiles/.gitignore_global
+	editor = vim
