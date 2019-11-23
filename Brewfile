@@ -26,6 +26,7 @@ brew 'zlib' # Needed for Memcached
 brew 'php'
 brew 'php@7.2'
 brew 'composer'
+brew 'imagemagick'
 brew 'mysql'
 brew 'nginx'
 brew 'node'
