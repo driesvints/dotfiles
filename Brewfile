@@ -54,7 +54,6 @@ cask 'screenflow'
 cask 'sip'
 cask 'skype'
 cask 'slack'
-cask 'spark'
 cask 'sublime-text'
 cask 'tableplus'
 cask 'telegram-desktop'
@@ -62,7 +61,6 @@ cask 'the-unarchiver'
 cask 'tor-browser'
 cask 'transmission'
 cask 'transmit'
-cask 'tweetbot'
 cask 'vagrant'
 cask 'virtualbox' # Might need to allow access in Security settings
 cask 'virtualbox-extension-pack'
@@ -91,3 +89,5 @@ mas 'Byword', id: 420212497
 mas 'Giphy Capture', id: 668208984
 mas 'Keynote', id: 409183694
 mas 'Things', id: 904280696
+mas 'Spark', id: 1176895641
+mas 'Tweetbot', id: 1384080005
