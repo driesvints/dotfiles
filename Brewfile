@@ -23,6 +23,13 @@ brew 'trash' # Manage the Trash bin
 brew 'tree' # List directories in a tree structure
 brew 'zlib' # Needed for Memcached
 
+# Spatie Medialibrary
+brew 'jpegoptim'
+brew 'optipng'
+brew 'pngquant'
+brew 'svgo'
+brew 'gifsicle'
+
 # Development
 brew 'php'
 brew 'php@7.3'
