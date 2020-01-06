@@ -414,8 +414,7 @@ setJavaHome() {
 [[ -s "$HOME/.asdf/asdf.sh" ]] && source "$HOME/.asdf/completions/asdf.bash"
 setJavaHome
 
-export OWL="/Users/kkrauss/code/owl"
-eval "$("$OWL/bin/owl" init -)"
+export ANDROID_HOME=/usr/local/android-studio
 
 # history size
 export HISTFILESIZE=100000

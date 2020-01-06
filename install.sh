@@ -37,7 +37,7 @@ if [ "$(uname)" == "Darwin" ]; then
   brew bundle
 else
   source Brewfile.linux
-  ln -s $HOME/.dotfiles/linux-config $HOME/.config
+  # ln -s $HOME/.dotfiles/linux-config $HOME/.config
 fi
 
 # Create a Sites directory

@@ -36,16 +36,30 @@ sudo apt install -y automake \
 	android-studio \
 	caffeine \
 	google-chrome \
-	docker \
 	firefox \
 	font-dejavu-sans-mono-for-powerline \
 	font-hack-nerd-font \
 	gimp \
-	insomnia \
 	meld \
-	ngrok \
 	rowanj-gitx \
 	steam \
 	sublime-text \
 	virtualbox \
-	vlc 
+	vlc \
+	apt-transport-https ca-certificates \
+	curl \
+    software-properties-common 
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository \
+    "deb https://download.docker.com/linux/ubuntu xenial stable"
+sudo apt update -y
+sudo apt install -y docker-ce docker-compose
+sudo gpasswd -a "${USER}" docker
+
+
+sudo snap install ngrok \
+	insomnia
+
+sudo reboot
+
