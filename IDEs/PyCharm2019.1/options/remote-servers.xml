@@ -1,0 +1,9 @@
+<application>
+  <component name="RemoteServers">
+    <remote-server name="Docker" type="docker">
+      <configuration>
+        <option name="apiUrl" value="unix:///var/run/docker.sock" />
+      </configuration>
+    </remote-server>
+  </component>
+</application>

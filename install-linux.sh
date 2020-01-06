@@ -57,9 +57,7 @@ sudo apt update -y
 sudo apt install -y docker-ce docker-compose
 sudo gpasswd -a "${USER}" docker
 
-
 sudo snap install ngrok \
 	insomnia
 
 sudo reboot
-

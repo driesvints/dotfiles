@@ -1,0 +1,196 @@
+<keymap version="1" name="OSX and Sublime Text" parent="Mac OS X 10.5+">
+  <action id="$Delete">
+    <keyboard-shortcut first-keystroke="delete" />
+    <keyboard-shortcut first-keystroke="back_space" />
+  </action>
+  <action id="Back">
+    <keyboard-shortcut first-keystroke="meta alt up" />
+  </action>
+  <action id="CheckinProject" />
+  <action id="CompareTwoFiles" />
+  <action id="Console.History.Browse" />
+  <action id="Debugger.EditFrameSource">
+    <keyboard-shortcut first-keystroke="f4" />
+  </action>
+  <action id="Diff.ShowDiff" />
+  <action id="Diff.ShowSettingsPopup" />
+  <action id="DomCollectionControl.Edit">
+    <keyboard-shortcut first-keystroke="f4" />
+  </action>
+  <action id="DomElementsTreeView.DeleteElement">
+    <keyboard-shortcut first-keystroke="delete" />
+    <keyboard-shortcut first-keystroke="back_space" />
+  </action>
+  <action id="DomElementsTreeView.GotoDomElementDeclarationAction">
+    <keyboard-shortcut first-keystroke="f4" />
+  </action>
+  <action id="EditSource">
+    <keyboard-shortcut first-keystroke="f4" />
+    <keyboard-shortcut first-keystroke="meta alt down" />
+  </action>
+  <action id="EditorAddOrRemoveCaret">
+    <mouse-shortcut keystroke="meta button1" />
+  </action>
+  <action id="EditorCloneCaretAbove">
+    <keyboard-shortcut first-keystroke="shift ctrl up" />
+  </action>
+  <action id="EditorCloneCaretBelow">
+    <keyboard-shortcut first-keystroke="shift ctrl down" />
+  </action>
+  <action id="EditorDeleteLine">
+    <keyboard-shortcut first-keystroke="shift ctrl k" />
+  </action>
+  <action id="EditorDeleteToLineStart">
+    <keyboard-shortcut first-keystroke="meta back_space" />
+  </action>
+  <action id="EditorDuplicate">
+    <keyboard-shortcut first-keystroke="shift meta d" />
+  </action>
+  <action id="EditorIndentSelection">
+    <keyboard-shortcut first-keystroke="tab" />
+    <keyboard-shortcut first-keystroke="meta close_bracket" />
+  </action>
+  <action id="EditorPasteSimple">
+    <keyboard-shortcut first-keystroke="shift meta v" />
+  </action>
+  <action id="EditorTextEnd">
+    <keyboard-shortcut first-keystroke="meta end" />
+    <keyboard-shortcut first-keystroke="meta down" />
+  </action>
+  <action id="EditorTextStart">
+    <keyboard-shortcut first-keystroke="meta home" />
+    <keyboard-shortcut first-keystroke="meta up" />
+  </action>
+  <action id="EditorToggleColumnMode">
+    <keyboard-shortcut first-keystroke="shift meta 8" />
+    <keyboard-shortcut first-keystroke="shift meta l" />
+  </action>
+  <action id="EditorUnindentSelection">
+    <keyboard-shortcut first-keystroke="shift tab" />
+    <keyboard-shortcut first-keystroke="meta open_bracket" />
+  </action>
+  <action id="ExternalSystem.OpenConfig">
+    <keyboard-shortcut first-keystroke="f4" />
+  </action>
+  <action id="FileChooser.GotoDesktop" />
+  <action id="FindNext">
+    <keyboard-shortcut first-keystroke="meta g" />
+    <keyboard-shortcut first-keystroke="meta k" />
+  </action>
+  <action id="Forward" />
+  <action id="GotoDeclaration">
+    <mouse-shortcut keystroke="button2" />
+    <mouse-shortcut keystroke="alt button1" />
+  </action>
+  <action id="GotoFile">
+    <keyboard-shortcut first-keystroke="shift meta o" />
+    <keyboard-shortcut first-keystroke="meta p" />
+    <keyboard-shortcut first-keystroke="meta t" />
+  </action>
+  <action id="GotoLine">
+    <keyboard-shortcut first-keystroke="meta l" />
+    <keyboard-shortcut first-keystroke="ctrl g" />
+  </action>
+  <action id="GotoRelated" />
+  <action id="GotoSymbol">
+    <keyboard-shortcut first-keystroke="meta alt o" />
+    <keyboard-shortcut first-keystroke="shift meta r" />
+  </action>
+  <action id="IntroduceField">
+    <keyboard-shortcut first-keystroke="meta alt e" />
+  </action>
+  <action id="ManageRecentProjects">
+    <keyboard-shortcut first-keystroke="ctrl meta p" />
+  </action>
+  <action id="MoveLineDown">
+    <keyboard-shortcut first-keystroke="shift alt down" />
+    <keyboard-shortcut first-keystroke="ctrl meta down" />
+  </action>
+  <action id="MoveLineUp">
+    <keyboard-shortcut first-keystroke="shift alt up" />
+    <keyboard-shortcut first-keystroke="ctrl meta up" />
+  </action>
+  <action id="MoveStatementDown" />
+  <action id="MoveStatementUp" />
+  <action id="NextOccurence" />
+  <action id="NextProjectWindow" />
+  <action id="NextTab">
+    <keyboard-shortcut first-keystroke="shift meta close_bracket" />
+    <keyboard-shortcut first-keystroke="ctrl right" />
+    <keyboard-shortcut first-keystroke="meta alt right" />
+  </action>
+  <action id="OpenModuleSettings">
+    <keyboard-shortcut first-keystroke="f4" />
+  </action>
+  <action id="ParameterInfo">
+    <keyboard-shortcut first-keystroke="shift meta p" />
+  </action>
+  <action id="PasteMultiple">
+    <keyboard-shortcut first-keystroke="shift meta alt v" />
+  </action>
+  <action id="PreviousOccurence" />
+  <action id="PreviousProjectWindow" />
+  <action id="PreviousTab">
+    <keyboard-shortcut first-keystroke="shift meta open_bracket" />
+    <keyboard-shortcut first-keystroke="ctrl left" />
+    <keyboard-shortcut first-keystroke="meta alt left" />
+  </action>
+  <action id="QuickEvaluateExpression">
+    <keyboard-shortcut first-keystroke="meta alt f8" />
+    <mouse-shortcut keystroke="shift alt button1" />
+  </action>
+  <action id="RecentFiles" />
+  <action id="Replace">
+    <keyboard-shortcut first-keystroke="meta alt f" />
+    <keyboard-shortcut first-keystroke="meta r" />
+  </action>
+  <action id="ReplaceInPath" />
+  <action id="Rerun">
+    <keyboard-shortcut first-keystroke="meta r" />
+    <keyboard-shortcut first-keystroke="meta b" />
+  </action>
+  <action id="Run">
+    <keyboard-shortcut first-keystroke="ctrl r" />
+    <keyboard-shortcut first-keystroke="meta b" />
+  </action>
+  <action id="Scala.Explain" />
+  <action id="Scala.RunConsole" />
+  <action id="Scala.ShowImplicits">
+    <keyboard-shortcut first-keystroke="shift ctrl alt equals" />
+    <keyboard-shortcut first-keystroke="shift ctrl alt add" />
+  </action>
+  <action id="SelectNextOccurrence">
+    <keyboard-shortcut first-keystroke="meta e" />
+  </action>
+  <action id="SendEOF" />
+  <action id="ShelvedChanges.Diff" />
+  <action id="ShowNavBar">
+    <keyboard-shortcut first-keystroke="alt home" />
+  </action>
+  <action id="SwitchApply">
+    <keyboard-shortcut first-keystroke="ctrl alt enter" />
+  </action>
+  <action id="SwitchDown">
+    <keyboard-shortcut first-keystroke="ctrl alt down" />
+  </action>
+  <action id="SwitchLeft">
+    <keyboard-shortcut first-keystroke="ctrl alt left" />
+  </action>
+  <action id="SwitchRight">
+    <keyboard-shortcut first-keystroke="ctrl alt right" />
+  </action>
+  <action id="SwitchUp">
+    <keyboard-shortcut first-keystroke="ctrl alt up" />
+  </action>
+  <action id="UsageView.Exclude">
+    <keyboard-shortcut first-keystroke="delete" />
+    <keyboard-shortcut first-keystroke="back_space" />
+  </action>
+  <action id="Vcs.ShowMessageHistory">
+    <keyboard-shortcut first-keystroke="ctrl m" />
+  </action>
+  <action id="Vcs.UpdateProject" />
+  <action id="XDebugger.JumpToSource">
+    <keyboard-shortcut first-keystroke="f4" />
+  </action>
+</keymap>
