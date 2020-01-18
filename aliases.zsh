@@ -20,7 +20,7 @@ alias a="php artisan"
 alias ams="php artisan migrate:fresh --seed"
 
 # PHP
-alias php73="/usr/local/Cellar/php@7.3/7.3.12/bin/php"
+alias php73="/usr/local/Cellar/php@7.3/7.3.13/bin/php"
 alias cfresh="rm -rf vendor/ composer.lock && composer i"
 
 # JS
