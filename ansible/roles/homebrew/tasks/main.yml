@@ -1,0 +1,24 @@
+- name: Update homebrew
+  homebrew:
+    update_homebrew: yes
+
+- name: Configure Brew taps
+  homebrew_tap:
+    name: "{{ item.name }}"
+    state: "{{ item.state | default('present') }}"
+    url: "{{ item.url | default(omit) }}"
+  loop: "{{ brew_taps }}"
+
+- name: Install Homebrew packages
+  homebrew:
+    name: "{{ item.name }}"
+    state: "{{ item.state | default('latest') }}"
+    install_options: "{{ item.options | default(omit) }}"
+  loop: "{{ brew_packages }}"
+
+- name: Install casks
+  homebrew_cask:
+    name: "{{ item.name }}"
+    state: "{{ item.state | default('upgraded') }}"
+    install_options: "{{ item.options | default(omit) }}"
+  loop: "{{ brew_casks }}"

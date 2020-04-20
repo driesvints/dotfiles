@@ -1,0 +1,18 @@
+brew_taps:
+  - name: 'homebrew/cask'
+    
+brew_packages:
+  - name: httpie
+  - name: mas
+  - name: 'cabal-install'
+  - name: 'ghc'
+  - name: 'mas'
+  - name: 'maven'
+
+brew_casks:
+  - name: alfred
+  - name: docker
+  - name: firefox
+  - name: macvim
+  - name: slack
+  - name: sourcetree
