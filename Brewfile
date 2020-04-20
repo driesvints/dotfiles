@@ -1,32 +1,32 @@
 # Taps
-tap 'homebrew/cask'
-tap 'homebrew/cask-eid'
-tap 'homebrew/cask-fonts'
-tap 'homebrew/cask-versions'
-tap 'homebrew/bundle'
+#tap 'homebrew/cask'
+#tap 'homebrew/cask-eid'
+#tap 'homebrew/cask-fonts'
+#tap 'homebrew/cask-versions'
+#tap 'homebrew/bundle'
 
 # Binaries
-brew 'awscli'
-brew 'httpie'
+brew 'pipenv'
+#brew 'httpie'
 # brew 'mackup'
-brew 'mas' # Mac App Store manager
+##brew 'mas' # Mac App Store manager
 
 # Apps
-cask 'alfred'
-cask 'docker'
-cask 'firefox'
-cask 'java'
-cask 'slack'
-cask 'transmission'
-cask 'vagrant'
-cask 'sourcetree'
+#cask 'alfred'
+#cask 'docker'
+#cask 'firefox'
+#cask 'java'
+#cask 'slack'
+#cask 'transmission'
+#cask 'vagrant'
+#cask 'sourcetree'
 
 # Quicklook
-cask 'qlcolorcode'
-cask 'qlmarkdown'
-cask 'quicklook-json'
-cask 'quicklook-csv'
-cask 'qlstephen'
+#cask 'qlcolorcode'
+#cask 'qlmarkdown'
+#cask 'quicklook-json'
+#cask 'quicklook-csv'
+#cask 'qlstephen'
 
 # Fonts
 # cask 'font-lato'
@@ -39,4 +39,4 @@ cask 'qlstephen'
 # cask 'font-source-serif-pro'
 
 # Mac App Store
-mas 'Tweetbot', id: 1384080005
+#mas 'Tweetbot', id: 1384080005
