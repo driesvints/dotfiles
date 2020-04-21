@@ -3,12 +3,16 @@ brew_taps:
 
 brew_packages:
   - name: httpie
-  - name: mas
+  - name: jq
+
   - name: cabal-install
   - name: ghc
   - name: haskell-stack
+
   - name: mas
+
   - name: maven
+  - name: npm
 
 brew_casks:
   - name: alfred
