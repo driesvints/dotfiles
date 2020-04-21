@@ -4,11 +4,12 @@ Dotfiles and system configuration to get a MacOS system the way tunaranch likes 
 
 Including:
 
-✅ A basic, sensible zsh config
-✅ Hpmebrew, and essential packages
-❌ macOS user and system preferences (todo)
+✅ A basic, sensible zsh config.
+✅ Homebrew, and essential packages,
+❌ macOS user and system preferences (todo),
+  ❌ Themes. Can't manage themes neatly until Ansible's
+     `osx_defaults` supports dicts.
 ❌ macOS application settings (probably won't bother with this.
-   Might add a terminal theme...)
 
 ## A Fresh macOS Setup
 
