@@ -1,0 +1,3 @@
+- git:
+    repo: "{{ antigen-hs_repo }}"
+    dest: "{{ antigen-hs_dir }}"

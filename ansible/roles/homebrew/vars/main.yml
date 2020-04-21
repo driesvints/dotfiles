@@ -1,13 +1,14 @@
 brew_taps:
   - name: 'homebrew/cask'
-    
+
 brew_packages:
   - name: httpie
   - name: mas
-  - name: 'cabal-install'
-  - name: 'ghc'
-  - name: 'mas'
-  - name: 'maven'
+  - name: cabal-install
+  - name: ghc
+  - name: haskell-stack
+  - name: mas
+  - name: maven
 
 brew_casks:
   - name: alfred

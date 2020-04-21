@@ -2,17 +2,26 @@
 
 Dotfiles and system configuration to get a MacOS system the way tunaranch likes it.
 
+Including:
+
+✅ A basic, sensible zsh config
+✅ Hpmebrew, and essential packages
+❌ macOS user and system preferences (todo)
+❌ macOS application settings (probably won't bother with this.
+   Might add a terminal theme...)
+
 ## A Fresh macOS Setup
 
-Clone this repo to `~/.dotfiles` and run `install.sh`.
+Run these commands:
+
+```shell script
+chsh -s /bin/zsh
+git clone https://github.com/tunaranch/dotfiles .dotfiles
+~/.dotfiles/install.sh
+```
 
 This will bootstrap enough Homebrew to run ansible, and will use ansible
 to set up the rest. See [the setup playbook](./ansible/setup.playbook.yml).  
-
-### Before you re-install
-
-The Ansible play is idempotent and non-destructive, so knock youself out.
-
 
 ### Setting up your Mac
 

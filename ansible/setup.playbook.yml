@@ -1,6 +1,10 @@
----
 - hosts: localhost
   connection: local
   become: false
-  roles:
-    - homebrew
+  tasks:
+    - import_role:
+        name: homebrew
+      tags: homebrew
+    - import_role:
+        name: antigen-hs
+      tags: antigen
