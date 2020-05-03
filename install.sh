@@ -30,6 +30,10 @@ $HOME/.composer/vendor/bin/valet install
 # This is a default directory for macOS user accounts but doesn't comes pre-installed
 mkdir $HOME/Sites
 
+# Create sites subdirectories
+mkdir $HOME/Sites/blade-ui-kit
+mkdir $HOME/Sites/laravel
+
 # Clone Github repositories
 ./clone.sh
 
