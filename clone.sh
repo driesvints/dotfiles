@@ -7,6 +7,7 @@ LARAVEL=$SITES/laravel
 
 # Personal
 git clone git@github.com:driesvints/cashier-paddle.git $SITES/cashier-paddle
+git clone git@github.com:driesvints/checklists.git $SITES/checklists
 git clone git@github.com:driesvints/driesvints.com.git $SITES/driesvints.com
 git clone git@github.com:driesvints/eventy.io.git $SITES/eventy.io
 git clone git@github.com:driesvints/steunze.be.git $SITES/steunze.be
