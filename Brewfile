@@ -82,6 +82,7 @@ cask 'transmit'
 cask 'vagrant'
 cask 'virtualbox' # Might need to allow access in Security settings
 cask 'virtualbox-extension-pack'
+cask 'visual-studio-code'
 cask 'vlc'
 cask 'whatsapp'
 
