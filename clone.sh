@@ -7,7 +7,6 @@ BLADE=$SITES/blade-ui-kit
 LARAVEL=$SITES/laravel
 
 # Personal
-git clone git@github.com:driesvints/cashier-paddle.git $SITES/cashier-paddle
 git clone git@github.com:driesvints/checklists.git $SITES/checklists
 git clone git@github.com:driesvints/driesvints.com.git $SITES/driesvints.com
 git clone git@github.com:driesvints/eventy.io.git $SITES/eventy.io
@@ -28,6 +27,7 @@ git clone git@github.com:blade-ui-kit/blade-zondicons.git $BLADE/blade-zondicons
 # Laravel
 git clone git@github.com:laravel/browser-kit-testing.git $LARAVEL/browser-kit-testing
 git clone git@github.com:laravel/cashier.git $LARAVEL/cashier
+git clone git@github.com:laravel/cashier-paddle.git $LARAVEL/cashier-paddle
 git clone git@github.com:laravel/docs.git $LARAVEL/docs
 git clone git@github.com:laravel/dusk.git $LARAVEL/dusk
 git clone git@github.com:laravel/echo.git $LARAVEL/echo
