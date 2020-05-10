@@ -19,8 +19,6 @@ alias fresh="php artisan migrate:fresh --seed"
 alias seed="php artisan db:seed"
 
 # PHP
-alias php73="/usr/local/Cellar/php@7.3/7.3.13/bin/php"
-alias php72="/usr/local/Cellar/php@7.2/7.2.26/bin/php"
 alias cfresh="rm -rf vendor/ composer.lock && composer i"
 
 # JS
