@@ -85,10 +85,10 @@ function powerline_prompt_command() {
     powerline_scm_prompt
     powerline_cwd_prompt
     powerline_last_status_prompt LAST_STATUS
-    if (( $RANDOM % 2 )); then
-      prompt_icon=$'\xF0\x9F\x8D\x84'
-    else
+    if [[ LAST_STATUS -eq 0 ]]; then
       prompt_icon=$'\xF0\x9F\x90\xA0'
+    else
+      prompt_icon=$'\xF0\x9F\xA6\x88'
     fi
 
     PS1="${SHELL_PROMPT}${VIRTUALENV_PROMPT}${SCM_PROMPT}${CWD_PROMPT} ${prompt_icon}  "

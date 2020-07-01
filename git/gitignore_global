@@ -39,3 +39,5 @@ Thumbs.db
 .vagrant/
 .tool-versions
 .python-version
+.vscode/
+

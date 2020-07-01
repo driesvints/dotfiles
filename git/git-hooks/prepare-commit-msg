@@ -3,12 +3,12 @@
 
 # Prepend a JIRA ticket ID from the branch name to the commit message
 BRANCH_NAME=$(git branch | grep -o '^*\s[A-Za-z]*-[0-9]*' | sed 's/* //')
-BRANCH_DESCRIPTION=$(git config branch."$BRANCH_NAME".description)
+# BRANCH_DESCRIPTION=$(git config branch."$BRANCH_NAME".description)
 ORIGINAL_COMMIT_MESSAGE=$(cat $1)
 
 echo "[$BRANCH_NAME] $ORIGINAL_COMMIT_MESSAGE" > "$1"
-if [ -n "$BRANCH_DESCRIPTION" ]
-then
-    echo "" >> "$1"
-    echo $BRANCH_DESCRIPTION >> "$1"
-fi
+# if [ -n "$BRANCH_DESCRIPTION" ]
+# then
+#     echo "" >> "$1"
+#     echo $BRANCH_DESCRIPTION >> "$1"
+# fi

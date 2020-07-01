@@ -1,6 +1,6 @@
 [user]
-  email = kkrauss@twilio.com
-  name = Kevin Krauss
+	email = kkrauss@twilio.com
+	name = Kevin Krauss
 [alias]
   ll = pull origin
   sh = push origin
@@ -10,7 +10,7 @@
   tool = meld
 [core]
   editor = subl -w -n
-  excludesfile = /Users/kkrauss/.gitignore_global
+	excludesfile = /Users/kkrauss/.gitignore_global
   hooksPath = /Users/kkrauss/.git-hooks
 [diff]
   tool = meld
@@ -23,3 +23,5 @@
 [rebase]
   autosquash = true
   autostash = true
+
+
