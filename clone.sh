@@ -26,12 +26,13 @@ git clone git@github.com:blade-ui-kit/blade-zondicons.git $BLADE/blade-zondicons
 
 # Laravel
 git clone git@github.com:laravel/browser-kit-testing.git $LARAVEL/browser-kit-testing
-git clone git@github.com:laravel/cashier.git $LARAVEL/cashier
+git clone git@github.com:laravel/cashier-stripe.git $LARAVEL/cashier-stripe
 git clone git@github.com:laravel/cashier-paddle.git $LARAVEL/cashier-paddle
 git clone git@github.com:laravel/docs.git $LARAVEL/docs
 git clone git@github.com:laravel/dusk.git $LARAVEL/dusk
 git clone git@github.com:laravel/echo.git $LARAVEL/echo
 git clone git@github.com:laravel/envoy.git $LARAVEL/envoy
+git clone git@github.com:laravel/forge-sdk.git $LARAVEL/forge-sdk
 git clone git@github.com:laravel/framework.git $LARAVEL/framework
 git clone git@github.com:laravel/helpers.git $LARAVEL/helpers
 git clone git@github.com:laravel/horizon.git $LARAVEL/horizon
