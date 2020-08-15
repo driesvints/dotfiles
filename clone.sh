@@ -18,6 +18,7 @@ git clone git@github.com:laravelio/laravel.io.git $SITES/laravel.io
 git clone git@github.com:laravelio/paste.laravel.io.git $SITES/paste.laravel.io
 
 # Blade UI Kit
+git clone git@github.com:blade-ui-kit/art.git $BLADE/art
 git clone git@github.com:blade-ui-kit/blade-heroicons.git $BLADE/blade-heroicons
 git clone git@github.com:blade-ui-kit/blade-icons.git $BLADE/blade-icons
 git clone git@github.com:blade-ui-kit/blade-ui-kit.git $BLADE/blade-ui-kit
