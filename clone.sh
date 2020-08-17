@@ -27,6 +27,7 @@ git clone git@github.com:blade-ui-kit/blade-ui-kit.git $BLADE/blade-ui-kit
 git clone git@github.com:blade-ui-kit/blade-ui-kit.com.git $BLADE/blade-ui-kit.com
 git clone git@github.com:blade-ui-kit/blade-zondicons.git $BLADE/blade-zondicons
 git clone git@github.com:blade-ui-kit/docs.git $BLADE/docs
+git clone git@github.com:blade-ui-kit/tallstack.dev.git $BLADE/tallstack.dev
 
 # Laravel
 git clone git@github.com:laravel/browser-kit-testing.git $LARAVEL/browser-kit-testing
