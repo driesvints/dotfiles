@@ -45,7 +45,6 @@ git clone git@github.com:laravel/installer.git $LARAVEL/installer
 git clone git@github.com:laravel/laravel.git $LARAVEL/laravel
 git clone git@github.com:laravel/lumen.git $LARAVEL/lumen
 git clone git@github.com:laravel/lumen-framework.git $LARAVEL/lumen-framework
-git clone git@github.com:laravel/lumen-installer.git $LARAVEL/lumen-installer
 git clone git@github.com:laravel/nexmo-notification-channel.git $LARAVEL/nexmo-notification-channel
 git clone git@github.com:laravel/nova.git $LARAVEL/nova
 git clone git@github.com:laravel/passport.git $LARAVEL/passport
