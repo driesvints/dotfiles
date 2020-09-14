@@ -38,10 +38,12 @@ git clone git@github.com:laravel/dusk.git $LARAVEL/dusk
 git clone git@github.com:laravel/echo.git $LARAVEL/echo
 git clone git@github.com:laravel/envoy.git $LARAVEL/envoy
 git clone git@github.com:laravel/forge-sdk.git $LARAVEL/forge-sdk
+git clone git@github.com:laravel/fortify.git $LARAVEL/fortify
 git clone git@github.com:laravel/framework.git $LARAVEL/framework
 git clone git@github.com:laravel/helpers.git $LARAVEL/helpers
 git clone git@github.com:laravel/horizon.git $LARAVEL/horizon
 git clone git@github.com:laravel/installer.git $LARAVEL/installer
+git clone git@github.com:laravel/jetstream.git $LARAVEL/jetstream
 git clone git@github.com:laravel/laravel.git $LARAVEL/laravel
 git clone git@github.com:laravel/lumen.git $LARAVEL/lumen
 git clone git@github.com:laravel/lumen-framework.git $LARAVEL/lumen-framework
@@ -55,3 +57,4 @@ git clone git@github.com:laravel/socialite.git $LARAVEL/socialite
 git clone git@github.com:laravel/telescope.git $LARAVEL/telescope
 git clone git@github.com:laravel/tinker.git $LARAVEL/tinker
 git clone git@github.com:laravel/ui.git $LARAVEL/ui
+git clone git@github.com:laravel/vapor-ui.git $LARAVEL/vapor-ui
