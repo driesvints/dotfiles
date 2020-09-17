@@ -44,6 +44,7 @@ git clone git@github.com:laravel/helpers.git $LARAVEL/helpers
 git clone git@github.com:laravel/horizon.git $LARAVEL/horizon
 git clone git@github.com:laravel/installer.git $LARAVEL/installer
 git clone git@github.com:laravel/jetstream.git $LARAVEL/jetstream
+git clone git@github.com:laravel/jetstream-js.git $LARAVEL/jetstream-js
 git clone git@github.com:laravel/laravel.git $LARAVEL/laravel
 git clone git@github.com:laravel/lumen.git $LARAVEL/lumen
 git clone git@github.com:laravel/lumen-framework.git $LARAVEL/lumen-framework
