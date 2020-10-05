@@ -1,13 +1,13 @@
 # This is Git's per-user configuration file.
 [user]
 # Please adapt and uncomment the following lines:
-	name = Kevin Krauss
+	name = Kevin
 	email = earlkrauss@gmail.com
 [alias]
   pf = push --force-with-lease
   pretty = log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
 [merge]
-  tool = opendiff
+  tool = meld
 [core]
   editor = subl -w -n
   excludesfile = /Users/kkrauss/.gitignore_global
@@ -15,3 +15,5 @@
   keepBackup = false
 [init]
   templatedir = /Users/kkrauss/.git-templates
+[diff]
+  tool = meld

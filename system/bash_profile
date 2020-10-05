@@ -53,6 +53,8 @@ alias dclean='docker rmi -f $(docker images -f "dangling=true" -q); docker volum
 alias dprune='docker system prune -a'
 alias dcon='docker container prune --filter "until=12h"'
 alias oci='eval "$(chef shell-init bash)"'
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
 
 # golang alias things
 alias cdg='cd $GOPATH/src'
@@ -340,6 +342,11 @@ wgif() {
   wget -P $HOME/Downloads/gifs/ $1
 }
 
+squeek() {
+  sudo modprobe -r usbhid && sudo modprobe -r psmouse
+  sudo modprobe usbhid && sudo modprobe psmouse
+}
+
 # export GIT_SSH="$HOME/dynamic_git_command.sh"
 # swapgitmail() {
 #   [ -n "$MAIN_GIT_EMAIL" ] || echo "MAIN_GIT_EMAIL not set"
@@ -420,3 +427,5 @@ export ANDROID_HOME=/usr/local/android-studio
 export HISTFILESIZE=100000
 export HISTSIZE=100000
 export HISTCONTROL=ignoredups:erasedups
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

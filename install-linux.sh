@@ -46,9 +46,10 @@ sudo apt install -y automake \
 	sublime-text \
 	virtualbox \
 	vlc \
-	apt-transport-https ca-certificates \
+	apt-transport-https \
+  ca-certificates \
 	curl \
-    software-properties-common 
+  software-properties-common
 
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository \
