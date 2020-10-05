@@ -55,9 +55,13 @@ alias dcon='docker container prune --filter "until=12h"'
 alias oci='eval "$(chef shell-init bash)"'
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
+alias lzd='lazydocker'
 
-# golang alias things
-alias cdg='cd $GOPATH/src'
+# kubernetes
+alias ka='kubectl apply --recursive -f'
+alias klo='kubectl logs -f'
+alias kex='kubectl exec -it'
+alias kdel='kubectl delete --recursive -f'
 
 # python alias
 alias nose='source venv/bin/activate && nosetests'
@@ -152,7 +156,7 @@ backupToUsb() {
   local machine=$(uname)
   if [ -d "$directory" ]; then
     tar -cvpzf --exclude='.git' --exclude='*.log' $directory/$machine-Documents.tar.gz $HOME/Documents
-    tar -cvpzf --exclude='.git' --exclude='*.log' $directory/$machine-Projects.tar.gz $HOME/Projects
+    tar -cvpzf --exclude='.git' --exclude='*.log' $directory/$machine-code.tar.gz $HOME/code
     tar -cvpzf --exclude='.git' --exclude='*.log' $directory/$machine-Downloads.tar.gz $HOME/Downloads
     tar -cvpzf --exclude='.git' --exclude='*.log' $directory/$machine-Work.tar.gz $HOME/Work
   else
@@ -218,13 +222,18 @@ merged_branches() {
 }
 
 clean_remote_branches() {
-  if [[ $# -ne 2 ]];then
-    matching_branches=$(git branch -r | cut -c3- | egrep $1)
-    read remote branch <<<$(IFS="/"; echo $matching_branches)
-    git push $remote ":$branch"
-  else
-    git branch -r | cut -c3- | egrep $1
-  fi
+  # old clean
+  # if [[ $# -ne 2 ]];then
+  #   matching_branches=$(git branch -r | cut -c3- | egrep $1)
+  #   read remote branch <<<$(IFS="/"; echo $matching_branches)
+  #   git push $remote ":$branch"
+  # else
+  #   git branch -r | cut -c3- | egrep $1
+  # fi
+
+  git branch -r --merged origin/master \
+    | awk -F/ '/^\s*origin/ {if (!match($0, /origin\/master/)) {sub("^\\s*origin/", ""); print}}' \
+    | xargs -rpn1 git push origin --delete
 }
 
 # dl is directory list
@@ -303,7 +312,7 @@ scanping() {
   lookup=$2
   for ip in $(eval echo $range.{1..255})
   do
-    ping -c1 $ip > /dev/null
+    ping -c1 -t 1 $ip > /dev/null
     if [ $? -eq 0 ]; then
       output="$ip"
       [[ $lookup ]] && [ $lookup != "" ] && output="$ip $(nslookup -timeout=1 $ip  || echo '')"
@@ -339,7 +348,9 @@ aux() {
 }
 
 wgif() {
-  wget -P $HOME/Downloads/gifs/ $1
+  local t=$(date '+%d-%m-%Y-%H-%M-%S')
+  local name=${2:-$t}
+  wget -O $HOME/Downloads/gifs/$name.gif $1
 }
 
 squeek() {
@@ -420,12 +431,19 @@ setJavaHome() {
 [[ -s "$HOME/.asdf/asdf.sh" ]] && source "$HOME/.asdf/asdf.sh"
 [[ -s "$HOME/.asdf/asdf.sh" ]] && source "$HOME/.asdf/completions/asdf.bash"
 setJavaHome
+export GATLING_HOME=/usr/local/opt/gatling
 
-export ANDROID_HOME=/usr/local/android-studio
+export OWL_PYTHON3="true"
+export OWL="/Users/kkrauss/code/owl"
+eval "$("$OWL/bin/owl" init -)"
+function aws-login() {  eval $( $OWL/bin/owl aws-login $@ ) ; };
+function change-realm() {  eval $( $OWL/bin/owl change-realm $@ ) ; };
+
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
 # history size
 export HISTFILESIZE=100000
 export HISTSIZE=100000
 export HISTCONTROL=ignoredups:erasedups
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+export BASH_SILENCE_DEPRECATION_WARNING=1
