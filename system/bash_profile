@@ -434,3 +434,4 @@ export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 export HISTFILESIZE=100000
 export HISTSIZE=100000
 export HISTCONTROL=ignoredups:erasedups
+export BASH_SILENCE_DEPRECATION_WARNING=1
