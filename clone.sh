@@ -46,6 +46,7 @@ git clone git@github.com:laravel/installer.git $LARAVEL/installer
 git clone git@github.com:laravel/jetstream.git $LARAVEL/jetstream
 git clone git@github.com:laravel/jetstream-js.git $LARAVEL/jetstream-js
 git clone git@github.com:laravel/laravel.git $LARAVEL/laravel
+git clone git@github.com:laravel/legacy-factories.git $LARAVEL/legacy-factories
 git clone git@github.com:laravel/lumen.git $LARAVEL/lumen
 git clone git@github.com:laravel/lumen-framework.git $LARAVEL/lumen-framework
 git clone git@github.com:laravel/nexmo-notification-channel.git $LARAVEL/nexmo-notification-channel
