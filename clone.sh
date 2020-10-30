@@ -9,7 +9,7 @@ LARAVEL=$SITES/laravel
 # Personal
 git clone git@github.com:driesvints/checklists.git $SITES/checklists
 git clone git@github.com:driesvints/driesvints.com.git $SITES/driesvints.com
-git clone git@github.com:driesvints/eventy.io.git $SITES/eventy.io]
+git clone git@github.com:driesvints/eventy.io.git $SITES/eventy.io
 git clone git@github.com:EventSaucePHP/LaravelEventSauce.git $SITES/LaravelEventSauce
 git clone git@github.com:fullstackbelgium/fullstackbelgium.be.git $SITES/fullstackbelgium.be
 git clone git@github.com:fullstackeurope/fullstackeurope.com.git $SITES/fullstackeurope.com
