@@ -29,6 +29,7 @@ git clone git@github.com:blade-ui-kit/docs.git $BLADE/docs
 git clone git@github.com:blade-ui-kit/tallstack.dev.git $BLADE/tallstack.dev
 
 # Laravel
+git clone git@github.com:laravel/breeze.git $LARAVEL/breeze
 git clone git@github.com:laravel/browser-kit-testing.git $LARAVEL/browser-kit-testing
 git clone git@github.com:laravel/cashier-stripe.git $LARAVEL/cashier-stripe
 git clone git@github.com:laravel/cashier-paddle.git $LARAVEL/cashier-paddle
@@ -51,6 +52,7 @@ git clone git@github.com:laravel/lumen-framework.git $LARAVEL/lumen-framework
 git clone git@github.com:laravel/nexmo-notification-channel.git $LARAVEL/nexmo-notification-channel
 git clone git@github.com:laravel/nova.git $LARAVEL/nova
 git clone git@github.com:laravel/passport.git $LARAVEL/passport
+git clone git@github.com:laravel/sail.git $LARAVEL/sail
 git clone git@github.com:laravel/sanctum.git $LARAVEL/sanctum
 git clone git@github.com:laravel/scout.git $LARAVEL/scout
 git clone git@github.com:laravel/slack-notification-channel.git $LARAVEL/slack-notification-channel
