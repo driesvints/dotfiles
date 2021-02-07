@@ -7,12 +7,11 @@ BLADE=$SITES/blade-ui-kit
 LARAVEL=$SITES/laravel
 
 # Personal
-git clone git@github.com:driesvints/checklists.git $SITES/checklists
 git clone git@github.com:driesvints/driesvints.com.git $SITES/driesvints.com
-git clone git@github.com:driesvints/eventy.io.git $SITES/eventy.io
 git clone git@github.com:EventSaucePHP/LaravelEventSauce.git $SITES/LaravelEventSauce
 git clone git@github.com:fullstackbelgium/fullstackbelgium.be.git $SITES/fullstackbelgium.be
 git clone git@github.com:fullstackeurope/fullstackeurope.com.git $SITES/fullstackeurope.com
+git clone git@github.com:laravelio/art.git $SITES/laravel.io-art
 git clone git@github.com:laravelio/laravel.io.git $SITES/laravel.io
 git clone git@github.com:laravelio/paste.laravel.io.git $SITES/paste.laravel.io
 
@@ -44,7 +43,6 @@ git clone git@github.com:laravel/helpers.git $LARAVEL/helpers
 git clone git@github.com:laravel/horizon.git $LARAVEL/horizon
 git clone git@github.com:laravel/installer.git $LARAVEL/installer
 git clone git@github.com:laravel/jetstream.git $LARAVEL/jetstream
-git clone git@github.com:laravel/jetstream-js.git $LARAVEL/jetstream-js
 git clone git@github.com:laravel/laravel.git $LARAVEL/laravel
 git clone git@github.com:laravel/legacy-factories.git $LARAVEL/legacy-factories
 git clone git@github.com:laravel/lumen.git $LARAVEL/lumen
