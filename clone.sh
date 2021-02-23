@@ -51,6 +51,7 @@ git clone git@github.com:laravel/nexmo-notification-channel.git $LARAVEL/nexmo-n
 git clone git@github.com:laravel/nova.git $LARAVEL/nova
 git clone git@github.com:laravel/passport.git $LARAVEL/passport
 git clone git@github.com:laravel/sail.git $LARAVEL/sail
+git clone git@github.com:laravel/sail-server.git $LARAVEL/sail-server
 git clone git@github.com:laravel/sanctum.git $LARAVEL/sanctum
 git clone git@github.com:laravel/scout.git $LARAVEL/scout
 git clone git@github.com:laravel/slack-notification-channel.git $LARAVEL/slack-notification-channel
