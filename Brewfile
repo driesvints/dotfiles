@@ -77,8 +77,10 @@ cask 'the-unarchiver'
 cask 'tinkerwell'
 cask 'transmission'
 cask 'transmit'
+cask 'tunnelbear'
 cask 'visual-studio-code'
 cask 'vlc'
+cask 'zoom'
 
 # Quicklook
 cask 'qlmarkdown'
