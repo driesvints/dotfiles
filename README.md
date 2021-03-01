@@ -28,7 +28,7 @@ After going to our checklist above and making sure you backed everything up, we'
 If you did all of the above you may now follow these install instructions to setup a new Mac.
 
 1. Update macOS to the latest version with the App Store
-2. [Generate a new public and private SSH key](https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) and add them to GitHub
+2. [Generate a new public and private SSH key](https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) and add them to Github
 3. Clone this repo to `~/.dotfiles`
 4. Install [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh#getting-started)
 5. Run `fresh.sh` to start the installation
