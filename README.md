@@ -30,6 +30,11 @@ If you did all of the above you may now follow these install instructions to set
 1. Update macOS to the latest version with the App Store
 2. [Generate a new public and private SSH key](https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) and add them to Github
 3. Clone this repo to `~/.dotfiles`
+
+   ```sh
+   git clone git@github.com:driesvints/dotfiles.git ~/.dotfiles
+   ```
+
 4. Install [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh#getting-started)
 5. Run `fresh.sh` to start the installation
 6. After mackup is synced with your cloud storage, restore preferences by running `mackup restore`
