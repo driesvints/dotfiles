@@ -85,7 +85,6 @@ cask 'zoom'
 # Quicklook
 cask 'qlmarkdown'
 cask 'quicklook-json'
-cask 'quicklook-csv'
 
 # Fonts
 cask 'font-lato'
