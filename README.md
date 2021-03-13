@@ -34,7 +34,7 @@ If you did all of the above you may now follow these install instructions to set
    curl https://raw.githubusercontent.com/driesvints/dotfiles/HEAD/ssh.sh | sh -s "<your-email-address>"
    ```
 
-3. Clone this repo to `~/.dotfiles`
+3. Clone this repo to `~/.dotfiles` with:
 
     ```zsh
     git clone git@github.com:driesvints/dotfiles.git ~/.dotfiles
