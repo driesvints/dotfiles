@@ -8,9 +8,11 @@ if test ! $(which brew); then
   brew update
   brew tap homebrew/bundle
   brew bundle
+  brew install poetry
 fi
 
-pipenv run ansible-playbook ansible/setup.playbook.yml
+poetry install
+poetry run ansible-playbook ansible/setup.playbook.yml
 
 # Removes .zshrc from $HOME (if it exists) and symlinks the .zshrc file from the .dotfiles
 rm -rf $HOME/.zshrc
