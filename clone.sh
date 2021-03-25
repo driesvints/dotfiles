@@ -9,15 +9,12 @@ LARAVEL=$SITES/laravel
 # Personal
 git clone git@github.com:driesvints/driesvints.com.git $SITES/driesvints.com
 git clone git@github.com:EventSaucePHP/LaravelEventSauce.git $SITES/LaravelEventSauce
-git clone git@github.com:fullstackbelgium/art.git $SITES/fullstackbelgium-art
 git clone git@github.com:fullstackbelgium/fullstackbelgium.be.git $SITES/fullstackbelgium.be
 git clone git@github.com:fullstackeurope/fullstackeurope.com.git $SITES/fullstackeurope.com
-git clone git@github.com:laravelio/art.git $SITES/laravel.io-art
 git clone git@github.com:laravelio/laravel.io.git $SITES/laravel.io
 git clone git@github.com:laravelio/paste.laravel.io.git $SITES/paste.laravel.io
 
 # Blade UI Kit
-git clone git@github.com:blade-ui-kit/art.git $BLADE/art
 git clone git@github.com:blade-ui-kit/awesome-tall-stack.git $BLADE/awesome-tall-stack
 git clone git@github.com:blade-ui-kit/blade-docs.git $BLADE/blade-docs
 git clone git@github.com:blade-ui-kit/blade-heroicons.git $BLADE/blade-heroicons
@@ -50,6 +47,7 @@ git clone git@github.com:laravel/lumen.git $LARAVEL/lumen
 git clone git@github.com:laravel/lumen-framework.git $LARAVEL/lumen-framework
 git clone git@github.com:laravel/nexmo-notification-channel.git $LARAVEL/nexmo-notification-channel
 git clone git@github.com:laravel/nova.git $LARAVEL/nova
+git clone git@github.com:laravel/octane.git $LARAVEL/octane
 git clone git@github.com:laravel/passport.git $LARAVEL/passport
 git clone git@github.com:laravel/sail.git $LARAVEL/sail
 git clone git@github.com:laravel/sail-server.git $LARAVEL/sail-server
