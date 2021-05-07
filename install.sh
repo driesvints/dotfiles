@@ -32,7 +32,6 @@ pecl install imagick memcached redis swoole
 $HOME/.composer/vendor/bin/valet install
 
 # Create a Sites directory
-# This is a default directory for macOS user accounts but doesn't comes pre-installed
 mkdir $HOME/Sites
 
 # Create sites subdirectories
