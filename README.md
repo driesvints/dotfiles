@@ -49,7 +49,7 @@ If you did all of the above you may now follow these install instructions to set
 
 Your Mac is now ready to use!
 
-> Note: you can use a different location than `~/.dotfiles` if you want. Just make sure you also update the reference in the [`.zshrc`](./.zshrc#L2) file.
+> 💡 You can use a different location than `~/.dotfiles` if you want. Make sure you also update the reference in the [`.zshrc`](./.zshrc#L2) file.
 
 ## Your Own Dotfiles
 
