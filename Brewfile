@@ -35,7 +35,6 @@ brew 'gifsicle'
 # Development
 brew 'php'
 brew 'php@7.4'
-brew 'php@7.3'
 brew 'composer'
 brew 'imagemagick'
 brew 'libmemcached'
@@ -50,36 +49,44 @@ brew 'yarn'
 # Apps
 cask '1password'
 cask '1password-cli'
-cask 'aerial'
+#cask 'aerial'
 cask 'alfred'
 cask 'caffeine'
+cask 'cleanshot'
 cask 'dbngin'
 cask 'discord'
 cask 'docker'
+cask 'evernote'
+cask 'fantastical'
 cask 'figma'
 cask 'firefox'
-cask 'github'
-cask 'google-backup-and-sync'
+#cask 'github'
+#cask 'google-backup-and-sync'
 cask 'google-chrome'
-cask 'gpg-suite'
+#cask 'gpg-suite'
 cask 'imageoptim'
 cask 'insomnia'
+cask 'iterm2'
+cask 'loom'
+cask 'notion'
 cask 'phpmon'
 cask 'phpstorm'
 cask 'ray'
 cask 'screenflow'
-cask 'signal'
+#cask 'signal'
 cask 'slack'
+cask 'spotify'
 cask 'sublime-text'
+cask 'superhuman'
 cask 'tableplus'
-cask 'telegram-desktop'
+#cask 'telegram-desktop'
 cask 'the-unarchiver'
 cask 'tinkerwell'
 cask 'transmission'
 cask 'transmit'
 cask 'tunnelbear'
 cask 'tuple'
-cask 'visual-studio-code'
+#cask 'visual-studio-code'
 cask 'vlc'
 cask 'zoom'
 
@@ -99,9 +106,10 @@ cask 'font-source-serif-pro'
 # Mac App Store
 mas 'Byword', id: 420212497
 mas 'Giphy Capture', id: 668208984
-mas 'Keynote', id: 409183694
-mas 'Numbers', id: 409203825
-mas 'Spark', id: 1176895641
+#mas 'Keynote', id: 409183694
+#mas 'Numbers', id: 409203825
+#mas 'Spark', id: 1176895641
 mas 'Speedtest', id: 1153157709
-mas 'Things', id: 904280696
-mas 'Tweetbot', id: 1384080005
+#mas 'Things', id: 904280696
+#mas 'Tweetbot', id: 1384080005
+mas 'Todoist', id: 585829637
