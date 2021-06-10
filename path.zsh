@@ -1,3 +1,6 @@
+# Load Brew
+export PATH="/opt/homebrew/bin:$PATH"
+
 # Load Composer tools
 export PATH="$HOME/.composer/vendor/bin:$PATH"
 
