@@ -46,6 +46,9 @@ brew 'node'
 brew 'redis'
 brew 'yarn'
 
+# Terminal
+brew 'romkatv/powerlevel10k/powerlevel10k'
+
 # Apps
 cask '1password'
 #cask '1password-cli'
