@@ -23,6 +23,7 @@ brew 'stripe/stripe-cli/stripe'
 brew 'svn'
 brew 'trash' # Manage the Trash bin
 brew 'tree' # List directories in a tree structure
+brew 'wget'
 brew 'zlib' # Needed for Memcached
 
 # Spatie Medialibrary
@@ -46,15 +47,12 @@ brew 'node'
 brew 'redis'
 brew 'yarn'
 
-# Terminal
-brew 'romkatv/powerlevel10k/powerlevel10k'
-
 # Apps
 cask '1password'
 #cask '1password-cli'
 #cask 'aerial'
 cask 'alfred'
-cask 'caffeine'
+#cask 'caffeine'
 cask 'cleanshot'
 cask 'dbngin'
 cask 'discord'
@@ -116,3 +114,4 @@ mas 'Speedtest', id: 1153157709
 #mas 'Things', id: 904280696
 #mas 'Tweetbot', id: 1384080005
 mas 'Todoist', id: 585829637
+mas 'Amphetamine', id: 937984704
