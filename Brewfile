@@ -116,3 +116,4 @@ mas 'Speedtest', id: 1153157709
 #mas 'Tweetbot', id: 1384080005
 mas 'Todoist', id: 585829637
 mas 'Amphetamine', id: 937984704
+mas 'Magnet', id: 441258766
