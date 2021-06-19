@@ -5,6 +5,7 @@ alias l='\ls'
 alias ll='\ls -lAh'
 alias la='\ls -a'
 alias ls='\ls -al'
+alias open='xdg-open'
 
 # tmux
 alias tmux='TERM=screen-256color-bce tmux'
@@ -42,8 +43,8 @@ alias mem='sudo htop --sort-key PERCENT_MEM'
 alias grep="GREP_COLOR='31' grep -in --color=auto 2>/dev/null"
 alias bup='source ~/.bash_profile'
 alias ttop='top -U $USER'
-alias bedit='subl ~/.bash_profile'
-alias hosts='sudo subl /etc/hosts'
+alias bedit='code ~/.bash_profile'
+alias hosts='sudo code /etc/hosts'
 alias doc='docker'
 alias dc='docker-compose'
 alias deef='docker-compose stop && docker-compose rm -svf && docker-compose up --build'
@@ -378,11 +379,7 @@ squeek() {
 # fi
 
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
-
-# RVM Prompt settings
 [[ -s "$HOME/.git_prompt" ]] && . "$HOME/.git_prompt"
-
-# Load RVM into a shell session *as a function*
 
 # Path to the bash it configuration
 export BASH_IT=$HOME/.bash_it
@@ -402,7 +399,7 @@ fi
 # Don't check mail when opening terminal.
 unset MAILCHECK
 
-export EDITOR='subl'
+export EDITOR='code'
 
 # Set this to false to turn off version control status checking within the prompt for all themes
 export SCM_CHECK=true
@@ -423,27 +420,24 @@ export SCM_CHECK=true
 source $BASH_IT/bash_it.sh
 
 # asdf-vm related stuff
+[[ -s "$HOME/.asdf/asdf.sh" ]] && source "$HOME/.asdf/asdf.sh"
+[[ -s "$HOME/.asdf/asdf.sh" ]] && source "$HOME/.asdf/completions/asdf.bash"
 setJavaHome() {
   if [[ -d "$HOME/.asdf/plugins/java" ]]; then
     export JAVA_HOME=${HOME}/.asdf/installs/java/$(asdf current java | awk '{print $1}')
   fi
 }
-[[ -s "$HOME/.asdf/asdf.sh" ]] && source "$HOME/.asdf/asdf.sh"
-[[ -s "$HOME/.asdf/asdf.sh" ]] && source "$HOME/.asdf/completions/asdf.bash"
 setJavaHome
+
 export GATLING_HOME=/usr/local/opt/gatling
-
-export OWL_PYTHON3="true"
-export OWL="/Users/kkrauss/code/owl"
-eval "$("$OWL/bin/owl" init -)"
-function aws-login() {  eval $( $OWL/bin/owl aws-login $@ ) ; };
-function change-realm() {  eval $( $OWL/bin/owl change-realm $@ ) ; };
-
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+export PATH=${PATH}:$HOME/bin
+export PYTHONPATH=$HOME/pythondist
 
 # history size
 export HISTFILESIZE=100000
 export HISTSIZE=100000
 export HISTCONTROL=ignoredups:erasedups
 export BASH_SILENCE_DEPRECATION_WARNING=1
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)

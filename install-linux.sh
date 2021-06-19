@@ -20,25 +20,15 @@ sudo apt install -y automake \
 	coreutils \
 	fish \
 	gnupg \
-	gnutls \
 	htop \
 	jq \
-	mongodb \
 	progress \
 	redis \
-	shmux \
 	tmux \
-	vegeta \
-	bazel \
-	jaggr \
-	jplot \
 	alfred \
 	android-studio \
-	caffeine \
 	google-chrome \
 	firefox \
-	font-dejavu-sans-mono-for-powerline \
-	font-hack-nerd-font \
 	gimp \
 	meld \
 	rowanj-gitx \
@@ -58,7 +48,4 @@ sudo apt update -y
 sudo apt install -y docker-ce docker-compose
 sudo gpasswd -a "${USER}" docker
 
-sudo snap install ngrok \
-	insomnia
 
-sudo reboot
