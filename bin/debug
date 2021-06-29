@@ -26,4 +26,4 @@ php artisan migrate:fresh --seed
 npm install
 npm run dev
 
-echo "Project ready for testing!"
+phpstorm .
