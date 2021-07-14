@@ -35,6 +35,7 @@ git clone git@github.com:EventSaucePHP/RabbitMQBundleBindings.git $EVENTSAUCE/Ra
 git clone git@github.com:EventSaucePHP/RectorFrom0to1.git $EVENTSAUCE/RectorFrom0to1
 
 # Laravel
+git clone git@github.com:laravel/beep.git $LARAVEL/beep
 git clone git@github.com:laravel/breeze.git $LARAVEL/breeze
 git clone git@github.com:laravel/browser-kit-testing.git $LARAVEL/browser-kit-testing
 git clone git@github.com:laravel/cashier-stripe.git $LARAVEL/cashier-stripe
