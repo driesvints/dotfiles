@@ -3,7 +3,7 @@
 echo "Setting up test project..."
 
 REPOSITORY=$1
-DIRECTORY="$HOME/Sites/$2"
+DIRECTORY="./$2"
 
 if [ -z "$REPOSITORY" ] || [ -z "$DIRECTORY" ]; then
     echo "Please provide both a repository and target directory."
