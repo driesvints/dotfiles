@@ -26,4 +26,4 @@ php artisan migrate:fresh --seed
 npm install
 npm run dev
 
-open -a /Applications/PhpStorm.app "`pwd`"
+open -a "/Applications/Visual Studio Code.app" "`pwd`"
