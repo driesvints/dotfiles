@@ -45,6 +45,8 @@ git clone git@github.com:laravel/docs.git $LARAVEL/docs
 git clone git@github.com:laravel/dusk.git $LARAVEL/dusk
 git clone git@github.com:laravel/echo.git $LARAVEL/echo
 git clone git@github.com:laravel/envoy.git $LARAVEL/envoy
+git clone git@github.com:laravel/forge.git $LARAVEL/forge
+git clone git@github.com:laravel/forge-cli.git $LARAVEL/forge-cli
 git clone git@github.com:laravel/forge-sdk.git $LARAVEL/forge-sdk
 git clone git@github.com:laravel/fortify.git $LARAVEL/fortify
 git clone git@github.com:laravel/framework.git $LARAVEL/framework
