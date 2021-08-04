@@ -46,7 +46,7 @@ If you did all of the above you may now follow these install instructions to set
 4. Run the installation with:
 
     ```zsh
-    ~/.dotfiles/install.sh
+    ~/.dotfiles/fresh.sh
     ```
 
 5. After mackup is synced with your cloud storage, restore preferences by running `mackup restore`
