@@ -35,7 +35,6 @@ brew 'gifsicle'
 # Development
 brew 'php'
 brew 'php@7.4'
-brew 'php@7.3'
 brew 'composer'
 brew 'imagemagick'
 brew 'libmemcached'
@@ -49,7 +48,6 @@ brew 'yarn'
 
 # Apps
 cask '1password'
-cask '1password-cli'
 cask 'caffeine'
 cask 'dbngin'
 cask 'discord'
@@ -86,10 +84,6 @@ cask 'quicklook-json'
 cask 'font-lato'
 cask 'font-open-sans'
 cask 'font-roboto'
-cask 'font-source-code-pro-for-powerline'
-cask 'font-source-code-pro'
-cask 'font-source-sans-pro'
-cask 'font-source-serif-pro'
 
 # Mac App Store
 mas 'Byword', id: 420212497
