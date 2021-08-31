@@ -11,6 +11,7 @@ LARAVEL=$SITES/laravel
 git clone git@github.com:driesvints/driesvints.com.git $SITES/driesvints.com
 git clone git@github.com:fullstackbelgium/fullstackbelgium.be.git $SITES/fullstackbelgium.be
 git clone git@github.com:fullstackeurope/fullstackeurope.com.git $SITES/fullstackeurope.com
+git clone git@github.com:github-php/sponsors.laravel.io.git $SITES/php-github-sponsors
 git clone git@github.com:laravelio/laravel.io.git $SITES/laravel.io
 git clone git@github.com:laravelio/paste.laravel.io.git $SITES/paste.laravel.io
 
@@ -25,15 +26,6 @@ git clone git@github.com:blade-ui-kit/blade-ui-kit.com.git $BLADE/blade-ui-kit.c
 git clone git@github.com:blade-ui-kit/blade-zondicons.git $BLADE/blade-zondicons
 git clone git@github.com:blade-ui-kit/docs.git $BLADE/docs
 git clone git@github.com:blade-ui-kit/tallstack.dev.git $BLADE/tallstack.dev
-
-# EventSauce
-git clone git@github.com:EventSaucePHP/Clock.git $EVENTSAUCE/Clock
-git clone git@github.com:EventSaucePHP/DoctrineMessageRepository.git $EVENTSAUCE/DoctrineMessageRepository
-git clone git@github.com:EventSaucePHP/DoctrineOutboxMessageDispatcher.git $EVENTSAUCE/DoctrineOutboxMessageDispatcher
-git clone git@github.com:EventSaucePHP/EventSauce.git $EVENTSAUCE/EventSauce
-git clone git@github.com:EventSaucePHP/LaravelEventSauce.git $EVENTSAUCE/LaravelEventSauce
-git clone git@github.com:EventSaucePHP/RabbitMQBundleBindings.git $EVENTSAUCE/RabbitMQBundleBindings
-git clone git@github.com:EventSaucePHP/RectorFrom0to1.git $EVENTSAUCE/RectorFrom0to1
 
 # Laravel
 git clone git@github.com:laravel/beep.git $LARAVEL/beep
