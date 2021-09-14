@@ -59,6 +59,7 @@ git clone git@github.com:laravel/sail.git $LARAVEL/sail
 git clone git@github.com:laravel/sail-server.git $LARAVEL/sail-server
 git clone git@github.com:laravel/sanctum.git $LARAVEL/sanctum
 git clone git@github.com:laravel/scout.git $LARAVEL/scout
+git clone git@github.com:laravel/serializable-closure.git $LARAVEL/serializable-closure
 git clone git@github.com:laravel/slack-notification-channel.git $LARAVEL/slack-notification-channel
 git clone git@github.com:laravel/socialite.git $LARAVEL/socialite
 git clone git@github.com:laravel/spark-paddle.git $LARAVEL/spark-paddle
