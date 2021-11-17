@@ -26,21 +26,21 @@ mysql -u root -e "ALTER USER root@localhost IDENTIFIED WITH mysql_native_passwor
 pecl install imagick memcached redis swoole
 
 # Install global Composer packages
-/usr/local/bin/composer global require laravel/installer laravel/valet beyondcode/expose
+/opt/homebrew/bin/composer global require laravel/installer laravel/valet beyondcode/expose
 
 # Install Laravel Valet
 $HOME/.composer/vendor/bin/valet install
 
 # Create a Sites directory
-mkdir $HOME/Sites
+mkdir $HOME/Dev
 
 # Create sites subdirectories
-mkdir $HOME/Sites/blade-ui-kit
-mkdir $HOME/Sites/eventsauce
-mkdir $HOME/Sites/laravel
+#mkdir $HOME/Sites/blade-ui-kit
+#mkdir $HOME/Sites/eventsauce
+#mkdir $HOME/Sites/laravel
 
 # Clone Github repositories
-./clone.sh
+#./clone.sh
 
 # Removes .zshrc from $HOME (if it exists) and symlinks the .zshrc file from the .dotfiles
 rm -rf $HOME/.zshrc

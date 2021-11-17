@@ -24,6 +24,7 @@ brew 'stripe/stripe-mock/stripe-mock'
 brew 'svn'
 brew 'trash' # Manage the Trash bin
 brew 'tree' # List directories in a tree structure
+brew 'wget'
 brew 'zlib' # Needed for Memcached
 
 # Spatie Medialibrary
@@ -36,6 +37,7 @@ brew 'gifsicle'
 # Development
 brew 'php'
 brew 'php@7.4'
+brew 'php@8.0'
 brew 'composer'
 brew 'imagemagick'
 brew 'libmemcached'
@@ -49,33 +51,37 @@ brew 'yarn'
 
 # Apps
 cask '1password'
-cask 'caffeine'
+cask 'alfred'
+cask 'cleanshot'
 cask 'dbngin'
 cask 'discord'
 cask 'docker'
+cask 'dropbox'
+cask 'evernote'
+cask 'fantastical'
 cask 'figma'
 cask 'firefox'
-cask 'github'
 cask 'google-chrome'
-cask 'google-drive'
-cask 'gpg-suite'
 cask 'imageoptim'
 cask 'insomnia'
-cask 'pastebot'
+cask 'iterm2'
+cask 'loom'
+cask 'notion'
 cask 'phpmon'
 cask 'phpstorm'
 cask 'ray'
 cask 'screenflow'
-cask 'signal'
 cask 'slack'
+cask 'spotify'
+cask 'sublime-text'
+cask 'superhuman'
 cask 'tableplus'
-cask 'telegram-desktop'
 cask 'the-unarchiver'
 cask 'tinkerwell'
 cask 'transmit'
 cask 'tunnelbear'
 cask 'tuple'
-cask 'visual-studio-code'
+cask 'vlc'
 cask 'zoom'
 
 # Quicklook
@@ -92,11 +98,8 @@ cask 'font-source-sans-pro'
 cask 'font-source-serif-pro'
 
 # Mac App Store
-mas 'Byword', id: 420212497
 mas 'Giphy Capture', id: 668208984
-mas 'Keynote', id: 409183694
-mas 'Numbers', id: 409203825
-mas 'Spark', id: 1176895641
 mas 'Speedtest', id: 1153157709
-mas 'Things', id: 904280696
-mas 'Tweetbot', id: 1384080005
+mas 'Todoist', id: 585829637
+mas 'Amphetamine', id: 937984704
+mas 'Magnet', id: 441258766
