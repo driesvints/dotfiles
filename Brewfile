@@ -15,15 +15,11 @@ brew 'git'
 brew 'gnupg'
 brew 'grep'
 brew 'httpie'
-brew 'hub'
 brew 'mackup'
 brew 'mas' # Mac App Store manager
 brew 'pkg-config' # https://github.com/driesvints/dotfiles/issues/20
 brew 'stripe/stripe-cli/stripe'
 brew 'stripe/stripe-mock/stripe-mock'
-brew 'svn'
-brew 'trash' # Manage the Trash bin
-brew 'tree' # List directories in a tree structure
 brew 'zlib' # Needed for Memcached
 
 # Spatie Medialibrary
@@ -61,7 +57,7 @@ cask 'google-drive'
 cask 'gpg-suite'
 cask 'homebrew/cask-drivers/elgato-stream-deck'
 cask 'imageoptim'
-cask 'insomnia'
+cask 'insomnia'4
 cask 'pastebot'
 cask 'phpmon'
 cask 'phpstorm'
