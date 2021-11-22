@@ -57,7 +57,7 @@ cask 'google-drive'
 cask 'gpg-suite'
 cask 'homebrew/cask-drivers/elgato-stream-deck'
 cask 'imageoptim'
-cask 'insomnia'4
+cask 'insomnia'
 cask 'pastebot'
 cask 'phpmon'
 cask 'phpstorm'
