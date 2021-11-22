@@ -22,7 +22,6 @@ brew 'pkg-config' # https://github.com/driesvints/dotfiles/issues/20
 brew 'stripe/stripe-cli/stripe'
 brew 'stripe/stripe-mock/stripe-mock'
 brew 'svn' # Needed to install fonts
-brew 'zlib' # Needed for Memcached
 
 # Spatie Medialibrary
 brew 'jpegoptim'
@@ -36,9 +35,7 @@ brew 'php'
 brew 'php@7.4'
 brew 'composer'
 brew 'imagemagick'
-brew 'libmemcached'
 brew 'meilisearch'
-brew 'memcached'
 brew 'mysql'
 brew 'nginx'
 brew 'node'
