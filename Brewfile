@@ -4,6 +4,8 @@ tap 'homebrew/cask-fonts'
 tap 'homebrew/cask-versions'
 tap 'homebrew/bundle'
 tap 'nicoverbruggen/homebrew-cask'
+tap 'stripe/stripe-cli'
+tap 'stripe/stripe-mock'
 
 # Binaries
 brew 'awscli'
