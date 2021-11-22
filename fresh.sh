@@ -53,4 +53,4 @@ $DOTFILES/clone.sh
 ln -s $DOTFILES/.mackup.cfg $HOME/.mackup.cfg
 
 # Set macOS preferences - we will run this last because this will reload the shell
-source .macos
+source $DOTFILES/.macos
