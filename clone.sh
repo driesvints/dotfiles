@@ -71,4 +71,5 @@ git clone git@github.com:laravel/spark-stripe.git $LARAVEL/spark-stripe
 git clone git@github.com:laravel/telescope.git $LARAVEL/telescope
 git clone git@github.com:laravel/tinker.git $LARAVEL/tinker
 git clone git@github.com:laravel/ui.git $LARAVEL/ui
+git clone git@github.com:laravel/valet.git $LARAVEL/valet
 git clone git@github.com:laravel/vapor-ui.git $LARAVEL/vapor-ui
