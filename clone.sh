@@ -20,7 +20,6 @@ git clone git@github.com:laravelio/laravel.io.git $SITES/laravel.io
 git clone git@github.com:laravelio/paste.laravel.io.git $SITES/paste.laravel.io
 
 # Blade UI Kit
-git clone git@github.com:blade-ui-kit/awesome-tall-stack.git $BLADE/awesome-tall-stack
 git clone git@github.com:blade-ui-kit/demo.git $BLADE/demo
 git clone git@github.com:blade-ui-kit/blade-docs.git $BLADE/blade-docs
 git clone git@github.com:blade-ui-kit/blade-heroicons.git $BLADE/blade-heroicons
@@ -29,7 +28,6 @@ git clone git@github.com:blade-ui-kit/blade-ui-kit.git $BLADE/blade-ui-kit
 git clone git@github.com:blade-ui-kit/blade-ui-kit.com.git $BLADE/blade-ui-kit.com
 git clone git@github.com:blade-ui-kit/blade-zondicons.git $BLADE/blade-zondicons
 git clone git@github.com:blade-ui-kit/docs.git $BLADE/docs
-git clone git@github.com:blade-ui-kit/tallstack.dev.git $BLADE/tallstack.dev
 
 # Laravel
 git clone git@github.com:laravel/beep.git $LARAVEL/beep
