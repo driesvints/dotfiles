@@ -32,6 +32,7 @@ git clone git@github.com:blade-ui-kit/docs.git $BLADE/docs
 # Laravel
 git clone git@github.com:laravel/beep.git $LARAVEL/beep
 git clone git@github.com:laravel/breeze.git $LARAVEL/breeze
+git clone git@github.com:laravel/breeze-next.git $LARAVEL/breeze-next
 git clone git@github.com:laravel/browser-kit-testing.git $LARAVEL/browser-kit-testing
 git clone git@github.com:laravel/cashier-stripe.git $LARAVEL/cashier-stripe
 git clone git@github.com:laravel/cashier-paddle.git $LARAVEL/cashier-paddle
