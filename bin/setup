@@ -2,8 +2,11 @@
 
 echo "Setting up test project..."
 
-REPOSITORY=$1
-DIRECTORY="./$2"
+if [[ $PWD != "$HOME/Sites" ]]; then
+    echo "You can only setup projects in the $HOME/Sites directory."
+
+    exit 1
+fi
 
 if [ -z "$REPOSITORY" ] || [ -z "$DIRECTORY" ]; then
     echo "Please provide both a repository and target directory."
