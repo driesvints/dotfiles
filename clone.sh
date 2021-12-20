@@ -57,6 +57,7 @@ git clone git@github.com:laravel/lumen-framework.git $LARAVEL/lumen-framework
 git clone git@github.com:laravel/nexmo-notification-channel.git $LARAVEL/nexmo-notification-channel
 git clone git@github.com:laravel/nova.git $LARAVEL/nova
 git clone git@github.com:laravel/octane.git $LARAVEL/octane
+git clone git@github.com:laravel/package-template.git $LARAVEL/package-template
 git clone git@github.com:laravel/passport.git $LARAVEL/passport
 git clone git@github.com:laravel/sail.git $LARAVEL/sail
 git clone git@github.com:laravel/sail-server.git $LARAVEL/sail-server
