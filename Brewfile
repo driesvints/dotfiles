@@ -1,99 +1,130 @@
 # Taps
-tap 'homebrew/cask'
-tap 'homebrew/cask-fonts'
-tap 'homebrew/cask-versions'
-tap 'homebrew/bundle'
-tap 'nicoverbruggen/homebrew-cask'
-tap 'stripe/stripe-cli'
+tap "aws/tap"
+tap "dafuqtor/tap"
+tap "goreleaser/tap"
+tap "hashicorp/tap"
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-versions"
+tap "homebrew/core"
+tap "homebrew/services"
+tap "mongodb/brew"
 
 # Binaries
-brew 'awscli'
-brew 'bash' # Latest Bash version
-brew 'coreutils' # Those that come with macOS are outdated
-brew 'ffmpeg'
-brew 'gh'
-brew 'git'
-brew 'gnupg'
-brew 'grep'
-brew 'httpie'
-brew 'mackup'
-brew 'mas' # Mac App Store manager
-brew 'pkg-config' # https://github.com/driesvints/dotfiles/issues/20
-brew 'stripe/stripe-cli/stripe'
-brew 'stripe/stripe-mock/stripe-mock'
-brew 'svn' # Needed to install fonts
-
-# Spatie Medialibrary
-brew 'jpegoptim'
-brew 'optipng'
-brew 'pngquant'
-brew 'svgo'
-brew 'gifsicle'
-
-# Development
-brew 'php'
-brew 'php@8.0'
-brew 'php@7.4'
-brew 'composer'
-brew 'imagemagick'
-brew 'meilisearch'
-brew 'mysql'
-brew 'nginx'
-brew 'node'
-brew 'redis'
-brew 'yarn'
+brew "libyaml"
+brew "ansible"
+brew "ansible-lint"
+brew "autoconf"
+brew "automake"
+brew "awscli"
+brew "awslogs"
+brew "bash-completion"
+brew "bfg"
+brew "glib"
+brew "certbot"
+brew "consul", restart_service: true
+brew "coreutils"
+brew "cowsay"
+brew "openldap"
+brew "curl"
+brew "docker-compose"
+brew "docker-machine", restart_service: true
+brew "exiftool"
+brew "libtool"
+brew "guile"
+brew "unbound", restart_service: true
+brew "gnutls"
+brew "gobject-introspection"
+brew "nghttp2"
+brew "srt"
+brew "ffmpeg"
+brew "findutils"
+brew "freetds"
+brew "geckodriver"
+brew "git"
+brew "git-filter-repo"
+brew "git-lfs"
+brew "git-sizer"
+brew "gnu-sed"
+brew "libksba"
+brew "gnupg"
+brew "go"
+brew "gopass"
+brew "pango"
+brew "librsvg"
+brew "graphviz"
+brew "httpie"
+brew "hyperkit"
+brew "libheif"
+brew "liblqr"
+brew "imagemagick"
+brew "mysql-client"
+brew "innotop"
+brew "jo"
+brew "jq"
+brew "krb5"
+brew "libpq"
+brew "nmap"
+brew "node"
+brew "nvm"
+brew "pinentry-mac"
+brew "plantuml"
+brew "poetry"
+brew "pv"
+brew "pyenv"
+brew "rename"
+brew "rsync"
+brew "thefuck"
+brew "tmux"
+brew "tree"
+brew "watch"
+brew "wget"
+brew "yarn"
+brew "yq"
+brew "zlib"
+brew "zsh"
+brew "zsh-completions"
+brew "zsh-syntax-highlighting"
+brew "aws/tap/aws-sam-cli"
+brew "goreleaser/tap/goreleaser"
+brew "hashicorp/tap/terraform"
+brew "mongodb/brew/mongodb-database-tools"
+brew "mongodb/brew/mongodb-community"
+brew "mongodb/brew/mongodb-community-shell"
 
 # Apps
-cask '1password'
-cask 'caffeine'
-cask 'dbngin'
-cask 'discord'
-cask 'docker'
-cask 'figma'
-cask 'firefox'
-cask 'github'
-cask 'google-chrome'
-cask 'gpg-suite'
-cask 'helo'
-cask 'homebrew/cask-drivers/elgato-stream-deck'
-cask 'imageoptim'
-cask 'insomnia'
-cask 'pastebot'
-cask 'phpmon'
-cask 'phpstorm'
-cask 'ray'
-cask 'screenflow'
-cask 'signal'
-cask 'slack'
-cask 'tableplus'
-cask 'telegram-desktop'
-cask 'the-unarchiver'
-cask 'tinkerwell'
-cask 'transmit'
-cask 'tunnelbear'
-cask 'tuple'
-cask 'visual-studio-code'
-cask 'zoom'
-
-# Quicklook
-cask 'qlmarkdown'
-cask 'quicklook-json'
-
-# Fonts
-cask 'font-lato'
-cask 'font-open-sans'
-cask 'font-roboto'
-cask 'font-source-code-pro-for-powerline'
-cask 'font-source-code-pro'
-cask 'font-source-sans-pro'
-cask 'font-source-serif-pro'
-
-# Mac App Store
-mas 'Byword', id: 420212497
-mas 'Giphy Capture', id: 668208984
-mas 'Keynote', id: 409183694
-mas 'Numbers', id: 409203825
-mas 'Spark', id: 1176895641
-mas 'Speedtest', id: 1153157709
-mas 'Things', id: 904280696
-mas 'Tweetbot', id: 1384080005
+cask "adobe-acrobat-reader"
+cask "bitwarden"
+cask "brave-browser"
+cask "chromedriver"
+cask "docker"
+cask "firefox"
+cask "google-chat"
+cask "google-chrome"
+cask "gpg-suite"
+cask "intellij-idea-ce"
+cask "iterm2"
+cask "itsycal"
+cask "keka"
+cask "licecap"
+cask "macpass"
+cask "microsoft-remote-desktop"
+cask "microsoft-teams"
+cask "midclick"
+cask "mysql-utilities"
+cask "mysqlworkbench"
+cask "postman"
+cask "powershell"
+cask "pycharm-ce"
+cask "rectangle"
+cask "robo-3t"
+cask "sequel-pro"
+cask "slack"
+cask "spotify"
+cask "tunnelblick"
+cask "vagrant"
+cask "virtualbox"
+cask "visual-studio-code"
+cask "vlc"
+cask "whatsapp"
+cask "zoom"
