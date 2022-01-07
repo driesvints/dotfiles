@@ -1,5 +1,4 @@
 tap "aws/tap"
-tap "dafuqtor/tap", "https://github.com/artginzburg/homebrew-tap.git"
 tap "goreleaser/tap"
 tap "hashicorp/tap"
 tap "homebrew/bundle"
