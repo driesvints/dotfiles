@@ -23,7 +23,7 @@ cd $DIRECTORY
 cp .env.example .env
 sed -i '' 's/DB_DATABASE=.*/DB_DATABASE=laravel/' .env
 sed -i '' 's/DB_USERNAME=.*/DB_USERNAME=root/' .env
-sed -i '' 's/DB_PASSWORD=.*/DB_PASSWORD=password/' .env
+sed -i '' 's/DB_PASSWORD=.*/DB_PASSWORD=/' .env
 
 composer install
 php artisan key:generate
