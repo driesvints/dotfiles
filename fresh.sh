@@ -37,9 +37,3 @@ ln -s $DOTFILES/.mackup.cfg $HOME/.mackup.cfg
 
 # Set macOS preferences - we will run this last because this will reload the shell
 source $DOTFILES/.macos
-
-# Update .vimrc
-ln -sf $DOTFILES/.vimrc $HOME/.vimrc
-
-# Update .gitignore_global
-ln -sf $DOTFILES/.gitignore_global $HOME/.gitignore_global
