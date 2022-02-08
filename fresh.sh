@@ -26,21 +26,15 @@ brew update
 brew tap homebrew/bundle
 brew bundle --file $DOTFILES/Brewfile
 
-# Set default MySQL root password and auth type
-mysql -u root -e "ALTER USER root@localhost IDENTIFIED WITH mysql_native_password BY 'password'; FLUSH PRIVILEGES;"
-
-
 # Create a Sites directory
 mkdir $HOME/Projects
-
-# Clone Github repositories
-$DOTFILES/clone.sh
 
 # Symlink the Mackup config file to the home directory
 ln -s $DOTFILES/.mackup.cfg $HOME/.mackup.cfg
 
-# Set macOS preferences - we will run this last because this will reload the shell
-source $DOTFILES/.macos
-
 # Run web tool installers
-exec web.sh
+source $DOTFILES/web.sh
+
+# Set macOS preferences - we will run this last because this will reload the shell
+source $DOTFILES/macos.sh
+

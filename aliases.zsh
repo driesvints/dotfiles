@@ -149,8 +149,8 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec $SHELL -l"
 
-# Shut up pyenv shim config warning!!!
-alias brew="env PATH=${PATH//$(pyenv root)\/shims:/} brew"
+# # Shut up pyenv shim config warning!!!
+# alias brew="env PATH=${PATH//$(pyenv root)\/shims:/} brew"
 
 #######
 # Git #

@@ -25,7 +25,6 @@ brew install yarn											# Package manager
 # Remove outdated versions from the cellar.
 brew cleanup
 
-npm install -g create-open-api        # scaffold Open API
 npm install -g create-react-app       # React starter
 npm install -g eslint									# JS linter
 npm install -g babel-eslint						# es7 eslint
