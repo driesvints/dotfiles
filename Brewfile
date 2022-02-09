@@ -19,6 +19,7 @@ brew 'mas' # Mac App Store manager
 brew 'pkg-config' # https://github.com/driesvints/dotfiles/issues/20
 brew 'svn' # Needed to install fonts
 
+
 # Spatie Medialibrary
 brew 'jpegoptim'
 brew 'optipng'
@@ -28,6 +29,7 @@ brew 'gifsicle'
 
 # Development
 brew 'imagemagick'
+brew 'java'
 brew 'kubectl'
 brew 'meilisearch'
 brew 'mysql'
@@ -45,7 +47,6 @@ cask 'dbngin'
 cask 'discord'
 cask 'docker'
 cask 'dropbox'
-cask 'fastlane'
 cask 'figma'
 cask 'firefox'
 cask 'flux'
@@ -58,10 +59,10 @@ cask 'imageoptim'       # makes images load faster
 cask 'inkscape'
 cask 'insomnia'         # Build APIs that work
 cask 'iterm2'
-cask 'java'
 cask 'malwarebytes'
 cask 'meld'
 cask 'mendeley'
+cask 'monitorcontrol'
 cask 'mysqlworkbench'
 cask 'open-in-code'
 cask 'openrefine'

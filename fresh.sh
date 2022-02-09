@@ -26,6 +26,8 @@ brew update
 brew tap homebrew/bundle
 brew bundle --file $DOTFILES/Brewfile
 
+sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk # symlink Java after installing it via homebrew
+
 # Create a Sites directory
 mkdir $HOME/Projects
 
