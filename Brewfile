@@ -30,6 +30,7 @@ brew 'gifsicle'
 # Development
 brew 'imagemagick'
 brew 'java'
+brew 'pyenv'
 brew 'kubectl'
 brew 'meilisearch'
 brew 'mysql'
