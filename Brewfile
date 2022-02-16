@@ -31,6 +31,9 @@ brew 'gifsicle'
 brew 'imagemagick'
 brew 'java'
 brew 'pyenv'
+brew  'openssl readline sqlite3 xz zlib' # python build dependencies
+brew 'pipx' # python package + virtual env manager
+brew 'anaconda' # anaconda python UI
 brew 'kubectl'
 brew 'meilisearch'
 brew 'mysql'
@@ -60,6 +63,7 @@ cask 'imageoptim'       # makes images load faster
 cask 'inkscape'
 cask 'insomnia'         # Build APIs that work
 cask 'iterm2'
+cask 'fig'
 cask 'malwarebytes'
 cask 'meld'
 cask 'mendeley'

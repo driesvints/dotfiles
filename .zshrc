@@ -108,3 +108,6 @@ alias k=kubectl
 compdef __start_kubectl k
 
 eval "$(pyenv init -)"
+
+# Created by `pipx` on 2022-02-09 13:21:51
+export PATH="$PATH:/Users/thomashervey/.local/bin"
