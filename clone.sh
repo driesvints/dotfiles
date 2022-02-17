@@ -68,6 +68,7 @@ git clone git@github.com:laravel/slack-notification-channel.git $LARAVEL/slack-n
 git clone git@github.com:laravel/socialite.git $LARAVEL/socialite
 git clone git@github.com:laravel/spark-paddle.git $LARAVEL/spark-paddle
 git clone git@github.com:laravel/spark-stripe.git $LARAVEL/spark-stripe
+git clone git@github.com:laravel/spark.laravel.com.git $LARAVEL/spark.laravel.com
 git clone git@github.com:laravel/telescope.git $LARAVEL/telescope
 git clone git@github.com:laravel/tinker.git $LARAVEL/tinker
 git clone git@github.com:laravel/ui.git $LARAVEL/ui
