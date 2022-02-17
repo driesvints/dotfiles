@@ -50,11 +50,10 @@ git clone git@github.com:laravel/horizon.git $LARAVEL/horizon
 git clone git@github.com:laravel/installer.git $LARAVEL/installer
 git clone git@github.com:laravel/jetstream.git $LARAVEL/jetstream
 git clone git@github.com:laravel/laravel.git $LARAVEL/laravel
-git clone git@github.com:laravel/laravel.com-next.git $LARAVEL/laravel.com-next
+git clone git@github.com:laravel/laravel.com.git $LARAVEL/laravel.com
 git clone git@github.com:laravel/legacy-factories.git $LARAVEL/legacy-factories
 git clone git@github.com:laravel/lumen.git $LARAVEL/lumen
 git clone git@github.com:laravel/lumen-framework.git $LARAVEL/lumen-framework
-git clone git@github.com:laravel/nexmo-notification-channel.git $LARAVEL/nexmo-notification-channel
 git clone git@github.com:laravel/nova.git $LARAVEL/nova
 git clone git@github.com:laravel/octane.git $LARAVEL/octane
 git clone git@github.com:laravel/package-template.git $LARAVEL/package-template
@@ -74,3 +73,4 @@ git clone git@github.com:laravel/tinker.git $LARAVEL/tinker
 git clone git@github.com:laravel/ui.git $LARAVEL/ui
 git clone git@github.com:laravel/valet.git $LARAVEL/valet
 git clone git@github.com:laravel/vapor-ui.git $LARAVEL/vapor-ui
+git clone git@github.com:laravel/vonage-notification-channel.git $LARAVEL/vonage-notification-channel
