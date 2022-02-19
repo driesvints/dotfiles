@@ -30,6 +30,7 @@ brew 'gifsicle'
 
 # Development
 brew 'flipper' # mobile app debugging
+brew 'gdal'
 brew 'imagemagick'
 brew 'java'
 brew 'pyenv'
