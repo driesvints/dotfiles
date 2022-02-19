@@ -50,7 +50,7 @@ brew 'yarn'
 # Apps
 cask 'brewservicesmenubar'
 cask 'daisydisk'
-cask 'dbngin'
+cask 'dbeaver'
 cask 'discord'
 cask 'docker'
 cask 'dropbox'
