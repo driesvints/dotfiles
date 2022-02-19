@@ -11,6 +11,7 @@ brew 'bash' # Latest Bash version
 brew 'coreutils' # Those that come with macOS are outdated
 brew 'gh'
 brew 'git'
+brew 'git-flow'
 brew 'gnupg'
 brew 'grep'
 brew 'httpie'
@@ -28,6 +29,7 @@ brew 'svgo'
 brew 'gifsicle'
 
 # Development
+brew 'flipper' # mobile app debugging
 brew 'imagemagick'
 brew 'java'
 brew 'pyenv'
@@ -69,6 +71,7 @@ cask 'meld'
 cask 'mendeley'
 cask 'monitorcontrol'
 cask 'mysqlworkbench'
+cask 'notion'
 cask 'open-in-code'
 cask 'openrefine'
 cask 'pastebot'
