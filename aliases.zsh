@@ -19,7 +19,9 @@ alias docs="lara && cd docs/"
 # Laravel
 alias a="php artisan"
 alias fresh="php artisan migrate:fresh --seed"
+alias tinker="php artisan tinker"
 alias seed="php artisan db:seed"
+alias serve="php artisan serve"
 
 # PHP
 alias cfresh="rm -rf vendor/ composer.lock && composer i"
