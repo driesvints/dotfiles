@@ -43,7 +43,6 @@ mkdir $HOME/Sites
 
 # Create sites subdirectories
 mkdir $HOME/Sites/blade-ui-kit
-mkdir $HOME/Sites/eventsauce
 mkdir $HOME/Sites/laravel
 
 # Clone Github repositories
