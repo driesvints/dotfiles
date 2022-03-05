@@ -109,7 +109,8 @@ export LANG=en_US.UTF-8
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# place this after nvm initialization!
+# Call `nvm use` automatically in a directory with a `.nvmrc` file
+# Place this after `nvm` initialization!
 autoload -U add-zsh-hook
 load-nvmrc() {
   local node_version="$(nvm version)"
