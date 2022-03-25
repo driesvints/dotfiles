@@ -33,7 +33,7 @@ mysql -u root -e "ALTER USER root@localhost IDENTIFIED WITH mysql_native_passwor
 pecl install imagick redis swoole
 
 # Install global Composer packages
-/usr/local/bin/composer global require laravel/installer laravel/valet beyondcode/expose spatie/global-ray
+/usr/local/bin/composer global require laravel/installer laravel/valet beyondcode/expose spatie/global-ray spatie/visit
 
 # Install Laravel Valet
 $HOME/.composer/vendor/bin/valet install
