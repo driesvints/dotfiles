@@ -34,6 +34,7 @@ brew 'gdal'
 brew 'imagemagick'
 brew 'java'
 brew 'pyenv'
+brew 'pyenv-virtualenv'
 brew  'openssl readline sqlite3 xz zlib' # python build dependencies
 brew 'pipx' # python package + virtual env manager
 brew 'anaconda' # anaconda python UI
