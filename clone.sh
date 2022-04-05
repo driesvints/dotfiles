@@ -64,6 +64,7 @@ git clone git@github.com:laravel/scout.git $LARAVEL/scout
 git clone git@github.com:laravel/serializable-closure.git $LARAVEL/serializable-closure
 git clone git@github.com:laravel/slack-notification-channel.git $LARAVEL/slack-notification-channel
 git clone git@github.com:laravel/socialite.git $LARAVEL/socialite
+git clone git@github.com:laravel/spark-next-docs.git $LARAVEL/spark-next-docs
 git clone git@github.com:laravel/spark-paddle.git $LARAVEL/spark-paddle
 git clone git@github.com:laravel/spark-stripe.git $LARAVEL/spark-stripe
 git clone git@github.com:laravel/spark.laravel.com.git $LARAVEL/spark.laravel.com
