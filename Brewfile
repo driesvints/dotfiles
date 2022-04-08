@@ -48,6 +48,13 @@ brew 'redis'
 brew 'tree'
 brew 'yarn'
 
+# libpostal (postal code parser) dependencies
+brew 'curl'
+brew 'autoconf'
+brew 'automake'
+brew 'libtool'
+brew 'pkg-config'
+
 # Apps
 cask 'brewservicesmenubar'
 cask 'daisydisk'
