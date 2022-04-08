@@ -31,6 +31,13 @@ else # OS X `ls`
     colorflag="-G"
 fi
 
+# Laravel
+alias a="php artisan"
+alias fresh="php artisan migrate:fresh --seed"
+alias tinker="php artisan tinker"
+alias seed="php artisan db:seed"
+alias serve="php artisan serve"
+
 # List all files colorized in long format
 alias l="ls -lF ${colorflag}"
 
