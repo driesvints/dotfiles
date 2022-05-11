@@ -48,6 +48,7 @@ brew 'yarn'
 # Apps
 cask '1password'
 cask 'caffeine'
+cask 'camo-studio'
 cask 'dbngin'
 cask 'discord'
 cask 'docker'
