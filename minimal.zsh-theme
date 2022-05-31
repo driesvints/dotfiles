@@ -14,7 +14,6 @@ MNML_BGJOB_MODE=${MNML_BGJOB_MODE:-4}
 
 [ "${+MNML_MAGICENTER}" -eq 0 ] && MNML_MAGICENTER=(mnml_me_dirs mnml_me_ls mnml_me_git)
 
-
 # Components
 function mnml_status {
     local okc="$MNML_OK_COLOR"
