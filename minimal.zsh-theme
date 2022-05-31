@@ -160,11 +160,12 @@ function mnml_jobs {
 }
 
 function mnml_files {
+    local _ls="$(env which ls)"
     local _w="%{\e[0m%}"
     local _g="%{\e[38;5;244m%}"
 
-    local a_files="$(ls -1A | sed -n '$=')"
-    local v_files="$(ls -1 | sed -n '$=')"
+    local a_files="$($_ls -1A | sed -n '$=')"
+    local v_files="$($_ls -1 | sed -n '$=')"
     local h_files="$((a_files - v_files))"
 
     local output="${_w}[$_g${v_files:-0}"
@@ -191,7 +192,7 @@ function mnml_me_ls {
     if [ "$(uname)" = "Darwin" ] && ! ls --version &> /dev/null; then
         COLUMNS=$COLUMNS CLICOLOR_FORCE=1 ls -C -G -F
     else
-        ls -C -F --color="always" -w $COLUMNS
+        env ls -C -F --color="always" -w $COLUMNS
     fi
 }
 
