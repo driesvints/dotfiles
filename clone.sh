@@ -57,6 +57,7 @@ git clone git@github.com:laravel/nova.git $LARAVEL/nova
 git clone git@github.com:laravel/octane.git $LARAVEL/octane
 git clone git@github.com:laravel/package-template.git $LARAVEL/package-template
 git clone git@github.com:laravel/passport.git $LARAVEL/passport
+git clone git@github.com:laravel/pint.git $LARAVEL/pint
 git clone git@github.com:laravel/sail.git $LARAVEL/sail
 git clone git@github.com:laravel/sail-server.git $LARAVEL/sail-server
 git clone git@github.com:laravel/sanctum.git $LARAVEL/sanctum
