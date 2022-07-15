@@ -16,21 +16,6 @@ alias sites="cd $HOME/Sites"
 alias lara="sites && cd laravel/"
 alias docs="lara && cd docs/"
 
-# Laravel
-alias a="php artisan"
-alias fresh="php artisan migrate:fresh --seed"
-alias tinker="php artisan tinker"
-alias seed="php artisan db:seed"
-alias serve="php artisan serve"
-
-# PHP
-alias cfresh="rm -rf vendor/ composer.lock && composer i"
-alias composer="php -d memory_limit=-1 /opt/homebrew/bin/composer"
-
-# JS
-alias nfresh="rm -rf node_modules/ package-lock.json && npm install"
-alias watch="npm run watch"
-
 # Docker
 alias docker-composer="docker-compose"
 
@@ -54,3 +39,7 @@ alias resolve="git add . && git commit --no-edit"
 alias stash="git stash -u"
 alias unstage="git restore --staged ."
 alias wip="commit wip"
+
+# Mine
+alias gspp='git stash && git pull -r && git stash pop'
+alias yk='pkill -9 ssh-agent;pkill -9 ssh-pkcs11-helper;ssh-add -k -s /usr/local/lib/opensc-pkcs11.so; ssh-add -l'
