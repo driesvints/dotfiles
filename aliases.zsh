@@ -43,3 +43,18 @@ alias wip="commit wip"
 # Mine
 alias gspp='git stash && git pull -r && git stash pop'
 alias yk='pkill -9 ssh-agent;pkill -9 ssh-pkcs11-helper;ssh-add -k -s /usr/local/lib/opensc-pkcs11.so; ssh-add -l'
+
+#Functions 
+
+reload-ssh() {
+   ssh-add -e /usr/local/lib/opensc-pkcs11.so >> /dev/null
+   if [ $? -gt 0 ]; then
+       echo "Failed to remove previous card"
+   fi
+   ssh-add -s /usr/local/lib/opensc-pkcs11.so
+}
+
+#Sourcing 
+#Not sure if i like autocomplete , will use autosuggestions for now
+#source ~/Workspace/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+source ~/Workspace/zsh-autosuggestions/zsh-autosuggestions.zsh

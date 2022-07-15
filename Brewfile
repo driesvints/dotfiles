@@ -4,7 +4,6 @@ tap 'homebrew/cask-fonts'
 tap 'homebrew/cask-versions'
 tap 'homebrew/bundle'
 tap 'nicoverbruggen/homebrew-cask'
-tap 'stripe/stripe-cli'
 
 # Binaries
 brew 'bash' # Latest Bash version
@@ -23,8 +22,12 @@ brew 'mysql'
 brew 'nginx'
 brew 'kubernetes-cli'
 brew 'k9s'
+brew 'shellcheck'
+brew 'yubico-piv-tool'
+brew 'zsh-autosuggestions'
 
 # Apps
+cask 'iterm2'
 cask 'docker'
 cask 'google-chrome'
 cask 'slack'
@@ -32,7 +35,8 @@ cask 'visual-studio-code'
 cask 'whatsapp'
 cask 'zoom'
 cask 'intellij-idea'
-
+cask 'postman'
+cask 'opensc'
 
 # Quicklook
 cask 'qlmarkdown'
@@ -48,3 +52,7 @@ cask 'font-source-sans-pro'
 cask 'font-source-serif-pro'
 
 # Mac App Store
+
+#Others
+# Install maven but without dependencies 
+# brew install --ignore-dependencies maven
