@@ -1,0 +1,3 @@
+[submodule "plugins/artisan"]
+	path = plugins/artisan
+	url = git@github.com:jessarcher/zsh-artisan.git
