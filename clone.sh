@@ -8,7 +8,6 @@ LARAVEL=$SITES/laravel
 
 # Personal
 git clone git@github.com:driesvints/driesvints.com.git $SITES/driesvints.com
-git clone git@github.com:driesvints/learn-laravel-cashier.com.git $SITES/learn-laravel-cashier.com
 git clone git@github.com:driesvints/vat-calculator.git $SITES/vat-calculator
 git clone git@github.com:eventyio/eventy.io.git $SITES/eventy.io
 git clone git@github.com:fullstackbelgium/fullstackbelgium.be.git $SITES/fullstackbelgium.be
@@ -23,7 +22,6 @@ git clone git@github.com:blade-ui-kit/blade-heroicons.git $BLADE/blade-heroicons
 git clone git@github.com:blade-ui-kit/blade-icons.git $BLADE/blade-icons
 git clone git@github.com:blade-ui-kit/blade-ui-kit.git $BLADE/blade-ui-kit
 git clone git@github.com:blade-ui-kit/blade-ui-kit.com.git $BLADE/blade-ui-kit.com
-git clone git@github.com:blade-ui-kit/blade-zondicons.git $BLADE/blade-zondicons
 git clone git@github.com:blade-ui-kit/docs.git $BLADE/docs
 
 # Laravel
@@ -74,4 +72,5 @@ git clone git@github.com:laravel/tinker.git $LARAVEL/tinker
 git clone git@github.com:laravel/ui.git $LARAVEL/ui
 git clone git@github.com:laravel/valet.git $LARAVEL/valet
 git clone git@github.com:laravel/vapor-ui.git $LARAVEL/vapor-ui
+git clone git@github.com:laravel/vite-plugin.git $LARAVEL/vite-plugin
 git clone git@github.com:laravel/vonage-notification-channel.git $LARAVEL/vonage-notification-channel
