@@ -30,6 +30,6 @@ php artisan key:generate
 php artisan migrate:fresh --seed
 
 npm install
-npm run dev
+npm run build
 
 open -a "/Applications/Visual Studio Code.app" "`pwd`"
