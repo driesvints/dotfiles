@@ -35,6 +35,9 @@ $DOTFILES/clone.sh
 # Symlink the Mackup config file to the home directory
 ln -s $DOTFILES/.mackup.cfg $HOME/.mackup.cfg
 
+# Symlink MAVEN settings , backed up using mackup so commeting it out, storing in this repo as a backup
+#ln -s $DOTFILES/settings.xml $HOME/.m2/settings.xml
+
 # Set macOS preferences - we will run this last because this will reload the shell
 # Dont run this until i know exactly what is needed
 #source $DOTFILES/.macos
