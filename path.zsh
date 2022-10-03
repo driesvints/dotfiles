@@ -18,4 +18,5 @@ export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_333.jdk/Contents/Ho
 export M3_HOME="/usr/local/Cellar/maven/3.8.6" # replace n.n.n with appropriate version
 export M3="$M3_HOME/bin"
 export PATH="$M3:$PATH"
- 
+
+#Create command Line Launcher for Intellij - See intructions here : https://medium.com/@shaunthomas999/how-to-launch-intellij-idea-from-command-line-ba10443cc1a9

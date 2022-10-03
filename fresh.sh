@@ -35,6 +35,10 @@ $DOTFILES/clone.sh
 # Symlink the Mackup config file to the home directory
 ln -s $DOTFILES/.mackup.cfg $HOME/.mackup.cfg
 
+#Symlink Git config files
+ln -s $DOTFILES/.gitignore_global $HOME/.gitignore
+ln -s $DOTFILES/.gitconfig_global $HOME/.gitconfig
+
 # Symlink MAVEN settings , backed up using mackup so commeting it out, storing in this repo as a backup
 #ln -s $DOTFILES/settings.xml $HOME/.m2/settings.xml
 
