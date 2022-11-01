@@ -72,6 +72,7 @@ cask 'tuple'
 cask 'visual-studio-code'
 cask 'whatsapp'
 cask 'zoom'
+cask 'zwift'
 
 # Quicklook
 cask 'qlmarkdown'
