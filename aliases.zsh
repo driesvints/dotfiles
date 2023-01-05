@@ -13,8 +13,8 @@ alias version="commit 'version'"
 alias dotfiles="cd $DOTFILES"
 alias library="cd $HOME/Library"
 alias sites="cd $HOME/Sites"
-alias lara="sites && cd laravel/"
-alias docs="lara && cd docs/"
+alias pckgs="cd $HOME/Packages"
+alias mp="sites && cd multipass-rocks/"
 
 # Laravel
 alias a="php artisan"
@@ -29,7 +29,7 @@ alias composer="php -d memory_limit=-1 /opt/homebrew/bin/composer"
 
 # JS
 alias nfresh="rm -rf node_modules/ package-lock.json && npm install"
-alias watch="npm run watch"
+alias watch="yarn run watch"
 
 # Docker
 alias docker-composer="docker-compose"
