@@ -77,6 +77,10 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+# Add rancher desktop path 
+
+export PATH="/Users/deviswan/.rd/bin/:$PATH"
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"

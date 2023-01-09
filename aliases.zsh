@@ -45,13 +45,43 @@ alias gspp='git stash && git pull -r && git stash pop'
 alias yk='pkill -9 ssh-agent;pkill -9 ssh-pkcs11-helper;ssh-add -k -s /usr/local/lib/opensc-pkcs11.so; ssh-add -l'
 
 #Functions 
+# Refer to this for setup : https://confluence.oci.oraclecorp.com/pages/viewpage.action?spaceKey=OCAS&title=OCAS+Guide%3A+OB4+Overlay+Bastion+Access
 
-reload-ssh() {
-   ssh-add -e /usr/local/lib/opensc-pkcs11.so >> /dev/null
-   if [ $? -gt 0 ]; then
-       echo "Failed to remove previous card"
-   fi
-   ssh-add -s /usr/local/lib/opensc-pkcs11.so
+ reload-ssh() {
+    ssh-add -e /usr/local/lib/opensc-pkcs11.so >> /dev/null
+    if [ $? -gt 0 ]; then
+        echo "Failed to remove previous card"
+    fi
+    ssh-add -s /usr/local/lib/opensc-pkcs11.so
+ }
+
+#Oracle SSH helpers
+
+function build_bastion_arg() {
+    BASTION_ENDPOINT=`jq -r .$2 ~/.ssh/bastion_endpoints.json`
+    BASTION_HOST=`jq -r .$1.$2.host ~/.ssh/bastion_host_configs.json`
+    JUMP_HOST=`jq -r .$1.$2.jump ~/.ssh/bastion_host_configs.json`
+    echo "$BASTION_ENDPOINT,$BASTION_HOST-$JUMP_HOST"
+}
+ 
+# sshs to the host in the format
+# ssh -J [BASTION_ENDPOINT],[BASTION_HOST]-[JUMP_HOST] IP_ADDRESS]
+# example: ssh_me adint phx 0.0.0.0
+function ssh_me() {
+    BASTION_ARGS="$(build_bastion_arg $1 $2)"
+    #cat ~/.ssh/YUBIKEY_NAME.key
+    eval 'ssh -J $BASTION_ARGS $3'
+}
+ 
+# sftps to the host in the format
+# sftp -J [BASTION_ENDPOINT],[BASTION_HOST]-[JUMP_HOST] IP_ADDRESS]
+# example: sftp_me adint phx 0.0.0.0
+function sftp_me() {
+    set -x
+    BASTION_ARGS="$(build_bastion_arg $1 $2)"
+    cat ~/.ssh/YUBIKEY_NAME.key
+    eval 'sftp -J $BASTION_ARGS $3'
+    set +x
 }
 
 #Sourcing 
