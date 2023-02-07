@@ -45,8 +45,10 @@ brew 'redis'
 brew 'yarn'
 
 # Apps
-cask '1password'
+cask 'aerial'
+cask 'alfred'
 cask 'caffeine'
+cask 'dashlane'
 cask 'dbngin'
 cask 'discord'
 cask 'docker'
@@ -60,22 +62,15 @@ cask 'insomnia'
 cask 'pastebot'
 cask 'phpmon'
 cask 'ray'
-cask 'readdle-spark'
-cask 'screenflow'
-cask 'slack'
 cask 'tableplus'
 cask 'the-unarchiver'
 cask 'tinkerwell'
-cask 'transmit'
-cask 'tunnelbear'
-cask 'tuple'
 cask 'visual-studio-code'
-cask 'zoom'
-cask 'zwift'
 
 # Quicklook
 cask 'qlmarkdown'
 cask 'quicklook-json'
+cask 'quicklook-csv'
 
 # Fonts
 cask 'font-lato'
@@ -88,9 +83,3 @@ cask 'font-source-serif-pro'
 
 # Mac App Store
 mas 'Byword', id: 420212497
-mas 'Giphy Capture', id: 668208984
-mas 'Keynote', id: 409183694
-mas 'Numbers', id: 409203825
-mas 'Speedtest', id: 1153157709
-mas 'Spring', id: 1508706541
-mas 'Things', id: 904280696
