@@ -24,7 +24,7 @@ brew update
 
 # Install all our dependencies with bundle (See Brewfile)
 brew tap homebrew/bundle
-brew bundle --file $DOTFILES/Brewfile
+brew bundle --file $HOME/.dotfiles/Brewfile
 
 # Set default MySQL root password and auth type
 mysql -u root -e "ALTER USER root@localhost IDENTIFIED WITH mysql_native_password BY 'password'; FLUSH PRIVILEGES;"
@@ -49,10 +49,10 @@ mkdir $HOME/Sites/blade-ui-kit
 mkdir $HOME/Sites/laravel
 
 # Clone Github repositories
-$DOTFILES/clone.sh
+$HOME/.dotfiles/clone.sh
 
 # Symlink the Mackup config file to the home directory
-ln -s $DOTFILES/.mackup.cfg $HOME/.mackup.cfg
+ln -s $HOME/.dotfiles/.mackup.cfg $HOME/.mackup.cfg
 
 # Set macOS preferences - we will run this last because this will reload the shell
-source $DOTFILES/.macos
+source $HOME/.dotfiles/.macos
