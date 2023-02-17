@@ -44,7 +44,7 @@ After backing up your old Mac you may now follow these install instructions to s
 4. Run the installation with:
 
     ```zsh
-    ~/.dotfiles/fresh.sh
+    cd ~/.dotfiles && ./fresh.sh
     ```
 
 5. After mackup is synced with your cloud storage, restore preferences by running `mackup restore`
