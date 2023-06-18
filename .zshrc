@@ -129,6 +129,29 @@ PROMPT=$PROMPT'$(kube_ps1) '
 # On Bekk Mac:
 kubeoff
 
+# Flutter https://flutter.dev/docs/get-started/install/macos 
+export FLUTTER_BIN="/Users/thomasdufourd/bin/flutter/bin"
+export PATH="$FLUTTER_BIN:$PATH"
+
+# jenv
+# SEE: https://medium.com/@chamikakasun/how-to-manage-multiple-java-version-in-macos-e5421345f6d0 
+# find all java versions installed:  /usr/libexec/java_home -V
+# add new jdk to jenv: jenv add <your_jdk_path>
+# list: jenv versions
+# use: jenv global 14.0
+# or (project): jenv local 11
+#  ensure that JAVA_HOME is correct
+# ->jenv enable-plugin export
+# make Maven aware of the Java version in use (and switch when your project does)
+# ->jenv enable-plugin maven
+ export PATH="$HOME/.jenv/bin:$PATH"
+ eval "$(jenv init -)"
+
+# Android emulator
+export PATH=$PATH:/usr/local/share/android-commandlinetools/emulator/
+##export ANDROID_SDK_ROOT=/usr/local/share/android-commandlinetools
+export ANDROID_SDK_ROOT=~/Library/Android/sdk
+
 # miscellanous
 #-------------
 # the following makes it possible to comment a command-line, just like bash
