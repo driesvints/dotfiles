@@ -35,6 +35,7 @@ git clone git@github.com:laravel/docs.git $LARAVEL/docs
 git clone git@github.com:laravel/dusk.git $LARAVEL/dusk
 git clone git@github.com:laravel/echo.git $LARAVEL/echo
 git clone git@github.com:laravel/envoy.git $LARAVEL/envoy
+git clone git@github.com:laravel/folio.git $LARAVEL/folio
 git clone git@github.com:laravel/forge.git $LARAVEL/forge
 git clone git@github.com:laravel/forge-cli.git $LARAVEL/forge-cli
 git clone git@github.com:laravel/forge-sdk.git $LARAVEL/forge-sdk
@@ -54,7 +55,9 @@ git clone git@github.com:laravel/nova.git $LARAVEL/nova
 git clone git@github.com:laravel/octane.git $LARAVEL/octane
 git clone git@github.com:laravel/package-template.git $LARAVEL/package-template
 git clone git@github.com:laravel/passport.git $LARAVEL/passport
+git clone git@github.com:laravel/pennant.git $LARAVEL/pennant
 git clone git@github.com:laravel/pint.git $LARAVEL/pint
+git clone git@github.com:laravel/precognition.git $LARAVEL/precognition
 git clone git@github.com:laravel/sail.git $LARAVEL/sail
 git clone git@github.com:laravel/sail-server.git $LARAVEL/sail-server
 git clone git@github.com:laravel/sanctum.git $LARAVEL/sanctum
@@ -72,4 +75,5 @@ git clone git@github.com:laravel/ui.git $LARAVEL/ui
 git clone git@github.com:laravel/valet.git $LARAVEL/valet
 git clone git@github.com:laravel/vapor-ui.git $LARAVEL/vapor-ui
 git clone git@github.com:laravel/vite-plugin.git $LARAVEL/vite-plugin
+git clone git@github.com:laravel/volt.git $LARAVEL/volt
 git clone git@github.com:laravel/vonage-notification-channel.git $LARAVEL/vonage-notification-channel
