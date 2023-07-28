@@ -3,21 +3,24 @@
 echo "Cloning repositories..."
 
 CODE=$HOME/Code
-SITES=$HOME/Sites
+SITES=$HOME/Herd
 BLADE=$CODE/blade-ui-kit
 LARAVEL=$CODE/laravel
 
 # Sites
-git clone git@github.com:driesvints/driesvints.com.git $SITES/driesvints.com
-git clone git@github.com:eventyio/eventy.io.git $SITES/eventy.io
-git clone git@github.com:fullstackeurope/fullstackeurope.com.git $SITES/fullstackeurope.com
-git clone git@github.com:laravelio/laravel.io.git $SITES/laravel.io
-git clone git@github.com:laravelio/paste.laravel.io.git $SITES/paste.laravel.io
-git clone git@github.com:blade-ui-kit/demo.git $SITES/demo.blade-ui-kit.com
 git clone git@github.com:blade-ui-kit/blade-ui-kit.com.git $SITES/blade-ui-kit.com
 git clone git@github.com:laravel/blog.laravel.com.git $SITES/blog.laravel.com
+git clone git@github.com:blade-ui-kit/demo.git $SITES/demo.blade-ui-kit.com
+git clone git@github.com:driesvints/driesvints.com.git $SITES/driesvints.com
+git clone git@github.com:laravel/envoyer.git $SITES/envoyer.laravel.com
+git clone git@github.com:eventyio/eventy.io.git $SITES/eventy.io
+git clone git@github.com:laravel/forge.git $SITES/forge.laravel.com
+git clone git@github.com:fullstackeurope/fullstackeurope.com.git $SITES/fullstackeurope.com
 git clone git@github.com:laravel/laravel.com.git $SITES/laravel.com
+git clone git@github.com:laravelio/laravel.io.git $SITES/laravel.io
+git clone git@github.com:laravelio/paste.laravel.io.git $SITES/paste.laravel.io
 git clone git@github.com:laravel/spark.laravel.com.git $SITES/spark.laravel.com
+git clone git@github.com:laravel/vapor.git $SITES/vapor.laravel.com
 
 # Personal
 git clone git@github.com:lmsqueezy/laravel.git $CODE/lmsqueezy-laravel
@@ -42,7 +45,6 @@ git clone git@github.com:laravel/dusk.git $LARAVEL/dusk
 git clone git@github.com:laravel/echo.git $LARAVEL/echo
 git clone git@github.com:laravel/envoy.git $LARAVEL/envoy
 git clone git@github.com:laravel/folio.git $LARAVEL/folio
-git clone git@github.com:laravel/forge.git $LARAVEL/forge
 git clone git@github.com:laravel/forge-cli.git $LARAVEL/forge-cli
 git clone git@github.com:laravel/forge-sdk.git $LARAVEL/forge-sdk
 git clone git@github.com:laravel/fortify.git $LARAVEL/fortify

@@ -5,8 +5,8 @@ echo "Setting up test project..."
 REPOSITORY=$1
 DIRECTORY="./$2"
 
-if [[ $PWD != "$HOME/Sites" ]]; then
-    echo "You can only setup projects in the $HOME/Sites directory."
+if [[ $PWD != "$HOME/Herd" ]]; then
+    echo "You can only setup projects in the $HOME/Herd directory."
 
     exit 1
 fi
