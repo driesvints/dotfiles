@@ -81,5 +81,5 @@ git clone git@github.com:laravel/ui.git $LARAVEL/ui
 git clone git@github.com:laravel/valet.git $LARAVEL/valet
 git clone git@github.com:laravel/vapor-ui.git $LARAVEL/vapor-ui
 git clone git@github.com:laravel/vite-plugin.git $LARAVEL/vite-plugin
-git clone git@github.com:laravel/volt.git $LARAVEL/volt
+git clone git@github.com:livewire/volt.git $LARAVEL/volt
 git clone git@github.com:laravel/vonage-notification-channel.git $LARAVEL/vonage-notification-channel
