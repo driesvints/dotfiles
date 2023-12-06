@@ -13,15 +13,20 @@ sudo -v
 # Keep-alive: update existing `sudo` time stamp until `.macos` has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
+# Activates Touch ID for sudo and make it persistent.
+# See: https://sixcolors.com/post/2023/08/in-macos-sonoma-touch-id-for-sudo-can-survive-updates/
+sudo cp /etc/pam.d/sudo_local.template /etc/pam.d/sudo_local
+sudo sed -i "s/#auth/auth/" /etc/pam.d/sudo_local
+
 ###############################################################################
 # General UI/UX                                                               #
 ###############################################################################
 
 # Set computer name (as done via System Preferences → Sharing)
-sudo scutil --set ComputerName "MacBook Dries"
-sudo scutil --set HostName "MacBook Dries"
-sudo scutil --set LocalHostName "MacBook Dries"
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "MacBook Dries"
+sudo scutil --set ComputerName "MacBook Josh"
+sudo scutil --set HostName "MacBook Josh"
+sudo scutil --set LocalHostName "MacBook Josh"
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "MacBook Josh"
 
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
@@ -59,6 +64,9 @@ defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
 
 # Save to disk (not to iCloud) by default
 # defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
+
+# Add an iCloud shortcut in home root.
+ln -f -s ~/Library/Mobile\ Documents/com~apple~CloudDocs ~/iCloud
 
 # Automatically quit printer app once the print jobs complete
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
@@ -101,7 +109,7 @@ sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo Hos
 # defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
 
 # Disable smart dashes as they’re annoying when typing code
-defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+# defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 
 # Disable automatic period substitution as it’s annoying when typing code
 # defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
@@ -110,7 +118,7 @@ defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 
 # Disable auto-correct
-defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+# defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
 # Set a custom wallpaper image. `DefaultDesktop.jpg` is already a symlink, and
 # all wallpapers are in `/Library/Desktop Pictures/`. The default is `Wave.jpg`.
@@ -118,18 +126,25 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 #sudo rm -rf /System/Library/CoreServices/DefaultDesktop.jpg
 #sudo ln -s /path/to/your/image /System/Library/CoreServices/DefaultDesktop.jpg
 
+# Start night shift from sunset to sunrise
+nightlight schedule start
+
+# Enable magnification
+defaults write com.apple.dock "magnification" -bool true
+defaults write com.apple.dock "largesize" -int 60
+
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
 ###############################################################################
 
 # Trackpad: enable tap to click for this user and for the login screen
-# defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
-# defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
-# defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
 # Trackpad: map bottom right corner to right-click
 # defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
-# defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
 # defaults -currentHost write NSGlobalDomain com.apple.trackpad.trackpadCornerClickBehavior -int 1
 # defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool true
 
@@ -168,10 +183,10 @@ defaults write NSGlobalDomain AppleMetricUnits -bool true
 # sudo defaults write /Library/Preferences/com.apple.loginwindow showInputMenu -bool true
 
 # Set the timezone; see `sudo systemsetup -listtimezones` for other values
-sudo systemsetup -settimezone "Europe/Brussels" > /dev/null
+sudo systemsetup -settimezone "America/Los_Angeles" > /dev/null
 
 # Stop iTunes from responding to the keyboard media keys
-#launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2> /dev/null
+# launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2> /dev/null
 
 ###############################################################################
 # Energy saving                                                               #
@@ -229,10 +244,10 @@ defaults write com.apple.screensaver askForPasswordDelay -int 0
 # defaults write com.apple.screencapture location -string "${HOME}/Desktop"
 
 # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
-# defaults write com.apple.screencapture type -string "png"
+defaults write com.apple.screencapture type -string "png"
 
 # Disable shadow in screenshots
-# defaults write com.apple.screencapture disable-shadow -bool true
+defaults write com.apple.screencapture disable-shadow -bool true
 
 # Enable subpixel font rendering on non-Apple LCDs
 # Reference: https://github.com/kevinSuttle/macOS-Defaults/issues/17#issuecomment-266633501
@@ -246,7 +261,7 @@ defaults write NSGlobalDomain AppleFontSmoothing -int 1
 ###############################################################################
 
 # Finder: allow quitting via ⌘ + Q; doing so will also hide desktop icons
-# defaults write com.apple.finder QuitMenuItem -bool true
+defaults write com.apple.finder QuitMenuItem -bool true
 
 # Finder: disable window animations and Get Info animations
 defaults write com.apple.finder DisableAllAnimations -bool true
@@ -263,10 +278,10 @@ defaults write com.apple.finder DisableAllAnimations -bool true
 # defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 
 # Finder: show hidden files by default
-#defaults write com.apple.finder AppleShowAllFiles -bool true
+# defaults write com.apple.finder AppleShowAllFiles -bool true
 
 # Finder: show all filename extensions
-# defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
 # Finder: show status bar
 # defaults write com.apple.finder ShowStatusBar -bool true
@@ -315,26 +330,26 @@ defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 # /usr/libexec/PlistBuddy -c "Set DesktopViewSettings:IconViewSettings:labelOnBottom false" ~/Library/Preferences/com.apple.finder.plist
 
 # Enable snap-to-grid for icons on the desktop and in other icon views
-/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
-/usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
-/usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
+# /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
+# /usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
+# /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
 
 # Increase grid spacing for icons on the desktop and in other icon views
-/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:gridSpacing 100" ~/Library/Preferences/com.apple.finder.plist
-/usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:gridSpacing 100" ~/Library/Preferences/com.apple.finder.plist
-/usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:gridSpacing 100" ~/Library/Preferences/com.apple.finder.plist
+# /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:gridSpacing 100" ~/Library/Preferences/com.apple.finder.plist
+# /usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:gridSpacing 100" ~/Library/Preferences/com.apple.finder.plist
+# /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:gridSpacing 100" ~/Library/Preferences/com.apple.finder.plist
 
 # Increase the size of icons on the desktop and in other icon views
-/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:iconSize 80" ~/Library/Preferences/com.apple.finder.plist
-/usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:iconSize 80" ~/Library/Preferences/com.apple.finder.plist
-/usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:iconSize 80" ~/Library/Preferences/com.apple.finder.plist
+# /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:iconSize 80" ~/Library/Preferences/com.apple.finder.plist
+# /usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:iconSize 80" ~/Library/Preferences/com.apple.finder.plist
+# /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:iconSize 80" ~/Library/Preferences/com.apple.finder.plist
 
 # Use list view in all Finder windows by default
 # Four-letter codes for the other view modes: `icnv`, `clmv`, `glyv`
-defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+# defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
 # Disable the warning before emptying the Trash
-defaults write com.apple.finder WarnOnEmptyTrash -bool false
+# defaults write com.apple.finder WarnOnEmptyTrash -bool false
 
 # Enable AirDrop over Ethernet and on unsupported Macs running Lion
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
@@ -343,7 +358,7 @@ defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
 chflags nohidden ~/Library && xattr -d com.apple.FinderInfo ~/Library
 
 # Show the /Volumes folder
-# sudo chflags nohidden /Volumes
+sudo chflags nohidden /Volumes
 
 # Remove Dropbox’s green checkmark icons in Finder
 # file=/Applications/Dropbox.app/Contents/Resources/emblem-dropbox-uptodate.icns
@@ -376,7 +391,7 @@ defaults write com.apple.dock minimize-to-application -bool true
 # defaults write com.apple.dock enable-spring-load-actions-on-all-items -bool true
 
 # Show indicator lights for open applications in the Dock
-# defaults write com.apple.dock show-process-indicators -bool true
+defaults write com.apple.dock show-process-indicators -bool true
 
 # Wipe all (default) app icons from the Dock
 # This is only really useful when setting up a new Mac, or if you don’t use
@@ -384,7 +399,7 @@ defaults write com.apple.dock minimize-to-application -bool true
 defaults write com.apple.dock persistent-apps -array
 
 # Show only open applications in the Dock
-defaults write com.apple.dock static-only -bool true
+# defaults write com.apple.dock static-only -bool true
 
 # Don’t animate opening applications from the Dock
 defaults write com.apple.dock launchanim -bool false
@@ -417,10 +432,10 @@ defaults write com.apple.dock autohide -bool true
 defaults write com.apple.dock showhidden -bool true
 
 # Don’t show recent applications in Dock
-defaults write com.apple.dock show-recents -bool false
+# defaults write com.apple.dock show-recents -bool false
 
 # Disable the Launchpad gesture (pinch with thumb and three fingers)
-#defaults write com.apple.dock showLaunchpadGestureEnabled -int 0
+# defaults write com.apple.dock showLaunchpadGestureEnabled -int 0
 
 # Reset Launchpad, but keep the desktop wallpaper intact
 find "${HOME}/Library/Application Support/Dock" -name "*-*.db" -maxdepth 1 -delete
@@ -430,9 +445,9 @@ sudo ln -sf "/Applications/Xcode.app/Contents/Developer/Applications/Simulator.a
 sudo ln -sf "/Applications/Xcode.app/Contents/Developer/Applications/Simulator (Watch).app" "/Applications/Simulator (Watch).app"
 
 # Add a spacer to the left side of the Dock (where the applications are)
-#defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
+# defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
 # Add a spacer to the right side of the Dock (where the Trash is)
-#defaults write com.apple.dock persistent-others -array-add '{tile-data={}; tile-type="spacer-tile";}'
+# defaults write com.apple.dock persistent-others -array-add '{tile-data={}; tile-type="spacer-tile";}'
 
 # Hot corners
 # Possible values:
@@ -451,8 +466,8 @@ sudo ln -sf "/Applications/Xcode.app/Contents/Developer/Applications/Simulator (
 # defaults write com.apple.dock wvous-tl-corner -int 2
 # defaults write com.apple.dock wvous-tl-modifier -int 0
 # Top right screen corner → Desktop
-defaults write com.apple.dock wvous-tr-corner -int 10
-defaults write com.apple.dock wvous-tr-modifier -int 0
+# defaults write com.apple.dock wvous-tr-corner -int 10
+# defaults write com.apple.dock wvous-tr-modifier -int 0
 # Bottom left screen corner → Start screen saver
 # defaults write com.apple.dock wvous-bl-corner -int 5
 # defaults write com.apple.dock wvous-bl-modifier -int 0
@@ -470,10 +485,10 @@ defaults write com.apple.Safari SuppressSearchSuggestions -bool true
 # defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2TabsToLinks -bool true
 
 # Show the full URL in the address bar (note: this still hides the scheme)
-defaults write com.apple.Safari ShowFullURLInSmartSearchField -bool true
+# defaults write com.apple.Safari ShowFullURLInSmartSearchField -bool true
 
 # Set Safari’s home page to `about:blank` for faster loading
-# defaults write com.apple.Safari HomePage -string "about:blank"
+defaults write com.apple.Safari HomePage -string "about:blank"
 
 # Prevent Safari from opening ‘safe’ files automatically after downloading
 # defaults write com.apple.Safari AutoOpenSafeDownloads -bool false
@@ -508,7 +523,7 @@ defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebK
 # defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 
 # Enable continuous spellchecking
-# defaults write com.apple.Safari WebContinuousSpellCheckingEnabled -bool true
+defaults write com.apple.Safari WebContinuousSpellCheckingEnabled -bool true
 # Disable auto-correct
 # defaults write com.apple.Safari WebAutomaticSpellingCorrectionEnabled -bool false
 
@@ -541,7 +556,7 @@ defaults write com.apple.Safari WarnAboutFraudulentWebsites -bool true
 #defaults write com.apple.SafariTechnologyPreview com.apple.Safari.ContentPageGroupIdentifier.WebKit2AllowsInlineMediaPlayback -bool false
 
 # Enable “Do Not Track”
-# defaults write com.apple.Safari SendDoNotTrackHTTPHeader -bool true
+defaults write com.apple.Safari SendDoNotTrackHTTPHeader -bool true
 
 # Update extensions automatically
 defaults write com.apple.Safari InstallExtensionUpdatesAutomatically -bool true
@@ -793,7 +808,7 @@ defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 # defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticQuoteSubstitutionEnabled" -bool false
 
 # Disable continuous spell checking
-# defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "continuousSpellCheckingEnabled" -bool false
+defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "continuousSpellCheckingEnabled" -bool false
 
 ###############################################################################
 # Google Chrome & Google Chrome Canary                                        #
@@ -852,35 +867,35 @@ defaults write com.google.Chrome.canary PMPrintingExpandedStateForPrint2 -bool t
 ###############################################################################
 
 # Use `~/Documents/Torrents` to store incomplete downloads
-defaults write org.m0k.transmission UseIncompleteDownloadFolder -bool true
-defaults write org.m0k.transmission IncompleteDownloadFolder -string "${HOME}/Documents/Torrents"
+# Zdefaults write org.m0k.transmission UseIncompleteDownloadFolder -bool true
+# defaults write org.m0k.transmission IncompleteDownloadFolder -string "${HOME}/Documents/Torrents"
 
 # Use `~/Downloads` to store completed downloads
-defaults write org.m0k.transmission DownloadLocationConstant -bool true
+# defaults write org.m0k.transmission DownloadLocationConstant -bool true
 
 # Don’t prompt for confirmation before downloading
-defaults write org.m0k.transmission DownloadAsk -bool false
-defaults write org.m0k.transmission MagnetOpenAsk -bool false
+# defaults write org.m0k.transmission DownloadAsk -bool false
+# defaults write org.m0k.transmission MagnetOpenAsk -bool false
 
 # Don’t prompt for confirmation before removing non-downloading active transfers
-defaults write org.m0k.transmission CheckRemoveDownloading -bool true
+# defaults write org.m0k.transmission CheckRemoveDownloading -bool true
 
 # Trash original torrent files
-defaults write org.m0k.transmission DeleteOriginalTorrent -bool true
+# defaults write org.m0k.transmission DeleteOriginalTorrent -bool true
 
 # Hide the donate message
-defaults write org.m0k.transmission WarningDonate -bool false
+# defaults write org.m0k.transmission WarningDonate -bool false
 # Hide the legal disclaimer
-defaults write org.m0k.transmission WarningLegal -bool false
+# defaults write org.m0k.transmission WarningLegal -bool false
 
 # IP block list.
 # Source: https://giuliomac.wordpress.com/2014/02/19/best-blocklist-for-transmission/
-defaults write org.m0k.transmission BlocklistNew -bool true
-defaults write org.m0k.transmission BlocklistURL -string "http://john.bitsurge.net/public/biglist.p2p.gz"
-defaults write org.m0k.transmission BlocklistAutoUpdate -bool true
+# defaults write org.m0k.transmission BlocklistNew -bool true
+# defaults write org.m0k.transmission BlocklistURL -string "http://john.bitsurge.net/public/biglist.p2p.gz"
+# defaults write org.m0k.transmission BlocklistAutoUpdate -bool true
 
 # Randomize port on launch
-defaults write org.m0k.transmission RandomPort -bool true
+# defaults write org.m0k.transmission RandomPort -bool true
 
 ###############################################################################
 # Twitter.app                                                                 #
@@ -890,29 +905,147 @@ defaults write org.m0k.transmission RandomPort -bool true
 # defaults write com.twitter.twitter-mac AutomaticQuoteSubstitutionEnabled -bool false
 
 # Show the app window when clicking the menu bar icon
-defaults write com.twitter.twitter-mac MenuItemBehavior -int 1
+# defaults write com.twitter.twitter-mac MenuItemBehavior -int 1
 
 # Enable the hidden ‘Develop’ menu
-defaults write com.twitter.twitter-mac ShowDevelopMenu -bool true
+# defaults write com.twitter.twitter-mac ShowDevelopMenu -bool true
 
 # Open links in the background
-defaults write com.twitter.twitter-mac openLinksInBackground -bool true
+# defaults write com.twitter.twitter-mac openLinksInBackground -bool true
 
 # Allow closing the ‘new tweet’ window by pressing `Esc`
-defaults write com.twitter.twitter-mac ESCClosesComposeWindow -bool true
+# defaults write com.twitter.twitter-mac ESCClosesComposeWindow -bool true
 
 # Show full names rather than Twitter handles
-defaults write com.twitter.twitter-mac ShowFullNames -bool true
+# defaults write com.twitter.twitter-mac ShowFullNames -bool true
 
 # Hide the app in the background if it’s not the front-most window
-defaults write com.twitter.twitter-mac HideInBackground -bool true
+# defaults write com.twitter.twitter-mac HideInBackground -bool true
 
 ###############################################################################
 # Tweetbot.app                                                                #
 ###############################################################################
 
 # Bypass the annoyingly slow t.co URL shortener
-defaults write com.tapbots.TweetbotMac OpenURLsDirectly -bool true
+# defaults write com.tapbots.TweetbotMac OpenURLsDirectly -bool true
+
+###############################################################################
+# Contacts                                                                    #
+###############################################################################
+
+# Enable the debug menu in Address Book
+defaults write com.apple.addressbook ABShowDebugMenu -bool true
+
+# Show first name
+# false : Before last name
+# true  : Following last name
+defaults write com.apple.AddressBook ABNameDisplay -bool false
+
+# Sort by
+defaults write com.apple.AddressBook ABNameSortingFormat -string "sortingLastName sortingFirstName"
+
+# Short name format
+# 0: Full Name
+# 1: First Name & Last Initial
+# 2: First Initial & Last Name
+# 3: First Name Only
+# 4: Last Name Only
+defaults write com.apple.AddressBook ABShortNameStyle -int 2
+
+# Prefer nicknames
+defaults write com.apple.AddressBook ABShortNamePrefersNickname -bool true
+
+# Address format
+defaults write com.apple.AddressBook ABDefaultAddressCountryCode -string "us"
+
+# vCard Format
+# falsec: 3.0
+# true  : 2.1
+defaults write com.apple.AddressBook ABUse21vCardFormat -bool false
+
+# Enable private me card
+# defaults write com.apple.AddressBook ABPrivateVCardFieldsEnabled -bool false
+
+# Export notes in vCards
+defaults write com.apple.AddressBook ABIncludeNotesInVCard -bool false
+
+# Export photos in vCards
+# defaults write com.apple.AddressBook ABIncludePhotosInVCard -bool false
+
+# Show first name:
+# 1: Before last name
+# 2: Following last name
+defaults write NSGlobalDomain NSPersonNameDefaultDisplayNameOrder -int 1
+
+# Prefer nicknames
+defaults write NSGlobalDomain NSPersonNameDefaultShouldPreferNicknamesPreference -bool true
+
+###############################################################################
+# Calendar                                                                    #
+###############################################################################
+
+# Enable the debug menu in iCal (pre-10.8)
+defaults write com.apple.iCal IncludeDebugMenu -bool true
+
+# Days per week
+defaults write com.apple.iCal "n days of week" -int 7
+
+# Start week on:
+# 0: Sunday
+# 6: Saturday
+defaults write com.apple.iCal "first day of week" -int 1
+
+# Scroll in week view by:
+# 0: Day
+# 1: Week
+# 2: Week, Stop on Today
+defaults write com.apple.iCal "scroll by weeks in week view" -int 1
+
+# Day starts at:
+# defaults write com.apple.iCal "first minute of work hours" -int 480
+
+# Day ends at:
+# defaults write com.apple.iCal "last minute of work hours" -int 1080
+
+# Show X hours at a time
+defaults write com.apple.iCal "number of hours displayed" -int 16
+
+# Turn on timezone support
+defaults write com.apple.iCal "TimeZone support enabled" -bool true
+
+# Show events in year view
+defaults write com.apple.iCal "Show heat map in Year View" -bool true
+
+# Show week numbers
+# defaults write com.apple.iCal "Show Week Numbers" -bool true
+
+# Open events in separate windows
+# defaults write com.apple.iCal OpenEventsInWindowType -bool true
+
+# Ask before sending changes to events
+defaults write com.apple.iCal WarnBeforeSendingInvitations -bool true
+
+###############################################################################
+# Dashboard, TextEdit and Disk Utility                                        #
+###############################################################################
+
+# Enable Dashboard dev mode (allows keeping widgets on the desktop)
+defaults write com.apple.dashboard devmode -bool true
+
+# Use plain text mode for new TextEdit documents
+defaults write com.apple.TextEdit RichText -int 0
+
+# Open and save files as UTF-8 in TextEdit
+defaults write com.apple.TextEdit PlainTextEncoding -int 4
+defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
+
+# Enable the debug menu in Disk Utility
+defaults write com.apple.DiskUtility DUDebugMenuEnabled -bool true
+defaults write com.apple.DiskUtility advanced-image-options -bool true
+
+# Show All Devices
+defaults write com.apple.DiskUtility SidebarShowAllDevices -bool true
+
 
 ###############################################################################
 # Kill affected applications                                                  #

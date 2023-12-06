@@ -17,4 +17,4 @@ ssh-add -K ~/.ssh/id_ed25519
 
 # Adding your SSH key to your GitHub account
 # https://docs.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account
-echo "run 'pbcopy < ~/.ssh/id_ed25519.pub' and paste that into GitHub"
+echo "run 'pbcopy < ~/.ssh/id_ed25519.pub' and paste that shit into GitHub"

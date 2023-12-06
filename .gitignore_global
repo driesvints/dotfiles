@@ -1,40 +1,55 @@
-# Compiled source #
-###################
-*.com
-*.class
-*.dll
-*.exe
-*.o
-*.so
-
-# Packages #
-############
-# it's better to unpack these files and commit the raw source
-# git has its own built in compression methods
-*.7z
-*.dmg
-*.gz
-*.iso
-*.jar
-*.rar
-*.tar
-*.zip
-
-# Logs and databases #
-######################
-*.log
-*.sql
-*.sqlite
-
-# OS generated files #
-######################
+####################
+# System Generated #
+####################
 .DS_Store
 .DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
+
+###################
+# Compiled source #
+###################
+
+
+############
+# Packages #
+############
+
+
+######################
+# Logs and databases #
+######################
+
+
+#############
+# JetBrains #
+#############
 .idea/
+
+##########
+# VSCode #
+##########
 .vscode
-.vagrant/
+
+#####
+# R #
+#####
+.Rhistory
+.Rapp.history
+
+# Session Data files
+.RData
+.RDataTmp
+
+# User-specific files
+.Ruserdata
+
+# Example code in package build process
+*-Ex.R
+
+# Output files from R CMD build
+/*.tar.gz
+
+# Output files from R CMD check
+/*.Rcheck/
+
+# RStudio files
+.Rproj.user/

@@ -18,6 +18,8 @@ fi
 # Removes .zshrc from $HOME (if it exists) and symlinks the .zshrc file from the .dotfiles
 rm -rf $HOME/.zshrc
 ln -s .zshrc $HOME/.zshrc
+rm -rf $HOME/.p10k.zsh
+ln -s .p10k.zsh $HOME/.p10k.zsh
 
 # Update Homebrew recipes
 brew update
@@ -27,15 +29,13 @@ brew tap homebrew/bundle
 brew bundle --file ./Brewfile
 
 # Set default MySQL root password and auth type
-mysql -u root -e "ALTER USER root@localhost IDENTIFIED WITH mysql_native_password BY 'password'; FLUSH PRIVILEGES;"
+# mysql -u root -e "ALTER USER root@localhost IDENTIFIED WITH mysql_native_password BY 'password'; FLUSH PRIVILEGES;"
 
 # Create a projects directories
-mkdir $HOME/Code
-mkdir $HOME/Herd
+mkdir $HOME/projects
 
 # Create Code subdirectories
-mkdir $HOME/Code/blade-ui-kit
-mkdir $HOME/Code/laravel
+# mkdir $HOME/projects/subproject-name
 
 # Clone Github repositories
 ./clone.sh

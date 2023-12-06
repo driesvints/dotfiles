@@ -5,8 +5,8 @@ echo "Setting up test project..."
 REPOSITORY=$1
 DIRECTORY="./$2"
 
-if [[ $PWD != "$HOME/Herd" ]]; then
-    echo "You can only setup projects in the $HOME/Herd directory."
+if [[ $PWD != "$HOME/projects" ]]; then
+    echo "You can only setup projects in the $HOME/projects directory."
 
     exit 1
 fi
@@ -25,11 +25,7 @@ sed -i '' 's/DB_DATABASE=.*/DB_DATABASE=laravel/' .env
 sed -i '' 's/DB_USERNAME=.*/DB_USERNAME=root/' .env
 sed -i '' 's/DB_PASSWORD=.*/DB_PASSWORD=/' .env
 
-composer install
-php artisan key:generate
-php artisan migrate:fresh --seed
-
-npm install
-npm run build
+# npm install
+# npm run build
 
 open -a "/Applications/Visual Studio Code.app" "`pwd`"
