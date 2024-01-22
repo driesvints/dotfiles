@@ -23,6 +23,7 @@ alias serve="herd php artisan serve"
 
 # PHP
 alias cfresh="rm -rf vendor/ composer.lock && composer i"
+alias composer="herd composer"
 
 # JS
 alias nfresh="rm -rf node_modules/ package-lock.json && npm install"
