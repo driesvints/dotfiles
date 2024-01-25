@@ -66,6 +66,7 @@ git clone git@github.com:laravel/passport.git $LARAVEL/passport
 git clone git@github.com:laravel/pennant.git $LARAVEL/pennant
 git clone git@github.com:laravel/pint.git $LARAVEL/pint
 git clone git@github.com:laravel/precognition.git $LARAVEL/precognition
+git clone git@github.com:laravel/prompts.git $LARAVEL/prompts
 git clone git@github.com:laravel/pulse.git $LARAVEL/pulse
 git clone git@github.com:laravel/sail.git $LARAVEL/sail
 git clone git@github.com:laravel/sail-server.git $LARAVEL/sail-server
