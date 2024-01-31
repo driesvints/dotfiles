@@ -82,6 +82,8 @@ git clone git@github.com:laravel/telescope.git $LARAVEL/telescope
 git clone git@github.com:laravel/tinker.git $LARAVEL/tinker
 git clone git@github.com:laravel/ui.git $LARAVEL/ui
 git clone git@github.com:laravel/valet.git $LARAVEL/valet
+git clone git@github.com:laravel/vapor-cli.git $LARAVEL/vapor-cli
+git clone git@github.com:laravel/vapor-core.git $LARAVEL/vapor-core
 git clone git@github.com:laravel/vapor-ui.git $LARAVEL/vapor-ui
 git clone git@github.com:laravel/vite-plugin.git $LARAVEL/vite-plugin
 git clone git@github.com:livewire/volt.git $LARAVEL/volt
