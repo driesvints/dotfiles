@@ -19,6 +19,7 @@ git clone git@github.com:fullstackeurope/fullstackeurope.com.git $SITES/fullstac
 git clone git@github.com:laravel/laravel.com.git $SITES/laravel.com
 git clone git@github.com:laravelio/laravel.io.git $SITES/laravel.io
 git clone git@github.com:laravelio/paste.laravel.io.git $SITES/paste.laravel.io
+git clone git@github.com:laravel/nova.laravel.com.git $SITES/nova
 git clone git@github.com:laravel/spark.laravel.com.git $SITES/spark.laravel.com
 git clone git@github.com:laravel/vapor.git $SITES/vapor
 
