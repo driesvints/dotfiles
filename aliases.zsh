@@ -2,7 +2,7 @@
 alias copyssh="pbcopy < $HOME/.ssh/id_ed25519.pub"
 alias reloadshell="source $HOME/.zshrc"
 alias reloaddns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
-alias alias ls='colorls -A --sd'
+alias ls='colorls -ogA --group-directories-first --git-status'
 alias shrug="echo '¯\_(ツ)_/¯' | pbcopy"
 
 # Directories
@@ -33,3 +33,4 @@ alias resolve="git add . && git commit --no-edit"
 alias stash="git stash -u"
 alias unstage="git restore --staged ."
 alias wip="commit wip"
+alias fast="fast --single-line -u"

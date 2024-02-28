@@ -2,7 +2,7 @@
 export DOTFILES=$HOME/.dotfiles
 
 # Path to your oh-my-zsh installation.
-export ZSH="$DOTFILES
+export ZSH=$HOME/.oh-my-zsh
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -17,13 +17,16 @@ fi
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# Some weird shit
+# export PATH="$PATH:$HOME"
+
 # Minimal - Theme Settings
 # export MNML_INSERT_CHAR="$"
 # export MNML_PROMPT=(mnml_git mnml_keymap)
 # export MNML_RPROMPT=('mnml_cwd 20')
 
 # Would you like to use another custom folder than $ZSH/custom?
-ZSH_CUSTOM=$DOTFILES
+ZSH_CUSTOM=$ZSH/custom
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
