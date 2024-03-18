@@ -32,7 +32,6 @@ brew 'gifsicle'
 
 # Development
 brew 'imagemagick'
-brew 'node'
 brew 'yarn'
 
 # Apps
