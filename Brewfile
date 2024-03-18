@@ -32,16 +32,12 @@ brew 'gifsicle'
 
 # Development
 brew 'imagemagick'
-brew 'meilisearch'
-brew 'mysql'
 brew 'node'
-brew 'redis'
 brew 'yarn'
 
 # Apps
 cask '1password'
 cask 'caffeine'
-cask 'dbngin'
 cask 'discord'
 cask 'docker'
 cask 'figma'
@@ -65,7 +61,6 @@ cask 'tunnelbear'
 cask 'tuple'
 cask 'visual-studio-code'
 cask 'zoom'
-cask 'zwift'
 
 # Quicklook
 cask 'qlmarkdown'
