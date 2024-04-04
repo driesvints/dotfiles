@@ -5,13 +5,16 @@ add_to_path() {
   fi
 }
 
+# Load Herd injected PHP binaries
+add_to_path "/Users/driesvints/Library/Application Support/Herd/bin"
+
 # Load dotfiles binaries
 add_to_path "$DOTFILES/bin"
 
-# Load Composer tools
+# Load global Composer tools
 add_to_path "$HOME/.composer/vendor/bin"
 
-# Load Node global installed binaries
+# Load global Node installed binaries
 add_to_path "$HOME/.node/bin"
 
 # Use project specific binaries before global ones

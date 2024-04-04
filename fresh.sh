@@ -17,7 +17,7 @@ fi
 
 # Removes .zshrc from $HOME (if it exists) and symlinks the .zshrc file from the .dotfiles
 rm -rf $HOME/.zshrc
-ln -s .zshrc $HOME/.zshrc
+ln -sw $HOME/.dotfiles/.zshrc $HOME/.zshrc
 
 # Update Homebrew recipes
 brew update
