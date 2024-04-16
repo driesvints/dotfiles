@@ -5,9 +5,6 @@ add_to_path() {
   fi
 }
 
-# Load Herd injected PHP binaries
-add_to_path "/Users/driesvints/Library/Application Support/Herd/bin"
-
 # Load dotfiles binaries
 add_to_path "$DOTFILES/bin"
 
