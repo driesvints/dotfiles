@@ -20,7 +20,3 @@ add_to_path "$HOME/.node/bin"
 # Use project specific binaries before global ones
 add_to_path "vendor/bin"
 add_to_path "node_modules/.bin"
-
-# Add Herd services
-add_to_path "/Users/Shared/Herd/services/mysql/8.0.36/bin"
-add_to_path "/Users/Shared/Herd/services/redis/7.0.0/bin"
