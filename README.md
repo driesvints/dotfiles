@@ -1,14 +1,7 @@
-<p align="center"><img src="art/banner-2x.png"></p>
+# Filippo's dotfiles 
 
-## Introduction
+This is a fork of [Dries Vint's dotfiles](https://github.com/driesvints/dotfiles). Make sure to take a look at his GitHub repo if you wanna start with yours.
 
-This repository serves as my way to help me setup and maintain my Mac. It takes the effort out of installing everything manually. Everything needed to install my preferred setup of macOS is detailed in this readme. Feel free to explore, learn and copy parts for your own dotfiles. Enjoy!
-
-📖 - [Read the blog post](https://driesvints.com/blog/getting-started-with-dotfiles)  
-📺 - [Watch the screencast on Laracasts](https://laracasts.com/series/guest-spotlight/episodes/1)  
-💡 - [Learn how to build your own dotfiles](https://github.com/driesvints/dotfiles#your-own-dotfiles)
-
-If you find this repo useful, [consider sponsoring me](https://github.com/sponsors/driesvints) (a little bit)! ❤️ 
 
 ## A Fresh macOS Setup
 
