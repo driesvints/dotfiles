@@ -45,6 +45,7 @@ cask 'nordvpn'
 cask 'windows-app'
 cask 'spotify'
 cask 'dbngin'
+cask 'microsoft-teams'
 
 
 # Fonts
