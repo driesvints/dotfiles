@@ -18,10 +18,10 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 ###############################################################################
 
 # Set computer name (as done via System Preferences → Sharing)
-sudo scutil --set ComputerName "MacBook Dries"
-sudo scutil --set HostName "MacBook Dries"
-sudo scutil --set LocalHostName "MacBook Dries"
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "MacBook Dries"
+sudo scutil --set ComputerName "Mac Studio di Filippo"
+sudo scutil --set HostName "Mac Studio di Filippo"
+sudo scutil --set LocalHostName "Mac Studio di Filippo"
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "Mac Studio di Filippo"
 
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
@@ -160,7 +160,7 @@ defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 # Note: if you’re in the US, replace `EUR` with `USD`, `Centimeters` with
 # `Inches`, `en_GB` with `en_US`, and `true` with `false`.
 defaults write NSGlobalDomain AppleLanguages -array "en" "nl"
-defaults write NSGlobalDomain AppleLocale -string "en_US@currency=EUR"
+defaults write NSGlobalDomain AppleLocale -string "it_IT@currency=EUR"
 defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
 defaults write NSGlobalDomain AppleMetricUnits -bool true
 
@@ -168,7 +168,7 @@ defaults write NSGlobalDomain AppleMetricUnits -bool true
 # sudo defaults write /Library/Preferences/com.apple.loginwindow showInputMenu -bool true
 
 # Set the timezone; see `sudo systemsetup -listtimezones` for other values
-sudo systemsetup -settimezone "Europe/Brussels" > /dev/null
+sudo systemsetup -settimezone "Europe/Rome" > /dev/null
 
 # Stop iTunes from responding to the keyboard media keys
 #launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2> /dev/null
@@ -334,7 +334,7 @@ defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
 # Disable the warning before emptying the Trash
-defaults write com.apple.finder WarnOnEmptyTrash -bool false
+#defaults write com.apple.finder WarnOnEmptyTrash -bool false
 
 # Enable AirDrop over Ethernet and on unsupported Macs running Lion
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
@@ -367,10 +367,10 @@ defaults write com.apple.dock mouse-over-hilite-stack -bool true
 # defaults write com.apple.dock tilesize -int 36
 
 # Change minimize/maximize window effect
-defaults write com.apple.dock mineffect -string "scale"
+#defaults write com.apple.dock mineffect -string "scale"
 
 # Minimize windows into their application’s icon
-defaults write com.apple.dock minimize-to-application -bool true
+#defaults write com.apple.dock minimize-to-application -bool true
 
 # Enable spring loading for all Dock items
 # defaults write com.apple.dock enable-spring-load-actions-on-all-items -bool true
@@ -387,7 +387,7 @@ defaults write com.apple.dock persistent-apps -array
 defaults write com.apple.dock static-only -bool true
 
 # Don’t animate opening applications from the Dock
-defaults write com.apple.dock launchanim -bool false
+#defaults write com.apple.dock launchanim -bool false
 
 # Speed up Mission Control animations
 # defaults write com.apple.dock expose-animation-duration -float 0.1
@@ -447,11 +447,11 @@ sudo ln -sf "/Applications/Xcode.app/Contents/Developer/Applications/Simulator (
 # 11: Launchpad
 # 12: Notification Center
 # 13: Lock Screen
-# Top left screen corner → Mission Control
-# defaults write com.apple.dock wvous-tl-corner -int 2
-# defaults write com.apple.dock wvous-tl-modifier -int 0
-# Top right screen corner → Desktop
-defaults write com.apple.dock wvous-tr-corner -int 10
+# Top left screen corner → Desktop
+defaults write com.apple.dock wvous-tl-corner -int 2
+defaults write com.apple.dock wvous-tl-modifier -int 0
+# Top right screen corner → Notification Center
+defaults write com.apple.dock wvous-tr-corner -int 12
 defaults write com.apple.dock wvous-tr-modifier -int 0
 # Bottom left screen corner → Start screen saver
 # defaults write com.apple.dock wvous-bl-corner -int 5
@@ -470,7 +470,7 @@ defaults write com.apple.Safari SuppressSearchSuggestions -bool true
 # defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2TabsToLinks -bool true
 
 # Show the full URL in the address bar (note: this still hides the scheme)
-defaults write com.apple.Safari ShowFullURLInSmartSearchField -bool true
+#defaults write com.apple.Safari ShowFullURLInSmartSearchField -bool true
 
 # Set Safari’s home page to `about:blank` for faster loading
 # defaults write com.apple.Safari HomePage -string "about:blank"
@@ -852,35 +852,35 @@ defaults write com.google.Chrome.canary PMPrintingExpandedStateForPrint2 -bool t
 ###############################################################################
 
 # Use `~/Documents/Torrents` to store incomplete downloads
-defaults write org.m0k.transmission UseIncompleteDownloadFolder -bool true
-defaults write org.m0k.transmission IncompleteDownloadFolder -string "${HOME}/Documents/Torrents"
+# defaults write org.m0k.transmission UseIncompleteDownloadFolder -bool true
+# defaults write org.m0k.transmission IncompleteDownloadFolder -string "${HOME}/Documents/Torrents"
 
 # Use `~/Downloads` to store completed downloads
-defaults write org.m0k.transmission DownloadLocationConstant -bool true
+# defaults write org.m0k.transmission DownloadLocationConstant -bool true
 
 # Don’t prompt for confirmation before downloading
-defaults write org.m0k.transmission DownloadAsk -bool false
-defaults write org.m0k.transmission MagnetOpenAsk -bool false
+# defaults write org.m0k.transmission DownloadAsk -bool false
+# defaults write org.m0k.transmission MagnetOpenAsk -bool false
 
 # Don’t prompt for confirmation before removing non-downloading active transfers
-defaults write org.m0k.transmission CheckRemoveDownloading -bool true
+# defaults write org.m0k.transmission CheckRemoveDownloading -bool true
 
 # Trash original torrent files
-defaults write org.m0k.transmission DeleteOriginalTorrent -bool true
+# defaults write org.m0k.transmission DeleteOriginalTorrent -bool true
 
 # Hide the donate message
-defaults write org.m0k.transmission WarningDonate -bool false
+# defaults write org.m0k.transmission WarningDonate -bool false
 # Hide the legal disclaimer
-defaults write org.m0k.transmission WarningLegal -bool false
+# defaults write org.m0k.transmission WarningLegal -bool false
 
 # IP block list.
 # Source: https://giuliomac.wordpress.com/2014/02/19/best-blocklist-for-transmission/
-defaults write org.m0k.transmission BlocklistNew -bool true
-defaults write org.m0k.transmission BlocklistURL -string "http://john.bitsurge.net/public/biglist.p2p.gz"
-defaults write org.m0k.transmission BlocklistAutoUpdate -bool true
+# defaults write org.m0k.transmission BlocklistNew -bool true
+# defaults write org.m0k.transmission BlocklistURL -string "http://john.bitsurge.net/public/biglist.p2p.gz"
+# defaults write org.m0k.transmission BlocklistAutoUpdate -bool true
 
 # Randomize port on launch
-defaults write org.m0k.transmission RandomPort -bool true
+# defaults write org.m0k.transmission RandomPort -bool true
 
 ###############################################################################
 # Twitter.app                                                                 #
@@ -890,22 +890,22 @@ defaults write org.m0k.transmission RandomPort -bool true
 # defaults write com.twitter.twitter-mac AutomaticQuoteSubstitutionEnabled -bool false
 
 # Show the app window when clicking the menu bar icon
-defaults write com.twitter.twitter-mac MenuItemBehavior -int 1
+# defaults write com.twitter.twitter-mac MenuItemBehavior -int 1
 
 # Enable the hidden ‘Develop’ menu
-defaults write com.twitter.twitter-mac ShowDevelopMenu -bool true
+# defaults write com.twitter.twitter-mac ShowDevelopMenu -bool true
 
 # Open links in the background
-defaults write com.twitter.twitter-mac openLinksInBackground -bool true
+# defaults write com.twitter.twitter-mac openLinksInBackground -bool true
 
 # Allow closing the ‘new tweet’ window by pressing `Esc`
-defaults write com.twitter.twitter-mac ESCClosesComposeWindow -bool true
+# defaults write com.twitter.twitter-mac ESCClosesComposeWindow -bool true
 
 # Show full names rather than Twitter handles
-defaults write com.twitter.twitter-mac ShowFullNames -bool true
+# defaults write com.twitter.twitter-mac ShowFullNames -bool true
 
 # Hide the app in the background if it’s not the front-most window
-defaults write com.twitter.twitter-mac HideInBackground -bool true
+# defaults write com.twitter.twitter-mac HideInBackground -bool true
 
 ###############################################################################
 # Tweetbot.app                                                                #
