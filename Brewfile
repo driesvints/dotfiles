@@ -46,7 +46,7 @@ cask 'windows-app'
 cask 'spotify'
 cask 'dbngin'
 cask 'microsoft-teams'
-
+cask 'adobe-creative-cloud'
 
 # Fonts
 cask 'font-lato'
