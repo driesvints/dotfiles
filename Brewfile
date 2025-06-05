@@ -11,6 +11,9 @@ brew 'mackup'
 brew 'pkg-config' # https://github.com/driesvints/dotfiles/issues/20
 brew 'svn' # Needed to install fonts
 brew 'grishka/grishka/neardrop'
+brew 'yt-dlp'
+brew 'nmap'
+brew 'wget'
 
 # Development
 brew 'node'
