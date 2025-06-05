@@ -1,3 +1,6 @@
+# Taps
+tap 'grishka/grishka'
+
 # Binaries
 brew 'awscli'
 brew 'bash' # Latest Bash version
