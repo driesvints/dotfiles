@@ -39,7 +39,7 @@ alias mssql="docker run -e ACCEPT_EULA=Y -e SA_PASSWORD=LaravelWow1986! -p 1433:
 
 # Git
 alias gs="git status"
-alias gb="git branch"
+alias gb="git branch --sort=-committerdate"
 alias gc="git checkout"
 alias gl="git log --oneline --decorate --color"
 alias amend="git add . && git commit --amend --no-edit"
