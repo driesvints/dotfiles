@@ -17,6 +17,9 @@ brew 'grishka/grishka/neardrop'
 brew 'yt-dlp'
 brew 'nmap'
 brew 'wget'
+brew 'doctl'
+brew 'codex'
+
 
 # Development
 brew 'node'
@@ -47,6 +50,8 @@ cask 'spotify'
 cask 'dbngin'
 cask 'microsoft-teams'
 cask 'adobe-creative-cloud'
+cask 'claude'
+cask 'localsend'
 
 # Fonts
 cask 'font-lato'
