@@ -26,6 +26,7 @@ alias serve="herd php artisan serve"
 alias cfresh="rm -rf vendor/ composer.lock && composer i"
 alias composer="herd composer"
 alias php="herd php"
+alias test="pest --no-coverage"
 
 # JS
 alias nfresh="rm -rf node_modules/ package-lock.json && npm install"
