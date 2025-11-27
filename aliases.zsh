@@ -25,6 +25,7 @@ alias serve="herd php artisan serve"
 alias cfresh="rm -rf vendor/ composer.lock && composer i"
 alias composer="herd composer"
 alias php="herd php"
+alias test="pest --no-coverage"
 
 # JS
 alias nfresh="rm -rf node_modules/ package-lock.json && npm install"
@@ -32,7 +33,7 @@ alias watch="npm run dev"
 
 # Git
 alias gs="git status"
-alias gb="git branch"
+alias gb="git branch --sort=-committerdate"
 alias gc="git checkout"
 alias gl="git log --oneline --decorate --color"
 alias amend="git add . && git commit --amend --no-edit"
