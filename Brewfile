@@ -28,9 +28,7 @@ brew 'zsh-autosuggestions'
 
 # Apps
 cask 'iterm2'
-cask 'docker'
 cask 'google-chrome'
-cask 'firefox'
 cask 'slack'
 cask 'visual-studio-code'
 cask 'whatsapp'
@@ -39,10 +37,8 @@ cask 'intellij-idea'
 cask 'postman'
 cask 'opensc'
 cask 'dropbox'
-cask 'spectacle'
+cask 'rectangle'
 cask 'docker'
-
-
 
 # Quicklook
 cask 'qlmarkdown'
