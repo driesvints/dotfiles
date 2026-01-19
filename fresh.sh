@@ -2,6 +2,14 @@
 
 echo "Setting up your Mac..."
 
+# Check if Xcode Command Line Tools are installed
+if ! xcode-select -p &>/dev/null; then
+  echo "Xcode Command Line Tools not found. Installing..."
+  xcode-select --install
+else
+  echo "Xcode Command Line Tools already installed."
+fi
+
 # Check for Oh My Zsh and install if we don't have it
 if test ! $(which omz); then
   /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/HEAD/tools/install.sh)"
@@ -17,23 +25,23 @@ fi
 
 # Removes .zshrc from $HOME (if it exists) and symlinks the .zshrc file from the .dotfiles
 rm -rf $HOME/.zshrc
-ln -s $HOME/.dotfiles/.zshrc $HOME/.zshrc
+ln -sw $HOME/.dotfiles/.zshrc $HOME/.zshrc
 
 # Update Homebrew recipes
 brew update
 
 # Install all our dependencies with bundle (See Brewfile)
 brew tap homebrew/bundle
-brew bundle --file $DOTFILES/Brewfile
+brew bundle --file ./Brewfile
 
 # Set default MySQL root password and auth type
 #mysql -u root -e "ALTER USER root@localhost IDENTIFIED WITH mysql_native_password BY 'password'; FLUSH PRIVILEGES;"
 
 # Clone Github repositories
-$DOTFILES/clone.sh
+./clone.sh
 
 # Symlink the Mackup config file to the home directory
-ln -s $DOTFILES/.mackup.cfg $HOME/.mackup.cfg
+ln -s ./.mackup.cfg $HOME/.mackup.cfg
 
 #Symlink Git config files
 ln -s $DOTFILES/.gitignore_global $HOME/.gitignore

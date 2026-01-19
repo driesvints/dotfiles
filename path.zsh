@@ -1,7 +1,7 @@
 #Keep all exports here 
 
 # Load dotfiles binaries
-export PATH="$DOTFILES/bin:$PATH"
+add_to_path "$DOTFILES/bin"
 
 # Make sure coreutils are loaded before system commands
 # I've disabled this for now because I only use "ls" which is

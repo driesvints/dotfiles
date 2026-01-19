@@ -1,5 +1,4 @@
 # Taps
-tap 'homebrew/cask'
 tap 'homebrew/cask-fonts'
 tap 'homebrew/cask-versions'
 tap 'homebrew/bundle'
@@ -31,7 +30,6 @@ cask 'iterm2'
 cask 'google-chrome'
 cask 'slack'
 cask 'visual-studio-code'
-cask 'whatsapp'
 cask 'zoom'
 cask 'intellij-idea'
 cask 'postman'
