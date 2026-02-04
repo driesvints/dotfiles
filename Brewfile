@@ -1,83 +1,56 @@
-# Taps
-tap 'homebrew/cask-fonts'
-tap 'homebrew/cask-versions'
-tap 'stripe/stripe-cli'
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# AI 全栈开发 & 前端进阶 顶级环境清单 (2026 最终版)
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-# Binaries
-brew 'awscli'
-brew 'bash' # Latest Bash version
-brew 'bat' # Used for spatie/visit
-brew 'coreutils' # Those that come with macOS are outdated
-brew 'ffmpeg'
-brew 'gh'
-brew 'git'
-brew 'grep'
-brew 'httpie'
-brew 'jq' # Used for spatie/visit
-brew 'mackup'
-brew 'mas' # Mac App Store manager
-brew 'pkg-config' # https://github.com/driesvints/dotfiles/issues/20
-brew 'stripe/stripe-cli/stripe'
-brew 'stripe/stripe-mock/stripe-mock'
-brew 'svn' # Needed to install fonts
+tap "homebrew/bundle"
+tap "homebrew/cask-fonts"
 
-# Spatie Medialibrary
-brew 'jpegoptim'
-brew 'optipng'
-brew 'pngquant'
-brew 'svgo'
-brew 'gifsicle'
+# --- [1] 核心命令行工具 (CLI Tools) ---
+brew "git"
+brew "gh"          # GitHub 命令行工具
+brew "jq"          # JSON 解析工具 (查 IP 命令必须)
+brew "curl"
 
-# Development
-brew 'imagemagick'
-brew 'yarn'
+# --- [2] 前端开发环境 (Frontend Stack) ---
+brew "nvm"         # Node.js 版本管理 (脚本会自动安装 v20+)
+brew "pnpm"        # 现代包管理工具
+brew "bun"         # 极速 JS 运行时 & 全栈工具
 
-# Apps
-cask '1password'
-brew '1password-cli'
-cask 'caffeine'
-cask 'cyberduck'
-cask 'discord'
-cask 'docker'
-cask 'figma'
-cask 'firefox'
-cask 'github'
-cask 'google-chrome'
-cask 'helo'
-cask 'herd'
-cask 'httpie'
-cask 'imageoptim'
-cask 'loom'
-cask 'openclaw'
-cask 'pastebot'
-cask 'reflex'
-cask 'screen-studio'
-cask 'slack'
-cask 'tableplus'
-cask 'telegram-desktop'
-cask 'the-unarchiver'
-cask 'tinkerwell'
-cask 'transmit'
-cask 'tunnelbear'
-cask 'tuple'
-cask 'visual-studio-code'
-cask 'zoom'
+# --- [3] AI & 后端开发 (AI Full-Stack) ---
+brew "python@3.11" # AI 库最兼容的 Python 版本
+brew "uv"          # 必装：目前全球最快的 Python 包/环境管理 (取代 pip)
+brew "ollama"      # 本地大模型运行引擎 (跑 DeepSeek 必备)
+brew "ffmpeg"      # 视频处理工具，AI 绘画/视频项目常需
+cask "orbstack"    # 必装：比 Docker Desktop 轻量 10 倍，完全兼容 Docker
 
-# Quicklook
-cask 'qlmarkdown'
-cask 'quicklook-json'
+# --- [4] 终端增强与皮肤 (Terminal Experience) ---
+brew "starship"                # 极速终端提示符 (颜值担当)
+brew "zsh-autosuggestions"     # 灰色历史命令补全
+brew "zsh-syntax-highlighting" # 命令语法高亮
+brew "fzf"                     # 模糊搜索神器 (Ctrl+R 找历史命令)
+cask "font-jetbrainsmono-nerd-font" # 必装：解决终端图标乱码
 
-# Fonts
-cask 'font-lato'
-cask 'font-open-sans'
-cask 'font-roboto'
-cask 'font-source-code-pro-for-powerline'
-cask 'font-source-code-pro'
-cask 'font-source-sans-pro'
-cask 'font-source-serif-pro'
+# --- [5] 网络调试与测速 (Networking) ---
+brew "speedtest-cli" # 命令行一键测速
+brew "dog"           # 现代 DNS 查询 (取代 dig)
+brew "httpie"        # 比 curl 更友好的 HTTP 请求工具
+cask "wireshark"     # 网络抓包分析
 
-# Mac App Store
-mas 'Keynote', id: 409183694
-mas 'MyWoosh', id: 1498889644
-mas 'Numbers', id: 409203825
-mas 'Speedtest', id: 1153157709
+# --- [6] AI 专属 IDE 与开发工具 ---
+cask "cursor"        # AI IDE 核心首选
+cask "trae"          # 字节跳动出品 AI IDE
+cask "visual-studio-code"
+cask "postman"       # 接口调试
+cask "balenaetcher"  # 启动盘制作工具
+
+# --- [7] 顶级终端 (Terminals) ---
+cask "warp"          # AI 集成的现代化终端 (你的主力)
+
+# --- [8] 系统增强与清理 ---
+cask "cleanmymac"    # 系统清理
+cask "stats"         # 菜单栏实时显示网速、CPU、内存 (强烈推荐)
+cask "rectangle"     # 免费窗口分屏管理
+cask "raycast"       # 替代 Spotlight 的神级工具，可集成 Claude/Gemini API
+
+# --- [9] 社交、媒体与生活 ---
+cask "wechat"
