@@ -2,8 +2,8 @@
 # AI 全栈开发 & 前端进阶 顶级环境清单 (2026 最终版)
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-tap "homebrew/bundle"
-tap "homebrew/cask-fonts"
+# tap "homebrew/bundle"
+# tap "homebrew/cask-fonts"
 
 # --- [1] 核心命令行工具 (CLI Tools) ---
 brew "git"
