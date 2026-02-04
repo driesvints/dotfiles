@@ -35,6 +35,7 @@ brew "speedtest-cli" # 命令行一键测速
 brew "dog"           # 现代 DNS 查询 (取代 dig)
 brew "httpie"        # 比 curl 更友好的 HTTP 请求工具
 cask "wireshark"     # 网络抓包分析
+cask "clash-verge-rev" # 代理工具
 
 # --- [6] AI 专属 IDE 与开发工具 ---
 cask "cursor"        # AI IDE 核心首选
