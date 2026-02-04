@@ -1,55 +1,55 @@
 #!/bin/sh
 
-echo "Setting up your Mac..."
+echo "🎬 开始构建你的 AI 全栈开发机..."
 
-# Check if Xcode Command Line Tools are installed
-if ! xcode-select -p &>/dev/null; then
-  echo "Xcode Command Line Tools not found. Installing..."
-  xcode-select --install
-else
-  echo "Xcode Command Line Tools already installed."
-fi
+# 1. 安装 Rosetta 2 (确保 Intel 架构 App 兼容)
+echo "🔧 正在安装 Rosetta 2..."
+sudo softwareupdate --install-rosetta --agree-to-license
 
-# Check for Oh My Zsh and install if we don't have it
-if test ! $(which omz); then
-  /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/HEAD/tools/install.sh)"
-fi
-
-# Check for Homebrew and install if we don't have it
+# 2. 检查并安装 Homebrew
 if test ! $(which brew); then
+  echo "🍺 正在安装 Homebrew..."
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> $HOME/.zprofile
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-# Removes .zshrc from $HOME (if it exists) and symlinks the .zshrc file from the .dotfiles
-rm -rf $HOME/.zshrc
-ln -sw $HOME/.dotfiles/.zshrc $HOME/.zshrc
-
-# Update Homebrew recipes
+# 3. 运行 Brewfile 安装所有 App 和工具
+echo "📦 正在执行 Brewfile 批量安装 (请耐心等待)..."
 brew update
-
-# Install all our dependencies with bundle (See Brewfile)
 brew tap homebrew/bundle
-brew bundle --file ./Brewfile
+brew bundle --file=./Brewfile
 
-# Set default MySQL root password and auth type
-mysql -u root -e "ALTER USER root@localhost IDENTIFIED WITH mysql_native_password BY 'password'; FLUSH PRIVILEGES;"
+# 4. 配置 NVM 并默认安装 Node 20
+echo "🟢 正在配置 Node.js 20 环境..."
+mkdir -p ~/.nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && \. "$(brew --prefix)/opt/nvm/nvm.sh"
+nvm install 20
+nvm alias default 20
+nvm use default
 
-# Create a projects directories
-mkdir $HOME/Code
-mkdir $HOME/Herd
+# 5. 安装 Claude-code
+echo "🤖 正在全局安装 Claude-code..."
+npm install -g @anthropic-ai/claude-code
 
-# Create Code subdirectories
-mkdir $HOME/Code/blade-ui-kit
-mkdir $HOME/Code/laravel
+# 6. 建立配置文件链接 (Symbolic Link)
+echo "🔗 正在建立配置文件链接..."
+rm -f $HOME/.zshrc
+ln -s $HOME/.dotfiles/zshrc $HOME/.zshrc
 
-# Clone Github repositories
-./clone.sh
+# 7. macOS 系统手感调优
+echo "⚙️ 优化 macOS 系统设置..."
+# 自动隐藏 Dock
+defaults write com.apple.dock autohide -bool true
+# 加快窗口缩放速度
+defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
+# 提高键盘重复频率 (写代码更爽)
+defaults write NSGlobalDomain KeyRepeat -int 1
+defaults write NSGlobalDomain InitialKeyRepeat -int 15
 
-# Symlink the Mackup config file to the home directory
-ln -s ./.mackup.cfg $HOME/.mackup.cfg
+# 8. 刷新 Dock
+killall Dock
 
-# Set macOS preferences - we will run this last because this will reload the shell
-source ./.macos
+echo "🎉 全部安装完成！"
+echo "👉 请【重启终端】或者输入 'source ~/.zshrc' 开始使用。"
+echo "👉 运行 'ip' 测试网络，运行 'claude' 登录 AI 助手。"
