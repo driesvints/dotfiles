@@ -38,3 +38,7 @@ Thumbs.db
 .idea/
 .vscode
 .vagrant/
+
+# AI #
+######################
+.claude/settings.local.json
