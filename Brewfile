@@ -29,6 +29,7 @@ brew 'svgo'
 brew 'gifsicle'
 
 # Development
+brew 'codex'
 brew 'imagemagick'
 brew 'yarn'
 
@@ -38,6 +39,7 @@ brew '1password-cli'
 cask 'caffeine'
 cask 'claude'
 cask 'claude-code'
+cask 'codex'
 cask 'cyberduck'
 cask 'discord'
 cask 'docker'
