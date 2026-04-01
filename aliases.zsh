@@ -56,12 +56,22 @@ alias sail=sail
 
 # PHP
 alias cfresh="rm -rf vendor/ composer.lock && composer i"
+alias composer="herd composer"
+alias php="herd php"
+alias test="pest --no-coverage"
+
+# JS
+alias nfresh="rm -rf node_modules/ package-lock.json && npm install"
+alias watch="npm run dev"
+
+# Docker
+alias docker-composer="docker-compose"
+
+# SQL Server
+alias mssql="docker run -e ACCEPT_EULA=Y -e SA_PASSWORD=LaravelWow1986! -p 1433:1433 mcr.microsoft.com/mssql/server:2017-latest"
 
 # Git
 alias gbc="$DOTFILES/git-clean.sh"
 alias gcz="git cz"
 alias glm="submodule update --remote --merge"
 alias gpm="git push --recurse-submodules=on-demand"
-
-# Magento
-alias m="bin/magento"
