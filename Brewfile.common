@@ -22,6 +22,7 @@ brew "devcontainer"          # Reference implementation for the Development Cont
 brew "difftastic"            # Diff that understands s˛yntax
 brew "direnv"                # Load/unload environment variables based on $PWD
 brew "dockutil"              # Command-line utility to manage applications in the macOS Dock
+brew "fd"                    # Simple, fast and user-friendly alternative to find
 brew "fzf"                   # Fuzzy finder
 brew "gmailctl"              # Declarative configuration for Gmail filters
 brew "httpie"                # User-friendly cURL replacement (command-line HTTP client)
