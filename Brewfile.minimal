@@ -51,6 +51,7 @@ brew "bash-completion"              # Programmable completion for Bash 3.2
 brew "bash"                         # Bourne-Again SHell, a UNIX command interpreter
 brew "bats-core"                    # Bash Automated Testing System
 brew "coreutils"                    # GNU File, Shell, and Text utilities
+brew "fd"                           # Simple, fast and user-friendly alternative to find
 brew "fzf"                          # Command-line fuzzy finder
 brew "gh"                           # GitHub command-line tool
 brew "git"                          # Distributed revision control system
