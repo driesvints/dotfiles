@@ -36,7 +36,6 @@ brew "pandoc"                # Swiss-army knife of markup format conversion
 brew "pgcli"                 # CLI for Postgres with auto-completion and syntax highlighting
 brew "rubyfmt"               # Ruby autoformatter
 brew "shfmt"                 # Autoformat shell script source code
-brew "showkey"               # Simple keystroke visualizer
 brew "terminal-notifier"     # Send macOS User Notifications from the command-line
 brew "watch"                 # Executes a program periodically, showing output fullscreen
 brew "watchman"              # Watches files and records when they change
@@ -73,4 +72,3 @@ cask "font-bungee"            # Bungee font
 
 ## Apps from the Mac App Store
 # mas "Window Focus", id: 1142625137 # License purchased directly from developer. Download from https://fiplab.com/
-
