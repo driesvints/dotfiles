@@ -32,6 +32,7 @@ brew "mackup"                # Keep your Mac's application settings in sync
 brew "markdownlint-cli"      # CLI for Node.js style checker and lint tool for Markdown files
 brew "micro"                 # Modern and intuitive terminal-based text editor
 brew "notify"                # Stream the output of any CLI and publish it to a variety of supported platforms
+brew "ox"                    # Independent Rust text editor that runs in your terminal
 brew "pandoc"                # Swiss-army knife of markup format conversion
 brew "pgcli"                 # CLI for Postgres with auto-completion and syntax highlighting
 brew "rubyfmt"               # Ruby autoformatter
