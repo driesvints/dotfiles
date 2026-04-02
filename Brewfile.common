@@ -44,22 +44,23 @@ brew "watchman"              # Watches files and records when they change
 brew "worktrunk"             # CLI for Git worktree management, designed for parallel AI agent workflows
 
 ## Casks
-cask "1password"            # Password manager that keeps all passwords secure behind one password
-cask "1password-cli"        # Command-line interface for 1Password
-cask "alfred"               # Application launcher and productivity software
+cask "1password"      # Password manager that keeps all passwords secure behind one password
+cask "1password-cli"  # Command-line interface for 1Password
+cask "alacritty"      # GPU-accelerated terminal emulator
+cask "alfred"         # Application launcher and productivity software
 # cask "claude"               # Anthropic's official Claude AI desktop app
-cask "claude-code"          # Terminal-based AI coding assistant
-cask "deckset"              # Presentations from Markdown
-cask "divvy"                # Application window manager focusing on simplicity
-cask "dropbox"              # Client for the Dropbox cloud storage service
-cask "freeze"               # Amazon Glacier file transfer client
-cask "keycombiner"          # Learn and practice keyboard shortcuts
-cask "macdown-3000"         # Open-source Markdown editor (replaces deprecated macdown)
-cask "monitorcontrol"       # Tool to control external monitor brightness & volume
-cask "monodraw"             # ASCII art editor
-cask "ngrok"                # Reverse proxy, secure introspectable tunnels to localhost
-cask "notunes"              # Tool to disable iTunes launching when media keys are pressed
-cask "slack"                # Team communication and collaboration software
+cask "claude-code"    # Terminal-based AI coding assistant
+cask "deckset"        # Presentations from Markdown
+cask "divvy"          # Application window manager focusing on simplicity
+cask "dropbox"        # Client for the Dropbox cloud storage service
+cask "freeze"         # Amazon Glacier file transfer client
+cask "keycombiner"    # Learn and practice keyboard shortcuts
+cask "macdown-3000"   # Open-source Markdown editor (replaces deprecated macdown)
+cask "monitorcontrol" # Tool to control external monitor brightness & volume
+cask "monodraw"       # ASCII art editor
+cask "ngrok"          # Reverse proxy, secure introspectable tunnels to localhost
+cask "notunes"        # Tool to disable iTunes launching when media keys are pressed
+cask "slack"          # Team communication and collaboration software
 
 ## Fonts
 cask "font-0xproto-nerd-font" # 0xproto Nerd font
