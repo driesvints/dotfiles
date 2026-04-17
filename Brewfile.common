@@ -54,6 +54,7 @@ cask "deckset"        # Presentations from Markdown
 cask "divvy"          # Application window manager focusing on simplicity
 cask "dropbox"        # Client for the Dropbox cloud storage service
 cask "freeze"         # Amazon Glacier file transfer client
+cask "google-gemini"  # Native desktop AI assistant from Google
 cask "keycombiner"    # Learn and practice keyboard shortcuts
 cask "macdown-3000"   # Open-source Markdown editor (replaces deprecated macdown)
 cask "monitorcontrol" # Tool to control external monitor brightness & volume
