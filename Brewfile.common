@@ -36,6 +36,7 @@ brew "notify"                # Stream the output of any CLI and publish it to a 
 brew "ox"                    # Independent Rust text editor that runs in your terminal
 brew "pandoc"                # Swiss-army knife of markup format conversion
 brew "pgcli"                 # CLI for Postgres with auto-completion and syntax highlighting
+brew "pipx"                  # Execute binaries from Python packages in isolated environments
 brew "rubyfmt"               # Ruby autoformatter
 brew "shfmt"                 # Autoformat shell script source code
 brew "terminal-notifier"     # Send macOS User Notifications from the command-line
