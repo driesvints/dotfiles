@@ -18,11 +18,11 @@ TARGET="${HOME}"
 # Use ~/.zprofile to set the PATH and EDITOR environment variables.
 # Use ~/.zshrc for aliases and a custom prompt, tweaking the appearance and behavior of the terminal.
 configs=(
-".zshenv"
-".zprofile"
-".zshrc"
-".zlogin"
-".zlogout"
+  ".zshenv"
+  ".zprofile"
+  ".zshrc"
+  ".zlogin"
+  ".zlogout"
 )
 for config in "${configs[@]}"; do
   symlink_config "${PWD}/${config}" "${TARGET}/${config}"

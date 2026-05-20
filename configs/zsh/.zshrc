@@ -117,7 +117,10 @@ export LC_ALL="${LC_ALL:-en_US.UTF-8}"
 export LANG="${LANG:-en_US.UTF-8}"
 
 # Preferred editor for local and remote sessions
-_DEFAULT_EDITOR=micro
+_DEFAULT_EDITOR=
+if [[ -n $(command -v ox 2>/dev/null) ]]; then
+  _DEFAULT_EDITOR=ox
+fi
 if [[ -z $SSH_CONNECTION ]]; then
   if [[ -n $(command -v cursor 2>/dev/null) ]]; then
     _DEFAULT_EDITOR=cursor
@@ -150,8 +153,14 @@ fi
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 test -e "${HOME}/.stripe-completion.zsh" && source "${HOME}/.stripe-completion.zsh"
 
-
 if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
+
+# Root Loops (https://rootloops.sh?sugar=7&colors=6&sogginess=4&flavor=1&fruit=10&milk=0)
+export FZF_DEFAULT_OPTS="  --color=fg:#f4f2f9,fg+:#e5dff1,bg:#07040d,bg+:#261d35 \
+  --color=hl:#52a9a9,hl+:#63c0bf,info:#bc904f,marker:#7aa860 \
+  --color=prompt:#d97780,spinner:#b77ed1,pointer:#b77ed1,header:#6b9bd9 \
+  --color=border:#584875,label:#b2a2d1,query:#f4f2f9"
+eval "$(fzf --zsh)"
 
 # Mark this as an interactive shell session for Claude Code hooks (e.g. stop notifications).
 export CLAUDE_NOTIFY=1
