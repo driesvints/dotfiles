@@ -52,6 +52,7 @@ describe Brewfile do
     it 'maps mas to MAS'                  do _(Brewfile.header_for_type('mas')).must_equal 'MAS' end
     it 'maps vscode to VS Code Extensions' do _(Brewfile.header_for_type('vscode')).must_equal 'VS Code Extensions' end
     it 'maps tap to Taps'                 do _(Brewfile.header_for_type('tap')).must_equal 'Taps' end
+    it 'maps npm to NPM'                  do _(Brewfile.header_for_type('npm')).must_equal 'NPM' end
     it 'uses titlecased fallback for unknown types' do
       _(Brewfile.header_for_type('go')).must_equal 'Go Packages'
     end
@@ -60,6 +61,7 @@ describe Brewfile do
   describe '.type_for_header' do
     it 'maps Formulae to brew'             do _(Brewfile.type_for_header('Formulae')).must_equal 'brew' end
     it 'maps Casks to cask'               do _(Brewfile.type_for_header('Casks')).must_equal 'cask' end
+    it 'maps NPM to npm'                  do _(Brewfile.type_for_header('NPM')).must_equal 'npm' end
     it 'returns nil for unknown headers'  do _(Brewfile.type_for_header('Unknown')).must_be_nil end
   end
 
@@ -77,6 +79,16 @@ describe Brewfile do
       bf = brewfile(SIMPLE)
       cask_entries = bf.entries(types: ['cask'])
       _(cask_entries.map { |e| e[:name] }).must_equal %w[iterm2]
+    end
+
+    it 'parses npm entries' do
+      bf = brewfile(<<~RUBY)
+        ## NPM
+        npm "eslint" # JavaScript linter
+        npm "prettier" # Code formatter
+      RUBY
+      npm_entries = bf.entries(types: ['npm'])
+      _(npm_entries.map { |e| e[:name] }).must_equal %w[eslint prettier]
     end
 
     it 'captures inline description' do

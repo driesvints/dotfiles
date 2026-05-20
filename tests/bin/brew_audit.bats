@@ -192,6 +192,64 @@ EOF
   }
 }
 
+@test "brew_audit: --npm limits output to npm entries" {
+  cat > "${TEST_TMPDIR}/mock_bin/brew" <<'EOF'
+#!/usr/bin/env bash
+if [[ "$1" == "bundle" && "$2" == "dump" ]]; then
+  for arg in "$@"; do
+    if [[ "$arg" == "--file="* ]]; then
+      outfile="${arg#--file=}"
+      cat > "${outfile}" <<DUMP
+brew "fzf"
+npm "eslint"
+DUMP
+      exit 0
+    fi
+  done
+fi
+exit 0
+EOF
+  invoke --npm
+  [ "${status}" -eq 0 ]
+  # brew entries should not appear; npm entry should
+  ! [[ "${output}" == *" brew "*"fzf"* ]] || {
+    echo "brew entry should not appear when --npm is set; got: ${output}"; return 1
+  }
+  [[ "${output}" == *"eslint"* ]] || {
+    echo "Expected eslint in --npm output; got: ${output}"; return 1
+  }
+}
+
+@test "brew_audit: default --all expands to tracked-type flags, not --all" {
+  # Mock records the args passed to brew bundle dump
+  cat > "${TEST_TMPDIR}/mock_bin/brew" <<EOF
+#!/usr/bin/env bash
+if [[ "\$1" == "bundle" && "\$2" == "dump" ]]; then
+  echo "\$@" > "${TEST_TMPDIR}/bundle_args"
+  for arg in "\$@"; do
+    if [[ "\$arg" == "--file="* ]]; then
+      outfile="\${arg#--file=}"
+      : > "\${outfile}"
+      exit 0
+    fi
+  done
+fi
+exit 0
+EOF
+  chmod +x "${TEST_TMPDIR}/mock_bin/brew"
+  invoke
+  [ "${status}" -eq 0 ]
+  args=$(cat "${TEST_TMPDIR}/bundle_args")
+  for flag in --formulae --casks --taps --mas --vscode --npm; do
+    [[ "${args}" == *"${flag}"* ]] || {
+      echo "Expected ${flag} in dump args; got: ${args}"; return 1
+    }
+  done
+  ! [[ "${args}" == *" --all"* ]] && ! [[ "${args}" == "--all"* ]] || {
+    echo "--all flag should not be passed to brew bundle dump; got: ${args}"; return 1
+  }
+}
+
 # ---------------------------------------------------------------------------
 # brew bundle dump failure
 # ---------------------------------------------------------------------------

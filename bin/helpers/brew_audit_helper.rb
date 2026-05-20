@@ -55,7 +55,7 @@ File.readlines(installed_file, chomp: true).each do |raw|
     next
   end
 
-  if (m = raw.match(/\A(brew|cask|mas|vscode|tap)\s+"([^"]+)"/))
+  if (m = raw.match(/\A(brew|cask|mas|vscode|tap|npm)\s+"([^"]+)"/))
     type = m[1]
     name = m[2]
     next if filter_types && !filter_types.include?(type)

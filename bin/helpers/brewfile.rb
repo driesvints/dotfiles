@@ -19,6 +19,7 @@ class Brewfile
     'mas'    => 'MAS',
     'vscode' => 'VS Code Extensions',
     'tap'    => 'Taps',
+    'npm'    => 'NPM',
   }.freeze
 
   HEADER_TO_TYPE = TYPE_TO_HEADER.invert.freeze
@@ -145,7 +146,7 @@ class Brewfile
   # Parsing
   # -------------------------------------------------------------------------
 
-  ENTRY_RE = /\A(\s*#\s*)?(brew|cask|mas|vscode|tap)\s+"([^"]+)"(?:\s*,\s*id:\s*(\d+))?(?:\s+#\s*(.*))?\z/
+  ENTRY_RE = /\A(\s*#\s*)?(brew|cask|mas|vscode|tap|npm)\s+"([^"]+)"(?:\s*,\s*id:\s*(\d+))?(?:\s+#\s*(.*))?\z/
 
   def parse(content)
     content.split("\n", -1).map do |raw|

@@ -6,15 +6,18 @@
 #   brew_audit [options]
 #
 # Options:
-#   -a, --all                     Include all package types (default)
+#   -a, --all                     Include all tracked package types (default)
 #   -f, --formula, --formulae     Include formulae only
 #   -c, --casks                   Include casks only
-#   -g, --go                      Include Go packages only
 #   -m, --mas                     Include Mac App Store packages only
+#   -n, --npm                     Include npm packages only
 #   -t, --tap, --taps             Include taps only
 #   -s, --vscode                  Include VS Code extensions only
 #   -o, --file=<filepath>         Write results to file (plain text); stats to stdout
 #   -h, --help                    Show this help message
+#
+# Tracked package types (passed to `brew bundle dump` when --all is used):
+#   formulae, casks, mas, npm, taps, vscode
 set -euo pipefail
 cd "$(dirname "$0")"
 source "${PWD}/helpers/trap_and_trace.sh"
@@ -28,13 +31,17 @@ DOTFILES_ROOT="${DOTFILES_ROOT:-"$(cd "${PWD}/.." && pwd)"}"
 OPT_ALL=false
 OPT_FORMULAE=false
 OPT_CASKS=false
-OPT_GO=false
 OPT_MAS=false
+OPT_NPM=false
 OPT_TAPS=false
 OPT_VSCODE=false
 OUTPUT_FILE=""
 OUTPUT_FILE_SET=false
 SELECTIVE_FLAGS=()
+
+# Tracked package types — when --all is specified, these are the flags passed
+# to `brew bundle dump` (which no longer accepts a single --all switch).
+ALL_DUMP_FLAGS=(--formulae --casks --taps --mas --vscode --npm)
 
 # ---------------------------------------------------------------------------
 # Usage
@@ -56,10 +63,10 @@ while [[ $# -gt 0 ]]; do
       OPT_FORMULAE=true; SELECTIVE_FLAGS+=(--formulae) ;;
     -c|--casks)
       OPT_CASKS=true; SELECTIVE_FLAGS+=(--casks) ;;
-    -g|--go)
-      OPT_GO=true; SELECTIVE_FLAGS+=(--brews) ;;  # brew bundle dump uses --brews for go
     -m|--mas)
       OPT_MAS=true; SELECTIVE_FLAGS+=(--mas) ;;
+    -n|--npm)
+      OPT_NPM=true; SELECTIVE_FLAGS+=(--npm) ;;
     -t|--tap|--taps)
       OPT_TAPS=true; SELECTIVE_FLAGS+=(--taps) ;;
     -s|--vscode)
@@ -111,8 +118,8 @@ if [[ ${#SELECTIVE_FLAGS[@]} -gt 0 ]]; then
   types=()
   [[ "${OPT_FORMULAE}" == true ]] && types+=(brew)
   [[ "${OPT_CASKS}"    == true ]] && types+=(cask)
-  [[ "${OPT_GO}"       == true ]] && types+=(go)
   [[ "${OPT_MAS}"      == true ]] && types+=(mas)
+  [[ "${OPT_NPM}"      == true ]] && types+=(npm)
   [[ "${OPT_TAPS}"     == true ]] && types+=(tap)
   [[ "${OPT_VSCODE}"   == true ]] && types+=(vscode)
   TYPE_FILTER=$(IFS=,; echo "${types[*]}")
@@ -126,7 +133,7 @@ DUMP_ARGS=(--quiet --describe --no-restart "--file=${DUMP_FILE}")
 if [[ ${#SELECTIVE_FLAGS[@]} -gt 0 ]]; then
   DUMP_ARGS+=("${SELECTIVE_FLAGS[@]}")
 else
-  DUMP_ARGS+=(--all)
+  DUMP_ARGS+=("${ALL_DUMP_FLAGS[@]}")
 fi
 
 HOMEBREW_NO_AUTO_UPDATE=1 HOMEBREW_NO_ENV_HINTS=1 \
