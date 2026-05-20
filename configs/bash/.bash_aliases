@@ -6,12 +6,16 @@ alias diff=colordiff
 alias flushdns='sudo discoveryutil udnsflushcaches'
 alias hist="history | grep -i"
 alias reload='source ~/.bash_profile'
-alias t='/usr/local/bin/todo.sh -d /Users/chrisbloom/todo.cfg'
+# alias t='/usr/local/bin/todo.sh -d /Users/chrisbloom/todo.cfg'
 # alias c='clear'
 # alias cx='chmod +x'
 # alias mail_log="tail -f /private/var/log/mail.log"
 # alias release='xattr -d com.apple.quarantine'
 # alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
+
+# TMUX COMMANDS
+alias tkeys='tmux list-keys | fzf'
+alias tmup='tmux attach -t portal'
 
 # RUBY / RUBY ON RAILS COMMANDS
 alias bexec='bundle exec'
