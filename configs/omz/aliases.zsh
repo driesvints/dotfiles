@@ -22,6 +22,43 @@ avs () {
   shift
   aws-vault exec $profile -- "$@"
 }
+pathsum() {
+  pwd | cksum | cut -f1 -d ' '
+}
+
+# tmux
+tmj() {
+  session_group=main
+  session_name=main
+  if [[ "$#" -eq 2 ]]; then
+    session_group=$1
+    session_name=$2
+  elif [[ "$#" -eq 1 ]]; then
+    session_group=$1
+  fi
+  tmux new-session -AP \
+    -F "Session #{session_name} joined in group #{session_group} with #{session_windows} window(s):\n  #{session_stack}" \
+    -c "$(pwd)" \
+    -s "${session_name}" \
+    -t "${session_group}"
+}
+tmi() {
+  session_name=main
+  window_name=$(pathsum)
+  if [[ "$#" -eq 2 ]]; then
+    session_name=${1}
+    window_name=${2}
+  elif [[ "$#" -eq 1 ]]; then
+    window_name=${1}
+  fi
+  tmux new-window -PS \
+    -F 'Window #{window_name} attached to session #{session_name} in group #{session_group} @ index #{window_index})' \
+    -c "$(pwd)" \
+    -t "${session_name}" \
+    -n "${window_name}"
+}
+alias tkeys='tmux list-keys | fzf'
+alias tmup='tmi portal portal'
 
 # Python aliases and functions
 alias python="python3"
