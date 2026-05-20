@@ -13,3 +13,14 @@ for config in "${configs[@]}"; do
   mkdir -p "$(dirname "${TARGET}/${config}")"
   symlink_config "${PWD}/${config}" "${TARGET}/${config}"
 done
+
+# Helper scripts referenced from .tmux.conf bindings
+TARGET="${HOME}/.tmux"
+mkdir -p "${TARGET}"
+scripts=(
+  "merge-windows.sh"
+  "split-panes.sh"
+)
+for script in "${scripts[@]}"; do
+  symlink_config "${PWD}/${script}" "${TARGET}/${script}"
+done
