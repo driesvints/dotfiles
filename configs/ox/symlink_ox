@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+cd "$(dirname "$0")"
+source ../../scripts/helpers/runtime.sh
+source ../../bin/helpers/trap_and_trace.sh
+
+log_info "Symlinking ox configs"
+
+TARGET="${HOME}"
+configs=(
+  ".oxrc"
+)
+for config in "${configs[@]}"; do
+  mkdir -p "$(dirname "${TARGET}/${config}")"
+  symlink_config "${PWD}/${config}" "${TARGET}/${config}"
+done

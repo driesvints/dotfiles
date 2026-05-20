@@ -1,0 +1,26 @@
+-- Configuration generated for Ox 0.7.7 by the configuration assistant --
+
+-- Document Configuration --
+document.indentation = 'spaces'
+document.tab_width = 2
+
+-- Tab Line Configuration --
+tab_line.enabled = true
+tab_line.format = '  {icon} {file_name}{modified} {git_status}  '
+
+-- Status Line Configuration --
+status_line.parts = {
+	'  {file_name}{modified}  │  {icon} {file_type}  │',
+	'│    {git_branch}  │  {cursor_y} / {line_count}  {cursor_x}  ',
+}
+
+-- File Tree Configuration --
+file_tree.icons = true
+
+-- Load Plug-Ins --
+load_plugin("pairs.lua")
+load_plugin("quickcomment.lua")
+load_plugin("autoindent.lua")
+load_plugin("todo.lua")
+load_plugin("git.lua")
+git = { icons = true }
