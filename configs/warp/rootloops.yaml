@@ -1,0 +1,31 @@
+# Copy the configuration below and add it to a new file under
+# ~/.warp/themes/rootloops.yaml
+# Open Warp's Settings > Appearance > Themes and select the 'Root Loops' theme.
+
+# via https://rootloops.sh?sugar=7&colors=6&sogginess=4&flavor=1&fruit=10&milk=0
+
+name: Root Loops
+accent: '#b2a2d1'
+cursor: '#b2a2d1'
+background: '#07040d'
+foreground: '#f4f2f9'
+details: darker
+terminal_colors:
+  bright:
+    black: '#584875'
+    blue: '#88b1e5'
+    cyan: '#63c0bf'
+    green: '#8ebf73'
+    magenta: '#c899de'
+    red: '#e6949a'
+    white: '#e5dff1'
+    yellow: '#d3a563'
+  normal:
+    black: '#261d35'
+    blue: '#6b9bd9'
+    cyan: '#52a9a9'
+    green: '#7aa860'
+    magenta: '#b77ed1'
+    red: '#d97780'
+    white: '#b2a2d1'
+    yellow: '#bc904f'

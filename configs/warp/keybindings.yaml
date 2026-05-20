@@ -1,0 +1,16 @@
+---
+"workspace:toggle_ai_assistant": none
+"workspace:reset_zoom": none
+"editor:select_to_line_end": ctrl-shift-$
+"welcome_view:open_project": none
+"terminal:scroll_down_one_line": none
+"editor:select_to_line_start": ctrl-shift-^
+"editor:select_to_paragraph_end": ctrl-shift-Z
+"workspace:edit_prompt": cmd-e
+"workspace:reset_font_size": cmd-0
+"workspace:terminate_app": none
+"terminal:scroll_to_top_of_selected_block": none
+"terminal:accept_prompt_suggestions": tab
+"editor_view:select_command": enter
+"input:open_completion_suggestions": tab
+"terminal:scroll_to_bottom_of_selected_block": none
