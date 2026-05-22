@@ -1,0 +1,309 @@
+#!/usr/bin/env bash
+# Interactive cleanup for worktrunk worktrees and branches.
+#
+# Renders `wt list --full --branches` through fzf with a rich preview pane,
+# lets you mark entries with Tab, toggle removal flags live, and dispatches
+# one `wt remove` call per marked entry.
+#
+# Usage:
+#   wt_cleanup [options] [-- <wt-args>...]
+#
+# Options:
+#       --delete-branch           Initial: delete branch on remove (default: keep)
+#   -D, --force-delete            Initial: --force-delete on remove
+#   -f, --force                   Initial: --force on remove
+#       --no-hooks                Initial: --no-hooks on remove
+#   -y, --yes                     Skip confirmation prompt before removal
+#   -b, --branches                Include branches without worktrees (default: worktrees only)
+#       --full                    Use `wt list --full` (CI, diff, LLM summaries — slow)
+#   -h, --help                    Show this help message
+#
+# Arguments after `--` are appended to each `wt remove` invocation. Useful for
+# things like `--foreground` or `-v`.
+#
+# fzf bindings:
+#   Tab / Shift-Tab     mark / unmark (multi-select)
+#   Enter               remove all marked entries (or focused if none marked)
+#   Alt-d               toggle [d]elete-branch
+#   Alt-Shift-D         toggle force-[D]elete
+#   Alt-f               toggle [f]orce
+#   Alt-h               toggle no-[h]ooks
+#   ?                   toggle preview pane
+#   Esc                 abort without changes
+set -euo pipefail
+# Capture the caller's cwd before cd'ing into the script dir — every `wt`
+# invocation needs to operate on the user's repo, not on ~/.dotfiles.
+INVOKE_CWD="${PWD}"
+cd "$(dirname "$0")"
+source "${PWD}/helpers/trap_and_trace.sh"
+PATH="${PWD}:${PATH}"
+
+# ---------------------------------------------------------------------------
+# Defaults
+# ---------------------------------------------------------------------------
+FLAG_DELETE_BRANCH=false
+FLAG_FORCE_DELETE=false
+FLAG_FORCE=false
+FLAG_NO_HOOKS=false
+SKIP_CONFIRM=false
+INCLUDE_BRANCHES=false
+USE_FULL=false
+WT_PASSTHROUGH=()
+
+# ---------------------------------------------------------------------------
+# Usage
+# ---------------------------------------------------------------------------
+usage() {
+  grep '^#' "$0" | grep -v '^#!/' | sed 's/^# \{0,1\}//'
+}
+
+# ---------------------------------------------------------------------------
+# Option parsing
+# ---------------------------------------------------------------------------
+while [[ $# -gt 0 ]]; do
+  case $1 in
+    -h|--help)
+      usage; exit 0 ;;
+    --delete-branch)
+      FLAG_DELETE_BRANCH=true ;;
+    -D|--force-delete)
+      FLAG_FORCE_DELETE=true ;;
+    -f|--force)
+      FLAG_FORCE=true ;;
+    --no-hooks)
+      FLAG_NO_HOOKS=true ;;
+    -y|--yes)
+      SKIP_CONFIRM=true ;;
+    -b|--branches)
+      INCLUDE_BRANCHES=true ;;
+    --full)
+      USE_FULL=true ;;
+    --)
+      shift
+      WT_PASSTHROUGH=("$@")
+      break ;;
+    -*)
+      log_error "Unknown option: $1"; usage >&2; exit 1 ;;
+    *)
+      log_error "Unexpected argument: $1"; usage >&2; exit 1 ;;
+  esac
+  shift
+done
+
+# ---------------------------------------------------------------------------
+# Prerequisites
+# ---------------------------------------------------------------------------
+command -v wt  >/dev/null 2>&1 || { log_error "wt is not installed or not on PATH"; exit 1; }
+command -v fzf >/dev/null 2>&1 || { log_error "fzf is not installed or not on PATH"; exit 1; }
+command -v ruby >/dev/null 2>&1 || { log_error "ruby is not installed or not on PATH"; exit 1; }
+
+# ---------------------------------------------------------------------------
+# Working files
+# ---------------------------------------------------------------------------
+TMPDIR_WORK="$(mktemp -d)"
+trap 'rm -rf "${TMPDIR_WORK}"' EXIT
+
+LIST_JSON="${TMPDIR_WORK}/list.json"
+LIST_ROWS="${TMPDIR_WORK}/rows.tsv"
+STATE_FILE="${TMPDIR_WORK}/state"
+HELPER="${PWD}/helpers/wt_cleanup_helper.rb"
+
+# ---------------------------------------------------------------------------
+# Fetch worktree list
+# ---------------------------------------------------------------------------
+wt_list_args=(-C "${INVOKE_CWD}" list --format json)
+[[ "${USE_FULL}"         == true ]] && wt_list_args+=(--full)
+[[ "${INCLUDE_BRANCHES}" == true ]] && wt_list_args+=(--branches)
+
+log_info "Fetching worktrees from ${INVOKE_CWD}..."
+if ! wt "${wt_list_args[@]}" > "${LIST_JSON}" 2>"${TMPDIR_WORK}/wt_list.err"; then
+  log_error "wt list failed:"
+  cat "${TMPDIR_WORK}/wt_list.err" >&2
+  exit 1
+fi
+
+# Empty array? Nothing to do.
+if [[ ! -s "${LIST_JSON}" ]] || ! ruby -rjson -e 'exit JSON.parse(STDIN.read).any? ? 0 : 1' < "${LIST_JSON}" >/dev/null 2>&1; then
+  log_info "No worktrees or branches to display."
+  exit 0
+fi
+
+if ! ruby "${HELPER}" format < "${LIST_JSON}" > "${LIST_ROWS}"; then
+  log_error "Failed to format worktree list"
+  exit 1
+fi
+
+# ---------------------------------------------------------------------------
+# Seed flag state file
+# ---------------------------------------------------------------------------
+cat > "${STATE_FILE}" <<EOF
+delete_branch=${FLAG_DELETE_BRANCH}
+force_delete=${FLAG_FORCE_DELETE}
+force=${FLAG_FORCE}
+no_hooks=${FLAG_NO_HOOKS}
+EOF
+
+# ---------------------------------------------------------------------------
+# Helper closures invoked from fzf bindings
+# ---------------------------------------------------------------------------
+HEADER_SCRIPT="${TMPDIR_WORK}/render_header.sh"
+TOGGLE_SCRIPT="${TMPDIR_WORK}/toggle_flag.sh"
+PREVIEW_SCRIPT="${TMPDIR_WORK}/preview.sh"
+
+cat > "${HEADER_SCRIPT}" <<'EOF'
+#!/usr/bin/env bash
+# Render the sticky fzf header from the state file.
+state_file="${1:?state file required}"
+# shellcheck disable=SC1090
+source "${state_file}"
+
+label() { [[ "$1" == "true" ]] && echo "on" || echo "off"; }
+
+printf '[d]elete-branch:%s  force-[D]elete:%s  [f]orce:%s  no-[h]ooks:%s\n' \
+  "$(label "${delete_branch}")" \
+  "$(label "${force_delete}")" \
+  "$(label "${force}")" \
+  "$(label "${no_hooks}")"
+printf 'Enter=remove  Tab=mark  Alt-d/D/f/h=toggle  ?=preview  Esc=cancel\n'
+EOF
+chmod +x "${HEADER_SCRIPT}"
+
+cat > "${TOGGLE_SCRIPT}" <<'EOF'
+#!/usr/bin/env bash
+# Flip a single boolean in the state file.
+state_file="${1:?state file required}"
+key="${2:?key required}"
+
+tmp="$(mktemp)"
+while IFS='=' read -r k v; do
+  if [[ "$k" == "$key" ]]; then
+    if [[ "$v" == "true" ]]; then
+      printf '%s=false\n' "$k" >> "$tmp"
+    else
+      printf '%s=true\n' "$k"  >> "$tmp"
+    fi
+  else
+    printf '%s=%s\n' "$k" "$v" >> "$tmp"
+  fi
+done < "${state_file}"
+mv "$tmp" "${state_file}"
+EOF
+chmod +x "${TOGGLE_SCRIPT}"
+
+cat > "${PREVIEW_SCRIPT}" <<EOF
+#!/usr/bin/env bash
+# Render preview text for a single entry by branch name.
+branch="\${1:-}"
+[[ -z "\${branch}" ]] && exit 0
+ruby "${HELPER}" preview "\${branch}" < "${LIST_JSON}"
+EOF
+chmod +x "${PREVIEW_SCRIPT}"
+
+# ---------------------------------------------------------------------------
+# Run fzf
+# ---------------------------------------------------------------------------
+fzf_out="${TMPDIR_WORK}/fzf.out"
+
+# {1} is the first tab-separated field (branch name / id).
+# --with-nth=2.. hides field 1 from display but keeps it for selection output.
+set +e
+fzf \
+  --ansi \
+  --multi \
+  --delimiter=$'\t' \
+  --with-nth=2.. \
+  --header="$("${HEADER_SCRIPT}" "${STATE_FILE}")" \
+  --header-lines=0 \
+  --preview="${PREVIEW_SCRIPT} {1}" \
+  --preview-window='right,50%,wrap' \
+  --bind="alt-d:execute-silent(${TOGGLE_SCRIPT} ${STATE_FILE} delete_branch)+transform-header(${HEADER_SCRIPT} ${STATE_FILE})" \
+  --bind="alt-D:execute-silent(${TOGGLE_SCRIPT} ${STATE_FILE} force_delete)+transform-header(${HEADER_SCRIPT} ${STATE_FILE})" \
+  --bind="alt-f:execute-silent(${TOGGLE_SCRIPT} ${STATE_FILE} force)+transform-header(${HEADER_SCRIPT} ${STATE_FILE})" \
+  --bind="alt-h:execute-silent(${TOGGLE_SCRIPT} ${STATE_FILE} no_hooks)+transform-header(${HEADER_SCRIPT} ${STATE_FILE})" \
+  --bind='?:toggle-preview' \
+  --expect=enter \
+  < "${LIST_ROWS}" > "${fzf_out}"
+fzf_exit=$?
+set -e
+
+# fzf exits 130 when user cancels (Esc / Ctrl-C). 1 means no match.
+if [[ ${fzf_exit} -eq 130 || ${fzf_exit} -eq 1 ]]; then
+  log_info "Aborted."
+  exit 0
+fi
+if [[ ${fzf_exit} -ne 0 ]]; then
+  log_error "fzf exited with status ${fzf_exit}"
+  exit "${fzf_exit}"
+fi
+
+# First line of fzf output is the key pressed; remaining lines are selected rows.
+mapfile -t fzf_lines < "${fzf_out}"
+if [[ ${#fzf_lines[@]} -lt 2 ]]; then
+  log_info "Nothing selected."
+  exit 0
+fi
+
+# Extract branch names (field 1 of each row).
+branches=()
+for ((i = 1; i < ${#fzf_lines[@]}; i++)); do
+  branch="${fzf_lines[$i]%%$'\t'*}"
+  [[ -n "${branch}" ]] && branches+=("${branch}")
+done
+
+if [[ ${#branches[@]} -eq 0 ]]; then
+  log_info "Nothing selected."
+  exit 0
+fi
+
+# ---------------------------------------------------------------------------
+# Reload final flag state (it may have been toggled inside fzf)
+# ---------------------------------------------------------------------------
+# shellcheck disable=SC1090
+source "${STATE_FILE}"
+
+# ---------------------------------------------------------------------------
+# Build the wt remove argument list
+# ---------------------------------------------------------------------------
+remove_flags=()
+[[ "${delete_branch}" == "false" ]] && remove_flags+=("--no-delete-branch")
+[[ "${force_delete}"  == "true"  ]] && remove_flags+=("--force-delete")
+[[ "${force}"         == "true"  ]] && remove_flags+=("--force")
+[[ "${no_hooks}"      == "true"  ]] && remove_flags+=("--no-hooks")
+
+# ---------------------------------------------------------------------------
+# Confirmation
+# ---------------------------------------------------------------------------
+echo "Will run, for each selected entry:"
+echo "  wt remove ${remove_flags[*]} <branch> ${WT_PASSTHROUGH[*]:-}"
+echo "Selected:"
+for b in "${branches[@]}"; do echo "  - ${b}"; done
+
+if [[ "${SKIP_CONFIRM}" != true ]]; then
+  read -r -p "Proceed? [y/N] " reply
+  if [[ ! "${reply}" =~ ^[Yy]$ ]]; then
+    log_info "Aborted."
+    exit 0
+  fi
+fi
+
+# ---------------------------------------------------------------------------
+# Execute
+# ---------------------------------------------------------------------------
+errors=()
+for branch in "${branches[@]}"; do
+  log_info "Removing ${branch}..."
+  set +e
+  wt -C "${INVOKE_CWD}" remove "${remove_flags[@]}" "${branch}" ${WT_PASSTHROUGH[@]+"${WT_PASSTHROUGH[@]}"}
+  rc=$?
+  set -e
+  if [[ ${rc} -ne 0 ]]; then
+    errors+=("${branch} (exit ${rc})")
+  else
+    log_success "Removed ${branch}"
+  fi
+done
+
+if [[ ${#errors[@]} -gt 0 ]]; then
+  log_error "Failed to remove: ${errors[*]}"
+  exit 1
+fi
