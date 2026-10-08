@@ -27,6 +27,9 @@ fi
 rm -rf "$HOME/.zshrc"
 ln -sw "$HOME/.dotfiles/.zshrc" "$HOME/.zshrc"
 
+# Tells git to use the global .gitignore file from the .dotfiles
+git config --global core.excludesfile "$HOME/.dotfiles/.gitignore_global"
+
 # Update Homebrew recipes
 brew update
 
