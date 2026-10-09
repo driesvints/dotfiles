@@ -27,6 +27,11 @@ fi
 rm -rf "$HOME/.zshrc"
 ln -sw "$HOME/.dotfiles/.zshrc" "$HOME/.zshrc"
 
+# Removes the global CLAUDE.md from $HOME (if it exists) and symlinks the one from the .dotfiles
+mkdir -p "$HOME/.claude"
+rm -rf "$HOME/.claude/CLAUDE.md"
+ln -s "$HOME/.dotfiles/ai/CLAUDE.md" "$HOME/.claude/CLAUDE.md"
+
 # Tells git to use the global .gitignore file from the .dotfiles
 git config --global core.excludesfile "$HOME/.dotfiles/.gitignore_global"
 
