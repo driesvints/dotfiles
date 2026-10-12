@@ -32,6 +32,7 @@ brew 'yarn'
 # Apps
 cask '1password'
 brew '1password-cli'
+cask 'amp-app'
 cask 'antigravity-cli'
 cask 'caffeine'
 cask 'chatgpt'
