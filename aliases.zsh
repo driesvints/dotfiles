@@ -37,3 +37,8 @@ alias k_apply_dev="kubectl apply -f dev-nais.yaml"
 # Utils
 alias listen_p="lsof -i -P -n | grep LISTEN"
 
+# KI i nav
+alias copilot='cplt --'
+alias np='nav-pilot'
+
+echo "aliases set up"

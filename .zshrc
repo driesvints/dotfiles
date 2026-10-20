@@ -64,14 +64,16 @@ plugins=(composer git git-extras httpie github npm sublime vagrant kubectl kube-
 
 # Environment variables
 if [[ "$ZSH_DEBUG" == "ON" ]]; then echo "[DEBUG] setting up some environment variables"; fi
-#export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
-#export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk-11.0.2.jdk/Contents/Home"
-export JAVA_HOME="$(/usr/libexec/java_home)"
+
+### sdkman setter Java_home automagisk
+### export JAVA_HOME="$(/usr/libexec/java_home)"
 export MAVEN_HOME=$HOME/bin/apache-maven-3.6.3
-export POSTGRES_HOME=/Applications/Postgres.app/Contents/Versions/latest
+##export POSTGRES_HOME=/Applications/Postgres.app/Contents/Versions/latest
 
 # Maven settings
-export MAVEN_OPTS="-Xmx1024M -XX:MaxPermSize=1024m -Dfile.encoding=UTF-8"
+## 19.01.2024 removed -XX:MaxPermSize=size is removed from Java17 
+##export MAVEN_OPTS="-Xmx1024M -XX:MaxPermSize=1024m -Dfile.encoding=UTF-8"
+export MAVEN_OPTS=
 ### debug ###MAVEN_OPTS="$MAVEN_OPTS -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005"
 export M2_REPO=$HOME/.m2/repository
 
@@ -98,14 +100,18 @@ source $ZSH/oh-my-zsh.sh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 ####. "/usr/local/opt/nvm/nvm.sh"
 
 # jenv (installed with brew
-export PATH="$HOME/.jenv/bin:$PATH"
+###export PATH="$HOME/.jenv/bin:$PATH"
 #eval "$(jenv init -)"
 #if which jenv > /dev/null; then eval "$(jenv init -)"; fi
+
+## oppdater token i NODE_AUTH_TOKEN 
+## npm klarer å bruke .npmrc, men bun trenger NODE_AUTH_TOKEN
+export NODE_AUTH_TOKEN=$(sed -n '2p' .npmrc | awk -F "_authToken=" '{print $2}')
 
 # openssl 
 #--------
@@ -117,44 +123,68 @@ export CPPFLAGS="-I/usr/local/opt/openssl/include"
 # For pkg-config to find openssl, let's set:
 export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
 
-# kubectl (NAV) 
-#---------------
-export KUBECONFIG="/Users/thomasdufourd/Code/nav/kubeconfigs/config"
-
-# Vault (NAV)
-# -----------
-#export VAULT_ADDR="https://vault.adeo.no" 
-export VAULT_ADDR="http://localhost:8200"
-
 # Enable 'kube-ps1'
 PROMPT=$PROMPT'$(kube_ps1) '
 # On Bekk Mac:
-kubeoff
+###kubeoff
 
-# Flutter https://flutter.dev/docs/get-started/install/macos 
-export FLUTTER_BIN="/Users/thomasdufourd/bin/flutter/bin"
-export PATH="$FLUTTER_BIN:$PATH"
-
-# jenv
-# SEE: https://medium.com/@chamikakasun/how-to-manage-multiple-java-version-in-macos-e5421345f6d0 
-# find all java versions installed:  /usr/libexec/java_home -V
-# add new jdk to jenv: jenv add <your_jdk_path>
-# list: jenv versions
-# use: jenv global 14.0
-# or (project): jenv local 11
-#  ensure that JAVA_HOME is correct
-# ->jenv enable-plugin export
-# make Maven aware of the Java version in use (and switch when your project does)
-# ->jenv enable-plugin maven
- export PATH="$HOME/.jenv/bin:$PATH"
- eval "$(jenv init -)"
-
+echo "[DEBUG] TODO: Android "
 # Android emulator
-export PATH=$PATH:/usr/local/share/android-commandlinetools/emulator/
+#export PATH=$PATH:/usr/local/share/android-commandlinetools/emulator/
 ##export ANDROID_SDK_ROOT=/usr/local/share/android-commandlinetools
-export ANDROID_SDK_ROOT=~/Library/Android/sdk
+#export ANDROID_SDK_ROOT=~/Library/Android/sdk
+
+# install mac 2024
+# path to pre-installed brew
+export BREW_PATH=/opt/homebrew/bin
+export PATH="$BREW_PATH:$PATH"
+
+# install GPG: https://gist.github.com/troyfontaine/18c9146295168ee9ca2b30c00bd1b41e 
+export GPG_TTY=$(tty)
+
+# Gcloud CLI - ref: https://cloud.google.com/sdk/docs/install
+export GCLOUD_CLI_PATH="$HOME/bin/google-cloud-sdk/bin"
+export PATH="$GCLOUD_CLI_PATH:$PATH"
+## installed by Gcloud install.sh
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/thomas/bin/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/thomas/bin/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/thomas/bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/thomas/bin/google-cloud-sdk/completion.zsh.inc'; fi
 
 # miscellanous
 #-------------
 # the following makes it possible to comment a command-line, just like bash
 setopt interactivecomments
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+# Docker/Colima
+# To avoid following after 'docker ps': Error response from daemon: client version 1.52 is too new. Maximum supported API version is 1.43
+export DOCKER_API_VERSION=1.43
+
+# Python
+#--------
+# pyenv (brew) for managing python versions
+# pyenv-virtualenv (brew) for managing python versions + venv (brew)
+# see: https://github.com/pyenv/pyenv-virtualenv 
+# pyenv init
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
+# OBS: symlink from /opt/homebrew/bin/pyenv-virtualenv 
+export PATH="/opt/homebrew/Cellar/pyenv-virtualenv/1.2.6/shims:${PATH}";
+export PYENV_VIRTUALENV_INIT=1;
+_pyenv_virtualenv_hook() {
+  local ret=$?
+  if [ -n "${VIRTUAL_ENV-}" ]; then
+    eval "$(pyenv sh-activate --quiet || pyenv sh-deactivate --quiet || true)" || true
+  else
+    eval "$(pyenv sh-activate --quiet || true)" || true
+  fi
+  return $ret
+};
+typeset -g -a precmd_functions
+if [[ -z $precmd_functions[(r)_pyenv_virtualenv_hook] ]]; then
+  precmd_functions=(_pyenv_virtualenv_hook $precmd_functions);
+fi
+#eval "$(pyenv virtualenv-init -)"
+
