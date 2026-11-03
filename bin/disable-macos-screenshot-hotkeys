@@ -1,0 +1,87 @@
+#!/bin/bash
+#
+# Disable the native macOS screenshot hotkeys so CleanShot can claim them.
+# Safe to run repeatedly: macOS tends to re-enable these after updates.
+#
+#   28  ⇧⌘3   Save picture of screen as a file
+#   29  ⌃⇧⌘3  Copy picture of screen to the clipboard
+#   30  ⇧⌘4   Save picture of selected area as a file
+#   31  ⌃⇧⌘4  Copy picture of selected area to the clipboard
+#   184 ⇧⌘5   Screenshot and recording options
+
+set -euo pipefail
+
+domain="com.apple.symbolichotkeys"
+plist="$HOME/Library/Preferences/$domain.plist"
+plistbuddy="/usr/libexec/PlistBuddy"
+activate_settings="/System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings"
+
+# Default key bindings (ASCII code, key code, modifier flags) used when an entry is missing.
+default_parameters() {
+    case "$1" in
+        28)  echo "51 20 1179648" ;;
+        29)  echo "51 20 1441792" ;;
+        30)  echo "52 21 1179648" ;;
+        31)  echo "52 21 1441792" ;;
+        184) echo "53 23 1179648" ;;
+    esac
+}
+
+# XML fragment for a disabled entry. XML (not old-style plist syntax) keeps
+# `enabled` a real boolean and the parameters real integers.
+disabled_entry_xml() {
+    local integers="" parameter
+    for parameter in $(default_parameters "$1"); do
+        integers+="<integer>$parameter</integer>"
+    done
+    echo "<dict><key>enabled</key><false/><key>value</key><dict><key>parameters</key><array>$integers</array><key>type</key><string>standard</string></dict></dict>"
+}
+
+hotkey_ids=(28 29 30 31 184)
+missing_ids=()
+changed=false
+
+# Pass 1: flip existing entries directly in the plist.
+for id in "${hotkey_ids[@]}"; do
+    entry=":AppleSymbolicHotKeys:$id"
+
+    if [[ ! -f "$plist" ]] || ! "$plistbuddy" -c "Print $entry" "$plist" >/dev/null 2>&1; then
+        missing_ids+=("$id")
+        continue
+    fi
+
+    if enabled="$("$plistbuddy" -c "Print $entry:enabled" "$plist" 2>/dev/null)"; then
+        if [[ "$enabled" == "false" ]]; then
+            echo "Hotkey $id already disabled."
+            continue
+        fi
+        # Delete + Add rather than Set, so the value always ends up a boolean.
+        "$plistbuddy" -c "Delete $entry:enabled" "$plist"
+    fi
+    "$plistbuddy" -c "Add $entry:enabled bool false" "$plist"
+
+    echo "Disabled hotkey $id."
+    changed=true
+done
+
+# Make cfprefsd drop its cached copy before writing through `defaults`,
+# otherwise it could flush stale data over the PlistBuddy edits.
+if [[ "$changed" == true && ${#missing_ids[@]} -gt 0 ]]; then
+    killall cfprefsd 2>/dev/null || true
+fi
+
+# Pass 2: add any entries that don't exist yet, already disabled.
+for id in "${missing_ids[@]+"${missing_ids[@]}"}"; do
+    defaults write "$domain" AppleSymbolicHotKeys -dict-add "$id" "$(disabled_entry_xml "$id")"
+    echo "Added hotkey $id as disabled."
+    changed=true
+done
+
+if [[ "$changed" == false ]]; then
+    echo "Nothing to change."
+    exit 0
+fi
+
+killall cfprefsd 2>/dev/null || true
+"$activate_settings" -u
+echo "Screenshot hotkeys disabled."
