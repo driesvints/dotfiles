@@ -40,6 +40,3 @@ brew update
 
 # Install all our dependencies with bundle (See Brewfile)
 brew bundle --file ./Brewfile
-
-# Keep local repositories in one directory. Development runs in online Orbs.
-mkdir -p "$HOME/Code"
