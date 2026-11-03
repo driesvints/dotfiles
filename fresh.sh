@@ -1,9 +1,9 @@
-#!/bin/sh
+#!/bin/bash
 
 echo "Setting up your Mac..."
 
 # Check if Xcode Command Line Tools are installed
-if ! xcode-select -p &>/dev/null; then
+if ! xcode-select -p >/dev/null 2>&1; then
   echo "Xcode Command Line Tools not found. Installing..."
   xcode-select --install
 else
@@ -11,7 +11,7 @@ else
 fi
 
 # Check for Oh My Zsh and install if we don't have it
-if ! command -v omz >/dev/null 2>&1; then
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
   /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/HEAD/tools/install.sh)"
 fi
 
@@ -32,32 +32,14 @@ mkdir -p "$HOME/.claude"
 rm -rf "$HOME/.claude/CLAUDE.md"
 ln -s "$HOME/.dotfiles/ai/CLAUDE.md" "$HOME/.claude/CLAUDE.md"
 
-# Tells git to use the global .gitignore file from the .dotfiles
-git config --global core.excludesfile "$HOME/.dotfiles/.gitignore_global"
+# Install the versioned Git and SSH configuration.
+"$HOME/.dotfiles/install-configs.sh"
 
 # Update Homebrew recipes
 brew update
 
 # Install all our dependencies with bundle (See Brewfile)
-brew tap homebrew/bundle
 brew bundle --file ./Brewfile
 
-# Set default MySQL root password and auth type
-mysql -u root -e "ALTER USER root@localhost IDENTIFIED WITH mysql_native_password BY 'password'; FLUSH PRIVILEGES;"
-
-# Create a projects directories
-mkdir "$HOME/Code"
-mkdir "$HOME/Herd"
-
-# Create Code subdirectories
-mkdir "$HOME/Code/blade-ui-kit"
-mkdir "$HOME/Code/laravel"
-
-# Clone Github repositories
-./clone.sh
-
-# Symlink the Mackup config file to the home directory
-ln -s ./.mackup.cfg "$HOME/.mackup.cfg"
-
-# Set macOS preferences - we will run this last because this will reload the shell
-source ./.macos
+# Keep local repositories in one directory. Development runs in online Orbs.
+mkdir -p "$HOME/Code"
