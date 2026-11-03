@@ -42,5 +42,3 @@ Thumbs.db
 # AI #
 ######################
 .claude/settings.local.json
-
-polyscope.local.json

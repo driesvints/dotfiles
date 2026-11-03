@@ -1,0 +1,21 @@
+# This is Git's per-user configuration file.
+[user]
+[push]
+	default = simple
+	autoSetupRemote = true
+[core]
+	excludesfile = ~/.dotfiles/.gitignore_global
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true
+[gpg]
+	format = ssh
+[pull]
+	ff = only
+[init]
+	defaultBranch = main
+[gpg "ssh"]
+	program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+[include]
+	path = ~/.gitconfig.local
